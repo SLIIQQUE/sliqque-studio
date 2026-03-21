@@ -1,6 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: "https://sliiqque.space",
+  trailingSlash: true,
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: "weekly",
@@ -10,6 +11,9 @@ const config = {
       "/": 1.0,
       "/work": 0.9,
       "/work/bizedge": 0.9,
+      "/work/lumia": 0.6,
+      "/work/mo-touch": 0.6,
+      "/work/zinid": 0.6,
       "/services": 0.9,
       "/expertise": 0.8,
       "/expertise/defi": 0.8,

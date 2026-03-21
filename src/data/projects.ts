@@ -71,7 +71,7 @@ export const projects: Project[] = [
     tags: ["Vite", "GSAP", "Framer Motion"],
     metric: "Interactive",
     imageAlt: "Mo Touch",
-    href: "https://mo-touch.vercel.app/",
+    href: "/work/mo-touch",
     bgColor: "#0a0a0a",
   },
   {
@@ -82,8 +82,8 @@ export const projects: Project[] = [
     description: "Africa's fraud prevention infrastructure platform — credit risk assessment, transaction monitoring, and shared risk memory for the fintech ecosystem.",
     tags: ["React", "TypeScript", "Next.js"],
     metric: "Risk Infrastructure",
-    imageSrc: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "ZINID Platform",
+    logoSrc: "https://zinid.africa/logo192.png",
+    imageAlt: "ZINID Logo",
     href: "/work/zinid",
   },
 ];
@@ -113,7 +113,7 @@ export const studioProjects: StudioProject[] = [
     name: "Mo Touch",
     type: "Beauty — Interactive makeup artist portfolio",
     metric: "Interactive",
-    link: "https://mo-touch.vercel.app/",
+    link: "/work/mo-touch",
   },
   {
     name: "ZINID",

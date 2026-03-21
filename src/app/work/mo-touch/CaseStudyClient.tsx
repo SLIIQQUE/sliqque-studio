@@ -11,6 +11,7 @@ const caseStudy = {
   year: "2024",
   engagementType: "Product Build",
   stack: ["Vite", "GSAP", "Framer Motion", "TypeScript"],
+  externalUrl: "https://mo-touch.vercel.app/",
   context: `Mo Touch is a premium interactive portfolio and digital experience for a makeup artist — built to replace the static gallery format that dominates the beauty industry. The brief was simple: create something that feels as premium as the work itself. The brand needed a digital home that could showcase artistry through immersive, scroll-driven storytelling rather than a flat grid of images.
 
 The makeup industry is saturated with portfolios that look identical — a masonry grid of before-and-after shots, minimal context, no sense of process or craft. Mo Touch was an opportunity to build something that communicated the artist's identity, aesthetic, and attention to detail before a single image loaded.`,
