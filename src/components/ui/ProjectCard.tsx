@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { InteractiveTitle } from "./InteractiveTitle";
 
 export interface ProjectCardProps {
   title: string;
@@ -47,12 +48,6 @@ export function ProjectCard({
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const rotate = useTransform(scrollYProgress, [0, 1], [2, -2]);
   const isLogo = !!logoSrc;
-  const initials = title
-    .split(" ")
-    .map((w) => w[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
 
   return (
     <motion.div
@@ -98,12 +93,14 @@ export function ProjectCard({
               />
             ) : (
               <div
-                className="w-full h-full flex items-center justify-center transition-all duration-700 ease-out group-hover:scale-105"
+                className="w-full h-full flex items-center justify-center overflow-hidden transition-all duration-700 ease-out group-hover:scale-105"
                 style={{ backgroundColor: bgColor }}
               >
-                <span className="font-display font-bold text-7xl tracking-tighter text-white/20 uppercase">
-                  {initials}
-                </span>
+                <InteractiveTitle
+                  title={title}
+                  className="font-display font-bold leading-none tracking-tighter uppercase"
+                  spanClassName="text-5xl md:text-6xl lg:text-7xl"
+                />
               </div>
             )}
             
