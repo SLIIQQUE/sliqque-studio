@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 interface NavLink {
@@ -34,6 +35,12 @@ const Navigation = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,25 +80,34 @@ const Navigation = ({
 
           <div className="hidden lg:flex items-center gap-10">
             {links.map((link) => (
-              <motion.div
-                key={link.label}
-                onMouseEnter={() => setHoveredLink(link.label)}
-                onMouseLeave={() => setHoveredLink(null)}
-                className="relative"
-              >
-                <Link
-                  href={link.href}
-                  className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
                 <motion.div
-                  className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-orange-500 to-blue-500 origin-left"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: hoveredLink === link.label ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.div>
+                  key={link.label}
+                  onMouseEnter={() => setHoveredLink(link.label)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                  className="relative"
+                >
+                  <Link
+                    href={link.href}
+                    className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-colors ${
+                      isActive(link.href)
+                        ? "text-white"
+                        : "text-white/60 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                  <motion.div
+                    className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-orange-500 to-blue-500 origin-left"
+                    initial={{ scaleX: 0 }}
+                    animate={{
+                      scaleX:
+                        hoveredLink === link.label || isActive(link.href)
+                          ? 1
+                          : 0,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
             ))}
           </div>
 
@@ -173,10 +189,22 @@ const Navigation = ({
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="group flex items-center justify-between"
                     >
-                      <span className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase text-white/80 hover:text-white">
+                      <span
+                        className={`font-display font-bold text-4xl md:text-5xl tracking-tight uppercase transition-colors ${
+                          isActive(link.href)
+                            ? "text-white"
+                            : "text-white/80 hover:text-white"
+                        }`}
+                      >
                         {link.label}
                       </span>
-                      <ArrowRight className="w-6 h-6 text-white/30 group-hover:text-white group-hover:translate-x-2 transition-all" />
+                      <ArrowRight
+                        className={`w-6 h-6 transition-all ${
+                          isActive(link.href)
+                            ? "text-orange-500 translate-x-2"
+                            : "text-white/30 group-hover:text-white group-hover:translate-x-2"
+                        }`}
+                      />
                     </Link>
                   </motion.div>
                 ))}
