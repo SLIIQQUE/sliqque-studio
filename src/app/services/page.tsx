@@ -8,6 +8,26 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Website design, product builds, interface engineering, studio retainers, and technical audits. SLIIQQUE takes on 2–3 new projects per quarter.",
+  openGraph: {
+    title: "Services | SLIIQQUE",
+    description:
+      "Website design, product builds, interface engineering, studio retainers, and technical audits. SLIIQQUE takes on 2–3 new projects per quarter.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SLIIQQUE Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | SLIIQQUE",
+    description:
+      "Website design, product builds, interface engineering, studio retainers, and technical audits.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function ServicesPage() {

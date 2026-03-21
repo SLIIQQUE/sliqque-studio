@@ -8,6 +8,26 @@ export const metadata: Metadata = {
   title: "Insights",
   description:
     "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
+  openGraph: {
+    title: "Insights | SLIIQQUE",
+    description:
+      "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SLIIQQUE Insights",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Insights | SLIIQQUE",
+    description:
+      "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function InsightsPage() {

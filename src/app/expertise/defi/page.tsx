@@ -8,6 +8,26 @@ export const metadata: Metadata = {
   title: "DeFi Interface Development",
   description:
     "We engineer high-performance DeFi dashboards, staking interfaces, and liquidity UIs. Built with Wagmi, Viem, The Graph, and Next.js.",
+  openGraph: {
+    title: "DeFi Interface Development | SLIIQQUE",
+    description:
+      "We engineer high-performance DeFi dashboards, staking interfaces, and liquidity UIs. Built with Wagmi, Viem, The Graph, and Next.js.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SLIIQQUE DeFi Interface Development",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DeFi Interface Development | SLIIQQUE",
+    description:
+      "We engineer high-performance DeFi dashboards, staking interfaces, and liquidity UIs.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function DeFiPage() {

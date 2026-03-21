@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { Mail, ArrowRight, Twitter, Linkedin, Github, ArrowUp } from "lucide-react";
+import { Mail, ArrowUp } from "lucide-react";
 
 interface FooterProps {
   brandMark?: string;
   email?: string;
-  socials?: { label: string; href: string; icon: any }[];
   copyright?: string;
 }
 
@@ -29,25 +28,9 @@ const AnimatedBackground = () => {
   );
 };
 
-const SocialLink = ({ href, icon: Icon, label }: { href: string; icon: any; label: string }) => (
-  <motion.div
-    whileHover={{ y: -3, scale: 1.1 }}
-    className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group cursor-pointer"
-  >
-    <Link href={href} target="_blank" rel="noopener noreferrer">
-      <Icon className="w-5 h-5 text-white/40 group-hover:text-white transition-colors" />
-    </Link>
-  </motion.div>
-);
-
 const Footer = ({
   brandMark = "SLIIQQUE",
   email = "hello@sliiqque.studio",
-  socials = [
-    { label: "Twitter", href: "https://twitter.com/sliiqque", icon: Twitter },
-    { label: "LinkedIn", href: "https://linkedin.com/company/sliiqque", icon: Linkedin },
-    { label: "GitHub", href: "https://github.com/sliiqque", icon: Github },
-  ],
   copyright = "© 2026 SLIIQQUE Studio. All rights reserved.",
 }: FooterProps) => {
   const [emailHovered, setEmailHovered] = useState(false);
@@ -109,21 +92,8 @@ const Footer = ({
           transition={{ delay: 0.2 }}
           className="mt-8 text-base font-body text-white/40 max-w-md mx-auto"
         >
-          We take on 2–3 new projects per quarter. Let's see if we're a fit.
+          We take on 2–3 new projects per quarter. Let&apos;s see if we&apos;re a fit.
         </motion.p>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative z-10 flex flex-col items-center gap-8 mb-20"
-      >
-        <div className="flex gap-6">
-          {socials.map(({ href, icon, label }) => (
-            <SocialLink key={label} href={href} icon={icon} label={label} />
-          ))}
-        </div>
       </motion.div>
 
       <motion.div

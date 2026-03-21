@@ -8,6 +8,26 @@ export const metadata: Metadata = {
   title: "NFT Platform Development",
   description:
     "We build NFT minting platforms, marketplace UIs, and collection managers. Built for creators who want control and collectors who want simplicity.",
+  openGraph: {
+    title: "NFT Platform Development | SLIIQQUE",
+    description:
+      "We build NFT minting platforms, marketplace UIs, and collection managers. Built for creators who want control and collectors who want simplicity.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SLIIQQUE NFT Platform Development",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NFT Platform Development | SLIIQQUE",
+    description:
+      "We build NFT minting platforms, marketplace UIs, and collection managers.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function NFTPage() {

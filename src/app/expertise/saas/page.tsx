@@ -8,6 +8,26 @@ export const metadata: Metadata = {
   title: "SaaS Frontend Engineering",
   description:
     "High-performance React and Next.js interfaces for SaaS products — built for conversion and scale.",
+  openGraph: {
+    title: "SaaS Frontend Engineering | SLIIQQUE",
+    description:
+      "High-performance React and Next.js interfaces for SaaS products — built for conversion and scale.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SLIIQQUE SaaS Frontend Engineering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS Frontend Engineering | SLIIQQUE",
+    description:
+      "High-performance React and Next.js interfaces for SaaS products — built for conversion and scale.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function SaaSPage() {

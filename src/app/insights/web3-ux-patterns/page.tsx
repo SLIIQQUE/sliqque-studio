@@ -8,6 +8,26 @@ export const metadata: Metadata = {
   title: "Web3 UX Patterns That Work",
   description:
     "After building dozens of dApps, these are the interface patterns that consistently improve onboarding and reduce abandonment.",
+  openGraph: {
+    title: "Web3 UX Patterns That Work | SLIIQQUE",
+    description:
+      "After building dozens of dApps, these are the interface patterns that consistently improve onboarding and reduce abandonment.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Web3 UX Patterns That Work",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web3 UX Patterns That Work | SLIIQQUE",
+    description:
+      "After building dozens of dApps, these are the interface patterns that consistently improve onboarding.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function ArticlePage() {

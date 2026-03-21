@@ -7,7 +7,27 @@ import ArticleClient from "./ArticleClient";
 export const metadata: Metadata = {
   title: "How to Build a DeFi Dashboard with Next.js 14",
   description:
-    "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi.",
+    "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi. Includes code examples and project structure.",
+  openGraph: {
+    title: "How to Build a DeFi Dashboard with Next.js 14 | SLIIQQUE",
+    description:
+      "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "How to Build a DeFi Dashboard with Next.js 14",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Build a DeFi Dashboard with Next.js 14 | SLIIQQUE",
+    description:
+      "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function ArticlePage() {

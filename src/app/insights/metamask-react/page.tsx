@@ -7,7 +7,27 @@ import ArticleClient from "./ArticleClient";
 export const metadata: Metadata = {
   title: "MetaMask Integration in React",
   description:
-    "Everything you need to know about connecting wallets to your React application. A comprehensive guide to wallet connection with wagmi and viem.",
+    "A practical guide to connecting MetaMask and any Web3 wallet to your React application — covering hooks, state management, and error handling.",
+  openGraph: {
+    title: "MetaMask Integration in React | SLIIQQUE",
+    description:
+      "A practical guide to connecting MetaMask and any Web3 wallet to your React application — covering hooks, state management, and error handling.",
+    images: [
+      {
+        url: "https://sliiqque.studio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MetaMask Integration in React",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MetaMask Integration in React | SLIIQQUE",
+    description:
+      "A practical guide to connecting MetaMask and any Web3 wallet to your React application.",
+    images: ["https://sliiqque.studio/og-image.png"],
+  },
 };
 
 export default function ArticlePage() {

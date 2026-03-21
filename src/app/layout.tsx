@@ -48,10 +48,10 @@ export const metadata: Metadata = {
     siteName: "SLIIQQUE",
     title: "SLIIQQUE — Web3 & SaaS Software Studio",
     description:
-      "We build high-performance Web3 and SaaS products. From interface to infrastructure.",
+      "We build high-performance Web3 and SaaS products — from interface to infrastructure.",
     images: [
       {
-        url: "/og-image.svg",
+        url: "https://sliiqque.studio/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE — Web3 & SaaS Software Studio",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     creator: "@sliiqque",
     title: "SLIIQQUE — Web3 & SaaS Software Studio",
     description: "We build high-performance Web3 and SaaS products.",
-    images: ["/og-image.svg"],
+    images: ["https://sliiqque.studio/og-image.png"],
   },
   alternates: {
     canonical: "https://sliiqque.studio",
