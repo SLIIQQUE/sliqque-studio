@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { studioProjects } from "@/data";
 
 const beliefs = [
   {
@@ -32,27 +33,6 @@ const services = [
   "Design Systems & Component Libraries",
   "Performance Optimization",
   "Smart Contract Frontend Integration",
-];
-
-const projects = [
-  {
-    name: "BizEdge",
-    type: "SaaS — 11-module HR platform",
-    metric: "11 Modules",
-    link: "/work/bizedge",
-  },
-  {
-    name: "DeFi Protocol",
-    type: "Web3 dashboard & token gating",
-    metric: "On-chain",
-    link: "/expertise/defi",
-  },
-  {
-    name: "NFT Marketplace",
-    type: "Minting flow & wallet integration",
-    metric: "Live",
-    link: "/expertise/nft",
-  },
 ];
 
 const stack = [
@@ -115,7 +95,7 @@ export default function StudioPageClient() {
               </h2>
               <div className="space-y-6 max-w-xl">
                 <p className="text-lg font-body text-white/60 leading-relaxed">
-                  BSc Physics turned frontend engineer. 5+ years building production React and TypeScript systems — leading teams, shipping multi-module SaaS products, integrating blockchain infrastructure into real consumer interfaces.
+                  BSc Physics turned frontend engineer. Building production React and TypeScript systems — leading teams, shipping multi-module SaaS products, integrating blockchain infrastructure into real consumer interfaces.
                 </p>
                 <p className="text-lg font-body text-white/60 leading-relaxed">
                   SLIIQQUE was built to do one thing well: take ambitious Web3 and SaaS products from concept to production, with craft and precision at every layer.
@@ -221,7 +201,7 @@ export default function StudioPageClient() {
           </motion.div>
 
           <div className="space-y-0">
-            {projects.map((project, i) => (
+            {studioProjects.map((project, i) => (
               <motion.div
                 key={project.name}
                 initial={{ opacity: 0, x: -20 }}

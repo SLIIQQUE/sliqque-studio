@@ -4,21 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
-const differentiators = [
-  {
-    title: "Full-Stack Ownership",
-    description: "From interface architecture to on-chain integration — one person owns the whole stack.",
-  },
-  {
-    title: "Web3-Native",
-    description: "Built on Ethereum, Solana, and modern tools like Viem and wagmi — not legacy abstractions.",
-  },
-  {
-    title: "Shipped, Not Promised",
-    description: "Every project I've shipped is live. I don't pitch capabilities I haven't already delivered.",
-  },
-];
+import { differentiators, studioInfo } from "@/data";
 
 const StudioSection = () => {
   return (
@@ -36,18 +22,18 @@ const StudioSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 block mb-4">
-                About the Studio
+                {studioInfo.subheadline}
               </span>
               <h2 className="font-display font-bold text-5xl md:text-6xl xl:text-7xl tracking-tight uppercase leading-none">
-                Built by<br />one person.<br />Driven by craft.
+                {studioInfo.tagline.split('.')[0]}<br />{studioInfo.tagline.split('.')[1]}.<br />Driven by craft.
               </h2>
             </div>
             <div>
               <p className="text-xl font-body text-white/50 leading-relaxed mb-6">
-                SLIIQQUE is a boutique software studio founded by Gabriel Njoabozia in Lagos, Nigeria. 5+ years building production frontend systems — leading engineering teams, shipping multi-module SaaS products, integrating blockchain infrastructure into real consumer interfaces.
+                {studioInfo.description}
               </p>
               <p className="text-lg font-body text-white/40">
-                Specializing in Web3 interfaces, SaaS frontends, and the engineering layer that makes those products actually work.
+                {studioInfo.specialization}
               </p>
             </div>
           </div>
@@ -86,10 +72,10 @@ const StudioSection = () => {
         >
           <div>
             <h3 className="font-display font-bold text-2xl md:text-3xl tracking-tight uppercase mb-2">
-              Gabriel Njoabozia
+              {studioInfo.founder}
             </h3>
             <p className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted">
-              Founder &amp; Lead Engineer — Lagos, Nigeria
+              {studioInfo.role} — {studioInfo.location}
             </p>
           </div>
           <Link

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, Play } from "lucide-react";
 import { ProjectCard } from "@/components/ui/ProjectCard";
+import { featuredProjects, workPageContent } from "@/data";
 
 const VideoReveal = ({ src, poster, title }: { src?: string; poster: string; title: string }) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -85,45 +86,6 @@ const VideoReveal = ({ src, poster, title }: { src?: string; poster: string; tit
   );
 };
 
-const projects = [
-  {
-    title: "BizEdge",
-    year: "2021",
-    clientType: "HRMS SaaS",
-    engagementType: "Product Build",
-    description: "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
-    tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
-    metric: "11 Modules",
-    imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "BizEdge HRMS Dashboard",
-    href: "/work/bizedge",
-  },
-  {
-    title: "Meridian Finance",
-    year: "2024",
-    clientType: "DeFi SaaS",
-    engagementType: "Interface Engineering",
-    description: "Real-time DeFi analytics dashboard with multi-chain support, portfolio tracking, and yield optimization tools.",
-    tags: ["Web3", "Wagmi", "The Graph"],
-    metric: "Multi-chain",
-    imageSrc: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Meridian Finance Dashboard",
-    href: "/work/meridian",
-  },
-  {
-    title: "Origin Protocol",
-    year: "2024",
-    clientType: "NFT Platform",
-    engagementType: "Product Build",
-    description: "NFT minting platform with IPFS storage, zero-slippage trading engine, and creator-friendly royalty system.",
-    tags: ["NFT", "Solidity", "IPFS"],
-    metric: "On-chain Minting",
-    imageSrc: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Origin Protocol Platform",
-    href: "/work/origin",
-  },
-];
-
 const SelectedWorkSection = () => {
   return (
     <section className="py-32 px-10 relative overflow-hidden">
@@ -137,21 +99,21 @@ const SelectedWorkSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-20 flex items-end justify-between"
         >
-          <div>
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: "auto" }}
-              viewport={{ once: true }}
-              className="overflow-hidden"
-            >
-              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 block mb-4">
-                Selected Work
-              </span>
-            </motion.div>
-            <h2 className="font-display font-bold text-5xl md:text-7xl tracking-tight uppercase">
-              Projects
-            </h2>
-          </div>
+            <div>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "auto" }}
+                viewport={{ once: true }}
+                className="overflow-hidden"
+              >
+                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 block mb-4">
+                  {workPageContent.label}
+                </span>
+              </motion.div>
+              <h2 className="font-display font-bold text-5xl md:text-7xl tracking-tight uppercase">
+                {workPageContent.title}
+              </h2>
+            </div>
           
           <Link
             href="/work"
@@ -168,7 +130,7 @@ const SelectedWorkSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-          {projects.map((project, i) => (
+          {featuredProjects.map((project, i) => (
             <ProjectCard key={project.title} {...project} index={i} />
           ))}
         </div>
