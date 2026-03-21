@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Plus_Jakarta_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -7,10 +7,10 @@ import { SchemaOrg } from "@/components/SchemaOrg";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import CursorWrapper from "@/components/ui/CursorWrapper";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "700"],
+  variable: "--font-jakarta",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const syne = Syne({
@@ -81,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(inter.variable, syne.variable)}>
+    <html lang="en" className={cn(plusJakartaSans.variable, syne.variable)}>
       <head>
         <SchemaOrg />
         <link rel="icon" href="/favicon.ico" sizes="any" />
