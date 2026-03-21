@@ -94,23 +94,6 @@ const CTASection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-3 px-6 py-3 border border-white/10 rounded-full mb-8"
-          >
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-2 h-2 rounded-full bg-green-500"
-            />
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/60">
-              Available for Q2 2026
-            </span>
-          </motion.div>
-          
           <h2 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.9] mb-8">
             Ready to<br />Build Something<br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-blue-500 to-purple-500">

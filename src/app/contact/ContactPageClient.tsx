@@ -95,14 +95,7 @@ export default function ContactPageClient() {
                     Lagos, Nigeria · Working globally
                   </span>
                 </div>
-                <div>
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">
-                    Availability
-                  </span>
-                  <span className="text-base font-body text-white/80">
-                    ● Available for Q2 2026
-                  </span>
-                </div>
+
               </div>
             </motion.div>
 

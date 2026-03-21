@@ -165,22 +165,6 @@ const Hero = ({
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center justify-center gap-4 mb-8"
-          >
-            <motion.div
-              animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-3 h-3 rounded-full bg-green-500"
-            />
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-green-500">
-              Available for Q2 2026
-            </span>
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
