@@ -11,9 +11,10 @@ import {
   Monitor,
   Sparkles,
   ChevronRight,
+  Star,
 } from "lucide-react";
 
-const ServiceItem = ({
+const ServiceCard = ({
   index,
   title,
   description,
@@ -21,6 +22,7 @@ const ServiceItem = ({
   price,
   features,
   delay,
+  highlight = false,
 }: {
   index: string;
   title: string;
@@ -29,6 +31,7 @@ const ServiceItem = ({
   price?: string;
   features?: string[];
   delay: number;
+  highlight?: boolean;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -41,159 +44,113 @@ const ServiceItem = ({
       transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       className="group relative"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-      
-      <div className="pl-8 py-10 border-b border-white/5 hover:border-white/10 transition-colors duration-500">
-        <div className="flex items-start justify-between gap-8">
-          <div className="flex-1">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-[10px] font-mono text-white/20 tracking-widest">
-                {index}
-              </span>
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        
+        <div className="relative z-10 p-8 lg:p-10">
+          <div className="flex items-start justify-between gap-6 mb-6">
+            <div className="flex items-center gap-4">
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center"
+                className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                  highlight 
+                    ? 'bg-gradient-to-br from-orange-500/15 to-orange-500/5 border border-orange-500/20' 
+                    : 'bg-white/5 border border-white/10'
+                }`}
               >
-                <Icon className="w-4 h-4 text-white/60" />
+                <Icon className={`w-5 h-5 ${highlight ? 'text-orange-400' : 'text-white/60'}`} />
               </motion.div>
+              
+              <div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-mono text-white/20 tracking-widest">
+                    {index}
+                  </span>
+                  {highlight && (
+                    <motion.span 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: delay + 0.3 }}
+                      className="flex items-center gap-1 text-[9px] font-medium uppercase tracking-wider text-orange-400/80 bg-orange-500/10 px-2 py-0.5 rounded-full"
+                    >
+                      <Star size={8} className="fill-current" />
+                      Popular
+                    </motion.span>
+                  )}
+                </div>
+              </div>
             </div>
             
-            <h3 className="font-display font-bold text-2xl md:text-3xl tracking-tight uppercase mb-3 group-hover:text-white/90 transition-colors">
-              {title}
-            </h3>
-            
-            <p className="text-sm font-body text-white/40 max-w-xl leading-relaxed mb-4">
-              {description}
-            </p>
-            
-            {features && features.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-6">
-                {features.slice(0, 3).map((feature) => (
-                  <span key={feature} className="text-[10px] font-mono text-white/30 px-2 py-1 bg-white/5 rounded">
-                    {feature}
-                  </span>
-                ))}
-                {features.length > 3 && (
-                  <span className="text-[10px] font-mono text-white/30 px-2 py-1">+{features.length - 3} more</span>
-                )}
+            {price && (
+              <div className="text-right shrink-0">
+                <span className="text-[10px] font-mono text-white/20 tracking-widest block mb-1">Starting at</span>
+                <span className={`font-display font-bold tracking-tight ${highlight ? 'text-xl' : 'text-lg'}`}>
+                  {price}
+                </span>
               </div>
             )}
-            
+          </div>
+          
+          <h3 className="font-display font-bold text-2xl md:text-3xl tracking-tight uppercase mb-3 group-hover:text-white/90 transition-colors">
+            {title}
+          </h3>
+          
+          <p className="text-sm font-body text-white/40 leading-relaxed mb-6 max-w-xl">
+            {description}
+          </p>
+          
+          {features && features.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-8">
+              {features.map((feature) => (
+                <span 
+                  key={feature} 
+                  className={`text-[10px] font-mono px-2.5 py-1 rounded-full transition-colors duration-300 ${
+                    highlight 
+                      ? 'text-orange-400/70 bg-orange-500/10 border border-orange-500/10 hover:bg-orange-500/20 hover:border-orange-500/20' 
+                      : 'text-white/30 bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10'
+                  }`}
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+          )}
+          
+          <div className="flex items-center justify-between pt-6 border-t border-white/5">
             <motion.a
               href="/contact"
               whileHover={{ x: 4 }}
-              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors duration-300"
+              className={`inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-300 ${
+                highlight 
+                  ? 'text-orange-400/70 hover:text-orange-400' 
+                  : 'text-white/30 hover:text-white/60'
+              }`}
             >
               Learn More
               <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
-          </div>
-          
-          {price && (
-            <div className="hidden md:block text-right shrink-0">
-              <span className="text-[10px] font-mono text-white/20 tracking-widest block mb-2">Starting at</span>
-              <span className="font-display font-bold text-xl tracking-tight">{price}</span>
-            </div>
-          )}
-        </div>
-        
-        <motion.div
-          className="h-px bg-gradient-to-r from-orange-500/50 via-blue-500/50 to-purple-500/50 mt-8 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
-        />
-      </div>
-    </motion.div>
-  );
-};
-
-const FeaturedService = ({
-  index,
-  title,
-  description,
-  icon: Icon,
-  price,
-  features,
-  delay,
-}: {
-  index: string;
-  title: string;
-  description: string;
-  icon: any;
-  price: string;
-  features: string[];
-  delay: number;
-}) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative"
-    >
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-transparent p-8 lg:p-10 hover:border-white/20 transition-all duration-500">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-        
-        <div className="relative z-10">
-          <div className="flex items-center justify-between mb-10">
-            <motion.div
-              whileHover={{ rotate: 360, scale: 1.1 }}
-              transition={{ duration: 0.6 }}
-              className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 border border-orange-500/20 flex items-center justify-center"
-            >
-              <Icon className="w-8 h-8 text-orange-400" />
-            </motion.div>
             
-            <span className="text-[10px] font-mono text-white/20 tracking-[0.3em]">
-              {index}
-            </span>
-          </div>
-          
-          <h3 className="font-display font-bold text-3xl md:text-4xl tracking-tight uppercase mb-4 leading-tight">
-            {title}
-          </h3>
-          
-          <p className="text-sm font-body text-white/50 leading-relaxed mb-8 max-w-sm">
-            {description}
-          </p>
-          
-          <div className="grid grid-cols-2 gap-3 mb-10">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature}
-                initial={{ opacity: 0, y: 10 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: delay + 0.1 * i }}
-                className="flex items-center gap-2 text-xs font-body text-white/40"
+            {highlight && (
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ delay: delay + 0.4 }}
+                className="flex items-center gap-2 px-5 py-2.5 bg-white text-black font-bold text-[10px] uppercase tracking-[0.15em] rounded-full"
               >
-                <span className="w-1 h-1 rounded-full bg-orange-500/60" />
-                {feature}
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="flex items-center justify-between pt-6 border-t border-white/5">
-            <div>
-              <span className="text-[10px] font-mono text-white/20 tracking-widest block mb-1">Starting at</span>
-              <span className="font-display font-bold text-2xl tracking-tight">{price}</span>
-            </div>
-            
-            <motion.a
-              href="/contact"
-              whileHover={{ x: 4, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center gap-2 px-6 py-3 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] rounded-full"
-            >
-              Get Started
-              <ArrowRight size={12} />
-            </motion.a>
+                Get Started
+                <ArrowRight size={12} />
+              </motion.a>
+            )}
           </div>
         </div>
         
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-blue-500 to-purple-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
+          className={`h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out ${
+            highlight ? 'bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500' : 'bg-gradient-to-r from-orange-500/50 via-blue-500/50 to-purple-500/50'
+          }`}
         />
       </div>
     </motion.div>
@@ -216,6 +173,7 @@ const services = [
       "Analytics setup",
       "Contact forms",
     ],
+    highlight: true,
   },
   {
     index: "02",
@@ -311,14 +269,10 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col gap-8">
-          <FeaturedService {...services[0]} delay={0.1} />
-          
-          <div className="space-y-0">
-            {services.slice(1).map((service, i) => (
-              <ServiceItem key={service.index} {...service} delay={0.2 + i * 0.1} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((service, i) => (
+            <ServiceCard key={service.index} {...service} delay={0.1 + i * 0.08} />
+          ))}
         </div>
 
         <motion.div
