@@ -46,7 +46,7 @@ export default function ContactPageClient() {
           </h1>
           <p className="text-lg font-body text-white/60 leading-relaxed">
             Thank you for reaching out. We'll review your project details and
-            get back to you within 48 hours.
+            get back to you within 24 hours.
           </p>
         </motion.div>
       </div>
@@ -67,7 +67,7 @@ export default function ContactPageClient() {
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
                 Contact
               </span>
-              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase leading-tight mb-6 md:mb-8">
+              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-[3.4rem] tracking-tighter uppercase leading-tight mb-6 md:mb-8">
                 Start a<br />Conversation
               </h1>
               <p className="text-lg font-body text-white/60 leading-relaxed mb-8">
