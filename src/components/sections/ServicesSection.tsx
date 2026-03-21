@@ -252,7 +252,7 @@ const ServicesSection = () => {
         </motion.div>
 
         <div className="space-y-0">
-          {services.map((service, i) => (
+          {services.slice(0, 4).map((service, i) => (
             <ServiceItem key={service.index} {...service} delay={0.1 + i * 0.08} />
           ))}
         </div>
