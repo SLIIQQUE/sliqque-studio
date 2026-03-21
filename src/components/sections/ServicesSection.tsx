@@ -18,6 +18,7 @@ import {
   Layers,
   Boxes,
   Sparkles,
+  Monitor,
 } from "lucide-react";
 
 const AnimatedIcon = ({
@@ -202,6 +203,21 @@ const ServiceCard = ({
 const services = [
   {
     index: "01",
+    title: "Website Design & Development",
+    description:
+      "Professional, conversion-focused websites for businesses ready to establish their online presence and grow.",
+    icon: Monitor,
+    features: [
+      "Custom responsive design",
+      "SEO-optimized structure",
+      "Fast load times",
+      "Mobile-first approach",
+    ],
+    startingAt: "From $1,000",
+    href: "/contact",
+  },
+  {
+    index: "02",
     title: "Product Build",
     description:
       "From brief to mainnet in weeks — not months. Full-stack product engineering for Web3 founders ready to ship.",
@@ -216,7 +232,7 @@ const services = [
     href: "/contact",
   },
   {
-    index: "02",
+    index: "03",
     title: "Interface Engineering",
     description:
       "SaaS and Web3 interfaces built for performance and conversion. React, Next.js, TypeScript.",
@@ -231,7 +247,7 @@ const services = [
     href: "/contact",
   },
   {
-    index: "03",
+    index: "04",
     title: "Studio Retainer",
     description:
       "Your dedicated frontend engineering partner — on call, embedded, always shipping.",
@@ -246,7 +262,7 @@ const services = [
     href: "/contact",
   },
   {
-    index: "04",
+    index: "05",
     title: "Technical Audit",
     description:
       "We review your existing product and tell you exactly what to fix and why.",
@@ -292,7 +308,7 @@ const ServicesSection = () => {
             Services
           </h2>
           <p className="text-lg font-body text-white/50 max-w-2xl mx-auto">
-            Four engagement types designed for founders building what's next.
+            Five engagement types designed for founders and businesses building what's next.
           </p>
         </motion.div>
 

@@ -7,7 +7,7 @@ import ServicesPageClient from "./ServicesPageClient";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Product builds, interface engineering, studio retainers, and technical audits. SLIIQQUE takes on 2–3 new projects per quarter.",
+    "Website design, product builds, interface engineering, studio retainers, and technical audits. SLIIQQUE takes on 2–3 new projects per quarter.",
 };
 
 export default function ServicesPage() {
