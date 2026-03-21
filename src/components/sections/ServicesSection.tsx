@@ -14,7 +14,7 @@ import {
   Star,
 } from "lucide-react";
 
-const ServiceCard = ({
+const ServiceItem = ({
   index,
   title,
   description,
@@ -39,84 +39,83 @@ const ServiceCard = ({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
       className="group relative"
     >
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <div className="relative pl-8 py-8 border-b border-white/5 hover:border-white/10 transition-colors duration-500">
+        <div className={`absolute left-0 top-0 bottom-0 w-px transition-all duration-500 ${
+          highlight ? 'bg-gradient-to-b from-orange-500 via-amber-400 to-orange-500' : 'bg-gradient-to-b from-transparent via-white/10 to-transparent'
+        }`} />
         
-        <div className="relative z-10 p-8 lg:p-10">
-          <div className="flex items-start justify-between gap-6 mb-6">
-            <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-8">
+          <div className="flex-1">
+            <div className="flex items-center gap-4 mb-3">
+              <span className="text-[10px] font-mono text-white/20 tracking-widest">
+                {index}
+              </span>
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   highlight 
-                    ? 'bg-gradient-to-br from-orange-500/15 to-orange-500/5 border border-orange-500/20' 
+                    ? 'bg-gradient-to-br from-orange-500/20 to-orange-500/5 border border-orange-500/30' 
                     : 'bg-white/5 border border-white/10'
                 }`}
               >
-                <Icon className={`w-5 h-5 ${highlight ? 'text-orange-400' : 'text-white/60'}`} />
+                <Icon className={`w-4 h-4 ${highlight ? 'text-orange-400' : 'text-white/60'}`} />
               </motion.div>
-              
-              <div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono text-white/20 tracking-widest">
-                    {index}
-                  </span>
-                  {highlight && (
-                    <motion.span 
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ delay: delay + 0.3 }}
-                      className="flex items-center gap-1 text-[9px] font-medium uppercase tracking-wider text-orange-400/80 bg-orange-500/10 px-2 py-0.5 rounded-full"
-                    >
-                      <Star size={8} className="fill-current" />
-                      Popular
-                    </motion.span>
-                  )}
-                </div>
-              </div>
+              {highlight && (
+                <motion.span 
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: delay + 0.2 }}
+                  className="flex items-center gap-1 text-[9px] font-medium uppercase tracking-wider text-orange-400/80"
+                >
+                  <Star size={8} className="fill-current" />
+                  Popular
+                </motion.span>
+              )}
             </div>
             
-            {price && (
-              <div className="text-right shrink-0">
-                <span className="text-[10px] font-mono text-white/20 tracking-widest block mb-1">Starting at</span>
-                <span className={`font-display font-bold tracking-tight ${highlight ? 'text-xl' : 'text-lg'}`}>
-                  {price}
-                </span>
+            <h3 className={`font-display font-bold tracking-tight uppercase mb-2 group-hover:text-white/90 transition-colors ${
+              highlight ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
+            }`}>
+              {title}
+            </h3>
+            
+            <p className="text-sm font-body text-white/40 max-w-xl leading-relaxed mb-4">
+              {description}
+            </p>
+            
+            {features && features.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {features.slice(0, 4).map((feature) => (
+                  <span 
+                    key={feature} 
+                    className={`text-[10px] font-mono px-2 py-0.5 rounded transition-colors duration-300 ${
+                      highlight 
+                        ? 'text-orange-400/60 bg-orange-500/10' 
+                        : 'text-white/30 bg-white/5'
+                    }`}
+                  >
+                    {feature}
+                  </span>
+                ))}
               </div>
             )}
           </div>
           
-          <h3 className="font-display font-bold text-2xl md:text-3xl tracking-tight uppercase mb-3 group-hover:text-white/90 transition-colors">
-            {title}
-          </h3>
-          
-          <p className="text-sm font-body text-white/40 leading-relaxed mb-6 max-w-xl">
-            {description}
-          </p>
-          
-          {features && features.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-8">
-              {features.map((feature) => (
-                <span 
-                  key={feature} 
-                  className={`text-[10px] font-mono px-2.5 py-1 rounded-full transition-colors duration-300 ${
-                    highlight 
-                      ? 'text-orange-400/70 bg-orange-500/10 border border-orange-500/10 hover:bg-orange-500/20 hover:border-orange-500/20' 
-                      : 'text-white/30 bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10'
-                  }`}
-                >
-                  {feature}
+          <div className="hidden md:flex flex-col items-end gap-4 shrink-0">
+            {price && (
+              <div className="text-right">
+                <span className="text-[10px] font-mono text-white/20 tracking-widest block mb-1">Starting at</span>
+                <span className={`font-display font-bold tracking-tight ${highlight ? 'text-lg text-orange-400' : 'text-base'}`}>
+                  {price}
                 </span>
-              ))}
-            </div>
-          )}
-          
-          <div className="flex items-center justify-between pt-6 border-t border-white/5">
+              </div>
+            )}
+            
             <motion.a
               href="/contact"
               whileHover={{ x: 4 }}
@@ -129,26 +128,11 @@ const ServiceCard = ({
               Learn More
               <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
-            
-            {highlight && (
-              <motion.a
-                href="/contact"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ delay: delay + 0.4 }}
-                className="flex items-center gap-2 px-5 py-2.5 bg-white text-black font-bold text-[10px] uppercase tracking-[0.15em] rounded-full"
-              >
-                Get Started
-                <ArrowRight size={12} />
-              </motion.a>
-            )}
           </div>
         </div>
         
         <motion.div
-          className={`h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out ${
+          className={`h-px mt-6 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out ${
             highlight ? 'bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500' : 'bg-gradient-to-r from-orange-500/50 via-blue-500/50 to-purple-500/50'
           }`}
         />
@@ -170,8 +154,6 @@ const services = [
       "SEO optimization",
       "Fast load times",
       "Mobile-first",
-      "Analytics setup",
-      "Contact forms",
     ],
     highlight: true,
   },
@@ -269,9 +251,9 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-0">
           {services.map((service, i) => (
-            <ServiceCard key={service.index} {...service} delay={0.1 + i * 0.08} />
+            <ServiceItem key={service.index} {...service} delay={0.1 + i * 0.08} />
           ))}
         </div>
 
