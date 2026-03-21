@@ -6,6 +6,20 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 
 const projects = [
   {
+    title: "Lumia",
+    year: "2019",
+    clientType: "FinTech",
+    engagementType: "Product Build",
+    description:
+      "Nigeria's electricity payment platform — prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
+    tags: ["React", "TypeScript", "Node.js", "Payment Integration"],
+    metric: "6 DisCos",
+    imageSrc:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop",
+    imageAlt: "Lumia Electricity Payment Platform",
+    href: "/work/lumia",
+  },
+  {
     title: "BizEdge",
     year: "2021",
     clientType: "HRMS SaaS",

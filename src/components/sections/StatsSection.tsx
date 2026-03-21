@@ -147,7 +147,7 @@ const StatCard = ({
 };
 
 const MarqueeStats = () => {
-  const stats = ["5+ Years Experience", "•", "50+ Projects", "•", "98% Client Satisfaction", "•", "24/7 Support", "•"];
+  const stats = ["5+ Years Experience", "•", "5+ Projects Shipped", "•", "Web3 & SaaS Focus", "•", "Lagos, Nigeria", "•"];
   
   return (
     <div className="py-6 border-y border-white/10 overflow-hidden">
@@ -179,9 +179,9 @@ const MarqueeStats = () => {
 const StatsSection = () => {
   const stats = [
     { value: 5, suffix: "+", label: "Years Experience", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-    { value: 50, suffix: "+", label: "Projects Shipped", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg> },
-    { value: 100, suffix: "%", label: "Client Satisfaction", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-    { value: 4, suffix: "x", label: "Faster Than Average", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> },
+    { value: 5, suffix: "+", label: "Projects Shipped", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg> },
+    { value: 3, suffix: "", label: "Focus Verticals", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg> },
+    { value: 1, suffix: "", label: "Principal", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg> },
   ];
 
   return (
@@ -200,7 +200,7 @@ const StatsSection = () => {
             By The Numbers
           </h2>
           <p className="text-white/40 font-body">
-            Results that speak for themselves
+            Honest numbers. Real work.
           </p>
         </motion.div>
 
@@ -209,28 +209,6 @@ const StatsSection = () => {
             <StatCard key={stat.label} {...stat} delay={i * 0.1} />
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-col lg:flex-row items-center justify-between gap-12 py-12 border-y border-white/5"
-        >
-          <div className="flex items-center gap-8">
-            <ProgressRing progress={95} delay={0} label="Quality" />
-            <ProgressRing progress={98} delay={0.2} label="Delivery" />
-            <ProgressRing progress={92} delay={0.4} label="Support" />
-          </div>
-          
-          <div className="text-center lg:text-right">
-            <p className="text-2xl font-display font-bold tracking-tight">
-              Excellence Measured
-            </p>
-            <p className="text-white/40 text-sm mt-2">
-              Internal metrics that drive our process
-            </p>
-          </div>
-        </motion.div>
       </div>
       
       <MarqueeStats />

@@ -3,157 +3,151 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-
-const team = [
-  {
-    name: "Gabriel Njoabozia",
-    role: "Founder & Lead Engineer",
-    initials: "GN",
-    bio: "5+ years building production frontend systems across SaaS, HR tech, and Web3. Led engineering teams shipping multi-module products from zero to launch.",
-    stack: ["React", "TypeScript", "Next.js", "Solidity", "Viem"],
-  },
-  {
-    name: "Chidi Okonkwo",
-    role: "Lead Designer",
-    initials: "CO",
-    bio: "Crafts interfaces that reduce cognitive load. Background in product design at scale — from enterprise dashboards to consumer Web3 products.",
-    stack: ["Figma", "Design Systems", "UX Research", "Framer"],
-  },
-];
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const beliefs = [
   {
     quote:
       "The interface is the product. If users can't figure it out in 5 seconds, you've already lost them.",
     description:
-      "In Web3 and SaaS, design isn't decoration — it's infrastructure. We build interfaces that reduce cognitive load, not add to it.",
+      "In Web3 and SaaS, design isn't decoration — it's infrastructure. I build interfaces that reduce cognitive load, not add to it.",
   },
   {
     quote: "Production means it still works 6 months later.",
     description:
-      "We write code that lasts. No shortcuts, no throwaway prototypes. Every project is architected to scale, maintain, and evolve with your product.",
+      "I write code that lasts. No shortcuts, no throwaway prototypes. Every project is architected to scale, maintain, and evolve with your product.",
   },
   {
     quote:
       "Complexity is easy. Simple is expensive — and worth it.",
     description:
-      "Anyone can build a feature. It takes craft to build one that doesn't need documentation. We'd rather take longer to get it right than hand over something fragile.",
+      "Anyone can build a feature. It takes craft to build one that doesn't need documentation. I'd rather take longer to get it right than hand over something fragile.",
   },
 ];
 
-const stats = [
-  { value: "2021", label: "Founded" },
-  { value: "5+", label: "Projects shipped" },
-  { value: "2,000+", label: "Businesses served" },
-  { value: "3", label: "Focus verticals" },
+const services = [
+  "Web3 Interface Design & Development",
+  "SaaS Frontend Architecture",
+  "On-chain Integration (Ethereum, Solana)",
+  "Design Systems & Component Libraries",
+  "Performance Optimization",
+  "Smart Contract Frontend Integration",
+];
+
+const projects = [
+  {
+    name: "BizEdge",
+    type: "SaaS — 11-module HR platform",
+    metric: "11 Modules",
+    link: "/work/bizedge",
+  },
+  {
+    name: "DeFi Protocol",
+    type: "Web3 dashboard & token gating",
+    metric: "On-chain",
+    link: "/expertise/defi",
+  },
+  {
+    name: "NFT Marketplace",
+    type: "Minting flow & wallet integration",
+    metric: "Live",
+    link: "/expertise/nft",
+  },
+];
+
+const stack = [
+  "React", "TypeScript", "Next.js", "Solidity", "Viem", "Ethers.js",
+  "Framer Motion", "Tailwind CSS", "Node.js", "PostgreSQL",
 ];
 
 export default function StudioPageClient() {
   return (
     <div className="pt-[100px]">
-      <section className="py-32 px-10 border-b border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              About the Studio
-            </span>
-            <h1 className="font-display font-bold text-5xl md:text-7xl tracking-tighter uppercase leading-tight max-w-4xl mb-12">
-              We build Web3 and SaaS<br />products that last.
-            </h1>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <span className="font-display font-bold text-4xl tracking-tight block mb-1">
-                    {stat.value}
-                  </span>
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted">
-                    {stat.label}
-                  </span>
+      <section className="min-h-[70vh] px-10 pb-32 border-b border-white/5 flex items-center">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-5"
+            >
+              <div className="relative inline-block mb-8">
+                <div className="relative w-[160px] h-[160px] flex items-center justify-center">
+                  <motion.div
+                    className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500/20 via-transparent to-blue-500/20"
+                    animate={{ rotate: [0, 90, 180, 270, 360] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  />
+                  <div className="absolute inset-[2px] rounded-2xl bg-background" />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                    className="relative text-center"
+                  >
+                    <span className="font-display font-bold text-5xl tracking-tighter block">
+                      GN
+                    </span>
+                    <span className="text-[9px] font-body font-bold uppercase tracking-[0.2em] text-white/30 mt-1 block">
+                      Founder
+                    </span>
+                  </motion.div>
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <p className="text-lg font-body text-white/60 leading-relaxed">
-                SLIIQQUE is a boutique software studio based in Lagos, Nigeria. We
-                partner with Web3 founders and SaaS builders to ship the products
-                they've designed — from interface architecture to production deployment.
+              <h1 className="font-display font-bold text-5xl md:text-6xl tracking-tighter uppercase leading-none mb-6">
+                Gabriel<br />Njoabozia
+              </h1>
+              <p className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted">
+                Founder & Lead Engineer — Lagos, Nigeria
               </p>
-              <p className="text-lg font-body text-white/60 leading-relaxed">
-                We don't do everything. We do Web3 interfaces, SaaS frontends,
-                and the things in between that make those products actually work
-                for real users. Every project gets senior engineering attention — no
-                juniors, no hand-offs, no project managers in the middle.
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-7"
+            >
+              <h2 className="font-display font-bold text-4xl md:text-5xl xl:text-6xl tracking-tighter uppercase leading-tight mb-10">
+                I build Web3 &amp; SaaS products that ship, scale, and drive real business.
+              </h2>
+              <div className="space-y-6 max-w-xl">
+                <p className="text-lg font-body text-white/60 leading-relaxed">
+                  BSc Physics turned frontend engineer. 5+ years building production React and TypeScript systems — leading teams, shipping multi-module SaaS products, integrating blockchain infrastructure into real consumer interfaces.
+                </p>
+                <p className="text-lg font-body text-white/60 leading-relaxed">
+                  SLIIQQUE was built to do one thing well: take ambitious Web3 and SaaS products from concept to production, with craft and precision at every layer.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="py-32 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-20"
-          >
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              The Team
-            </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
-              Two People. Full Stack.
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {team.map((member, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "2021", label: "Founded" },
+              { value: "5+", label: "Projects shipped" },
+              { value: "3", label: "Focus verticals" },
+              { value: "1", label: "Principal" },
+            ].map((stat) => (
               <motion.div
-                key={member.name}
+                key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: i * 0.15,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="border border-white/10 p-10"
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="flex items-center gap-5 mb-6">
-                  <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0">
-                    <span className="font-display font-bold text-lg tracking-tight">
-                      {member.initials}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-lg tracking-tight uppercase">
-                      {member.name}
-                    </h3>
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted">
-                      {member.role}
-                    </span>
-                  </div>
-                </div>
-                <p className="text-sm font-body text-white/60 leading-relaxed mb-6">
-                  {member.bio}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {member.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted border border-white/10 px-3 py-1.5"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <span className="font-display font-bold text-5xl md:text-6xl tracking-tight block mb-2">
+                  {stat.value}
+                </span>
+                <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted">
+                  {stat.label}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -164,12 +158,180 @@ export default function StudioPageClient() {
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
             <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              What We Believe
+              What I Work On
+            </span>
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
+              Services
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+            {services.map((service, i) => (
+              <motion.div
+                key={service}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="bg-background p-8 group hover:bg-white/[0.03] transition-colors"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted">
+                    0{i + 1}
+                  </span>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-white/20 group-hover:text-white/60 transition-colors"
+                  />
+                </div>
+                <h3 className="font-display font-bold text-lg tracking-tight uppercase leading-tight">
+                  {service}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-10 border-b border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20"
+          >
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
+              Selected Work
+            </span>
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
+              Projects
+            </h2>
+          </motion.div>
+
+          <div className="space-y-0">
+            {projects.map((project, i) => (
+              <motion.div
+                key={project.name}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <Link
+                  href={project.link}
+                  className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 border-b border-white/5 hover:border-white/20 transition-colors"
+                >
+                  <div className="md:col-span-1">
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <div className="md:col-span-7">
+                    <h3 className="font-display font-bold text-3xl md:text-4xl tracking-tight uppercase mb-2 group-hover:text-white/80 transition-colors">
+                      {project.name}
+                    </h3>
+                    <p className="text-sm font-body text-white/40">
+                      {project.type}
+                    </p>
+                  </div>
+                  <div className="md:col-span-2 flex items-center">
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] border border-white/10 px-3 py-1.5">
+                      {project.metric}
+                    </span>
+                  </div>
+                  <div className="md:col-span-2 flex items-center justify-end">
+                    <ArrowRight
+                      size={20}
+                      className="text-white/30 group-hover:text-white/80 group-hover:translate-x-2 transition-all"
+                    />
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white border border-white/10 hover:border-white/30 px-6 py-3 transition-all"
+            >
+              View All Work
+              <ArrowRight size={12} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-32 px-10 border-b border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20"
+          >
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
+              Tech Stack
+            </span>
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
+              Tools I Use
+            </h2>
+          </motion.div>
+
+          <div className="flex flex-wrap gap-3">
+            {stack.map((tech, i) => (
+              <motion.span
+                key={tech}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: i * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-muted border border-white/10 px-4 py-2 hover:border-white/30 hover:text-white/80 transition-all cursor-default"
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-10 border-b border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20"
+          >
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
+              What I Believe
             </span>
             <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
               Philosophy
@@ -181,7 +343,8 @@ export default function StudioPageClient() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
                   duration: 0.8,
                   delay: i * 0.15,
@@ -191,7 +354,7 @@ export default function StudioPageClient() {
               >
                 <div className="lg:col-span-4">
                   <blockquote className="font-display font-bold text-2xl md:text-3xl tracking-tight leading-tight">
-                    "{belief.quote}"
+                    &ldquo;{belief.quote}&rdquo;
                   </blockquote>
                 </div>
                 <div className="lg:col-span-8 lg:col-start-9">
@@ -205,124 +368,25 @@ export default function StudioPageClient() {
         </div>
       </section>
 
-      <section className="py-32 px-10 border-b border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-20"
-          >
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              How We Work
-            </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
-              Process
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-3xl"
-          >
-            <div className="space-y-8">
-              <p className="text-lg font-body text-white/60 leading-relaxed">
-                Every engagement starts with understanding what you're building and
-                who it's for. We spend time in discovery so we don't waste time
-                building the wrong thing.
-              </p>
-              <p className="text-lg font-body text-white/60 leading-relaxed">
-                From there, we work in focused 2-week sprints with regular updates
-                and a shared workspace. You always know where we are and what's
-                next.
-              </p>
-              <p className="text-lg font-body text-white/80 leading-relaxed font-medium">
-                Fixed scope. Fixed timeline. No surprises. And we stay involved
-                after launch.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-32 px-10 border-b border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-20"
-          >
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              Why We're Different
-            </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
-              What Sets Us Apart
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {[
-              {
-                title: "Senior attention, every time",
-                body: "No juniors, no hand-offs, no project managers. The people you talk to are the people building your product.",
-              },
-              {
-                title: "We say no when we should",
-                body: "We're not the right fit for every project. If we're not sure we can deliver, we'll tell you honestly — and often point you somewhere better.",
-              },
-              {
-                title: "Fixed scope, no surprises",
-                body: "You get a complete quote before we start. If scope changes, we discuss it openly before doing any additional work.",
-              },
-              {
-                title: "We stay after launch",
-                body: "The launch isn't the end. We're available for questions, fixes, and ongoing support long after we've handed over.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: i * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <h3 className="font-display font-bold text-xl tracking-tight uppercase mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-sm font-body text-white/60 leading-relaxed">
-                  {item.body}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-32 px-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-8">
-              Work With Us
+              Start a Project
             </h2>
             <p className="text-lg font-body text-white/60 max-w-xl mx-auto mb-12">
-              We take on 2–3 projects per quarter. If you're building something
-              ambitious, we'd love to hear about it.
+              I take on 2–3 projects per quarter. If you&apos;re building something ambitious, let&apos;s talk.
             </p>
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors"
             >
-              Start a Conversation
+              Get in Touch
               <ArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform"

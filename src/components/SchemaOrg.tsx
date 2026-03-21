@@ -13,7 +13,7 @@ export function SchemaOrg() {
         },
         description:
           "Boutique software studio building Web3 and SaaS products.",
-        foundingDate: "2025",
+        foundingDate: "2021",
         foundingLocation: {
           "@type": "City",
           name: "Lagos",
@@ -24,11 +24,6 @@ export function SchemaOrg() {
           email: "hello@sliiqque.studio",
           contactType: "customer service",
         },
-        sameAs: [
-          "https://twitter.com/sliiqque",
-          "https://linkedin.com/company/sliiqque",
-          "https://github.com/sliiqque",
-        ],
         knowsAbout: [
           "Web3 Development",
           "React",
@@ -190,31 +185,31 @@ export function SchemaOrg() {
           },
           {
             "@type": "ListItem",
-            position: 2,
+            position: 3,
             name: "Work",
             item: "https://sliiqque.studio/work",
           },
           {
             "@type": "ListItem",
-            position: 2,
+            position: 4,
             name: "Insights",
             item: "https://sliiqque.studio/insights",
           },
           {
             "@type": "ListItem",
-            position: 2,
+            position: 5,
             name: "Expertise",
             item: "https://sliiqque.studio/expertise",
           },
           {
             "@type": "ListItem",
-            position: 2,
+            position: 6,
             name: "Studio",
             item: "https://sliiqque.studio/studio",
           },
           {
             "@type": "ListItem",
-            position: 2,
+            position: 7,
             name: "Contact",
             item: "https://sliiqque.studio/contact",
           },
