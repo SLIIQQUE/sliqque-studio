@@ -55,9 +55,9 @@ export default function ContactPageClient() {
 
   return (
     <div className="pt-[100px]">
-      <section className="py-32 px-10 border-b border-white/5">
+      <section className="py-16 md:py-24 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function ContactPageClient() {
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
                 Contact
               </span>
-              <h1 className="font-display font-bold text-5xl md:text-6xl tracking-tighter uppercase leading-tight mb-8">
+              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase leading-tight mb-6 md:mb-8">
                 Start a Conversation
               </h1>
               <p className="text-lg font-body text-white/60 leading-relaxed mb-8">
@@ -160,6 +160,7 @@ export default function ContactPageClient() {
                       className="w-full bg-background border border-white/10 px-4 py-3 text-sm font-body text-white focus:border-white focus:outline-none transition-colors"
                     >
                       <option value="">Select type</option>
+                      <option value="website">Website Design & Development</option>
                       <option value="product-build">Product Build</option>
                       <option value="interface-engineering">
                         Interface Engineering
