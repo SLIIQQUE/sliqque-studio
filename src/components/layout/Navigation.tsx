@@ -132,6 +132,7 @@ const Navigation = ({
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (

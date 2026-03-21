@@ -9,9 +9,19 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
+    let animationFrameId: number;
+    let lastX = 0;
+    let lastY = 0;
+
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+      lastX = e.clientX;
+      lastY = e.clientY;
+    };
+
+    const animate = () => {
+      cursorX.set(lastX);
+      cursorY.set(lastY);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -28,12 +38,14 @@ const CustomCursor = () => {
       }
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("mousemove", moveCursor, { passive: true });
     window.addEventListener("mouseover", handleMouseOver);
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleMouseOver);
+      cancelAnimationFrame(animationFrameId);
     };
   }, [cursorX, cursorY]);
 

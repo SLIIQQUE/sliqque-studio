@@ -11,39 +11,17 @@ interface HeroProps {
   description?: string;
 }
 
-const FloatingShape = ({ delay, x, y, size, duration }: any) => (
-  <motion.div
-    className="absolute rounded-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm"
-    style={{ width: size, height: size, left: x, top: y }}
-    animate={{
-      y: [0, -20, 0],
-      x: [0, 10, 0],
-      scale: [1, 1.05, 1],
-    }}
-    transition={{
-      duration,
-      delay,
-      repeat: Infinity,
-      ease: [0.45, 0, 0.55, 1],
-    }}
-    whileHover={{ scale: 1.1 }}
+const FloatingShape = ({ delay, x, y, size }: { delay: number; x: string; y: string; size: string }) => (
+  <div
+    className="absolute rounded-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm animate-float"
+    style={{ width: size, height: size, left: x, top: y, animationDelay: `${delay}s` }}
   />
 );
 
-const GradientOrb = ({ color, size, x, y }: any) => (
-  <motion.div
-    className="absolute rounded-full blur-[120px] opacity-30"
+const GradientOrb = ({ color, size, x, y }: { color: string; size: string; x: string; y: string }) => (
+  <div
+    className="absolute rounded-full blur-[120px] opacity-30 animate-pulse-slow"
     style={{ width: size, height: size, background: color, left: x, top: y }}
-    animate={{
-      x: [0, 30, 0],
-      y: [0, -20, 0],
-      scale: [1, 1.1, 1],
-    }}
-    transition={{
-      duration: 12,
-      repeat: Infinity,
-      ease: [0.45, 0, 0.55, 1],
-    }}
   />
 );
 
@@ -76,12 +54,28 @@ const Hero = ({
   });
 
   useEffect(() => {
+    let rafId: number;
+    let lastX = 0;
+    let lastY = 0;
+    
     const handleMouse = (e: MouseEvent) => {
-      mouseX.set(e.clientX - 192);
-      mouseY.set(e.clientY - 192);
+      lastX = e.clientX - 192;
+      lastY = e.clientY - 192;
     };
+    
+    const animate = () => {
+      mouseX.set(lastX);
+      mouseY.set(lastY);
+      rafId = requestAnimationFrame(animate);
+    };
+    
     window.addEventListener("mousemove", handleMouse, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouse);
+    rafId = requestAnimationFrame(animate);
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMouse);
+      cancelAnimationFrame(rafId);
+    };
   }, [mouseX, mouseY]);
 
   return (
@@ -104,11 +98,11 @@ const Hero = ({
           }}
         />
 
-        <FloatingShape delay={0} x="10%" y="20%" size={120} duration={7} />
-        <FloatingShape delay={1} x="85%" y="30%" size={80} duration={9} />
-        <FloatingShape delay={2} x="70%" y="70%" size={150} duration={8} />
-        <FloatingShape delay={0.5} x="20%" y="60%" size={60} duration={6} />
-        <FloatingShape delay={1.5} x="50%" y="80%" size={100} duration={10} />
+        <FloatingShape delay={0} x="10%" y="20%" size="120px" />
+        <FloatingShape delay={1} x="85%" y="30%" size="80px" />
+        <FloatingShape delay={2} x="70%" y="70%" size="150px" />
+        <FloatingShape delay={0.5} x="20%" y="60%" size="60px" />
+        <FloatingShape delay={1.5} x="50%" y="80%" size="100px" />
 
         <motion.div
           className="absolute w-96 h-96 border border-white/10 rounded-full pointer-events-none"
