@@ -67,8 +67,8 @@ export default function ContactPageClient() {
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
                 Contact
               </span>
-              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase leading-tight mb-6 md:mb-8">
-                Start a Conversation
+              <h1 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl tracking-tighter uppercase leading-tight mb-6 md:mb-8">
+                Start a<br />Conversation
               </h1>
               <p className="text-lg font-body text-white/60 leading-relaxed mb-8">
                 We're selective about the projects we take on. This intake form
