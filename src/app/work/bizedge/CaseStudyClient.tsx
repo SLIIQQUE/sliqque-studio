@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -140,14 +141,14 @@ export default function CaseStudyClient() {
       <section className="py-20 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="aspect-video bg-white/5 rounded-[2px] overflow-hidden">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop"
               alt="BizEdge Dashboard"
               width={1600}
               height={900}
-              loading="lazy"
-              decoding="async"
               className="w-full h-full object-cover grayscale"
+              sizes="100vw"
+              loading="lazy"
             />
           </div>
         </div>

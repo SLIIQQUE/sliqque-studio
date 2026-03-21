@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, Play } from "lucide-react";
@@ -12,18 +13,18 @@ const VideoReveal = ({ src, poster, title }: { src?: string; poster: string; tit
 
   return (
     <motion.div
-      className="relative aspect-video overflow-hidden rounded-2xl bg-black"
+      className="relative aspect-video overflow-hidden rounded-2xl bg-black group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => { setIsHovered(false); setIsPlaying(false); }}
     >
-      <motion.img
+      <Image
         src={poster}
         alt={title}
-        className="w-full h-full object-cover"
+        width={1920}
+        height={1080}
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         loading="lazy"
-        decoding="async"
-        animate={{ scale: isHovered ? 1.1 : 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        sizes="100vw"
       />
       
       <motion.div

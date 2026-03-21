@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -26,16 +27,16 @@ const WorkCard = ({
 }: WorkCardProps) => {
   return (
     <Link href={href} className="group block">
-      <div className="relative overflow-hidden rounded-[2px] aspect-[4/3] bg-black">
-        <motion.img
-          src={imageSrc}
-          alt={imageAlt}
-          width={1200}
-          height={900}
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s] ease-out"
-        />
+        <div className="relative overflow-hidden rounded-[2px] aspect-[4/3] bg-black">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={1200}
+            height={900}
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s] ease-out"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
+          />
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
           <div className="flex items-center gap-2 text-white">
             <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em]">

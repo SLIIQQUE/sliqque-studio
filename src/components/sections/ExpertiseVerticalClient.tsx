@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -130,18 +131,18 @@ export default function ExpertiseVerticalClient({
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <Link href="/work/meridian" className="group block">
-              <div className="aspect-video bg-white/5 rounded-[2px] overflow-hidden mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=800&auto=format&fit=crop"
-                  alt="Meridian Finance"
-                  width={800}
-                  height={450}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]"
-                />
-              </div>
+              <Link href="/work/meridian" className="group block">
+                <div className="aspect-video bg-white/5 rounded-[2px] overflow-hidden mb-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=800&auto=format&fit=crop"
+                    alt="Meridian Finance"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                  />
+                </div>
               <h3 className="font-display font-bold text-xl tracking-tight uppercase">
                 Meridian Finance
               </h3>

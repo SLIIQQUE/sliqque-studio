@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -140,14 +141,14 @@ export default function StudioPageClient() {
                 className="lg:col-span-4"
               >
                 <div className="aspect-[3/4] bg-white/5 rounded-[2px] overflow-hidden mb-6">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
                     width={400}
                     height={533}
-                    loading="lazy"
-                    decoding="async"
                     className="w-full h-full object-cover grayscale"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="font-display font-bold text-2xl tracking-tight uppercase">

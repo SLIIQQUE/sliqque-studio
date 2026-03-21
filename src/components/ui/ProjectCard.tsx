@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 
@@ -59,16 +60,14 @@ export function ProjectCard({
       >
         <Link href={href} className="block">
           <div className="relative overflow-hidden rounded-3xl">
-            <motion.img
+            <Image
               src={imageSrc}
               alt={imageAlt}
               width={1200}
               height={900}
-              className="w-full aspect-[4/3] object-cover"
+              className="w-full aspect-[4/3] object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               loading="lazy"
-              decoding="async"
-              animate={{ scale: isHovered ? 1.1 : 1, filter: isHovered ? "grayscale(0%)" : "grayscale(100%)" }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             />
             
             <motion.div

@@ -3,25 +3,24 @@
 import React, { useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Quote, Play } from "lucide-react";
 
 const FloatingImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
   return (
     <motion.div
-      className={`relative overflow-hidden rounded-3xl ${className}`}
+      className={`relative overflow-hidden rounded-3xl group ${className}`}
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <motion.img
+      <Image
         src={src}
         alt={alt}
         width={800}
         height={1333}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         loading="lazy"
-        decoding="async"
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.7 }}
+        sizes="(max-width: 1024px) 100vw, 40vw"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
     </motion.div>
@@ -107,12 +106,14 @@ const TeamCard = ({
       className="group"
     >
       <div className="relative overflow-hidden rounded-3xl mb-6">
-        <motion.img
+        <Image
           src={image}
           alt={name}
-          className="w-full aspect-[3/4] object-cover"
-          animate={{ scale: isHovered ? 1.05 : 1, filter: isHovered ? "grayscale(0%)" : "grayscale(100%)" }}
-          transition={{ duration: 0.7 }}
+          width={600}
+          height={800}
+          className="w-full aspect-[3/4] object-cover transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 grayscale"
+          loading="lazy"
+          sizes="(max-width: 768px) 50vw, 33vw"
         />
         
         <motion.div

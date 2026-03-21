@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -43,14 +44,13 @@ export default function ArticleClient() {
 
             <div className="flex items-center gap-4 mt-8 pt-8 border-t border-white/5">
               <div className="w-10 h-10 bg-white/10 rounded-full overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
                   alt="Gabriel Njoabozia"
                   width={100}
                   height={100}
-                  loading="lazy"
-                  decoding="async"
                   className="w-full h-full object-cover grayscale"
+                  loading="lazy"
                 />
               </div>
               <div>

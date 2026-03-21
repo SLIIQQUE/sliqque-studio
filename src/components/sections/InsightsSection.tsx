@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, Calendar, Tag, ArrowUpRight } from "lucide-react";
@@ -38,16 +39,14 @@ const ArticleCard = ({
     >
       <Link href={href} className="block">
         <div className="relative overflow-hidden rounded-3xl mb-6">
-          <motion.img
+          <Image
             src={image || `https://images.unsplash.com/photo-${1551288049 + index * 1000}-bebda4e38f71?q=80&w=600&auto=format&fit=crop`}
             alt={title}
             width={600}
             height={338}
-            className="w-full aspect-video object-cover"
+            className="w-full aspect-video object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale-[80%]"
+            sizes="(max-width: 768px) 100vw, 600px"
             loading="lazy"
-            decoding="async"
-            animate={{ scale: isHovered ? 1.1 : 1, filter: isHovered ? "grayscale(0%)" : "grayscale(80%)" }}
-            transition={{ duration: 0.7 }}
           />
           
           <motion.div
@@ -168,12 +167,14 @@ const FeaturedArticle = ({
     >
       <Link href={href} className="block">
         <div className="relative overflow-hidden rounded-3xl mb-8 h-full">
-          <motion.img
+          <Image
             src={image}
             alt={title}
-            className="w-full h-full aspect-[21/9] object-cover"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
-            transition={{ duration: 0.7 }}
+            width={1200}
+            height={514}
+            className="w-full h-full aspect-[21/9] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+            sizes="(max-width: 768px) 100vw, 800px"
+            priority
           />
           
           <motion.div
