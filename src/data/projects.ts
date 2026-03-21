@@ -86,30 +86,6 @@ export const projects: Project[] = [
     href: "https://mo-touch.vercel.app/",
     bgColor: "#0a0a0a",
   },
-  {
-    title: "Meridian Finance",
-    year: "2024",
-    clientType: "DeFi SaaS",
-    engagementType: "Interface Engineering",
-    description: "Real-time DeFi analytics dashboard with multi-chain support, portfolio tracking, and yield optimization tools.",
-    tags: ["Web3", "Wagmi", "The Graph"],
-    metric: "Multi-chain",
-    imageSrc: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Meridian Finance Dashboard",
-    href: "/work/meridian",
-  },
-  {
-    title: "Origin Protocol",
-    year: "2024",
-    clientType: "NFT Platform",
-    engagementType: "Product Build",
-    description: "NFT minting platform with IPFS storage, zero-slippage trading engine, and creator-friendly royalty system.",
-    tags: ["NFT", "Solidity", "IPFS"],
-    metric: "On-chain Minting",
-    imageSrc: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Origin Protocol Platform",
-    href: "/work/origin",
-  },
 ];
 
 export const featuredProjects = projects.slice(0, 3);
@@ -144,12 +120,6 @@ export const studioProjects: StudioProject[] = [
     type: "Beauty — Interactive makeup artist portfolio",
     metric: "Interactive",
     link: "https://mo-touch.vercel.app/",
-  },
-  {
-    name: "Meridian Finance",
-    type: "Web3 dashboard & DeFi analytics",
-    metric: "Multi-chain",
-    link: "/work/meridian",
   },
 ];
 
