@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import ExpertiseCard from "@/components/ui/ExpertiseCard";
+import { ProjectCard } from "@/components/ui/ProjectCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -12,18 +12,30 @@ const verticals = [
     description:
       "Dashboards, staking interfaces, liquidity UIs, and yield optimization tools. We build the interfaces that make DeFi usable.",
     href: "/expertise/defi",
+    metric: "Web3",
+    imageSrc: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop",
+    imageAlt: "DeFi Interface",
+    tags: ["Wagmi", "Viem", "The Graph"],
   },
   {
     title: "NFT",
     description:
       "Minting platforms, marketplace UIs, and collection managers. Built for creators who want control and collectors who want simplicity.",
     href: "/expertise/nft",
+    metric: "NFT",
+    imageSrc: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop",
+    imageAlt: "NFT Platform",
+    tags: ["Solidity", "IPFS", "ERC-721"],
   },
   {
     title: "SaaS",
     description:
       "Frontend architecture for SaaS products — from admin dashboards to user-facing features. React, Next.js, TypeScript.",
     href: "/expertise/saas",
+    metric: "SaaS",
+    imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    imageAlt: "SaaS Interface",
+    tags: ["React", "Next.js", "TypeScript"],
   },
 ];
 
@@ -77,20 +89,9 @@ export default function ExpertisePageClient() {
 
       <section className="py-20 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {verticals.map((vertical, i) => (
-              <motion.div
-                key={vertical.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: i * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <ExpertiseCard {...vertical} />
-              </motion.div>
+              <ProjectCard key={vertical.title} {...vertical} index={i} />
             ))}
           </div>
         </div>

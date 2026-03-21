@@ -16,7 +16,7 @@ const FloatingImage = ({ src, alt, className }: { src: string; alt: string; clas
         src={src}
         alt={alt}
         width={800}
-        height={1000}
+        height={1333}
         className="w-full h-full object-cover"
         loading="lazy"
         decoding="async"
@@ -225,12 +225,12 @@ const StudioSection = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 h-full"
           >
             <FloatingImage
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
               alt="Team collaboration"
-              className="aspect-[4/5]"
+              className="h-full"
             />
           </motion.div>
           

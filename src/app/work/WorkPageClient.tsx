@@ -2,24 +2,30 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import WorkCard from "@/components/ui/WorkCard";
+import { ProjectCard } from "@/components/ui/ProjectCard";
 
 const projects = [
   {
     title: "BizEdge",
+    year: "2021",
+    clientType: "HRMS SaaS",
+    engagementType: "Product Build",
     description:
-      "Multi-module HRMS platform built for SMEs — from recruitment to payroll, time & attendance to task management. A comprehensive enterprise solution serving real businesses.",
-    tags: ["React", "TypeScript", "Next.js"],
-    metric: "9+ Modules",
+      "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
+    tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
+    metric: "11 Modules",
     imageSrc:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     imageAlt: "BizEdge HRMS Dashboard",
     href: "/work/bizedge",
   },
   {
     title: "Meridian Finance",
+    year: "2024",
+    clientType: "DeFi SaaS",
+    engagementType: "Interface Engineering",
     description:
-      "Real-time DeFi analytics dashboard with multi-chain support, portfolio tracking, and yield optimization tools. Built for DeFi power users who need data, fast.",
+      "Real-time DeFi analytics dashboard with multi-chain support, portfolio tracking, and yield optimization tools.",
     tags: ["Web3", "Wagmi", "The Graph"],
     metric: "Multi-chain",
     imageSrc:
@@ -29,25 +35,17 @@ const projects = [
   },
   {
     title: "Origin Protocol",
+    year: "2024",
+    clientType: "NFT Platform",
+    engagementType: "Product Build",
     description:
-      "NFT minting platform with IPFS storage, zero-slippage trading engine, and creator-friendly royalty system. Built for artists who want control.",
+      "NFT minting platform with IPFS storage, zero-slippage trading engine, and creator-friendly royalty system.",
     tags: ["NFT", "Solidity", "IPFS"],
     metric: "On-chain Minting",
     imageSrc:
       "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1200&auto=format&fit=crop",
     imageAlt: "Origin Protocol Platform",
     href: "/work/origin",
-  },
-  {
-    title: "Nexus Analytics",
-    description:
-      "On-chain data visualization platform for institutional investors. Real-time tracking of whale wallets, token flows, and protocol metrics.",
-    tags: ["D3.js", "Viem", "React"],
-    metric: "Real-time Data",
-    imageSrc:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Nexus Analytics Platform",
-    href: "/work/nexus",
   },
 ];
 
@@ -77,20 +75,9 @@ export default function WorkPageClient() {
 
       <section className="py-20 px-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
             {projects.map((project, i) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: i * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <WorkCard {...project} />
-              </motion.div>
+              <ProjectCard key={project.title} {...project} index={i} />
             ))}
           </div>
         </div>
