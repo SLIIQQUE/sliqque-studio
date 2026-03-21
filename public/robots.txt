@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://sliiqque.studio
+Host: https://sliiqque.space
 
 # Sitemaps
-Sitemap: https://sliiqque.studio/sitemap.xml
+Sitemap: https://sliiqque.space/sitemap.xml

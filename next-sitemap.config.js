@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: "https://sliiqque.studio",
+  siteUrl: "https://sliiqque.space",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: "weekly",
