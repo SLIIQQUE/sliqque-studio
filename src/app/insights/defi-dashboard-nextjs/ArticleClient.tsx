@@ -48,6 +48,10 @@ export default function ArticleClient() {
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
                   alt="Gabriel Njoabozia"
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale"
                 />
               </div>

@@ -115,6 +115,10 @@ export default function CaseStudyClient() {
             <img
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
               alt="BizEdge Dashboard"
+              width={1600}
+              height={900}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover grayscale"
             />
           </div>

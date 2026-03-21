@@ -19,6 +19,8 @@ const VideoReveal = ({ src, poster, title }: { src?: string; poster: string; tit
         src={poster}
         alt={title}
         className="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
         animate={{ scale: isHovered ? 1.1 : 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       />
@@ -132,7 +134,11 @@ const ProjectCard = ({
             <motion.img
               src={imageSrc}
               alt={imageAlt}
+              width={1200}
+              height={900}
               className="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+              decoding="async"
               animate={{ scale: isHovered ? 1.1 : 1, filter: isHovered ? "grayscale(0%)" : "grayscale(100%)" }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             />

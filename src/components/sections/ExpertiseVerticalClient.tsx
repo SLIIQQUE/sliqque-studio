@@ -135,6 +135,10 @@ export default function ExpertiseVerticalClient({
                 <img
                   src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=800&auto=format&fit=crop"
                   alt="Meridian Finance"
+                  width={800}
+                  height={450}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]"
                 />
               </div>

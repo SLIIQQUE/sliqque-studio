@@ -143,6 +143,10 @@ export default function StudioPageClient() {
                   <img
                     src={member.image}
                     alt={member.name}
+                    width={400}
+                    height={533}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale"
                   />
                 </div>

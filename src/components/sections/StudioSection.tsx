@@ -15,7 +15,11 @@ const FloatingImage = ({ src, alt, className }: { src: string; alt: string; clas
       <motion.img
         src={src}
         alt={alt}
+        width={800}
+        height={1000}
         className="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.7 }}
       />

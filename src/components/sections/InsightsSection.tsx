@@ -41,7 +41,11 @@ const ArticleCard = ({
           <motion.img
             src={image || `https://images.unsplash.com/photo-${1551288049 + index * 1000}-bebda4e38f71?q=80&w=600&auto=format&fit=crop`}
             alt={title}
+            width={600}
+            height={338}
             className="w-full aspect-video object-cover"
+            loading="lazy"
+            decoding="async"
             animate={{ scale: isHovered ? 1.1 : 1, filter: isHovered ? "grayscale(0%)" : "grayscale(80%)" }}
             transition={{ duration: 0.7 }}
           />
