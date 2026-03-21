@@ -299,13 +299,13 @@ const InsightsSection = () => {
           </Link>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="space-y-8 mb-12">
           {featuredArticle && (
             <FeaturedArticle {...featuredArticle} />
           )}
           
-          <div className="space-y-8">
-            {regularArticles.slice(0, 2).map((article, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularArticles.slice(0, 3).map((article, i) => (
               <ArticleCard key={article.title} {...article} index={i} />
             ))}
           </div>
