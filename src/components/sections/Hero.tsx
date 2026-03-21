@@ -137,24 +137,35 @@ const Hero = ({
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               />
-              <motion.h1
-                style={{ scale: smoothScale }}
-                className="relative font-display font-bold text-[15vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60"
-              >
-                {title.split('').map((char, i) => (
-                  <motion.span
-                    key={i}
-                    whileHover={{
-                      y: -8,
-                      color: ['#f97316', '#3b82f6', '#8b5cf6', '#ffffff'][i % 4],
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                    className="inline-block cursor-pointer"
-                  >
-                    {char === ' ' ? '\u00A0' : char}
-                  </motion.span>
-                ))}
-              </motion.h1>
+              <motion.div style={{ scale: smoothScale }} className="relative">
+                <h1
+                  className="relative font-display font-bold text-[15vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60"
+                >
+                  {title.split('').map((char, i) => (
+                    <span
+                      key={i}
+                      className="inline-block group relative cursor-pointer"
+                    >
+                      <motion.span
+                        className="relative z-10"
+                        whileHover={{ y: -8 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                      >
+                        {char === ' ' ? '\u00A0' : char}
+                      </motion.span>
+                      <motion.span
+                        className="absolute inset-0 z-0"
+                        style={{ color: ['#f97316', '#3b82f6', '#8b5cf6', '#ffffff'][i % 4] }}
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.15 }}
+                      >
+                        {char === ' ' ? '\u00A0' : char}
+                      </motion.span>
+                    </span>
+                  ))}
+                </h1>
+              </motion.div>
             </div>
           </motion.div>
 
