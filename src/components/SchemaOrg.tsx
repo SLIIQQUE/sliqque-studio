@@ -202,6 +202,52 @@ export function SchemaOrg() {
           },
         ],
       },
+        {
+        "@type": "Article",
+        "@id": "https://sliiqque.studio/insights/rsc-web3/#article",
+        headline: "React Server Components in a Web3 App",
+        description:
+          "How we're using React Server Components to reduce client-side JavaScript and improve the initial load experience for data-heavy Web3 applications.",
+        author: {
+          "@type": "Organization",
+          name: "SLIIQQUE Studio",
+          url: "https://sliiqque.studio",
+        },
+        publisher: { "@id": "https://sliiqque.studio/#organization" },
+        datePublished: "2026-01-15",
+        dateModified: "2026-03-21",
+        image: {
+          "@type": "ImageObject",
+          url: "https://sliiqque.studio/og-image.svg",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": "https://sliiqque.studio/insights/rsc-web3",
+        },
+      },
+      {
+        "@type": "Article",
+        "@id": "https://sliiqque.studio/insights/token-gating/#article",
+        headline: "Building a Token-Gated Interface with Wagmi",
+        description:
+          "Step-by-step guide to implementing token-gated content in your Next.js application using Wagmi.",
+        author: {
+          "@type": "Organization",
+          name: "SLIIQQUE Studio",
+          url: "https://sliiqque.studio",
+        },
+        publisher: { "@id": "https://sliiqque.studio/#organization" },
+        datePublished: "2025-12-01",
+        dateModified: "2026-03-21",
+        image: {
+          "@type": "ImageObject",
+          url: "https://sliiqque.studio/og-image.svg",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": "https://sliiqque.studio/insights/token-gating",
+        },
+      },
       {
         "@type": "Article",
         "@id": "https://sliiqque.studio/insights/defi-dashboard-nextjs/#article",
@@ -218,11 +264,80 @@ export function SchemaOrg() {
         dateModified: "2026-03-21",
         image: {
           "@type": "ImageObject",
-          url: "https://sliiqque.studio/og-image.png",
+          url: "https://sliiqque.studio/og-image.svg",
         },
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": "https://sliiqque.studio/insights/defi-dashboard-nextjs",
+        },
+      },
+      {
+        "@type": "Article",
+        "@id": "https://sliiqque.studio/insights/metamask-react/#article",
+        headline: "MetaMask Integration in React",
+        description:
+          "Everything you need to know about connecting wallets to your React application.",
+        author: {
+          "@type": "Organization",
+          name: "SLIIQQUE Studio",
+          url: "https://sliiqque.studio",
+        },
+        publisher: { "@id": "https://sliiqque.studio/#organization" },
+        datePublished: "2026-02-01",
+        dateModified: "2026-02-01",
+        image: {
+          "@type": "ImageObject",
+          url: "https://sliiqque.studio/og-image.svg",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": "https://sliiqque.studio/insights/metamask-react",
+        },
+      },
+      {
+        "@type": "Article",
+        "@id": "https://sliiqque.studio/insights/web3-ux-patterns/#article",
+        headline: "Web3 UX Patterns That Work",
+        description:
+          "After building dozens of dApps, these are the interface patterns that consistently improve onboarding.",
+        author: {
+          "@type": "Organization",
+          name: "SLIIQQUE Studio",
+          url: "https://sliiqque.studio",
+        },
+        publisher: { "@id": "https://sliiqque.studio/#organization" },
+        datePublished: "2026-02-15",
+        dateModified: "2026-02-15",
+        image: {
+          "@type": "ImageObject",
+          url: "https://sliiqque.studio/og-image.svg",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": "https://sliiqque.studio/insights/web3-ux-patterns",
+        },
+      },
+      {
+        "@type": "Article",
+        "@id": "https://sliiqque.studio/insights/viem-migration/#article",
+        headline: "Why We Switched to Viem",
+        description:
+          "A practical look at migrating our entire Web3 stack from Web3.js to Viem.",
+        author: {
+          "@type": "Organization",
+          name: "SLIIQQUE Studio",
+          url: "https://sliiqque.studio",
+        },
+        publisher: { "@id": "https://sliiqque.studio/#organization" },
+        datePublished: "2026-01-01",
+        dateModified: "2026-01-01",
+        image: {
+          "@type": "ImageObject",
+          url: "https://sliiqque.studio/og-image.svg",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": "https://sliiqque.studio/insights/viem-migration",
         },
       },
     ],
