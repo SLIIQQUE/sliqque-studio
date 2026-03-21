@@ -30,7 +30,7 @@ const AnimatedBackground = () => {
 
 const Footer = ({
   brandMark = "SLIIQQUE",
-  email = "hello@sliiqque.studio",
+  email = "hello@sliiqque.space",
   copyright = "© 2026 SLIIQQUE Studio. All rights reserved.",
 }: FooterProps) => {
   const [emailHovered, setEmailHovered] = useState(false);

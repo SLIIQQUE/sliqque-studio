@@ -112,11 +112,11 @@ const CTASection = () => {
             </Link>
             
             <a
-              href="mailto:hello@sliiqque.studio"
+              href="mailto:hello@sliiqque.space"
               className="group px-12 py-6 border border-white/20 font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all flex items-center gap-3"
             >
               <Mail className="w-4 h-4" />
-              hello@sliiqque.studio
+              hello@sliiqque.space
             </a>
           </div>
         </motion.div>

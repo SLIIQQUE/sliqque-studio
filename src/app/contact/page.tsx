@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Start a conversation with SLIIQQUE. We take on 2–3 new projects per quarter.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Contact",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Contact | SLIIQQUE",
     description:
       "Start a conversation with SLIIQQUE. We take on 2–3 new projects per quarter.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

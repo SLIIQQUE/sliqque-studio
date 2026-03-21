@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "High-performance React and Next.js interfaces for SaaS products — built for conversion and scale.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE SaaS Frontend Engineering",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "SaaS Frontend Engineering | SLIIQQUE",
     description:
       "High-performance React and Next.js interfaces for SaaS products — built for conversion and scale.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

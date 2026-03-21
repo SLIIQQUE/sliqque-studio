@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Step-by-step guide to implementing token-gated content in your Next.js application using Wagmi.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "Building a Token-Gated Interface with Wagmi",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Building a Token-Gated Interface with Wagmi | SLIIQQUE",
     description:
       "Step-by-step guide to implementing token-gated content in your Next.js application using Wagmi.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

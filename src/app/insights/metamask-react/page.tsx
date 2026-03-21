@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "A practical guide to connecting MetaMask and any Web3 wallet to your React application — covering hooks, state management, and error handling.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "MetaMask Integration in React",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "MetaMask Integration in React | SLIIQQUE",
     description:
       "A practical guide to connecting MetaMask and any Web3 wallet to your React application.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

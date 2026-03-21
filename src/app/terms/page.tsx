@@ -62,10 +62,10 @@ export default function TermsPage() {
             <p className="text-base font-body text-white/60 leading-relaxed">
               If you have any questions about these Terms, please contact us at{" "}
               <a
-                href="mailto:hello@sliiqque.studio"
+                href="mailto:hello@sliiqque.space"
                 className="text-white hover:underline"
               >
-                hello@sliiqque.studio
+                hello@sliiqque.space
               </a>
               .
             </p>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "A case study on building Nigeria's electricity payment platform — prepaid/postpaid meters, multi-DisCo support, and instant token delivery.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "Lumia Case Study — SLIIQQUE",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Lumia Case Study | SLIIQQUE",
     description:
       "Building Nigeria's electricity payment platform — prepaid/postpaid meters, multi-DisCo support, and instant token delivery.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

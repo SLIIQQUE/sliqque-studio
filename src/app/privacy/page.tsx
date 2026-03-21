@@ -57,10 +57,10 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy, please contact
               us at{" "}
               <a
-                href="mailto:hello@sliiqque.studio"
+                href="mailto:hello@sliiqque.space"
                 className="text-white hover:underline"
               >
-                hello@sliiqque.studio
+                hello@sliiqque.space
               </a>
               .
             </p>

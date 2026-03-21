@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "We build NFT minting platforms, marketplace UIs, and collection managers. Built for creators who want control and collectors who want simplicity.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE NFT Platform Development",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "NFT Platform Development | SLIIQQUE",
     description:
       "We build NFT minting platforms, marketplace UIs, and collection managers.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Premium interactive portfolio for a makeup artist — immersive scroll-driven animations and touch-optimized interactions.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "Mo Touch Case Study — SLIIQQUE",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Mo Touch Case Study | SLIIQQUE",
     description:
       "Premium interactive portfolio for a makeup artist — immersive scroll-driven animations.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

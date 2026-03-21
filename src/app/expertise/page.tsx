@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Deep expertise in DeFi interface development, NFT platform engineering, and SaaS frontend architecture.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Expertise",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Expertise | SLIIQQUE",
     description:
       "Deep expertise in DeFi interface development, NFT platform engineering, and SaaS frontend architecture.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

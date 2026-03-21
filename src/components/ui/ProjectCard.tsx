@@ -99,7 +99,7 @@ export function ProjectCard({
                 <InteractiveTitle
                   title={title}
                   className="font-display font-bold leading-none tracking-tighter uppercase"
-                  spanClassName="text-5xl md:text-6xl lg:text-7xl"
+                  spanClassName="text-3xl md:text-4xl lg:text-5xl"
                 />
               </div>
             )}

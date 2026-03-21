@@ -81,10 +81,10 @@ export default function ContactPageClient() {
                     Email
                   </span>
                   <a
-                    href="mailto:hello@sliiqque.studio"
+                    href="mailto:hello@sliiqque.space"
                     className="text-base font-body text-white/80 hover:text-white transition-colors"
                   >
-                    hello@sliiqque.studio
+                    hello@sliiqque.space
                   </a>
                 </div>
                 <div>

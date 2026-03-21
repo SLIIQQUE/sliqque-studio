@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Africa's fraud prevention infrastructure — digital identity, real-time risk scoring, and shared intelligence across the Nigerian fintech ecosystem.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "ZINID Case Study — SLIIQQUE",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "ZINID Case Study | SLIIQQUE",
     description:
       "Building Africa's shared fraud prevention infrastructure for the Nigerian fintech ecosystem.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

@@ -123,7 +123,7 @@ export default function CaseStudyClient() {
             <InteractiveTitle
               title="ZINID"
               className="font-display font-bold leading-none tracking-tighter uppercase"
-              spanClassName="text-7xl md:text-8xl lg:text-9xl"
+              spanClassName="text-5xl md:text-6xl lg:text-7xl"
             />
           </div>
         </div>

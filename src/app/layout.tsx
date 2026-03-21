@@ -20,7 +20,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sliiqque.studio"),
+  metadataBase: new URL("https://sliiqque.space"),
   title: {
     default: "SLIIQQUE — Web3 & SaaS Software Studio",
     template: "%s | SLIIQQUE",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sliiqque.studio",
+    url: "https://sliiqque.space",
     siteName: "SLIIQQUE",
     title: "SLIIQQUE — Web3 & SaaS Software Studio",
     description:
       "We build high-performance Web3 and SaaS products — from interface to infrastructure.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE — Web3 & SaaS Software Studio",
@@ -64,10 +64,10 @@ export const metadata: Metadata = {
     creator: "@sliiqque",
     title: "SLIIQQUE — Web3 & SaaS Software Studio",
     description: "We build high-performance Web3 and SaaS products.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
   alternates: {
-    canonical: "https://sliiqque.studio",
+    canonical: "https://sliiqque.space",
   },
 };
 

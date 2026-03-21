@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "After building dozens of dApps, these are the interface patterns that consistently improve onboarding and reduce abandonment.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "Web3 UX Patterns That Work",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Web3 UX Patterns That Work | SLIIQQUE",
     description:
       "After building dozens of dApps, these are the interface patterns that consistently improve onboarding.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

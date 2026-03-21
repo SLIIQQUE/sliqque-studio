@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "How we use React Server Components to reduce client-side JavaScript and improve load times for data-heavy Web3 applications.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "React Server Components in a Web3 App",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "React Server Components in a Web3 App | SLIIQQUE",
     description:
       "How we use React Server Components to reduce client-side JavaScript in Web3 apps.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

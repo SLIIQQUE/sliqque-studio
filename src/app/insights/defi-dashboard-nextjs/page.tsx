@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "How to Build a DeFi Dashboard with Next.js 14",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "How to Build a DeFi Dashboard with Next.js 14 | SLIIQQUE",
     description:
       "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

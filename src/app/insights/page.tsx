@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Insights",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Insights | SLIIQQUE",
     description:
       "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "SLIIQQUE is a Lagos-based boutique software studio built by engineers who believe the best Web3 interfaces are the ones that feel effortless.",
     images: [
       {
-        url: "https://sliiqque.studio/og-image.png",
+        url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Studio",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "About the Studio | SLIIQQUE",
     description:
       "Lagos-based boutique software studio building high-performance Web3 and SaaS products.",
-    images: ["https://sliiqque.studio/og-image.png"],
+    images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
