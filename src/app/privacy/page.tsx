@@ -40,8 +40,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-base font-body text-white/60 leading-relaxed mb-6">
               We collect information you provide directly to us, such as when you
-              fill out a contact form, subscribe to our newsletter, or otherwise
-              communicate with us.
+              fill out a contact form or otherwise communicate with us.
             </p>
             <h2 className="font-display font-bold text-xl tracking-tight uppercase mt-8 mb-4">
               How We Use Information

@@ -27,15 +27,6 @@ export const metadata: Metadata = {
   },
   description:
     "SLIIQQUE is a boutique software studio building high-performance Web3 and SaaS products. We partner with founders to engineer interfaces that ship, scale, and convert.",
-  keywords: [
-    "web3 development studio",
-    "saas frontend development",
-    "defi interface engineering",
-    "nextjs web3 studio",
-    "react web3 agency",
-    "web3 product design",
-    "dapp development",
-  ],
   authors: [{ name: "SLIIQQUE Studio" }],
   creator: "SLIIQQUE Studio",
   publisher: "SLIIQQUE Studio",
@@ -60,7 +51,7 @@ export const metadata: Metadata = {
       "We build high-performance Web3 and SaaS products. From interface to infrastructure.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE — Web3 & SaaS Software Studio",
@@ -73,7 +64,7 @@ export const metadata: Metadata = {
     creator: "@sliiqque",
     title: "SLIIQQUE — Web3 & SaaS Software Studio",
     description: "We build high-performance Web3 and SaaS products.",
-    images: ["/og-image.png"],
+    images: ["/og-image.svg"],
   },
   alternates: {
     canonical: "https://sliiqque.studio",
@@ -94,7 +85,8 @@ export default function RootLayout({
       <head>
         <SchemaOrg />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
         <ScrollProgress />
