@@ -139,7 +139,7 @@ const Hero = ({
               />
               <motion.div style={{ scale: smoothScale }} className="relative inline-block">
                 <h1
-                  className="relative font-display font-bold text-[15vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase"
+                  className="relative font-display font-bold text-[12vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase"
                 >
                   {title.split('').map((char, i) => (
                     <span
@@ -169,9 +169,9 @@ const Hero = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-3xl mx-auto mb-12"
+            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-12"
           >
-            {subtitle}
+            {"We build Web3 and SaaS products\nthat ship, scale, and convert."}
           </motion.p>
 
           <motion.div
