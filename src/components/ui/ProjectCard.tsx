@@ -47,6 +47,12 @@ export function ProjectCard({
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const rotate = useTransform(scrollYProgress, [0, 1], [2, -2]);
   const isLogo = !!logoSrc;
+  const initials = title
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
   return (
     <motion.div
@@ -90,7 +96,16 @@ export function ProjectCard({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
               />
-            ) : null}
+            ) : (
+              <div
+                className="w-full aspect-square flex items-center justify-center transition-all duration-700 ease-out group-hover:scale-105"
+                style={{ backgroundColor: bgColor }}
+              >
+                <span className="font-display font-bold text-7xl tracking-tighter text-white/20 uppercase">
+                  {initials}
+                </span>
+              </div>
+            )}
             
             <motion.div
               className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"
