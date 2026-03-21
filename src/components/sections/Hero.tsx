@@ -137,24 +137,20 @@ const Hero = ({
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               />
-              <motion.div style={{ scale: smoothScale }} className="relative">
+              <motion.div style={{ scale: smoothScale }} className="relative inline-block">
                 <h1
-                  className="relative font-display font-bold text-[15vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60"
+                  className="relative font-display font-bold text-[15vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase"
                 >
                   {title.split('').map((char, i) => (
                     <span
                       key={i}
-                      className="inline-block group relative cursor-pointer"
+                      className="inline-block relative cursor-pointer"
                     >
-                      <motion.span
-                        className="relative z-10"
-                        whileHover={{ y: -8 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                      >
+                      <span className="relative z-10 text-white transition-colors duration-200">
                         {char === ' ' ? '\u00A0' : char}
-                      </motion.span>
+                      </span>
                       <motion.span
-                        className="absolute inset-0 z-0"
+                        className="absolute inset-0 z-20"
                         style={{ color: ['#f97316', '#3b82f6', '#8b5cf6', '#ffffff'][i % 4] }}
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
