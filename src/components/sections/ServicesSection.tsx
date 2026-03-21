@@ -131,7 +131,7 @@ const FeaturedService = ({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative md:col-span-2 lg:col-span-1"
+      className="group relative"
     >
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-transparent p-8 lg:p-10 hover:border-white/20 transition-all duration-500">
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -311,10 +311,10 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+        <div className="flex flex-col gap-8">
           <FeaturedService {...services[0]} delay={0.1} />
           
-          <div className="lg:col-span-4 space-y-0">
+          <div className="space-y-0">
             {services.slice(1).map((service, i) => (
               <ServiceItem key={service.index} {...service} delay={0.2 + i * 0.1} />
             ))}
