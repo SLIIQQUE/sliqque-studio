@@ -38,16 +38,16 @@ export interface CaseStudy extends Project {
 
 export const projects: Project[] = [
   {
-    title: "ZINID",
-    year: "2018",
-    clientType: "RegTech / Fraud Prevention",
+    title: "BizEdge",
+    year: "2021",
+    clientType: "HRMS SaaS",
     engagementType: "Product Build",
-    description: "Africa's fraud prevention infrastructure platform — credit risk assessment, transaction monitoring, and shared risk memory for the fintech ecosystem.",
-    tags: ["React", "TypeScript", "Next.js"],
-    metric: "Risk Infrastructure",
-    imageSrc: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "ZINID Platform",
-    href: "/work/zinid",
+    description: "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
+    tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
+    metric: "11 Modules",
+    imageAlt: "BizEdge Logo",
+    href: "/work/bizedge",
+    bgColor: "#1a1a2e",
   },
   {
     title: "Lumia",
@@ -63,18 +63,6 @@ export const projects: Project[] = [
     bgColor: "#0f0f0f",
   },
   {
-    title: "BizEdge",
-    year: "2021",
-    clientType: "HRMS SaaS",
-    engagementType: "Product Build",
-    description: "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
-    tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
-    metric: "11 Modules",
-    imageAlt: "BizEdge Logo",
-    href: "/work/bizedge",
-    bgColor: "#1a1a2e",
-  },
-  {
     title: "Mo Touch",
     year: "2024",
     clientType: "Beauty & Wellness",
@@ -85,6 +73,18 @@ export const projects: Project[] = [
     imageAlt: "Mo Touch",
     href: "https://mo-touch.vercel.app/",
     bgColor: "#0a0a0a",
+  },
+  {
+    title: "ZINID",
+    year: "2018",
+    clientType: "RegTech / Fraud Prevention",
+    engagementType: "Product Build",
+    description: "Africa's fraud prevention infrastructure platform — credit risk assessment, transaction monitoring, and shared risk memory for the fintech ecosystem.",
+    tags: ["React", "TypeScript", "Next.js"],
+    metric: "Risk Infrastructure",
+    imageSrc: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop",
+    imageAlt: "ZINID Platform",
+    href: "/work/zinid",
   },
 ];
 
@@ -98,10 +98,10 @@ export const workPageContent: WorkPageContent = {
 
 export const studioProjects: StudioProject[] = [
   {
-    name: "ZINID",
-    type: "RegTech — Fraud prevention & risk infrastructure",
-    metric: "Risk Infrastructure",
-    link: "/work/zinid",
+    name: "BizEdge",
+    type: "SaaS — 11-module HR platform",
+    metric: "11 Modules",
+    link: "/work/bizedge",
   },
   {
     name: "Lumia",
@@ -110,16 +110,16 @@ export const studioProjects: StudioProject[] = [
     link: "/work/lumia",
   },
   {
-    name: "BizEdge",
-    type: "SaaS — 11-module HR platform",
-    metric: "11 Modules",
-    link: "/work/bizedge",
-  },
-  {
     name: "Mo Touch",
     type: "Beauty — Interactive makeup artist portfolio",
     metric: "Interactive",
     link: "https://mo-touch.vercel.app/",
+  },
+  {
+    name: "ZINID",
+    type: "RegTech — Fraud prevention & risk infrastructure",
+    metric: "Risk Infrastructure",
+    link: "/work/zinid",
   },
 ];
 
