@@ -25,7 +25,7 @@ export default function Home() {
         <SelectedWorkSection />
         <StatsSection />
         <StudioSection />
-        <ProjectTypeMarquee />
+        {/* <ProjectTypeMarquee /> */}
         <InsightsSection />
         <CTASection />
         <Footer />
