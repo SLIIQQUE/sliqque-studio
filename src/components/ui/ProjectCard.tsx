@@ -70,18 +70,18 @@ export function ProjectCard({
         className="relative"
       >
         <Link href={href} className="block">
-          <div className={`relative overflow-hidden rounded-3xl ${isLogo ? "aspect-square" : ""}`}>
+          <div className="relative overflow-hidden rounded-3xl aspect-[4/3]">
             {isLogo ? (
               <div
-                className="w-full aspect-square flex items-center justify-center p-12 transition-all duration-700 ease-out group-hover:scale-105"
+                className="w-full h-full flex items-center justify-center p-8 transition-all duration-700 ease-out group-hover:scale-105"
                 style={{ backgroundColor: bgColor }}
               >
                 <Image
                   src={logoSrc}
                   alt={imageAlt}
-                  width={280}
-                  height={280}
-                  className="w-full h-full object-contain"
+                  width={400}
+                  height={400}
+                  className="max-w-full max-h-full object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   loading="lazy"
                 />
@@ -92,13 +92,13 @@ export function ProjectCard({
                 alt={imageAlt}
                 width={1200}
                 height={900}
-                className="w-full aspect-[4/3] object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
+                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
               />
             ) : (
               <div
-                className="w-full aspect-square flex items-center justify-center transition-all duration-700 ease-out group-hover:scale-105"
+                className="w-full h-full flex items-center justify-center transition-all duration-700 ease-out group-hover:scale-105"
                 style={{ backgroundColor: bgColor }}
               >
                 <span className="font-display font-bold text-7xl tracking-tighter text-white/20 uppercase">
