@@ -15,7 +15,6 @@ SLIIQQUE is a Web3 and SaaS software studio that partners with founders to build
 - Technical expertise areas (DeFi, NFTs, SaaS)
 - Blog/insights on Web3 and product development
 - Contact and studio information
-
 ---
 
 ## Tech Stack
