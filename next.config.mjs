@@ -22,6 +22,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "lumia.ng",
       },
+      {
+        protocol: "https",
+        hostname: "zinid.africa",
+      },
     ],
   },
   async headers() {
