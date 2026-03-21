@@ -19,9 +19,11 @@ export interface Project {
   description: string;
   tags: string[];
   metric: string;
-  imageSrc: string;
+  imageSrc?: string;
+  logoSrc?: string;
   imageAlt: string;
   href: string;
+  bgColor?: string;
 }
 
 export interface CaseStudy extends Project {
@@ -43,9 +45,10 @@ export const projects: Project[] = [
     description: "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
     tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
     metric: "11 Modules",
-    imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "BizEdge HRMS Dashboard",
+    logoSrc: "https://bizedgeapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FBizedge_ORIGINAL.3d97592e.png&w=400&q=80",
+    imageAlt: "BizEdge Logo",
     href: "/work/bizedge",
+    bgColor: "#1a1a2e",
   },
   {
     title: "Lumia",
@@ -55,9 +58,10 @@ export const projects: Project[] = [
     description: "Nigeria's electricity payment platform — prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
     tags: ["React", "TypeScript", "Node.js", "Payment Integration"],
     metric: "6 DisCos",
-    imageSrc: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Lumia Electricity Payment Platform",
+    logoSrc: "https://lumia.ng/assets/Logo.png",
+    imageAlt: "Lumia Logo",
     href: "/work/lumia",
+    bgColor: "#0f0f0f",
   },
   {
     title: "Meridian Finance",
@@ -123,8 +127,8 @@ export const caseStudies: Record<string, CaseStudy> = {
     description: "Nigeria's electricity payment platform — prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
     tags: ["React", "TypeScript", "Node.js", "Payment Integration"],
     metric: "6 DisCos",
-    imageSrc: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "Lumia Electricity Payment Platform",
+    logoSrc: "https://lumia.ng/assets/Logo.png",
+    imageAlt: "Lumia Logo",
     href: "/work/lumia",
     externalUrl: "https://lumia.ng",
     context: `Lumia is Nigeria's digital electricity payment platform that enables users to purchase prepaid and postpaid electricity units without visiting physical locations. Founded to solve the problem of long queues and inconvenience at electricity distribution company offices, Lumia partnered with major DisCos across Nigeria including AEDC, PHEDC, IKEDC, KNEDC, EEDC, and EKEDC.

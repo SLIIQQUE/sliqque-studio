@@ -14,10 +14,12 @@ export interface ProjectCardProps {
   description: string;
   tags: string[];
   metric?: string;
-  imageSrc: string;
+  imageSrc?: string;
+  logoSrc?: string;
   imageAlt: string;
   href: string;
   index: number;
+  bgColor?: string;
 }
 
 export function ProjectCard({
@@ -29,9 +31,11 @@ export function ProjectCard({
   tags,
   metric,
   imageSrc,
+  logoSrc,
   imageAlt,
   href,
-  index
+  index,
+  bgColor = "#0a0a0a"
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef(null);
@@ -42,6 +46,7 @@ export function ProjectCard({
   
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const rotate = useTransform(scrollYProgress, [0, 1], [2, -2]);
+  const isLogo = !!logoSrc;
 
   return (
     <motion.div
@@ -59,16 +64,33 @@ export function ProjectCard({
         className="relative"
       >
         <Link href={href} className="block">
-          <div className="relative overflow-hidden rounded-3xl">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={1200}
-              height={900}
-              className="w-full aspect-[4/3] object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              loading="lazy"
-            />
+          <div className={`relative overflow-hidden rounded-3xl ${isLogo ? "aspect-square" : ""}`}>
+            {isLogo ? (
+              <div
+                className="w-full aspect-square flex items-center justify-center p-12 transition-all duration-700 ease-out group-hover:scale-105"
+                style={{ backgroundColor: bgColor }}
+              >
+                <Image
+                  src={logoSrc}
+                  alt={imageAlt}
+                  width={280}
+                  height={280}
+                  className="w-full h-full object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
+                />
+              </div>
+            ) : imageSrc ? (
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                width={1200}
+                height={900}
+                className="w-full aspect-[4/3] object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
+              />
+            ) : null}
             
             <motion.div
               className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"
