@@ -91,8 +91,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.svg" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://zinid.africa" />
-        <link rel="dns-prefetch" href="https://zinid.africa" />
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
         <ScrollProgress />
