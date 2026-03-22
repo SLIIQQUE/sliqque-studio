@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { 
   Zap, 
   Code2, 
@@ -46,34 +45,19 @@ const Marquee = ({ speed = 40, className = "" }: { speed?: number; className?: s
     <div className={`relative overflow-hidden border-y border-white/5 ${className}`}>
       <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
       
-      <motion.div
-        className="flex items-center py-8"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: speed,
-            ease: "linear",
-          },
-        }}
+      <div
+        className="flex items-center py-8 animate-marquee"
+        style={{ "--marquee-duration": `${speed}s` } as React.CSSProperties}
       >
         {[...items, ...items].map((item, i) => (
-          <div key={i} className="flex items-center gap-6 mx-8 whitespace-nowrap">
-            <motion.span
-              whileHover={{ scale: 1.1, color: "#fff" }}
-              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40"
-            >
+          <div key={i} className="flex items-center gap-6 mx-8 whitespace-nowrap group">
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white group-hover:scale-110 transition-all duration-200">
               {item}
-            </motion.span>
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-blue-500"
-            />
+            </span>
+            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-blue-500 animate-spin-slow" />
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -81,28 +65,16 @@ const Marquee = ({ speed = 40, className = "" }: { speed?: number; className?: s
 const IconMarquee = () => {
   return (
     <div className="py-16 border-b border-white/5 overflow-hidden">
-      <motion.div
-        className="flex items-center justify-center gap-8"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 30,
-            ease: "linear",
-          },
-        }}
-      >
+      <div className="flex items-center justify-center gap-8 animate-marquee" style={{ "--marquee-duration": "30s" } as React.CSSProperties}>
         {[...icons, ...icons].map(({ Icon, color }, i) => (
-          <motion.div
+          <div
             key={i}
-            whileHover={{ scale: 1.3, rotate: 10 }}
-            className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group cursor-pointer"
+            className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group cursor-pointer hover:scale-130 hover:rotate-10 transition-all duration-200"
           >
             <Icon className={`w-8 h-8 ${color} group-hover:text-white transition-colors`} />
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -121,50 +93,30 @@ const TechStackMarquee = () => {
 
   return (
     <div className="py-12 overflow-hidden">
-      <motion.div
-        className="flex items-center gap-6"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 40,
-            ease: "linear",
-          },
-        }}
-      >
+      <div className="flex items-center gap-6 animate-marquee" style={{ "--marquee-duration": "40s" } as React.CSSProperties}>
         {[...techStack, ...techStack].map((tech, i) => (
-          <motion.div
+          <div
             key={i}
-            whileHover={{ scale: 1.05, y: -5 }}
-            className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-full whitespace-nowrap cursor-pointer"
+            className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-full whitespace-nowrap cursor-pointer hover:scale-105 hover:-translate-y-1 transition-all duration-200"
           >
-            <div className="relative w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500 to-blue-500"
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1 }}
-                style={{ opacity: 0.3 }}
-              />
-              <span className="relative text-sm font-bold">{tech.name.charAt(0)}</span>
+            <div className="relative w-10 h-10 rounded-full bg-white/10 flex items-center justify-center overflow-hidden group-hover:opacity-30 transition-opacity">
+              <span className="text-sm font-bold">{tech.name.charAt(0)}</span>
             </div>
             <div>
               <span className="text-sm font-body font-medium">{tech.name}</span>
               <div className="flex items-center gap-2 mt-1">
                 <div className="w-16 h-1 bg-white/10 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-orange-500 to-blue-500 rounded-full"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: `${tech.level}%` }}
-                    transition={{ duration: 0.5 }}
+                  <div
+                    className="h-full bg-gradient-to-r from-orange-500 to-blue-500 rounded-full group-hover:opacity-100 opacity-30 transition-opacity"
+                    style={{ width: `${tech.level}%` }}
                   />
                 </div>
                 <span className="text-[10px] text-white/30">{tech.level}%</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -181,29 +133,17 @@ const ProjectTypeMarquee = () => {
 
   return (
     <div className="py-12 border-y border-white/5 overflow-hidden">
-      <motion.div
-        className="flex items-center gap-4"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 25,
-            ease: "linear",
-          },
-        }}
-      >
+      <div className="flex items-center gap-4 animate-marquee" style={{ "--marquee-duration": "25s" } as React.CSSProperties}>
         {[...projectTypes, ...projectTypes].map((project, i) => (
-          <motion.div
+          <div
             key={i}
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl whitespace-nowrap"
+            className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl whitespace-nowrap hover:scale-105 transition-all duration-200"
           >
             <span className="text-2xl">{project.icon}</span>
             <span className="text-sm font-body font-medium">{project.type}</span>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

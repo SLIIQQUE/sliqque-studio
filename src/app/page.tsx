@@ -1,16 +1,36 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import LightLeaks from "@/components/ui/LightLeaks";
-import Marquee, { ProjectTypeMarquee } from "@/components/ui/Marquee";
+import Marquee from "@/components/ui/Marquee";
 import Hero from "@/components/sections/Hero";
-import ServicesSection from "@/components/sections/ServicesSection";
-import SelectedWorkSection from "@/components/sections/SelectedWorkSection";
-import StatsSection from "@/components/sections/StatsSection";
-import StudioSection from "@/components/sections/StudioSection";
-import InsightsSection from "@/components/sections/InsightsSection";
-import CTASection from "@/components/sections/CTASection";
+
+const ServicesSection = dynamic(
+  () => import("@/components/sections/ServicesSection"),
+  { ssr: false }
+);
+const SelectedWorkSection = dynamic(
+  () => import("@/components/sections/SelectedWorkSection"),
+  { ssr: false }
+);
+const StatsSection = dynamic(
+  () => import("@/components/sections/StatsSection"),
+  { ssr: false }
+);
+const StudioSection = dynamic(
+  () => import("@/components/sections/StudioSection"),
+  { ssr: false }
+);
+const InsightsSection = dynamic(
+  () => import("@/components/sections/InsightsSection"),
+  { ssr: false }
+);
+const CTASection = dynamic(
+  () => import("@/components/sections/CTASection"),
+  { ssr: false }
+);
 
 export default function Home() {
   return (
@@ -25,7 +45,6 @@ export default function Home() {
         <SelectedWorkSection />
         <StatsSection />
         <StudioSection />
-        {/* <ProjectTypeMarquee /> */}
         <InsightsSection />
         <CTASection />
         <Footer />
