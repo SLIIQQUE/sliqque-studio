@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { studioProjects } from "@/data";
 
@@ -53,7 +54,7 @@ export default function StudioPageClient() {
               className="lg:col-span-5"
             >
               <div className="relative inline-block mb-8">
-                <div className="relative w-[160px] h-[160px] flex items-center justify-center">
+                <div className="relative w-[160px] h-[160px] flex items-center justify-center overflow-hidden rounded-2xl">
                   <motion.div
                     className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500/20 via-transparent to-blue-500/20"
                     animate={{ rotate: [0, 90, 180, 270, 360] }}
@@ -64,14 +65,15 @@ export default function StudioPageClient() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.3 }}
-                    className="relative text-center"
+                    className="relative"
                   >
-                    <span className="font-display font-bold text-5xl tracking-tighter block">
-                      GN
-                    </span>
-                    <span className="text-[9px] font-body font-bold uppercase tracking-[0.2em] text-white/30 mt-1 block">
-                      Founder
-                    </span>
+                    <Image
+                      src="/images/Gabriel.jpg"
+                      alt="Gabriel Njoabozia"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover"
+                    />
                   </motion.div>
                 </div>
               </div>
