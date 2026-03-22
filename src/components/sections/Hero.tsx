@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 
@@ -18,19 +18,65 @@ const FloatingShape = ({ delay, x, y, size }: { delay: number; x: string; y: str
   />
 );
 
+const GradientOrb = ({ color, size, x, y }: { color: string; size: string; x: string; y: string }) => (
+  <div
+    className="absolute rounded-full blur-[120px] opacity-30 animate-pulse-slow"
+    style={{ width: size, height: size, background: color, left: x, top: y }}
+  />
+);
+
 const Hero = ({
   title = "SLIIQQUE",
   subtitle = "We build Web3 and SaaS products that ship, scale, and convert.",
+  description = "Boutique software studio. Partnering with founders and protocols to engineer high-performance interfaces — from onboarding flow to on-chain interaction.",
 }: HeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const springX = useSpring(mouseX, { stiffness: 50, damping: 20, mass: 0.5 });
+  const springY = useSpring(mouseY, { stiffness: 50, damping: 20, mass: 0.5 });
+
   const { scrollY } = useScroll();
   
   const smoothY = useSpring(useTransform(scrollY, [0, 600], [0, 100]), {
     stiffness: 100,
     damping: 30,
   });
-  const smoothOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const smoothScale = useTransform(scrollY, [0, 600], [1, 1.05]);
+  const smoothOpacity = useSpring(useTransform(scrollY, [0, 400], [1, 0]), {
+    stiffness: 100,
+    damping: 30,
+  });
+  const smoothScale = useSpring(useTransform(scrollY, [0, 600], [1, 1.05]), {
+    stiffness: 100,
+    damping: 30,
+  });
+
+  useEffect(() => {
+    let rafId: number;
+    let lastX = 0;
+    let lastY = 0;
+    
+    const handleMouse = (e: MouseEvent) => {
+      lastX = e.clientX - 192;
+      lastY = e.clientY - 192;
+    };
+    
+    const animate = () => {
+      mouseX.set(lastX);
+      mouseY.set(lastY);
+      rafId = requestAnimationFrame(animate);
+    };
+    
+    window.addEventListener("mousemove", handleMouse, { passive: true });
+    rafId = requestAnimationFrame(animate);
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMouse);
+      cancelAnimationFrame(rafId);
+    };
+  }, [mouseX, mouseY]);
 
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden">
@@ -40,9 +86,9 @@ const Hero = ({
       >
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-zinc-900" />
         
-        <div className="absolute rounded-full blur-[120px] opacity-30 animate-pulse-slow" style={{ width: "600px", height: "600px", background: "#f97316", left: "-10%", top: "20%" }} />
-        <div className="absolute rounded-full blur-[120px] opacity-30 animate-pulse-slow" style={{ width: "500px", height: "500px", background: "#3b82f6", left: "60%", top: "50%" }} />
-        <div className="absolute rounded-full blur-[120px] opacity-30 animate-pulse-slow" style={{ width: "400px", height: "400px", background: "#8b5cf6", left: "30%", top: "-10%" }} />
+        <GradientOrb color="#f97316" size="600px" x="-10%" y="20%" />
+        <GradientOrb color="#3b82f6" size="500px" x="60%" y="50%" />
+        <GradientOrb color="#8b5cf6" size="400px" x="30%" y="-10%" />
 
         <div 
           className="absolute inset-0 opacity-20"
@@ -58,42 +104,95 @@ const Hero = ({
         <FloatingShape delay={0.5} x="20%" y="60%" size="60px" />
         <FloatingShape delay={1.5} x="50%" y="80%" size="100px" />
 
+        <motion.div
+          className="absolute w-96 h-96 border border-white/10 rounded-full pointer-events-none"
+          style={{ x: springX, y: springY }}
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.4, 0, 0.4],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
         <div className="relative z-10 max-w-7xl mx-auto px-10 text-center">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="mb-8"
           >
             <div className="relative inline-block">
-              <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-pulse-slow" />
+              <motion.div
+                className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              />
               <motion.div style={{ scale: smoothScale }} className="relative inline-block">
                 <h1
                   className="relative font-display font-bold text-[12vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase"
                 >
-                  {title}
+                  {title.split('').map((char, i) => (
+                    <span
+                      key={i}
+                      className="inline-block relative cursor-pointer"
+                    >
+                      <span className="relative z-10 text-white transition-colors duration-200">
+                        {char === ' ' ? '\u00A0' : char}
+                      </span>
+                      <motion.span
+                        className="absolute inset-0 z-20"
+                        style={{ color: ['#f97316', '#3b82f6', '#8b5cf6', '#ffffff'][i % 4] }}
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.15 }}
+                      >
+                        {char === ' ' ? '\u00A0' : char}
+                      </motion.span>
+                    </span>
+                  ))}
                 </h1>
               </motion.div>
             </div>
           </motion.div>
 
-          <p className="text-xl md:text-3xl font-body font-light text-white/80 max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-12">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-12"
+          >
             {"We build Web3 and SaaS products\nthat ship, scale, and convert."}
-          </p>
+          </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Link
               href="/work"
-              className="group relative px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] overflow-hidden hover:bg-white/90 transition-colors"
+              className="group relative px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] overflow-hidden"
             >
-              <span className="flex items-center gap-3">
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-orange-500 via-blue-500 to-purple-500"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <span className="relative z-10 flex items-center gap-3">
                 See Our Work
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <motion.span
+                  className="inline-flex"
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                >
+                  <ArrowRight size={16} />
+                </motion.span>
               </span>
             </Link>
             
@@ -101,7 +200,12 @@ const Hero = ({
               href="/contact"
               className="group relative px-10 py-5 border border-white/30 font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
             >
-              <Play size={14} className="fill-current animate-spin-slow" style={{ animationDuration: "12s" }} />
+              <motion.span
+                animate={{ rotate: 360 }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+              >
+                <Play size={14} className="fill-current" />
+              </motion.span>
               Start a Project
             </Link>
           </motion.div>
@@ -109,16 +213,20 @@ const Hero = ({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-20 flex flex-wrap items-center justify-center gap-4"
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="mt-20 flex items-center justify-center gap-8"
           >
-            {['Web3', 'React', 'Next.js', 'TypeScript', 'Solidity'].map((tech) => (
-              <div
+            {['Web3', 'React', 'Next.js', 'TypeScript', 'Solidity'].map((tech, i) => (
+              <motion.div
                 key={tech}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 className="px-4 py-2 border border-white/10 rounded-full text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60 hover:text-white hover:border-white/30 transition-all duration-200 cursor-pointer"
               >
                 {tech}
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -126,12 +234,13 @@ const Hero = ({
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 1.5, duration: 0.6 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
-          <div
-            className="w-[1px] h-16 bg-gradient-to-b from-white/50 to-transparent animate-float"
-            style={{ animationDuration: "2s", animationDirection: "alternate" }}
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-[1px] h-16 bg-gradient-to-b from-white/50 to-transparent"
           />
         </motion.div>
       </motion.div>
