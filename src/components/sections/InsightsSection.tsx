@@ -121,7 +121,7 @@ const ArticleCard = ({
             whileHover={{ opacity: 1, x: 0 }}
             className="flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 group-hover:text-white transition-colors"
           >
-            Read Article
+            Read: {title}
             <ArrowRight size={12} className="group-hover:translate-x-2 transition-transform" />
           </motion.div>
 
