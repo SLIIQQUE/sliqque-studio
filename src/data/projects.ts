@@ -45,6 +45,7 @@ export const projects: Project[] = [
     description: "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
     tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
     metric: "11 Modules",
+    logoSrc: "/images/bizedge-logo.svg",
     imageAlt: "BizEdge Logo",
     href: "/work/bizedge",
     bgColor: "#1a1a2e",
