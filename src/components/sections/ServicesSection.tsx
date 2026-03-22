@@ -125,7 +125,7 @@ const ServiceItem = ({
                   : 'text-white/30 hover:text-white/60'
               }`}
             >
-              Learn More
+              Get {title} Quote
               <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </div>
