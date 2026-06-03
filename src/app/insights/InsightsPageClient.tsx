@@ -6,6 +6,24 @@ import InsightCard from "@/components/ui/InsightCard";
 
 const articles = [
   {
+    title:
+      "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms",
+    excerpt:
+      "Why AI-native founders are ditching Upwork and Fiverr for boutique software studios — and what that means for your next build.",
+    date: "Jun 2026",
+    readingTime: "7 min read",
+    href: "/insights/ai-native-boutique-studios",
+  },
+  {
+    title:
+      "The Hidden Cost of Cheap Web Development for Nigerian Businesses",
+    excerpt:
+      "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security issues, and missed opportunities.",
+    date: "Jun 2026",
+    readingTime: "6 min read",
+    href: "/insights/hidden-cost-web-dev-nigeria",
+  },
+  {
     title: "How to Build a DeFi Dashboard with Next.js 14",
     excerpt:
       "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi. We'll cover data fetching, state management, and creating a smooth user experience.",
