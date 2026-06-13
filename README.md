@@ -1,6 +1,6 @@
 # SLIIQQUE Studio Website
 
-A boutique software studio website built with Next.js, featuring dark editorial aesthetics, Web3 and SaaS product showcases, and case studies.
+A boutique software studio website built with Next.js, featuring dark editorial aesthetics, SaaS product showcases and business website case studies.
 
 **Live:** [https://sliiqque.space](https://sliiqque.space)
 
@@ -8,12 +8,12 @@ A boutique software studio website built with Next.js, featuring dark editorial 
 
 ## Overview
 
-SLIIQQUE is a Web3 and SaaS software studio that partners with founders to build high-performance digital products. The website showcases:
+SLIIQQUE is a frontend engineering studio that partners with founders to build high-performance digital products. The website showcases:
 
 - Featured projects and case studies (BizEdge, Lumia, Mo Touch, ZINID)
 - Service offerings (Website Design, Product Build, Interface Engineering, Studio Retainer, Technical Audit)
-- Technical expertise areas (DeFi, NFTs, SaaS)
-- Blog/insights on Web3 and product development
+- Technical expertise areas (SaaS, driving schools, business websites)
+- Blog/insights on frontend engineering and product development
 - Contact and studio information
 ---
 
@@ -48,7 +48,7 @@ sliiqque-studio/
 │   │   ├── page.tsx        # Homepage
 │   │   ├── globals.css      # Global styles
 │   │   ├── contact/        # Contact page
-│   │   ├── expertise/      # Expertise pages (defi/, nft/, saas/)
+│   │   ├── expertise/      # Expertise pages (saas/, driving-schools/, engineering/)
 │   │   ├── insights/       # Blog/insights articles
 │   │   ├── privacy/        # Privacy policy
 │   │   ├── services/       # Services & process page
@@ -81,8 +81,8 @@ sliiqque-studio/
 | `/work` | Full project portfolio |
 | `/work/[slug]` | Individual project/case study pages |
 | `/services` | Service offerings with pricing and process |
-| `/expertise` | Expertise areas (DeFi, NFT, SaaS) |
-| `/insights` | Blog articles on Web3, SaaS, and product development |
+| `/expertise` | Expertise areas (SaaS, driving schools, engineering) |
+| `/insights` | Blog articles on frontend engineering and product development |
 | `/studio` | About the studio |
 | `/contact` | Contact page |
 

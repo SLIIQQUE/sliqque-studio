@@ -1,5 +1,3 @@
-"use client";
-
 import dynamic from "next/dynamic";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -8,33 +6,27 @@ import Marquee from "@/components/ui/Marquee";
 import Hero from "@/components/sections/Hero";
 
 const ServicesSection = dynamic(
-  () => import("@/components/sections/ServicesSection"),
-  { ssr: false }
+  () => import("@/components/sections/ServicesSection")
 );
 const SelectedWorkSection = dynamic(
-  () => import("@/components/sections/SelectedWorkSection"),
-  { ssr: false }
+  () => import("@/components/sections/SelectedWorkSection")
 );
 const StatsSection = dynamic(
-  () => import("@/components/sections/StatsSection"),
-  { ssr: false }
+  () => import("@/components/sections/StatsSection")
 );
 const StudioSection = dynamic(
-  () => import("@/components/sections/StudioSection"),
-  { ssr: false }
+  () => import("@/components/sections/StudioSection")
 );
 const InsightsSection = dynamic(
-  () => import("@/components/sections/InsightsSection"),
-  { ssr: false }
+  () => import("@/components/sections/InsightsSection")
 );
 const CTASection = dynamic(
-  () => import("@/components/sections/CTASection"),
-  { ssr: false }
+  () => import("@/components/sections/CTASection")
 );
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-background">
+    <main id="main-content" className="relative min-h-screen bg-background">
       <Navigation />
       <LightLeaks />
 

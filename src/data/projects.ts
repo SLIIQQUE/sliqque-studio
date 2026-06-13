@@ -26,27 +26,18 @@ export interface Project {
   bgColor?: string;
 }
 
-export interface CaseStudy extends Project {
-  context: string;
-  problem: string;
-  approach: string;
-  whatWeBuilt: string;
-  results: string;
-  learnings: string;
-  externalUrl?: string;
-}
-
 export const projects: Project[] = [
   {
     title: "BizEdge",
     year: "2021",
     clientType: "HRMS SaaS",
     engagementType: "Product Build",
-    description: "All-in-one HR, Payroll & Productivity suite — 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
+    description: "All-in-one HR, Payroll & Productivity suite: 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
     tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
     metric: "11 Modules",
     logoSrc: "/images/bizedge-logo.svg",
-    imageAlt: "BizEdge Logo",
+    imageSrc: "/images/bizedge-screenshot.jpg",
+    imageAlt: "BizEdge HR and Payroll platform dashboard",
     href: "/work/bizedge",
     bgColor: "#1a1a2e",
   },
@@ -55,11 +46,12 @@ export const projects: Project[] = [
     year: "2019",
     clientType: "FinTech",
     engagementType: "Product Build",
-    description: "Nigeria's electricity payment platform — prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
+    description: "Nigeria's electricity payment platform: prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
     tags: ["React", "TypeScript", "Node.js", "Payment Integration"],
     metric: "6 DisCos",
     logoSrc: "https://lumia.ng/assets/Logo.png",
-    imageAlt: "Lumia Logo",
+    imageSrc: "/images/lumia-screenshot.jpg",
+    imageAlt: "Lumia electricity payment platform homepage",
     href: "/work/lumia",
     bgColor: "#0f0f0f",
   },
@@ -68,10 +60,11 @@ export const projects: Project[] = [
     year: "2024",
     clientType: "Beauty & Wellness",
     engagementType: "Product Build",
-    description: "Premium interactive gallery for a makeup artist — immersive scroll-driven animations, touch-optimized interactions, and a digital-first portfolio experience.",
+    description: "Premium interactive gallery for a makeup artist: immersive scroll-driven animations, touch-optimized interactions, and a digital-first portfolio experience.",
     tags: ["Vite", "GSAP", "Framer Motion"],
     metric: "Interactive",
-    imageAlt: "Mo Touch",
+    imageSrc: "/images/motouch-screenshot.jpg",
+    imageAlt: "Mo Touch — premium interactive makeup artist portfolio gallery with immersive scroll-driven animations",
     href: "/work/mo-touch",
     bgColor: "#0a0a0a",
   },
@@ -80,12 +73,14 @@ export const projects: Project[] = [
     year: "2018",
     clientType: "RegTech / Fraud Prevention",
     engagementType: "Product Build",
-    description: "Africa's fraud prevention infrastructure platform — credit risk assessment, transaction monitoring, and shared risk memory for the fintech ecosystem.",
+    description: "Africa's fraud prevention infrastructure platform: credit risk assessment, transaction monitoring, and shared risk memory for the fintech ecosystem.",
     tags: ["React", "TypeScript", "Next.js"],
     metric: "Risk Infrastructure",
     logoSrc: "https://zinid.africa/logo192.png",
-    imageAlt: "ZINID Logo",
+    imageSrc: "/images/zinid-screenshot.jpg",
+    imageAlt: "ZINID fraud prevention platform homepage",
     href: "/work/zinid",
+    bgColor: "#0a0a0a",
   },
 ];
 
@@ -100,89 +95,29 @@ export const workPageContent: WorkPageContent = {
 export const studioProjects: StudioProject[] = [
   {
     name: "BizEdge",
-    type: "SaaS — 11-module HR platform",
+    type: "SaaS: 11-module HR platform",
     metric: "11 Modules",
     link: "/work/bizedge",
   },
   {
     name: "Lumia",
-    type: "FinTech — Electricity payment platform",
+    type: "FinTech: Electricity payment platform",
     metric: "6 DisCos",
     link: "/work/lumia",
   },
   {
     name: "Mo Touch",
-    type: "Beauty — Interactive makeup artist portfolio",
+    type: "Beauty: Interactive makeup artist portfolio",
     metric: "Interactive",
     link: "/work/mo-touch",
   },
   {
     name: "ZINID",
-    type: "RegTech — Fraud prevention & risk infrastructure",
+    type: "RegTech: Fraud prevention & risk infrastructure",
     metric: "Risk Infrastructure",
     link: "/work/zinid",
   },
 ];
 
-export const caseStudies: Record<string, CaseStudy> = {
-  lumia: {
-    title: "Lumia",
-    year: "2019",
-    clientType: "FinTech",
-    engagementType: "Product Build",
-    description: "Nigeria's electricity payment platform — prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
-    tags: ["React", "TypeScript", "Node.js", "Payment Integration"],
-    metric: "6 DisCos",
-    logoSrc: "https://lumia.ng/assets/Logo.png",
-    imageAlt: "Lumia Logo",
-    href: "/work/lumia",
-    externalUrl: "https://lumia.ng",
-    context: `Lumia is Nigeria's digital electricity payment platform that enables users to purchase prepaid and postpaid electricity units without visiting physical locations. Founded to solve the problem of long queues and inconvenience at electricity distribution company offices, Lumia partnered with major DisCos across Nigeria including AEDC, PHEDC, IKEDC, KNEDC, EEDC, and EKEDC.
-
-The platform provides instant token delivery via SMS and email after payment, with support for both prepaid meters and postpaid bill payments. Lumia also offers mobile apps for Android and iOS, making electricity purchases accessible from anywhere.`,
-    problem: `Nigerian electricity consumers faced significant friction in purchasing electricity:
-
-• Long queues at PHCN/DisCo offices consuming hours of productive time
-• Limited operating hours of physical payment centers
-• No option to purchase electricity for third parties remotely
-• Inability to check meter balance or account status online
-• No loyalty programs or rewards for regular customers
-• Poor mobile experience at existing digital options`,
-    approach: `We approached Lumia with a focus on speed, reliability, and user trust. Key decisions:
-
-• Built a web platform and native mobile apps (iOS & Android) for maximum accessibility
-• Integrated with multiple DisCo APIs for real-time meter validation and token generation
-• Designed for instant token delivery via SMS and email simultaneously
-• Created a proxy buying feature allowing users to purchase for family/friends
-• Implemented a loyalty program with points and discounts for repeat customers
-• Built a referral system with wallet bonuses for successful referrals`,
-    whatWeBuilt: `We built a complete electricity payment ecosystem:
-
-1. Web Platform — Responsive website for purchasing prepaid and postpaid electricity
-2. Mobile Apps — Native iOS and Android applications for on-the-go purchases
-3. DisCo Integration — Real-time integration with AEDC, PHEDC, IKEDC, KNEDC, EEDC, EKEDC
-4. Meter Validation — Instant verification of meter numbers and account details
-5. Payment Processing — Secure payment gateway integration with multiple options
-6. Token Generation — Instant token generation and delivery system
-7. Proxy Buying — Save beneficiary meter details for quick third-party purchases
-8. Loyalty Program — Points accumulation and redemption system
-9. Referral System — Wallet bonus system for successful app referrals
-10. Reseller Program — White-label solution for entrepreneurs to start their own electricity vending business`,
-    results: `• Platform processing thousands of electricity transactions monthly
-• Partnerships with 6 major DisCos across Nigeria
-• Instant token delivery — typically under 30 seconds from payment
-• Mobile apps available on both iOS App Store and Google Play Store
-• Reseller program enabling entrepreneurs to start electricity vending with N1,000
-• Featured in Nigerian tech media including TechCabal
-• Contact center in Wuse II, Abuja with 07056414224 support line`,
-    learnings: `This project reinforced several critical principles for Nigerian fintech:
-
-Trust is everything — Users need to believe their money will convert to electricity units. We built in multiple confirmation steps and instant feedback to build confidence. The 30-second token delivery became our most important feature.
-
-Partnership complexity — Working with DisCos required understanding each company's technical capabilities and limitations. Not all DisCos had robust APIs, so we built fallback mechanisms.
-
-Mobile-first isn't optional — Nigerian consumers predominantly access services via mobile. The native apps weren't an afterthought — they were designed alongside the web platform.
-
-Reseller networks work — The white-label reseller program created a growth flywheel, turning customers into distribution partners.`,
-  },
-};
+// Note: Individual case study data is co-located with their respective
+// page.tsx files under src/app/work/[slug]/

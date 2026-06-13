@@ -12,12 +12,12 @@ const config: Config = {
         background: "#050505",
         footer: "#0a0a0a",
         foreground: "#FFFFFF",
-        muted: "rgba(255, 255, 255, 0.4)",
+        muted: "rgba(255, 255, 255, 0.75)",
         border: "rgba(255, 255, 255, 0.05)",
       },
       fontFamily: {
         display: ["var(--font-clash)", "sans-serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        body: ["var(--font-jakarta)", "sans-serif"],
       },
       animation: {
         "reveal-up": "reveal-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards",

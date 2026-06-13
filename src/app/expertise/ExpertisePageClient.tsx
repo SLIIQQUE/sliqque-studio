@@ -4,86 +4,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Layers, Building2, BrainCircuit, Workflow, Palette } from "lucide-react";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { verticals, capabilities, projectReferences } from "@/data";
 
-const verticals = [
-  {
-    title: "DeFi",
-    description:
-      "Dashboards, staking interfaces, liquidity UIs, and yield optimization tools. We build the interfaces that make DeFi usable.",
-    href: "/expertise/defi",
-    metric: "Web3",
-    imageSrc: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "DeFi Interface",
-    tags: ["Wagmi", "Viem", "The Graph"],
-  },
-  {
-    title: "NFT",
-    description:
-      "Minting platforms, marketplace UIs, and collection managers. Built for creators who want control and collectors who want simplicity.",
-    href: "/expertise/nft",
-    metric: "NFT",
-    imageSrc: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "NFT Platform",
-    tags: ["Solidity", "IPFS", "ERC-721"],
-  },
-  {
-    title: "SaaS",
-    description:
-      "Frontend architecture for SaaS products — from admin dashboards to user-facing features. React, Next.js, TypeScript.",
-    href: "/expertise/saas",
-    metric: "SaaS",
-    imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-    imageAlt: "SaaS Interface",
-    tags: ["React", "Next.js", "TypeScript"],
-  },
-];
-
-const capabilities = [
-  {
-    title: "Wallet Integration",
-    description:
-      "MetaMask, WalletConnect, Coinbase Wallet — we integrate any wallet provider with consistent, accessible patterns.",
-  },
-  {
-    title: "On-chain Data",
-    description:
-      "Real-time data from The Graph, subgraphs, and direct RPC calls. We make on-chain data fast and usable.",
-  },
-  {
-    title: "Smart Contract UI",
-    description:
-      "Readable interfaces for complex contract interactions. Token swaps, staking, governance — all simplified.",
-  },
-  {
-    title: "Performance",
-    description:
-      "Sub-second load times, smooth animations, and 60fps interactions. Performance is a feature, not an afterthought.",
-  },
-];
+const iconMap: Record<string, React.ElementType> = {
+  Layers, Building2, BrainCircuit, Workflow, Palette,
+};
 
 export default function ExpertisePageClient() {
   return (
     <div className="pt-[100px]">
       <section className="py-32 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              Expertise
-            </span>
-            <h1 className="font-display font-bold text-5xl md:text-7xl tracking-tighter uppercase leading-tight max-w-4xl">
-              What We Do Well
-            </h1>
-            <p className="mt-8 text-xl font-body text-white/60 max-w-2xl leading-relaxed">
-              We focus on three verticals where we have deep expertise and a
-              track record of shipping production software. Not generalists —
-              specialists.
-            </p>
-          </motion.div>
+          <SectionHeader
+            label="Expertise"
+            title="Built These, Can Build Yours"
+            description="We don't pitch capabilities we haven't shipped. Every vertical below is backed by production software that's live, processing real transactions, and serving real users. Here's what we actually do."
+            as="h1"
+          />
         </div>
       </section>
 
@@ -99,24 +38,49 @@ export default function ExpertisePageClient() {
 
       <section className="py-32 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-20"
-          >
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
-              Capabilities
-            </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase">
-              Core Skills
-            </h2>
-          </motion.div>
+          <SectionHeader label="Capabilities" title="What We Ship" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {capabilities.map((cap, i) => (
+            {capabilities.map((cap, i) => {
+              const Icon = iconMap[cap.icon] || Layers;
+              return (
+                <motion.div
+                  key={cap.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="flex flex-col gap-4"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-white/40" aria-hidden="true" />
+                    </div>
+                    <h3 className="font-display font-bold text-2xl tracking-tight uppercase">
+                      {cap.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm font-body text-white/60 leading-relaxed">
+                    {cap.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-10 border-b border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader label="Shipped Work" title="Projects That Back This Up" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projectReferences.map((project, i) => (
               <motion.div
-                key={cap.title}
+                key={project.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -124,14 +88,23 @@ export default function ExpertisePageClient() {
                   delay: i * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex flex-col gap-4"
               >
-                <h3 className="font-display font-bold text-2xl tracking-tight uppercase">
-                  {cap.title}
-                </h3>
-                <p className="text-sm font-body text-white/60 leading-relaxed">
-                  {cap.description}
-                </p>
+                <Link
+                  href={project.href}
+                  className="group block p-8 border border-white/5 hover:border-white/20 transition-colors duration-500 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-display font-bold text-2xl tracking-tight uppercase group-hover:text-white/80 transition-colors">
+                      {project.name}
+                    </h3>
+                    <span className="text-white/20 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" aria-hidden="true">
+                      ↗
+                    </span>
+                  </div>
+                  <p className="text-sm font-body text-white/50 leading-relaxed">
+                    {project.description}
+                  </p>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -145,14 +118,17 @@ export default function ExpertisePageClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-8">
-              Building in One of These Areas?
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-6">
+            Need Something Built in One of These Areas?
             </h2>
+            <p className="text-base font-body text-white/50 max-w-xl mx-auto mb-10">
+              We take on 2&ndash;3 new projects per quarter. If your project matches what we&apos;ve already shipped, we can move fast.
+            </p>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors"
+              className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
-              Let's Talk
+              Let&apos;s Talk
               <ArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform"

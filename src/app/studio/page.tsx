@@ -1,17 +1,18 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import StudioPageClient from "./StudioPageClient";
 
 export const metadata: Metadata = {
-  title: "About the Studio",
+  title: "About SLIIQQUE | Website, AI & Automation Studio",
   description:
-    "SLIIQQUE is a Lagos-based boutique software studio built by engineers who believe the best Web3 interfaces are the ones that feel effortless.",
+    "SLIIQQUE is a Lagos-based boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms, founded by engineers who ship.",
+  alternates: {
+    canonical: "https://sliiqque.space/studio",
+  },
   openGraph: {
-    title: "About the Studio | SLIIQQUE",
+    title: "About SLIIQQUE | Website, AI & Automation Studio | SLIIQQUE",
     description:
-      "SLIIQQUE is a Lagos-based boutique software studio built by engineers who believe the best Web3 interfaces are the ones that feel effortless.",
+    "SLIIQQUE is a Lagos-based boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms, founded by engineers who ship.",
     images: [
       {
         url: "https://sliiqque.space/og-image.png",
@@ -23,20 +24,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About the Studio | SLIIQQUE",
+    title: "About SLIIQQUE | Website, AI & Automation Studio | SLIIQQUE",
     description:
-      "Lagos-based boutique software studio building high-performance Web3 and SaaS products.",
+      "Lagos-based boutique software studio building high-performance websites, AI bots, automation systems, and SaaS platforms.",
     images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
 export default function StudioPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <StudioPageClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

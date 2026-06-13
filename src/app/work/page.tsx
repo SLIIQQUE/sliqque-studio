@@ -1,42 +1,40 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import WorkPageClient from "./WorkPageClient";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Our Work | Websites, AI Bots & Automation Projects",
   description:
-    "Selected case studies from SLIIQQUE — Web3 and SaaS products built with craft and precision.",
+    "Browse our portfolio of websites, AI bots and agents, workflow automation systems, and SaaS platforms, each project built with craft, precision, and measurable impact for founders and businesses worldwide.",
+  alternates: {
+    canonical: "https://sliiqque.space/work",
+  },
   openGraph: {
-    title: "Work | SLIIQQUE",
+    title: "Our Work | Websites, AI Bots & Automation Projects | SLIIQQUE",
     description:
-      "Selected case studies from SLIIQQUE — Web3 and SaaS products built with craft and precision.",
+    "Browse our portfolio of websites, AI bots and agents, workflow automation systems, and SaaS platforms, each project built with craft, precision, and measurable impact for founders and businesses worldwide.",
     images: [
       {
         url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SLIIQQUE Work",
+        alt: "SLIIQQUE Portfolio: Websites, Bots & Automation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Work | SLIIQQUE",
+    title: "Our Work | Websites, AI Bots & Automation Projects | SLIIQQUE",
     description:
-      "Selected case studies from SLIIQQUE — Web3 and SaaS products built with craft and precision.",
+      "Browse our portfolio: websites, AI bots, automation systems, and SaaS platforms built with craft and precision for global clients.",
     images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
 export default function WorkPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <WorkPageClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

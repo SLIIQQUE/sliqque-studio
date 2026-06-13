@@ -1,42 +1,40 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Start Your Website, AI Bot or Automation Project",
   description:
-    "Start a conversation with SLIIQQUE. We take on 2–3 new projects per quarter.",
+    "Ready to build something exceptional? Tell us about your website, AI bot, workflow automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
+  alternates: {
+    canonical: "https://sliiqque.space/contact",
+  },
   openGraph: {
-    title: "Contact | SLIIQQUE",
+    title: "Contact | Start Your Website, AI Bot or Automation Project | SLIIQQUE",
     description:
-      "Start a conversation with SLIIQQUE. We take on 2–3 new projects per quarter.",
+      "Ready to build something exceptional? Tell us about your website, AI bot, workflow automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
     images: [
       {
         url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SLIIQQUE Contact",
+        alt: "Contact SLIIQQUE for Web, AI & Automation Projects",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | SLIIQQUE",
+    title: "Contact | Web, AI Bot & Automation Projects | SLIIQQUE",
     description:
-      "Start a conversation with SLIIQQUE. We take on 2–3 new projects per quarter.",
+      "Ready to build? Tell us about your website, AI bot, automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
     images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
 export default function ContactPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <ContactPageClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

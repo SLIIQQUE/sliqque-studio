@@ -1,42 +1,40 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import ServicesPageClient from "./ServicesPageClient";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Website Development, AI Agents & Automation Services",
   description:
-    "Website design, product builds, interface engineering, studio retainers, and technical audits. SLIIQQUE takes on 2–3 new projects per quarter.",
+    "We build high-performance websites, custom AI bots and agents, workflow automation systems, and SaaS interfaces. SLIIQQUE takes on only 2–3 new projects per quarter to guarantee quality and attention.",
+  alternates: {
+    canonical: "https://sliiqque.space/services",
+  },
   openGraph: {
-    title: "Services | SLIIQQUE",
+    title: "Website Development, AI Agents & Automation Services | SLIIQQUE",
     description:
-      "Website design, product builds, interface engineering, studio retainers, and technical audits. SLIIQQUE takes on 2–3 new projects per quarter.",
+      "We build high-performance websites, custom AI bots and agents, workflow automation systems, and SaaS interfaces. SLIIQQUE takes on only 2–3 new projects per quarter to guarantee quality and attention.",
     images: [
       {
         url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SLIIQQUE Services",
+        alt: "SLIIQQUE Web Dev, AI & Automation Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services | SLIIQQUE",
+    title: "Website Development, AI Agents & Automation Services | SLIIQQUE",
     description:
-      "Website design, product builds, interface engineering, studio retainers, and technical audits.",
+      "High-performance websites, custom AI bots and agents, workflow automation, and SaaS interfaces, built by SLIIQQUE.",
     images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
 export default function ServicesPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <ServicesPageClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

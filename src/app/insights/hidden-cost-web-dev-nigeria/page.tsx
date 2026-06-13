@@ -1,27 +1,29 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import ArticleClient from "./ArticleClient";
 
 export const metadata: Metadata = {
   title:
     "The Hidden Cost of Cheap Web Development for Nigerian Businesses",
   description:
-    "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security issues, and missed opportunities.",
+    "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security vulnerabilities, and missed growth opportunities.",
   openGraph: {
+    type: "article",
     title:
       "The Hidden Cost of Cheap Web Development for Nigerian Businesses | SLIIQQUE",
     description:
-      "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security issues, and missed opportunities.",
+      "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security vulnerabilities, and missed growth opportunities.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "https://sliiqque.space/images/insights/nigeria-web-dev.jpg",
+        width: 1920,
+        height: 1280,
         alt: "The Hidden Cost of Cheap Web Development for Nigerian Businesses",
       },
     ],
+  },
+  alternates: {
+    canonical: "https://sliiqque.space/insights/hidden-cost-web-dev-nigeria",
   },
   twitter: {
     card: "summary_large_image",
@@ -29,17 +31,14 @@ export const metadata: Metadata = {
       "The Hidden Cost of Cheap Web Development for Nigerian Businesses | SLIIQQUE",
     description:
       "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security issues, and missed opportunities.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/images/insights/nigeria-web-dev.jpg"],
   },
 };
 
 export default function ArticlePage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <ArticleClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

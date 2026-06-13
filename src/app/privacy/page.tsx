@@ -1,28 +1,28 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy for SLIIQQUE Studio.",
+  title: "Privacy Policy | How We Handle Your Data",
+  description:
+    "SLIIQQUE Studio's privacy policy explains how we collect, use, store, and protect your personal information when you visit our website or use our services. Your privacy matters to us.",
+  alternates: {
+    canonical: "https://sliiqque.space/privacy",
+  },
 };
 
 export default function PrivacyPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <div className="pt-[100px]">
         <section className="py-20 px-10 border-b border-white/5">
           <div className="max-w-3xl mx-auto">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-12"
+              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-12 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
-              <ArrowLeft size={12} />
+              <ArrowLeft size={12} aria-hidden="true" />
               Back to Home
             </Link>
             <h1 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-8">
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
               us at{" "}
               <a
                 href="mailto:hello@sliiqque.space"
-                className="text-white hover:underline"
+                className="text-white underline underline-offset-2 hover:no-underline"
               >
                 hello@sliiqque.space
               </a>
@@ -67,7 +67,6 @@ export default function PrivacyPage() {
           </div>
         </section>
       </div>
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

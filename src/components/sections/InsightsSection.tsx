@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Clock, Calendar, Tag, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Clock, Calendar, ArrowUpRight } from "lucide-react";
+import { insightArticles } from "@/data";
 
 const ArticleCard = ({
   title,
@@ -40,7 +41,7 @@ const ArticleCard = ({
       <Link href={href} className="block">
         <div className="relative overflow-hidden rounded-3xl mb-6">
           <Image
-            src={image || `https://images.unsplash.com/photo-${1551288049 + index * 1000}-bebda4e38f71?q=80&w=600&auto=format&fit=crop`}
+            src={image || `/images/insights/ai-boutique.webp`}
             alt={title}
             width={600}
             height={338}
@@ -69,7 +70,7 @@ const ArticleCard = ({
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                  <ArrowUpRight className="w-6 h-6 text-white" />
+                  <ArrowUpRight className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
               </motion.div>
             )}
@@ -78,11 +79,11 @@ const ArticleCard = ({
           <div className="absolute bottom-6 left-6 right-6">
             <div className="flex items-center gap-4 mb-3">
               <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
-                <Calendar className="w-3 h-3" />
+                <Calendar className="w-3 h-3" aria-hidden="true" />
                 {date}
               </span>
               <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3 h-3" aria-hidden="true" />
                 {readingTime}
               </span>
             </div>
@@ -112,17 +113,17 @@ const ArticleCard = ({
             {title}
           </motion.h3>
           
-          <p className="text-sm font-body text-white/40 leading-relaxed mb-4">
+          <p className="text-sm font-body text-white/50 leading-relaxed mb-4">
             {excerpt}
           </p>
 
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             whileHover={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 group-hover:text-white transition-colors"
+            className="flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 group-hover:text-white transition-colors"
           >
             Read: {title}
-            <ArrowRight size={12} className="group-hover:translate-x-2 transition-transform" />
+            <ArrowRight size={12} className="group-hover:translate-x-2 transition-transform" aria-hidden="true" />
           </motion.div>
 
           <motion.div
@@ -139,7 +140,6 @@ const ArticleCard = ({
 
 const FeaturedArticle = ({
   title,
-  excerpt,
   date,
   readingTime,
   tags,
@@ -147,7 +147,6 @@ const FeaturedArticle = ({
   image
 }: {
   title: string;
-  excerpt: string;
   date: string;
   readingTime: string;
   tags: string[];
@@ -211,7 +210,7 @@ const FeaturedArticle = ({
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
                 {date}
               </span>
-              <span className="text-white/30">•</span>
+              <span className="text-white/30" aria-hidden="true">•</span>
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
                 {readingTime}
               </span>
@@ -223,55 +222,20 @@ const FeaturedArticle = ({
   );
 };
 
-const insights = [
-  {
-    title: "How to Build a DeFi Dashboard with Next.js 14",
-    excerpt: "A complete guide to building a real-time DeFi dashboard using Next.js 14 App Router, The Graph, and Wagmi.",
-    date: "Mar 2026",
-    readingTime: "8 min read",
-    tags: ["Web3", "Next.js", "Tutorial"],
-    href: "/insights/defi-dashboard-nextjs",
-    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop",
-    featured: true,
-  },
-  {
-    title: "MetaMask Integration in React",
-    excerpt: "Everything you need to know about connecting wallets to your React application.",
-    date: "Feb 2026",
-    readingTime: "12 min read",
-    tags: ["Web3", "React"],
-    href: "/insights/metamask-react",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=600&auto=format&fit=crop",
-    featured: false,
-  },
-  {
-    title: "Web3 UX Patterns That Work",
-    excerpt: "After building dozens of dApps, these are the interface patterns that improve onboarding.",
-    date: "Feb 2026",
-    readingTime: "6 min read",
-    tags: ["UX", "Web3"],
-    href: "/insights/web3-ux-patterns",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-    featured: false,
-  },
-  {
-    title: "Why We Switched to Viem",
-    excerpt: "A practical look at migrating our Web3 stack from Web3.js to Viem.",
-    date: "Jan 2026",
-    readingTime: "10 min read",
-    tags: ["Web3", "Viem"],
-    href: "/insights/viem-migration",
-    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=600&auto=format&fit=crop",
-    featured: false,
-  },
-];
+const insights = insightArticles.filter((a) =>
+  ["ai-native-boutique-studios", "design-system-guide", "frontend-ux-conversion", "hidden-cost-web-dev-nigeria"].includes(
+    a.href.replace("/insights/", "")
+  )
+).map(a => ({
+  ...a,
+  image: a.imageSrc,
+}));
 
 const InsightsSection = () => {
   const featuredArticle = insights.find((i) => i.featured);
   const regularArticles = insights.filter((i) => !i.featured);
-
   return (
-    <section className="py-32 px-10 relative overflow-hidden">
+    <section aria-labelledby="insights-heading" className="py-32 px-10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent" />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -283,20 +247,20 @@ const InsightsSection = () => {
           className="mb-20 flex items-end justify-between"
         >
           <div>
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 block mb-4">
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/50 block mb-4">
               From the Studio
             </span>
-            <h2 className="font-display font-bold text-5xl md:text-7xl tracking-tight uppercase">
+            <h2 id="insights-heading" className="font-display font-bold text-5xl md:text-7xl tracking-tight uppercase">
               Insights
             </h2>
           </div>
           
           <Link
             href="/insights"
-            className="hidden md:flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors group"
+            className="hidden md:flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors group focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
           >
             Read All Articles
-            <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
+            <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" aria-hidden="true" />
           </Link>
         </motion.div>
 
@@ -320,10 +284,10 @@ const InsightsSection = () => {
         >
           <Link
             href="/insights"
-            className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
           >
             Read All Articles
-            <ArrowRight size={14} />
+            <ArrowRight size={14} aria-hidden="true" />
           </Link>
         </motion.div>
       </div>

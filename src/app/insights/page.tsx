@@ -1,17 +1,18 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import InsightsPageClient from "./InsightsPageClient";
 
 export const metadata: Metadata = {
-  title: "Insights",
+  title: "Insights: Web Dev, AI Agents & Automation Articles",
   description:
-    "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
+    "Technical articles and thought leadership on website development, AI bots and agents, workflow automation, frontend engineering, and SaaS architecture, written by the team at SLIIQQUE Studio.",
+  alternates: {
+    canonical: "https://sliiqque.space/insights",
+  },
   openGraph: {
-    title: "Insights | SLIIQQUE",
+    title: "Insights: Web Dev, AI Agents & Automation Articles | SLIIQQUE",
     description:
-      "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
+      "Technical articles and thought leadership on website development, AI bots and agents, workflow automation, frontend engineering, and SaaS architecture, written by the team at SLIIQQUE Studio.",
     images: [
       {
         url: "https://sliiqque.space/og-image.png",
@@ -23,20 +24,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Insights | SLIIQQUE",
+    title: "Insights: Web Dev, AI Agents & Automation | SLIIQQUE",
     description:
-      "Technical articles, Web3 perspectives, and studio thinking from SLIIQQUE.",
+      "Technical articles on web development, AI agents, automation, and frontend engineering from the SLIIQQUE team.",
     images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
 export default function InsightsPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <InsightsPageClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

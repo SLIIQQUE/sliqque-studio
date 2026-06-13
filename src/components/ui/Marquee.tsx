@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { 
   Zap, 
   Code2, 
@@ -27,17 +27,30 @@ const icons = [
   { Icon: Database, color: "text-teal-500" },
 ];
 
+function useReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return reduced;
+}
+
 const Marquee = ({ speed = 40, className = "" }: { speed?: number; className?: string }) => {
+  const reducedMotion = useReducedMotion();
   const items = [
-    "Web3 Native",
     "React",
     "Next.js",
     "TypeScript",
-    "Built for Performance",
-    "Shipped in Weeks",
+    "AI Agents",
+    "Workflow Automation",
+    "Bot Development",
     "Craft-Led Engineering",
     "Lagos to the World",
-    "Solidity",
+    "Website Design",
     "SaaS Frontend",
   ];
 
@@ -46,12 +59,12 @@ const Marquee = ({ speed = 40, className = "" }: { speed?: number; className?: s
       <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
       
       <div
-        className="flex items-center py-8 animate-marquee"
-        style={{ "--marquee-duration": `${speed}s` } as React.CSSProperties}
+        className={`flex items-center py-8 ${reducedMotion ? "" : "animate-marquee"}`}
+        style={reducedMotion ? undefined : { "--marquee-duration": `${speed}s` } as React.CSSProperties}
       >
         {[...items, ...items].map((item, i) => (
           <div key={i} className="flex items-center gap-6 mx-8 whitespace-nowrap group">
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white group-hover:scale-110 transition-all duration-200">
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 group-hover:text-white group-hover:scale-110 transition-all duration-200">
               {item}
             </span>
             <div className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-blue-500 animate-spin-slow" />
@@ -63,15 +76,16 @@ const Marquee = ({ speed = 40, className = "" }: { speed?: number; className?: s
 };
 
 const IconMarquee = () => {
+  const reducedMotion = useReducedMotion();
   return (
     <div className="py-16 border-b border-white/5 overflow-hidden">
-      <div className="flex items-center justify-center gap-8 animate-marquee" style={{ "--marquee-duration": "30s" } as React.CSSProperties}>
+      <div className={`flex items-center justify-center gap-8 ${reducedMotion ? "" : "animate-marquee"}`} style={reducedMotion ? undefined : { "--marquee-duration": "30s" } as React.CSSProperties}>
         {[...icons, ...icons].map(({ Icon, color }, i) => (
           <div
             key={i}
-            className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group cursor-pointer hover:scale-130 hover:rotate-10 transition-all duration-200"
+            className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group hover:scale-130 hover:rotate-10 transition-all duration-200"
           >
-            <Icon className={`w-8 h-8 ${color} group-hover:text-white transition-colors`} />
+            <Icon className={`w-8 h-8 ${color} group-hover:text-white transition-colors`} aria-hidden="true" />
           </div>
         ))}
       </div>
@@ -80,6 +94,7 @@ const IconMarquee = () => {
 };
 
 const TechStackMarquee = () => {
+  const reducedMotion = useReducedMotion();
   const techStack = [
     { name: "React", level: 98 },
     { name: "Next.js", level: 95 },
@@ -93,11 +108,11 @@ const TechStackMarquee = () => {
 
   return (
     <div className="py-12 overflow-hidden">
-      <div className="flex items-center gap-6 animate-marquee" style={{ "--marquee-duration": "40s" } as React.CSSProperties}>
+      <div className={`flex items-center gap-6 ${reducedMotion ? "" : "animate-marquee"}`} style={reducedMotion ? undefined : { "--marquee-duration": "40s" } as React.CSSProperties}>
         {[...techStack, ...techStack].map((tech, i) => (
           <div
             key={i}
-            className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-full whitespace-nowrap cursor-pointer hover:scale-105 hover:-translate-y-1 transition-all duration-200"
+            className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-full whitespace-nowrap hover:scale-105 hover:-translate-y-1 transition-all duration-200"
           >
             <div className="relative w-10 h-10 rounded-full bg-white/10 flex items-center justify-center overflow-hidden group-hover:opacity-30 transition-opacity">
               <span className="text-sm font-bold">{tech.name.charAt(0)}</span>
@@ -111,7 +126,7 @@ const TechStackMarquee = () => {
                     style={{ width: `${tech.level}%` }}
                   />
                 </div>
-                <span className="text-[10px] text-white/30">{tech.level}%</span>
+                <span className="text-[10px] text-white/55">{tech.level}%</span>
               </div>
             </div>
           </div>
@@ -122,24 +137,25 @@ const TechStackMarquee = () => {
 };
 
 const ProjectTypeMarquee = () => {
+  const reducedMotion = useReducedMotion();
   const projectTypes = [
-    { type: "DeFi Dashboard", icon: "📊" },
-    { type: "NFT Platform", icon: "🎨" },
-    { type: "SaaS Product", icon: "🚀" },
-    { type: "DAO Interface", icon: "🏛️" },
-    { type: "Trading Platform", icon: "📈" },
-    { type: "Social dApp", icon: "💬" },
+    { type: "Business Website", icon: "🌐" },
+    { type: "SaaS Platform", icon: "🚀" },
+    { type: "Dashboard UI", icon: "📊" },
+    { type: "Design System", icon: "🎨" },
+    { type: "Voice AI Bot", icon: "🎙️" },
+    { type: "Landing Page", icon: "💻" },
   ];
 
   return (
     <div className="py-12 border-y border-white/5 overflow-hidden">
-      <div className="flex items-center gap-4 animate-marquee" style={{ "--marquee-duration": "25s" } as React.CSSProperties}>
+      <div className={`flex items-center gap-4 ${reducedMotion ? "" : "animate-marquee"}`} style={reducedMotion ? undefined : { "--marquee-duration": "25s" } as React.CSSProperties}>
         {[...projectTypes, ...projectTypes].map((project, i) => (
           <div
             key={i}
             className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl whitespace-nowrap hover:scale-105 transition-all duration-200"
           >
-            <span className="text-2xl">{project.icon}</span>
+            <span className="text-2xl" aria-hidden="true">{project.icon}</span>
             <span className="text-sm font-body font-medium">{project.type}</span>
           </div>
         ))}

@@ -1,44 +1,43 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import ArticleClient from "./ArticleClient";
 
 export const metadata: Metadata = {
   title: "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms",
   description:
-    "Why AI-native founders are ditching Upwork and Fiverr for boutique software studios — and what that means for your next build.",
+    "AI-native founders are leaving freelance platforms for boutique studios and getting higher quality, real accountability, and long-term value for their builds.",
   openGraph: {
+    type: "article",
     title:
       "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms | SLIIQQUE",
     description:
-      "Why AI-native founders are ditching Upwork and Fiverr for boutique software studios — and what that means for your next build.",
+      "AI-native founders are leaving freelance platforms for boutique studios and getting higher quality, real accountability, and long-term value for their builds.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "https://sliiqque.space/images/insights/ai-boutique.jpg",
+        width: 1920,
+        height: 1280,
         alt: "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms",
       },
     ],
+  },
+  alternates: {
+    canonical: "https://sliiqque.space/insights/ai-native-boutique-studios",
   },
   twitter: {
     card: "summary_large_image",
     title:
       "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms | SLIIQQUE",
     description:
-      "Why AI-native founders are ditching Upwork and Fiverr for boutique software studios — and what that means for your next build.",
-    images: ["https://sliiqque.space/og-image.png"],
+      "Why AI-native founders are ditching Upwork and Fiverr for boutique software studios, and what that means for your next build.",
+    images: ["https://sliiqque.space/images/insights/ai-boutique.jpg"],
   },
 };
 
 export default function ArticlePage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <ArticleClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

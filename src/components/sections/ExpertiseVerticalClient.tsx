@@ -6,6 +6,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+interface RelatedProject {
+  title: string;
+  description: string;
+  href: string;
+  imageSrc: string;
+}
+
 interface ExpertiseVerticalClientProps {
   title: string;
   subtitle: string;
@@ -13,7 +20,23 @@ interface ExpertiseVerticalClientProps {
   stack: string[];
   services: string[];
   cta: string;
+  relatedProjects?: RelatedProject[];
 }
+
+const defaultRelatedProjects: RelatedProject[] = [
+  {
+    title: "BizEdge",
+    description: "11-module HRMS, Payroll & Productivity suite — 2,000+ businesses across Africa and Europe",
+    href: "/work/bizedge",
+    imageSrc: "/images/bizedge-screenshot.jpg",
+          },
+          {
+            title: "Project Name",
+            description: "Brief description of the related project goes here.",
+            href: "/work/project",
+            imageSrc: "/images/lumia-screenshot.jpg",
+  },
+];
 
 export default function ExpertiseVerticalClient({
   title,
@@ -22,6 +45,7 @@ export default function ExpertiseVerticalClient({
   stack,
   services,
   cta,
+  relatedProjects = defaultRelatedProjects,
 }: ExpertiseVerticalClientProps) {
   return (
     <div className="pt-[100px]">
@@ -131,11 +155,12 @@ export default function ExpertiseVerticalClient({
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <Link href="/work/meridian" className="group block">
+            {relatedProjects.map((project) => (
+              <Link key={project.title} href={project.href} className="group block">
                 <div className="aspect-video bg-white/5 rounded-[2px] overflow-hidden mb-4">
                   <Image
-                    src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=800&auto=format&fit=crop"
-                    alt="Meridian Finance"
+                    src={project.imageSrc}
+                    alt={project.title}
                     width={800}
                     height={450}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]"
@@ -143,13 +168,14 @@ export default function ExpertiseVerticalClient({
                     loading="lazy"
                   />
                 </div>
-              <h3 className="font-display font-bold text-xl tracking-tight uppercase">
-                Meridian Finance
-              </h3>
-              <p className="text-sm font-body text-white/60 mt-2">
-                Multi-chain DeFi analytics dashboard
-              </p>
-            </Link>
+                <h3 className="font-display font-bold text-xl tracking-tight uppercase">
+                  {project.title}
+                </h3>
+                <p className="text-sm font-body text-white/60 mt-2">
+                  {project.description}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -166,9 +192,9 @@ export default function ExpertiseVerticalClient({
             </h2>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors"
+              className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
-              Let's Talk
+              Let&apos;s Talk
               <ArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform"

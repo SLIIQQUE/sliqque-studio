@@ -17,6 +17,18 @@ body {
   scroll-padding-top: 80px;
 }
 
+/*
+ * Reduced motion — respects OS-level accessibility setting.
+ *
+ * This media query disables ALL CSS animations and transitions for users
+ * who prefer reduced motion. For framer-motion JS animations, the
+ * `MotionConfig reducedMotion="user"` in layout.tsx handles this.
+ *
+ * ⚠ If adding new animations, ensure they only animate `transform` and
+ *   `opacity` (compositor-only properties). Avoid animating `width`,
+ *   `height`, `margin`, `padding`, `top`, `left`, etc. which trigger
+ *   layout recalculations.
+ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -65,6 +77,21 @@ body {
   }
 }
 
+/*
+ * CSS Animation Performance Notes
+ * ================================
+ * All keyframes below animate ONLY `transform` and `opacity`, which are
+ * compositor-only properties. They NEVER trigger layout or paint.
+ *
+ * Elements using these animations should have `will-change: transform` or
+ * `will-change-transform` (Tailwind utility) applied to hint GPU compositing
+ * and avoid layer creation jank.
+ *
+ * Tailwind utility reference:
+ *   `will-change-transform` → `will-change: transform`
+ *   `will-change-opacity`   → `will-change: opacity`
+ */
+
 @keyframes float {
   0%, 100% {
     transform: translate(0, 0) scale(1);
@@ -103,6 +130,12 @@ body {
   }
 }
 
+/*
+ * Utility classes for CSS animations.
+ * These classes also serve as attach points for `will-change` where needed.
+ * For JS-driven animations (framer-motion), apply `will-change-transform`
+ * or `will-change-opacity` directly in the component className.
+ */
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }

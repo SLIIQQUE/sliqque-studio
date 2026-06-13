@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Mail, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 interface FooterProps {
   brandMark?: string;
@@ -45,7 +45,7 @@ const Footer = ({
         viewport={{ once: true }}
         className="relative z-10 text-center mb-20"
       >
-        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 block mb-8">
+        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 block mb-8">
           Ready to build?
         </span>
         
@@ -90,7 +90,7 @@ const Footer = ({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-8 text-base font-body text-white/40 max-w-md mx-auto"
+          className="mt-8 text-base font-body text-white/50 max-w-md mx-auto"
         >
           We take on 2–3 new projects per quarter. Let&apos;s see if we&apos;re a fit.
         </motion.p>
@@ -106,13 +106,13 @@ const Footer = ({
           <div className="flex gap-8">
             <Link
               href="/privacy"
-              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 hover:text-white/60 transition-colors"
+              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 hover:text-white/60 transition-colors"
+              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
               Terms
             </Link>
@@ -133,20 +133,22 @@ const Footer = ({
       >
         <Link
           href="#top"
-          className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
         >
           Back to top
           <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="w-4 h-4" aria-hidden="true" />
           </motion.div>
         </Link>
       </motion.div>
 
-      <span className="absolute bottom-[-15%] font-display font-bold text-[25vw] uppercase tracking-tighter opacity-[0.02] select-none pointer-events-none whitespace-nowrap">
-        {brandMark}
+      <span className="absolute bottom-0 inset-x-0 flex justify-center pointer-events-none select-none">
+        <span className="font-display font-bold text-[clamp(3.5rem,19.5vw,25vw)] uppercase tracking-tighter opacity-[0.025] leading-none">
+          {brandMark}
+        </span>
       </span>
     </footer>
   );

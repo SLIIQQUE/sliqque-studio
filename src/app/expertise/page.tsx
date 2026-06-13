@@ -1,17 +1,18 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import ExpertisePageClient from "./ExpertisePageClient";
 
 export const metadata: Metadata = {
-  title: "Expertise",
+  title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",
   description:
-    "Deep expertise in DeFi interface development, NFT platform engineering, and SaaS frontend architecture.",
+    "We build full-stack SaaS platforms, FinTech payment infrastructure, fraud prevention systems, AI bots, and interactive frontends. Backed by shipped products: BizEdge HRMS, Lumia payments, ZINID fraud prevention, Mo Touch interactive portfolio.",
+  alternates: {
+    canonical: "https://sliiqque.space/expertise",
+  },
   openGraph: {
-    title: "Expertise | SLIIQQUE",
+    title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",
     description:
-      "Deep expertise in DeFi interface development, NFT platform engineering, and SaaS frontend architecture.",
+      "We build full-stack React/Next.js platforms, FinTech payment infrastructure, AI bots, and interactive frontends. Backed by shipped products serving real users.",
     images: [
       {
         url: "https://sliiqque.space/og-image.png",
@@ -23,20 +24,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Expertise | SLIIQQUE",
+    title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",
     description:
-      "Deep expertise in DeFi interface development, NFT platform engineering, and SaaS frontend architecture.",
+      "Full-stack platforms, FinTech systems, AI bots, and interactive frontends shipped by SLIIQQUE.",
     images: ["https://sliiqque.space/og-image.png"],
   },
 };
 
 export default function ExpertisePage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <ExpertisePageClient />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

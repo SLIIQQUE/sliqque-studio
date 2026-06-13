@@ -1,6 +1,17 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ *
+ * Performance tooling notes:
+ * - To analyze bundle sizes, install `@next/bundle-analyzer` and wrap:
+ *     const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: process.env.ANALYZE === 'true' });
+ *     export default withBundleAnalyzer(nextConfig);
+ * - Run: ANALYZE=true npm run build
+ */
 const nextConfig = {
   trailingSlash: true,
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
@@ -51,6 +62,15 @@ const nextConfig = {
           {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

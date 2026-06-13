@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -36,6 +36,9 @@ const Navigation = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuToggleRef = useRef<HTMLButtonElement>(null);
+  const firstFocusableRef = useRef<HTMLAnchorElement>(null);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -53,10 +56,55 @@ const Navigation = ({
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
+      // Focus the first menu item when menu opens
+      setTimeout(() => {
+        firstFocusableRef.current?.focus();
+      }, 100);
     } else {
       document.body.style.overflow = "unset";
     }
   }, [isMobileMenuOpen]);
+
+  // Focus trap for mobile menu
+  const getFocusableElements = useCallback((container: HTMLElement): HTMLElement[] => {
+    const selectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    return Array.from(container.querySelectorAll<HTMLElement>(selectors));
+  }, []);
+
+  const handleMenuKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!isMobileMenuOpen || !mobileMenuRef.current) return;
+
+    if (e.key === "Escape") {
+      setIsMobileMenuOpen(false);
+      mobileMenuToggleRef.current?.focus();
+      return;
+    }
+
+    if (e.key === "Tab") {
+      const focusableElements = getFocusableElements(mobileMenuRef.current);
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+  }, [isMobileMenuOpen, getFocusableElements]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleMenuKeyDown);
+    return () => document.removeEventListener("keydown", handleMenuKeyDown);
+  }, [handleMenuKeyDown]);
 
   return (
     <>
@@ -88,7 +136,8 @@ const Navigation = ({
                 >
                   <Link
                     href={link.href}
-                    className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-colors ${
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none ${
                       isActive(link.href)
                         ? "text-white"
                         : "text-white/60 hover:text-white"
@@ -114,7 +163,7 @@ const Navigation = ({
           <div className="hidden lg:flex items-center gap-6">
             <Link
               href={contactHref}
-              className="group relative px-6 py-3 border border-white/20 rounded-full overflow-hidden"
+              className="group relative px-6 py-3 border border-white/20 rounded-full overflow-hidden focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
               <motion.div
                 className="absolute inset-0 bg-white"
@@ -129,9 +178,10 @@ const Navigation = ({
           </div>
 
           <motion.button
+            ref={mobileMenuToggleRef}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center"
+            className="lg:hidden relative z-50 w-12 h-12 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             <AnimatePresence mode="wait">
@@ -143,7 +193,7 @@ const Navigation = ({
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X className="w-6 h-6 text-white" />
+                  <X className="w-6 h-6 text-white" aria-hidden="true" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -153,7 +203,7 @@ const Navigation = ({
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className="w-6 h-6 text-white" />
+                  <Menu className="w-6 h-6 text-white" aria-hidden="true" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -164,6 +214,10 @@ const Navigation = ({
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            ref={mobileMenuRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -186,9 +240,11 @@ const Navigation = ({
                     transition={{ delay: i * 0.1 }}
                   >
                     <Link
+                      ref={i === 0 ? firstFocusableRef : undefined}
                       href={link.href}
+                      aria-current={isActive(link.href) ? "page" : undefined}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="group flex items-center justify-between"
+                      className="group flex items-center justify-between focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
                     >
                       <span
                         className={`font-display font-bold text-4xl md:text-5xl tracking-tight uppercase transition-colors ${
@@ -200,6 +256,7 @@ const Navigation = ({
                         {link.label}
                       </span>
                       <ArrowRight
+                        aria-hidden="true"
                         className={`w-6 h-6 transition-all ${
                           isActive(link.href)
                             ? "text-orange-500 translate-x-2"
@@ -220,10 +277,10 @@ const Navigation = ({
                 <Link
                   href={contactHref}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em]"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
                 >
                   {contactLabel}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" aria-hidden="true" />
                 </Link>
               </motion.div>
             </motion.div>

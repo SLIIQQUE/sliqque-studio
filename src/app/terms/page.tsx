@@ -1,28 +1,28 @@
 import { Metadata } from "next";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
-import LightLeaks from "@/components/ui/LightLeaks";
+import { PageLayout } from "@/components/layout/PageLayout";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Terms of service for SLIIQQUE Studio.",
+  title: "Terms of Service | SLIIQQUE Studio",
+  description:
+    "SLIIQQUE Studio's terms of service outline the conditions for using our website, engaging our services, and the legal agreements that govern our client relationships and project delivery.",
+  alternates: {
+    canonical: "https://sliiqque.space/terms",
+  },
 };
 
 export default function TermsPage() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <LightLeaks />
+    <PageLayout>
       <div className="pt-[100px]">
         <section className="py-20 px-10 border-b border-white/5">
           <div className="max-w-3xl mx-auto">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-12"
+              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-12 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
             >
-              <ArrowLeft size={12} />
+              <ArrowLeft size={12} aria-hidden="true" />
               Back to Home
             </Link>
             <h1 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-8">
@@ -63,7 +63,7 @@ export default function TermsPage() {
               If you have any questions about these Terms, please contact us at{" "}
               <a
                 href="mailto:hello@sliiqque.space"
-                className="text-white hover:underline"
+                className="text-white underline underline-offset-2 hover:no-underline"
               >
                 hello@sliiqque.space
               </a>
@@ -72,7 +72,6 @@ export default function TermsPage() {
           </div>
         </section>
       </div>
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }

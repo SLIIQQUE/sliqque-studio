@@ -34,6 +34,7 @@ export function InteractiveTitle({
               style={{ color: COLORS[i % COLORS.length] }}
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
+              whileFocus={{ opacity: 1 }}
               transition={{ duration: 0.15 }}
             >
               {char === " " ? "\u00A0" : char}

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { InteractiveTitle } from "./InteractiveTitle";
 
@@ -39,19 +39,9 @@ export function ProjectCard({
   bgColor = "#0a0a0a"
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-  
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [2, -2]);
-  const isLogo = !!logoSrc;
 
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -60,13 +50,20 @@ export function ProjectCard({
       onMouseLeave={() => setIsHovered(false)}
       className="group"
     >
-      <motion.div
-        style={{ y, rotate }}
-        className="relative"
-      >
-        <Link href={href} className="block">
-          <div className="relative overflow-hidden rounded-3xl aspect-[4/3]">
-            {isLogo ? (
+      <div className="relative">
+        <Link href={href} className="block focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none rounded-2xl">
+          <div className="relative overflow-hidden rounded-2xl aspect-[8/5]">
+            {imageSrc ? (
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                width={1280}
+                height={800}
+                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
+              />
+            ) : logoSrc ? (
               <div
                 className="w-full h-full flex items-center justify-center p-8 transition-all duration-700 ease-out group-hover:scale-105"
                 style={{ backgroundColor: bgColor }}
@@ -81,16 +78,6 @@ export function ProjectCard({
                   loading="lazy"
                 />
               </div>
-            ) : imageSrc ? (
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                width={1200}
-                height={900}
-                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                loading="lazy"
-              />
             ) : (
               <div
                 className="w-full h-full flex items-center justify-center overflow-hidden transition-all duration-700 ease-out group-hover:scale-105"
@@ -125,7 +112,7 @@ export function ProjectCard({
                   className="absolute inset-0 flex items-center justify-center"
                 >
                   <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                    <ArrowUpRight className="w-8 h-8 text-white" />
+                    <ArrowUpRight className="w-8 h-8 text-white" aria-hidden="true" />
                   </div>
                 </motion.div>
               )}
@@ -143,38 +130,38 @@ export function ProjectCard({
 
           <div className="mt-6">
             <div className="flex items-start justify-between mb-3">
-              <motion.h3
+              <motion.h2
                 animate={isHovered ? { x: 5 } : {}}
                 className="font-display font-bold text-2xl md:text-3xl tracking-tight uppercase"
               >
                 {title}
-              </motion.h3>
+              </motion.h2>
               <motion.div
                 animate={{ x: isHovered ? 0 : -10, opacity: isHovered ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronRight className="w-6 h-6 text-white/30" />
+                <ChevronRight className="w-6 h-6 text-white/30" aria-hidden="true" />
               </motion.div>
             </div>
 
             <div className="flex items-center gap-3 mb-4">
               {year && (
-                <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/30">
+                <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/55">
                   {year}
                 </span>
               )}
               {clientType && (
                 <>
                   <span className="text-white/20 text-[10px]">•</span>
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/30">
+                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/55">
                     {clientType}
                   </span>
                 </>
               )}
               {engagementType && (
                 <>
-                  <span className="text-white/20 text-[10px]">•</span>
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/30">
+                  <span className="text-white/20 text-[10px]" aria-hidden="true">•</span>
+                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/55">
                     {engagementType}
                   </span>
                 </>
@@ -193,7 +180,7 @@ export function ProjectCard({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/30 border border-white/10 px-3 py-1.5 rounded-full"
+                  className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/55 border border-white/10 px-3 py-1.5 rounded-full"
                 >
                   {tag}
                 </motion.span>
@@ -201,7 +188,7 @@ export function ProjectCard({
             </div>
           </div>
         </Link>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }
