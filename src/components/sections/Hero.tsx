@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValue,
+} from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 
@@ -19,10 +25,26 @@ interface HeroProps {
  * - `will-change: transform` promotes GPU layer.
  * - Respects `prefers-reduced-motion` via CSS `@media` query in globals.css.
  */
-const FloatingShape = ({ delay, x, y, size }: { delay: number; x: string; y: string; size: string }) => (
+const FloatingShape = ({
+  delay,
+  x,
+  y,
+  size,
+}: {
+  delay: number;
+  x: string;
+  y: string;
+  size: string;
+}) => (
   <div
     className="absolute rounded-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm animate-float will-change-transform"
-    style={{ width: size, height: size, left: x, top: y, animationDelay: `${delay}s` }}
+    style={{
+      width: size,
+      height: size,
+      left: x,
+      top: y,
+      animationDelay: `${delay}s`,
+    }}
   />
 );
 
@@ -34,14 +56,31 @@ const FloatingShape = ({ delay, x, y, size }: { delay: number; x: string; y: str
  * - `blur-[120px]` is expensive; kept to low opacity (0.3) to reduce GPU cost.
  * - Respects prefers-reduced-motion via CSS.
  */
-const GradientOrb = ({ color, size, x, y }: { color: string; size: string; x: string; y: string }) => (
+const GradientOrb = ({
+  color,
+  size,
+  x,
+  y,
+}: {
+  color: string;
+  size: string;
+  x: string;
+  y: string;
+}) => (
   <div
     className="absolute rounded-full blur-[120px] opacity-30 animate-pulse-slow will-change-transform"
     style={{ width: size, height: size, background: color, left: x, top: y }}
   />
 );
 
-const ITEMS = ["React", "Next.js", "TypeScript", "AI Agents", "Bot APIs", "Automation"];
+const ITEMS = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "AI Agents",
+  "Bot APIs",
+  "Automation",
+];
 
 const Hero = ({
   title = "SLIIQQUE",
@@ -84,9 +123,17 @@ const Hero = ({
   }, [mouseX, mouseY]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen overflow-hidden" aria-label="Hero">
+    <section
+      ref={containerRef}
+      className="relative min-h-screen overflow-hidden"
+      aria-label="Hero"
+    >
       <motion.div
-        style={{ y: smoothY, opacity: smoothOpacity, willChange: "transform, opacity" }}
+        style={{
+          y: smoothY,
+          opacity: smoothOpacity,
+          willChange: "transform, opacity",
+        }}
         className="sticky top-0 h-screen flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-zinc-900" />
@@ -99,7 +146,7 @@ const Hero = ({
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
+            backgroundSize: "40px 40px",
           }}
         />
 
@@ -139,26 +186,31 @@ const Hero = ({
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               />
-              <motion.div style={{ scale: smoothScale }} className="relative inline-block">
-                <h1
-                  className="relative font-display font-bold text-[12vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase"
-                >
-                  {title.split('').map((char, i) => (
+              <motion.div
+                style={{ scale: smoothScale }}
+                className="relative inline-block"
+              >
+                <h1 className="relative font-display font-bold text-[12vw] md:text-[10vw] leading-[0.8] tracking-tighter uppercase">
+                  {title.split("").map((char, i) => (
                     <span
                       key={i}
                       className="inline-block relative cursor-pointer"
                     >
                       <span className="relative z-10 text-white transition-colors duration-200">
-                        {char === ' ' ? '\u00A0' : char}
+                        {char === " " ? "\u00A0" : char}
                       </span>
                       <motion.span
                         className="absolute inset-0 z-20"
-                        style={{ color: ['#f97316', '#3b82f6', '#8b5cf6', '#ffffff'][i % 4] }}
+                        style={{
+                          color: ["#f97316", "#3b82f6", "#8b5cf6", "#ffffff"][
+                            i % 4
+                          ],
+                        }}
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.15 }}
                       >
-                        {char === ' ' ? '\u00A0' : char}
+                        {char === " " ? "\u00A0" : char}
                       </motion.span>
                     </span>
                   ))}
@@ -171,7 +223,7 @@ const Hero = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-12"
+            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-md md:max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-12"
           >
             {subtitle}
           </motion.p>
