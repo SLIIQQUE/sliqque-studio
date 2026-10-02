@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "A practical look at building production-grade animations with Framer Motion, from micro-interactions and gesture UI to page transitions and layout animations.",
   alternates: {
-    canonical: "https://sliiqque.space/insights/framer-motion-guide",
+    canonical: "https://sliiqque.space/insights/framer-motion-guide/",
   },
   openGraph: {
     type: "article",

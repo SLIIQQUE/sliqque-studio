@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/insights/hidden-cost-web-dev-nigeria",
+    canonical: "https://sliiqque.space/insights/hidden-cost-web-dev-nigeria/",
   },
   twitter: {
     card: "summary_large_image",

@@ -4,11 +4,11 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | How We Handle Your Data",
+  title: "Privacy Policy",
   description:
-    "SLIIQQUE Studio's privacy policy explains how we collect, use, store, and protect your personal information when you visit our website or use our services. Your privacy matters to us.",
+    "How SLIIQQUE Studio collects, uses, stores and protects your personal information when you visit our website or use our services.",
   alternates: {
-    canonical: "https://sliiqque.space/privacy",
+    canonical: "https://sliiqque.space/privacy/",
   },
 };
 

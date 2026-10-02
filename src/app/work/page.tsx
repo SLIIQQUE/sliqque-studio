@@ -3,11 +3,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import WorkPageClient from "./WorkPageClient";
 
 export const metadata: Metadata = {
-  title: "Our Work | Websites, AI Bots & Automation Projects",
+  title: "Our Work: Websites, AI Bots & SaaS Projects",
   description:
-    "Browse our portfolio of websites, AI bots and agents, workflow automation systems, and SaaS platforms, each project built with craft, precision, and measurable impact for founders and businesses worldwide.",
+    "Selected projects from SLIIQQUE: BizEdge HRMS, SLIIQQUE Real Estate, Lumia payments, Mo Touch and ZINID fraud prevention.",
   alternates: {
-    canonical: "https://sliiqque.space/work",
+    canonical: "https://sliiqque.space/work/",
   },
   openGraph: {
     title: "Our Work | Websites, AI Bots & Automation Projects | SLIIQQUE",

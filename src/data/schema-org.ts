@@ -1,11 +1,27 @@
+import { faqs } from "./faq";
+import { projects } from "./projects";
+
 export const baseUrl = "https://sliiqque.space";
+
+const logo = {
+  "@type": "ImageObject",
+  "@id": baseUrl + "/#logo",
+  url: baseUrl + "/icon-192.png",
+  contentUrl: baseUrl + "/icon-192.png",
+  width: 192,
+  height: 192,
+};
+const sameAs = ["https://x.com/sliiqque"];
 
 export const organizationSchema = {
   "@type": "Organization",
   "@id": baseUrl + "/#organization",
   name: "SLIIQQUE",
   url: baseUrl + "/",
-  logo: { "@type": "ImageObject", url: baseUrl + "/logo.svg" },
+  logo,
+  image: baseUrl + "/og-image.png",
+  sameAs,
+  email: "hello@sliiqque.space",
   description: "Boutique software studio building websites, AI bots and agents, workflow automation, and SaaS platforms.",
   foundingDate: "2021",
   foundingLocation: { "@type": "City", name: "Lagos" },
@@ -28,7 +44,10 @@ export const localBusinessSchema = {
   name: "SLIIQQUE",
   description: "Boutique software studio in Lagos, Nigeria, specializing in websites, AI bots, and workflow automation",
   url: baseUrl + "/",
-  logo: { "@type": "ImageObject", url: baseUrl + "/logo.svg" },
+  logo,
+  image: baseUrl + "/og-image.png",
+  sameAs,
+  email: "hello@sliiqque.space",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Lagos",
@@ -49,15 +68,10 @@ export const webSiteSchema = {
   "@id": baseUrl + "/#website",
   url: baseUrl + "/",
   name: "SLIIQQUE",
+  inLanguage: "en",
   publisher: { "@id": baseUrl + "/#organization" },
 };
 
-const offering = (name: string, price: number, currency: string) => ({
-  "@type": "Offer",
-  itemOffered: { "@type": "Service", name },
-  price,
-  priceCurrency: currency,
-});
 
 const fixedOffer = (price: number, currency: string, description: string) => ({
   "@type": "Offer",
@@ -80,21 +94,13 @@ const service = (id: string, serviceType: string, name: string, description: str
 export const serviceSchemas = [
   service("/#service", "AI Bot & Agent Development", "AI Bot & Agent Development",
     "AI bots for WhatsApp, Telegram, and social platforms. AI agents embedded in websites for customer support, lead qualification, and booking automation.",
-    {
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Engineering Services",
-        itemListElement: [
-          offering("Product Build", 15000, "USD"),
-          offering("Interface Engineering", 1000, "USD"),
-        ],
-      },
-    }),
+    { url: baseUrl + "/services/", offers: fixedOffer(600, "USD", "Starting price") }),
   service("/#service-website", "Website Design", "Website Design & Development",
     "Professional, conversion-focused websites with workflow automation and AI bot integration for businesses ready to grow.",
     { offers: fixedOffer(300, "USD", "Starting price") }),
   service("/#service-saas", "SaaS Frontend Development", "SaaS Interface Engineering",
-    "High-performance React and Next.js interfaces for SaaS products with AI agent integration and workflow automation, built for conversion and scale."),
+    "High-performance React and Next.js interfaces for SaaS products with AI agent integration and workflow automation, built for conversion and scale.",
+    { offers: fixedOffer(1000, "USD", "Starting price") }),
   service("/#service-automation", "Workflow Automation", "Workflow Automation Systems",
     "End-to-end workflow automation connecting websites, bots, and backend systems, reducing manual work and increasing operational efficiency."),
   service("/#service-retainer", "Studio Retainer", "Studio Retainer",
@@ -161,3 +167,63 @@ export const articleSchemas = [
     "Step-by-step guide to implementing role-based access control in your Next.js application using middleware, session-based auth, and composable protection patterns.",
     "2026-01-05", "2026-03-21"),
 ];
+
+const faqSchema = {
+  "@type": "FAQPage",
+  "@id": baseUrl + "/services/#faq",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
+const projectSchema = (p: (typeof projects)[number]) => ({
+  "@type": "CreativeWork",
+  "@id": baseUrl + p.href + "/#project",
+  name: p.title,
+  headline: p.title,
+  description: p.description,
+  url: baseUrl + p.href + "/",
+  image: p.imageSrc ? baseUrl + p.imageSrc : undefined,
+  dateCreated: p.year,
+  genre: p.clientType,
+  keywords: p.tags.join(", "),
+  creator: { "@id": baseUrl + "/#organization" },
+  publisher: { "@id": baseUrl + "/#organization" },
+});
+
+const workListSchema = {
+  "@type": "ItemList",
+  "@id": baseUrl + "/work/#list",
+  itemListElement: projects.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: baseUrl + p.href + "/",
+    name: p.title,
+  })),
+};
+
+const norm = (pathname: string) => pathname.replace(/\/?$/, "/");
+
+/** Schema nodes that belong to one page only; the site-wide graph lives in SchemaOrg. */
+export function pageSchemas(pathname: string) {
+  const path = norm(pathname);
+  const nodes: Record<string, unknown>[] = [];
+  nodes.push({ "@type": "WebPage", "@id": baseUrl + path + "#webpage", url: baseUrl + path, isPartOf: { "@id": baseUrl + "/#website" }, about: { "@id": baseUrl + "/#organization" } });
+  if (path === "/services/") nodes.push(faqSchema);
+  if (path === "/work/") nodes.push(workListSchema);
+  const project = projects.find((p) => path === p.href + "/");
+  if (project) nodes.push(projectSchema(project));
+  const post = articleSchemas.find((a) => a["@id"] === baseUrl + path + "#article");
+  if (post) nodes.push(post);
+  return nodes;
+}
+
+export function pageLabel(pathname: string, fallback: string) {
+  const path = norm(pathname);
+  const project = projects.find((p) => path === p.href + "/");
+  if (project) return project.title;
+  const post = articleSchemas.find((a) => a["@id"] === baseUrl + path + "#article");
+  return post ? post.headline : fallback;
+}

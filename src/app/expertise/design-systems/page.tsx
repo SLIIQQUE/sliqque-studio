@@ -5,9 +5,9 @@ import LightLeaks from "@/components/ui/LightLeaks";
 import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClient";
 
 export const metadata: Metadata = {
-  title: "AI Agents & Automation | Bots, Workflow Automation & Interactive Frontends | SLIIQQUE",
+  title: "AI Agents & Workflow Automation Development",
   description:
-    "AI bots for WhatsApp and Telegram, website-embedded AI agents for customer support and lead qualification, workflow automation systems, and interactive frontends with scroll-driven animations.",
+    "AI bots for WhatsApp and Telegram, website AI agents for support and lead qualification, workflow automation, and interactive frontends.",
   openGraph: {
     title: "AI Agents & Automation | Bots, Workflow Automation & Interactive Frontends | SLIIQQUE",
     description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/expertise/design-systems",
+    canonical: "https://sliiqque.space/expertise/design-systems/",
   },
   twitter: {
     card: "summary_large_image",

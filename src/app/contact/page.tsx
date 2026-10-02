@@ -3,11 +3,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact | Start Your Website, AI Bot or Automation Project",
+  title: "Start a Website, AI Bot or Automation Project",
   description:
-    "Ready to build something exceptional? Tell us about your website, AI bot, workflow automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
+    "Tell us about your website, AI bot, workflow automation or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
   alternates: {
-    canonical: "https://sliiqque.space/contact",
+    canonical: "https://sliiqque.space/contact/",
   },
   openGraph: {
     title: "Contact | Start Your Website, AI Bot or Automation Project | SLIIQQUE",

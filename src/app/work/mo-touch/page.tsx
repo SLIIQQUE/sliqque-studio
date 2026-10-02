@@ -3,9 +3,9 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import CaseStudyClient from "./CaseStudyClient";
 
 export const metadata: Metadata = {
-  title: "Mo Touch | Interactive Makeup Artist Portfolio",
+  title: "Mo Touch: Interactive Makeup Artist Portfolio",
   description:
-    "Premium interactive portfolio and digital experience for a makeup artist with immersive scroll-driven animations, touch-optimized interactions, and a digital-first showcase.",
+    "Case study: an immersive, scroll-driven portfolio for a makeup artist with touch-optimized interactions.",
   openGraph: {
     title: "Mo Touch Case Study | SLIIQQUE",
     description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/work/mo-touch",
+    canonical: "https://sliiqque.space/work/mo-touch/",
   },
   twitter: {
     card: "summary_large_image",

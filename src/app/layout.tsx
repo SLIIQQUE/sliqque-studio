@@ -25,7 +25,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sliiqque.space"),
   title: {
-    default: "SLIIQQUE | Website Development, AI Agents & Workflow Automation Studio",
+    default: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
     template: "%s | SLIIQQUE",
   },
   description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sliiqque.space",
     siteName: "SLIIQQUE",
-    title: "SLIIQQUE | Website Development, AI Agents & Workflow Automation Studio",
+    title: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
     description:
       "We build high-performance websites, AI bots and agents, workflow automation, and SaaS platforms, from concept to deployment.",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "https://sliiqque.space/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SLIIQQUE | Website Development, AI Agents & Workflow Automation Studio",
+        alt: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
       },
     ],
   },
@@ -65,12 +65,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sliiqque",
     creator: "@sliiqque",
-    title: "SLIIQQUE | Website Development, AI Agents & Workflow Automation Studio",
+    title: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
     description: "We build websites, AI bots, and workflow automation.",
     images: ["https://sliiqque.space/og-image.png"],
   },
   alternates: {
-    canonical: "https://sliiqque.space",
+    canonical: "https://sliiqque.space/",
   },
 };
 
@@ -92,6 +92,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
 
         <meta name="description" content="SLIIQQUE is a boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms. We help founders and businesses automate, engage, and grow." />
         <link rel="alternate" href="https://sliiqque.space" hrefLang="en" />

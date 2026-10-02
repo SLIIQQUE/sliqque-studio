@@ -3,9 +3,9 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import CaseStudyClient from "./CaseStudyClient";
 
 export const metadata: Metadata = {
-  title: "ZINID | Africa's Fraud Prevention Infrastructure",
+  title: "ZINID: Africa's Fraud Prevention Infrastructure",
   description:
-    "A case study on building Africa's shared fraud prevention platform with digital identity, real-time risk scoring, and cross-platform AML compliance for the Nigerian fintech ecosystem.",
+    "Case study: Africa's shared fraud prevention platform with digital identity, real-time risk scoring and AML compliance.",
   openGraph: {
     title: "ZINID Case Study | SLIIQQUE",
     description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/work/zinid",
+    canonical: "https://sliiqque.space/work/zinid/",
   },
   twitter: {
     card: "summary_large_image",

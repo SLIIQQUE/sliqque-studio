@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/insights/cra-to-nextjs-migration",
+    canonical: "https://sliiqque.space/insights/cra-to-nextjs-migration/",
   },
   twitter: {
     card: "summary_large_image",

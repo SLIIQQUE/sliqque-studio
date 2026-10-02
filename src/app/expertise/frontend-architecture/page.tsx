@@ -5,9 +5,9 @@ import LightLeaks from "@/components/ui/LightLeaks";
 import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClient";
 
 export const metadata: Metadata = {
-  title: "FinTech & RegTech Systems | Payment Infrastructure & Fraud Prevention | SLIIQQUE",
+  title: "FinTech & RegTech Systems Development",
   description:
-    "Payment infrastructure, multi-API integration, real-time transaction processing, and fraud prevention platforms built for the African market. We built Lumia (6 DisCo electricity payments) and ZINID (fraud prevention infrastructure).",
+    "Payment infrastructure, multi-API integration and fraud prevention platforms for Africa. We built Lumia (6 DisCos) and ZINID.",
   openGraph: {
     title: "FinTech & RegTech Systems | Payment Infrastructure & Fraud Prevention | SLIIQQUE",
     description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/expertise/frontend-architecture",
+    canonical: "https://sliiqque.space/expertise/frontend-architecture/",
   },
   twitter: {
     card: "summary_large_image",

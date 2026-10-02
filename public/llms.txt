@@ -1,0 +1,36 @@
+# SLIIQQUE
+
+> SLIIQQUE is a boutique software studio in Lagos, Nigeria, founded in 2021. It builds websites, AI bots and agents, workflow automation systems, and SaaS interfaces for founders and businesses worldwide. The studio takes on 2-3 new projects per quarter.
+
+Key facts:
+- Founder and lead engineer: Gabriel Njoabozia
+- Location: Lagos, Nigeria (clients worldwide)
+- Contact: hello@sliiqque.space
+- Stack: React, Next.js, TypeScript, Node.js, PostgreSQL
+
+## Services and pricing (USD, starting prices)
+- Website Design & Development: from $300
+- AI Bot & Agent Development (WhatsApp, Telegram, website AI agents): from $600
+- Interface Engineering (SaaS and business interfaces): from $1,000
+- Studio Retainer: from $2,500 per month, 40 hours per month
+- Technical Audit: fixed $800
+
+## Pages
+- [Home](https://sliiqque.space/): Studio overview, services, selected work
+- [Services](https://sliiqque.space/services/): Engagement types, process, FAQ
+- [Work](https://sliiqque.space/work/): Case studies
+- [Expertise](https://sliiqque.space/expertise/): SaaS, FinTech and RegTech, AI agents and automation
+- [Studio](https://sliiqque.space/studio/): About the founder and the studio
+- [Insights](https://sliiqque.space/insights/): Technical articles
+- [Contact](https://sliiqque.space/contact/): Start a project
+
+## Case studies
+- [BizEdge](https://sliiqque.space/work/bizedge/): 11-module HR, payroll and productivity suite
+- [SLIIQQUE Real Estate](https://sliiqque.space/work/real-estate/): Property website with a built-in CMS
+- [Lumia](https://sliiqque.space/work/lumia/): Nigerian electricity payment platform
+- [Mo Touch](https://sliiqque.space/work/mo-touch/): Interactive makeup artist portfolio
+- [ZINID](https://sliiqque.space/work/zinid/): Fraud prevention infrastructure for African fintech
+
+## Optional
+- [Full content for LLMs](https://sliiqque.space/llms-full.txt)
+- [Sitemap](https://sliiqque.space/sitemap.xml)

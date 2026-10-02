@@ -5,9 +5,9 @@ import StudioPageClient from "./StudioPageClient";
 export const metadata: Metadata = {
   title: "About SLIIQQUE | Website, AI & Automation Studio",
   description:
-    "SLIIQQUE is a Lagos-based boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms, founded by engineers who ship.",
+    "SLIIQQUE is a Lagos-based boutique studio building websites, AI bots and agents, workflow automation and SaaS platforms. Founded 2021.",
   alternates: {
-    canonical: "https://sliiqque.space/studio",
+    canonical: "https://sliiqque.space/studio/",
   },
   openGraph: {
     title: "About SLIIQQUE | Website, AI & Automation Studio | SLIIQQUE",

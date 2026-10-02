@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/insights/nextauth-authentication",
+    canonical: "https://sliiqque.space/insights/nextauth-authentication/",
   },
   twitter: {
     card: "summary_large_image",

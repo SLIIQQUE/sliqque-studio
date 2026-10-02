@@ -5,9 +5,9 @@ import LightLeaks from "@/components/ui/LightLeaks";
 import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClient";
 
 export const metadata: Metadata = {
-  title: "SaaS & Full-Stack Platform Engineering | SLIIQQUE",
+  title: "SaaS & Full-Stack Platform Engineering",
   description:
-    "Full-stack React and Next.js platforms with complex module architectures, payment integrations, real-time data processing, and mobile apps. We built BizEdge's 11-module HRMS serving 2,000+ businesses.",
+    "Full-stack React and Next.js platforms with complex modules, payments and mobile apps. We built BizEdge's 11-module HRMS for 2,000+ businesses.",
   openGraph: {
     title: "SaaS & Full-Stack Platform Engineering | SLIIQQUE",
     description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/expertise/saas",
+    canonical: "https://sliiqque.space/expertise/saas/",
   },
   twitter: {
     card: "summary_large_image",

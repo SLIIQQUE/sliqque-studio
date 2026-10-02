@@ -7,7 +7,8 @@ import {
   localBusinessSchema,
   webSiteSchema,
   serviceSchemas,
-  articleSchemas,
+  pageSchemas,
+  pageLabel,
 } from "@/data/schema-org";
 
 function generateBreadcrumbs(pathname: string) {
@@ -18,7 +19,7 @@ function generateBreadcrumbs(pathname: string) {
     accumulated += "/" + segment;
     items.push({
       position: items.length + 1,
-      name: segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+      name: pageLabel(accumulated, segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())),
       item: baseUrl + accumulated + "/",
     });
   }
@@ -34,10 +35,10 @@ export function SchemaOrg() {
       localBusinessSchema,
       webSiteSchema,
       ...serviceSchemas,
-      ...articleSchemas,
+      ...pageSchemas(pathname),
       {
         "@type": "BreadcrumbList",
-        "@id": baseUrl + "/#breadcrumb",
+        "@id": baseUrl + (pathname.replace(/\/?$/, "/")) + "#breadcrumb",
         itemListElement: generateBreadcrumbs(pathname),
       },
     ],

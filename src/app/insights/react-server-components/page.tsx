@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/insights/react-server-components",
+    canonical: "https://sliiqque.space/insights/react-server-components/",
   },
   twitter: {
     card: "summary_large_image",

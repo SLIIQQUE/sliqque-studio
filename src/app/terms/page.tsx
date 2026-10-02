@@ -4,11 +4,11 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | SLIIQQUE Studio",
+  title: "Terms of Service",
   description:
-    "SLIIQQUE Studio's terms of service outline the conditions for using our website, engaging our services, and the legal agreements that govern our client relationships and project delivery.",
+    "The terms for using the SLIIQQUE Studio website, engaging our services, and the agreements that govern client relationships and delivery.",
   alternates: {
-    canonical: "https://sliiqque.space/terms",
+    canonical: "https://sliiqque.space/terms/",
   },
 };
 

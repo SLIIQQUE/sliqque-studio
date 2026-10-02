@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "A complete guide to building a real-time analytics dashboard using Next.js 14 App Router, React Query, and Recharts from data fetching to live updates.",
   alternates: {
-    canonical: "https://sliiqque.space/insights/analytics-dashboard-nextjs",
+    canonical: "https://sliiqque.space/insights/analytics-dashboard-nextjs/",
   },
   openGraph: {
     type: "article",

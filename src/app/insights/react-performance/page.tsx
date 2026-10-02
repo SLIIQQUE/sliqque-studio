@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Practical techniques for profiling React apps, identifying rendering bottlenecks, and optimizing component performance for real-world production scenarios.",
   alternates: {
-    canonical: "https://sliiqque.space/insights/react-performance",
+    canonical: "https://sliiqque.space/insights/react-performance/",
   },
   openGraph: {
     type: "article",

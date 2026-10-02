@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/work/lumia",
+    canonical: "https://sliiqque.space/work/lumia/",
   },
   twitter: {
     card: "summary_large_image",

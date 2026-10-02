@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/insights/ai-native-boutique-studios",
+    canonical: "https://sliiqque.space/insights/ai-native-boutique-studios/",
   },
   twitter: {
     card: "summary_large_image",

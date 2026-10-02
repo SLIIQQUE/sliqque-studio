@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/insights/role-based-access-control",
+    canonical: "https://sliiqque.space/insights/role-based-access-control/",
   },
   twitter: {
     card: "summary_large_image",

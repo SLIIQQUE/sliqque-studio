@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "A practical guide to architecting a design system from scratch covering design tokens, component libraries, accessibility standards, and team adoption.",
   alternates: {
-    canonical: "https://sliiqque.space/insights/design-system-guide",
+    canonical: "https://sliiqque.space/insights/design-system-guide/",
   },
   openGraph: {
     type: "article",

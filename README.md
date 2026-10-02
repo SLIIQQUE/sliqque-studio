@@ -10,7 +10,7 @@ A boutique software studio website built with Next.js, featuring dark editorial 
 
 SLIIQQUE is a frontend engineering studio that partners with founders to build high-performance digital products. The website showcases:
 
-- Featured projects and case studies (BizEdge, Lumia, Mo Touch, ZINID)
+- Featured projects and case studies (BizEdge, SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID)
 - Service offerings (Website Design, Product Build, Interface Engineering, Studio Retainer, Technical Audit)
 - Technical expertise areas (SaaS, driving schools, business websites)
 - Blog/insights on frontend engineering and product development
@@ -21,7 +21,7 @@ SLIIQQUE is a frontend engineering studio that partners with founders to build h
 
 | Category | Technology |
 |----------|------------|
-| Framework | Next.js 14 (App Router) |
+| Framework | Next.js 15 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Animations | Framer Motion |
@@ -40,7 +40,9 @@ sliiqque-studio/
 ├── public/                  # Static assets
 │   ├── og-image.png         # Open Graph image
 │   ├── og-image.svg         # SVG fallback
-│   ├── logo.svg             # SVG favicon
+│   ├── favicon.ico, favicon-32.png, icon-192.png, apple-touch-icon.png  # QQ icon set
+│   ├── llms.txt, llms-full.txt  # AI/LLM-readable site summary (AEO)
+│   ├── robots.txt           # Auto-generated (AI crawlers allowed)
 │   └── sitemap.xml          # Auto-generated
 ├── src/
 │   ├── app/                 # Next.js App Router pages
@@ -57,6 +59,7 @@ sliiqque-studio/
 │   │   └── work/           # Work portfolio & case studies
 │   │       ├── bizedge/
 │   │       ├── lumia/
+│   │       ├── real-estate/
 │   │       ├── mo-touch/
 │   │       └── zinid/
 │   ├── components/
@@ -64,7 +67,10 @@ sliiqque-studio/
 │   │   ├── sections/       # Page sections (Hero, Services, etc.)
 │   │   └── ui/             # Reusable UI components
 │   └── data/
-│       └── projects.ts     # Project & case study data
+│       ├── projects.ts     # Project data (order = display order)
+│       ├── services.ts     # Services & pricing
+│       ├── faq.ts          # FAQ (rendered on /services and emitted as FAQPage schema)
+│       └── schema-org.ts   # JSON-LD builders
 ├── next.config.mjs         # Next.js configuration
 ├── tailwind.config.ts       # Tailwind theme configuration
 ├── next-sitemap.config.js   # Sitemap generation config
@@ -80,7 +86,7 @@ sliiqque-studio/
 | `/` | Homepage with hero, services, selected work, stats, insights |
 | `/work` | Full project portfolio |
 | `/work/[slug]` | Individual project/case study pages |
-| `/services` | Service offerings with pricing and process |
+| `/services` | Service offerings with pricing, process and FAQ |
 | `/expertise` | Expertise areas (SaaS, driving schools, engineering) |
 | `/insights` | Blog articles on frontend engineering and product development |
 | `/studio` | About the studio |
@@ -174,7 +180,7 @@ npm run postbuild        # Auto-generate sitemap.xml after build
 
 No environment variables are required for the website itself. All images from external sources (Unsplash, Lumia, ZinID) are configured via `next.config.mjs` remote patterns.
 
-For local development, ensure you have Node.js 18+ installed.
+For local development, ensure you have Node.js 18.18+ installed.
 
 ---
 
@@ -202,13 +208,16 @@ npm run start
 
 ---
 
-## SEO
+## SEO & AEO
 
-- Metadata is managed via Next.js `generateMetadata` in each page
-- Sitemap auto-generates on build via `next-sitemap`
-- `robots.txt` is auto-generated
-- OpenGraph and Twitter cards configured
-- Canonical URLs set in `layout.tsx`
+Full audit, checklist and maintenance routine: [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md).
+
+- **Metadata:** every route sets its own `title`, `description`, canonical, Open Graph and Twitter card. Canonicals use a trailing slash to match `trailingSlash: true` and the sitemap. Titles stay under ~50 characters because the root template appends ` | SLIIQQUE`.
+- **Structured data (JSON-LD):** `src/components/SchemaOrg.tsx` emits a site-wide graph (Organization, LocalBusiness, WebSite, Services with prices) plus page-specific nodes from `pageSchemas()` in `src/data/schema-org.ts`: `Article` on insights, `CreativeWork` on case studies, `ItemList` on `/work`, `FAQPage` on `/services`, and a `BreadcrumbList` everywhere.
+- **Sitemap:** `next-sitemap` runs after `npm run build` and writes `public/sitemap.xml`. `lastmod` comes from the last git commit touching the route, not the build time. New routes are picked up automatically; add case studies to `workPriorities` in `next-sitemap.config.js`.
+- **robots.txt:** generated from `next-sitemap.config.js`. It allows all crawlers and names the major AI search/answer bots (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and others). `/api/` is disallowed.
+- **AEO:** `public/llms.txt` and `public/llms-full.txt` summarise the studio, services, prices and case studies for LLMs. Keep them in sync with `src/data/services.ts` and `src/data/faq.ts` whenever prices or services change.
+- **Keeping it consistent:** when changing a price, update `services.ts`, `schema-org.ts`, `faq.ts`, and both `llms` files.
 
 ---
 

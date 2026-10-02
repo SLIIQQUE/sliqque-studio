@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "After building dozens of products, these interface patterns consistently improve onboarding, retention, and conversion rates for real SaaS and web applications.",
   alternates: {
-    canonical: "https://sliiqque.space/insights/frontend-ux-conversion",
+    canonical: "https://sliiqque.space/insights/frontend-ux-conversion/",
   },
   openGraph: {
     type: "article",

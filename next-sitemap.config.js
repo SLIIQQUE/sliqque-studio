@@ -1,3 +1,16 @@
+const { execSync } = require("child_process");
+
+/** Last commit date touching a route's source, so lastmod reflects real changes instead of build time. */
+const lastModified = (path) => {
+  const dir = path === "/" ? "src/app/page.tsx src/components/sections" : `src/app${path.replace(/\/$/, "")}`;
+  try {
+    const out = execSync(`git log -1 --format=%cI -- ${dir} ${path.split("/").filter(Boolean).length > 1 ? "" : "src/data"}`, { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+    return out || new Date().toISOString();
+  } catch {
+    return new Date().toISOString();
+  }
+};
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: "https://sliiqque.space",
@@ -43,10 +56,22 @@ const config = {
       loc: path,
       changefreq: config.changefreq,
       priority,
-      lastmod: new Date().toISOString(),
+      lastmod: lastModified(path),
     };
   },
-  exclude: ["/404", "/500", "/favicon.ico"],
+  exclude: ["/404", "/500", "/favicon.ico", "/api/*"],
+  robotsTxtOptions: {
+    policies: [
+      { userAgent: "*", allow: "/", disallow: ["/api/"] },
+      // AI search and answer engines: explicitly welcome, so the studio can be cited.
+      ...[
+        "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-Web", "anthropic-ai",
+        "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot",
+        "CCBot", "Amazonbot", "cohere-ai", "MistralAI-User", "YouBot", "DuckAssistBot",
+      ].map((userAgent) => ({ userAgent, allow: "/", disallow: ["/api/"] })),
+    ],
+    additionalSitemaps: [],
+  },
 };
 
 module.exports = config;

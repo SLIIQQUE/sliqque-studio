@@ -3,11 +3,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import ExpertisePageClient from "./ExpertisePageClient";
 
 export const metadata: Metadata = {
-  title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",
+  title: "SaaS, FinTech, AI Agents & Automation Expertise",
   description:
-    "We build full-stack SaaS platforms, FinTech payment infrastructure, fraud prevention systems, AI bots, and interactive frontends. Backed by shipped products: BizEdge HRMS, Lumia payments, ZINID fraud prevention, Mo Touch interactive portfolio.",
+    "Full-stack SaaS, FinTech payments, fraud prevention and AI bots, backed by shipped products: BizEdge, Lumia, ZINID and Mo Touch.",
   alternates: {
-    canonical: "https://sliiqque.space/expertise",
+    canonical: "https://sliiqque.space/expertise/",
   },
   openGraph: {
     title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",

@@ -3,9 +3,9 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import CaseStudyClient from "./CaseStudyClient";
 
 export const metadata: Metadata = {
-  title: "SLIIQQUE Real Estate | CMS-Powered Property Platform",
+  title: "Real Estate CMS Platform Case Study",
   description:
-    "A case study on building a property website with a built-in CMS: searchable listings, agent profiles, articles, and enquiry capture, all editable without code changes or redeploys.",
+    "Case study: a property website with a built-in CMS for searchable listings, agent profiles, articles and enquiry capture.",
   openGraph: {
     title: "SLIIQQUE Real Estate Case Study | SLIIQQUE",
     description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://sliiqque.space/work/real-estate",
+    canonical: "https://sliiqque.space/work/real-estate/",
   },
   twitter: {
     card: "summary_large_image",

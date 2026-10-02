@@ -5,9 +5,9 @@ import ServicesPageClient from "./ServicesPageClient";
 export const metadata: Metadata = {
   title: "Website Development, AI Agents & Automation Services",
   description:
-    "We build high-performance websites, custom AI bots and agents, workflow automation systems, and SaaS interfaces. SLIIQQUE takes on only 2–3 new projects per quarter to guarantee quality and attention.",
+    "Websites from $300, AI bots and agents from $600, workflow automation, SaaS interfaces and retainers. 2–3 new projects per quarter.",
   alternates: {
-    canonical: "https://sliiqque.space/services",
+    canonical: "https://sliiqque.space/services/",
   },
   openGraph: {
     title: "Website Development, AI Agents & Automation Services | SLIIQQUE",
