@@ -1,0 +1,59 @@
+# SEO & AEO audit
+
+Audited 2 Oct 2026, updated after the service pages, legal pages and Real Estate case study were added. Scope: technical SEO, on-page metadata, structured data, sitemap, robots, and answer-engine (AEO/GEO) readiness for https://sliiqque.space.
+
+## Fixed in this pass
+
+| Area | Problem found | Fix |
+|---|---|---|
+| Canonicals | No trailing slash, but the site uses `trailingSlash: true` and the sitemap lists slashed URLs. Canonicals pointed at a URL that redirects. | All canonicals now end in `/`. |
+| Titles | Many titles already contained "SLIIQQUE" and the root template appended it again; several were 65-90 characters and would truncate. | Core page titles shortened, brand no longer doubled. Home title is 58 characters. |
+| Descriptions | 12 pages had descriptions of 165-243 characters (truncated in results). | Rewritten to roughly 130-160 characters. |
+| Structured data | Every page emitted all 11 `Article` nodes. Service offers contained a made-up $15,000 "Product Build" price. The logo pointed to an old SVG. No `sameAs`. | Articles, `CreativeWork` and `FAQPage` now appear only on their own pages. Offers match `services.ts`. Logo is the QQ icon PNG. `sameAs` added. |
+| Breadcrumbs | Names came from URL slugs ("Hidden Cost Web Dev Nigeria"). | Use real article and project titles. |
+| Sitemap | `lastmod` was the build time for every URL (a freshness signal Google learns to ignore). Real Estate case study missing. | `lastmod` is the last git commit touching the route. Real Estate added. 28 URLs. |
+| robots.txt | Non-standard `Host:` line, no AI bot rules, `/api/` crawlable. | Standard rules, named AI search bots allowed, `/api/` disallowed. |
+| AEO | No `llms.txt`, no FAQ content, no direct answers about pricing or location. | `llms.txt`, `llms-full.txt`, and a visible FAQ on `/services` with matching `FAQPage` schema. |
+| Favicon | Old logo. | QQ icon set (ico, 32, 192, apple-touch). |
+
+## Added after the first pass
+
+| Addition | Detail |
+|---|---|
+| Service detail pages | Five new indexable pages at `/services/<slug>/`, each with its own title, description, canonical and `Service` schema carrying the starting price (`UnitPriceSpecification`, monthly for the retainer). In the sitemap at priority 0.8 and listed in `llms.txt` |
+| Add-on configurator | Interactive estimate on each service page. The quote link opens the contact form pre-filled, which should lift enquiry quality and conversion |
+| Real Estate case study | `/work/real-estate/` with `CreativeWork` schema and an entry in the work `ItemList` |
+| Privacy and Terms | Rewritten at 1,400 and 1,800 words from `src/data/legal/`. Real content on trust pages supports E-E-A-T signals and gives AI engines something accurate to cite |
+| Sitemap | 33 URLs. `lastmod` still comes from git history |
+| Contact form | Budget ranges now start at "Under $500" to match the new pricing, and an "AI Bot & Agent Development" option was added |
+| Internal links | Services list and home page link straight to the detail pages |
+
+## Verified
+
+- `npm run build` passes and generates the sitemap and robots.txt (33 URLs).
+- Rendered HTML checked on `/`, `/services/`, `/work/real-estate/` and an article: one `<h1>`, correct canonical, correct JSON-LD node set.
+
+## Still to do (needs you, cannot be done from the repo)
+
+1. **Verify in Google Search Console and Bing Webmaster Tools**, submit `https://sliiqque.space/sitemap.xml`, and request indexing for the new `/work/real-estate/` page.
+2. **Add real social profiles** to `sameAs` in `src/data/schema-org.ts` (only `x.com/sliiqque` is listed; add LinkedIn, GitHub, Instagram, Clutch etc. once they exist). This is the strongest entity signal for AI engines.
+3. **Create a Google Business Profile** for the Lagos address. The LocalBusiness schema has coordinates and hours but no street address, so local results will be weak until one exists.
+4. **Replace `og-image.png`** with per-page share images, and add a 1200x630 image for each case study.
+5. **Real Estate case study** is based on demo data. Add a live URL and real results when the product launches.
+6. **Backlinks:** the biggest ranking lever. Case study clients (BizEdge, Lumia, ZINID) linking back, plus directory listings.
+7. **Service pages:** add a testimonial or client logo to each once you have one, and consider per-service share images.
+8. **Insights:** several articles show dates of 2026-03-21 as `dateModified` in schema. Update `articleSchemas` when an article is edited.
+9. Run Lighthouse and the Rich Results Test against production after deploy.
+
+## Maintenance checklist
+
+When you change any of these, also update:
+
+| Change | Update |
+|---|---|
+| A price or any other shared fact | See the full table in [CONTENT-GUIDE.md](CONTENT-GUIDE.md) |
+| A new case study | `src/data/projects.ts`, `src/app/work/<slug>/`, `workPriorities` in `next-sitemap.config.js`, `public/llms.txt` |
+| A new article | `src/data/insights.ts`, `articleSchemas` in `schema-org.ts`, the slug list in `next-sitemap.config.js` |
+| A project count | `src/data/studio.ts` (`studioStats`) and `src/components/sections/StatsSection.tsx` |
+
+Always finish with `npm run build` so `public/sitemap.xml` and `public/robots.txt` regenerate.

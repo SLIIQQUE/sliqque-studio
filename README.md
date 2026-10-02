@@ -1,280 +1,196 @@
 # SLIIQQUE Studio Website
 
-A boutique software studio website built with Next.js, featuring dark editorial aesthetics, SaaS product showcases and business website case studies.
+The website for SLIIQQUE, a boutique software studio in Lagos, Nigeria. Dark editorial design, case studies, a service configurator with live price estimates, technical articles, and a contact form.
 
 **Live:** [https://sliiqque.space](https://sliiqque.space)
 
+Related docs:
+
+- [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md): where every price, project, stat and email lives, and what to update together
+- [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md): SEO and AEO audit, what was fixed, what is still open
+
 ---
 
-## Overview
+## What the site does
 
-SLIIQQUE is a frontend engineering studio that partners with founders to build high-performance digital products. The website showcases:
+- **Home:** hero, services preview, selected work, stats, studio overview, latest insights, call to action
+- **Services:** five engagement types with "from" prices, process, and an FAQ
+- **Service detail pages:** each service has a page where visitors choose optional add-ons and see the estimate rise (a booking system adds $100 to a $300 website). The selection pre-fills the contact form
+- **Work:** five case studies (BizEdge, SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID)
+- **Expertise:** SaaS platforms, FinTech and RegTech systems, AI agents and automation
+- **Insights:** 11 technical articles
+- **Studio, Contact, Privacy, Terms**
 
-- Featured projects and case studies (BizEdge, SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID)
-- Service offerings (Website Design, Product Build, Interface Engineering, Studio Retainer, Technical Audit)
-- Technical expertise areas (SaaS, driving schools, business websites)
-- Blog/insights on frontend engineering and product development
-- Contact and studio information
 ---
 
-## Tech Stack
+## Tech stack
 
 | Category | Technology |
 |----------|------------|
-| Framework | Next.js 15 (App Router) |
+| Framework | Next.js 15 (App Router), React 18 |
 | Language | TypeScript |
-| Styling | Tailwind CSS |
-| Animations | Framer Motion |
+| Styling | Tailwind CSS 3 |
+| Animation | Framer Motion |
 | Icons | Lucide React |
-| Fonts | Plus Jakarta Sans + Syne (Google Fonts) |
-| Utilities | clsx, tailwind-merge |
-| SEO | next-sitemap (auto-generates sitemap.xml & robots.txt) |
-| Hosting | Static export compatible |
+| Fonts | Plus Jakarta Sans (body) and Syne (display), via `next/font` |
+| Email | Resend (contact form) |
+| SEO | next-sitemap, JSON-LD, `llms.txt` |
+| Hosting | Vercel |
+
+Requires Node.js 18.18 or newer (developed on 20).
 
 ---
 
-## Project Structure
+## Getting started
 
+```bash
+npm install
+cp .env.example .env.local   # then fill in the values below
+npm run dev                  # http://localhost:3000
 ```
-sliiqque-studio/
-├── public/                  # Static assets
-│   ├── og-image.png         # Open Graph image
-│   ├── og-image.svg         # SVG fallback
-│   ├── favicon.ico, favicon-32.png, icon-192.png, apple-touch-icon.png  # QQ icon set
-│   ├── llms.txt, llms-full.txt  # AI/LLM-readable site summary (AEO)
-│   ├── robots.txt           # Auto-generated (AI crawlers allowed)
-│   └── sitemap.xml          # Auto-generated
-├── src/
-│   ├── app/                 # Next.js App Router pages
-│   │   ├── layout.tsx       # Root layout (fonts, metadata, providers)
-│   │   ├── page.tsx        # Homepage
-│   │   ├── globals.css      # Global styles
-│   │   ├── contact/        # Contact page
-│   │   ├── expertise/      # Expertise pages (saas/, driving-schools/, engineering/)
-│   │   ├── insights/       # Blog/insights articles
-│   │   ├── privacy/        # Privacy policy
-│   │   ├── services/       # Services & process page
-│   │   ├── studio/         # About the studio
-│   │   ├── terms/          # Terms of service
-│   │   └── work/           # Work portfolio & case studies
-│   │       ├── bizedge/
-│   │       ├── lumia/
-│   │       ├── real-estate/
-│   │       ├── mo-touch/
-│   │       └── zinid/
-│   ├── components/
-│   │   ├── layout/          # Navigation, Footer
-│   │   ├── sections/       # Page sections (Hero, Services, etc.)
-│   │   └── ui/             # Reusable UI components
-│   └── data/
-│       ├── projects.ts     # Project data (order = display order)
-│       ├── services.ts     # Services & pricing
-│       ├── faq.ts          # FAQ (rendered on /services and emitted as FAQPage schema)
-│       └── schema-org.ts   # JSON-LD builders
-├── next.config.mjs         # Next.js configuration
-├── tailwind.config.ts       # Tailwind theme configuration
-├── next-sitemap.config.js   # Sitemap generation config
-└── package.json
-```
+
+| Command | What it does |
+|---------|--------------|
+| `npm run dev` | Development server |
+| `npm run build` | Production build, then `next-sitemap` regenerates `public/sitemap.xml` and `public/robots.txt` |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint (the build also runs it) |
+
+Always run `npm run build` before shipping, so the sitemap is regenerated.
+
+> If the dev server shows an unstyled page or a webpack "reading 'call'" error, stop it, delete `.next`, and start again. This happens when the dev server runs over a production build's output or after adding routes while it is running.
+
+### Environment variables
+
+| Variable | Purpose |
+|----------|---------|
+| `RESEND_API_KEY` | Resend API key for the contact form |
+| `RESEND_FROM_EMAIL` | Sender, on a Resend-verified domain (`SLIIQQUE Contact <contact@send.sliiqque.space>`) |
+| `RESEND_TO_EMAIL` | Where enquiries are delivered. Defaults to `hello@sliiqque.space` if unset |
+
+Set the same variables in the Vercel project settings. The form works only when `RESEND_API_KEY` is present.
 
 ---
 
-## Key Pages
+## Routes
 
 | Route | Description |
 |-------|-------------|
-| `/` | Homepage with hero, services, selected work, stats, insights |
-| `/work` | Full project portfolio |
-| `/work/[slug]` | Individual project/case study pages |
-| `/services` | Service offerings with pricing, process and FAQ |
-| `/expertise` | Expertise areas (SaaS, driving schools, engineering) |
-| `/insights` | Blog articles on frontend engineering and product development |
-| `/studio` | About the studio |
-| `/contact` | Contact page |
+| `/` | Home |
+| `/services/` | Services, process, FAQ |
+| `/services/[slug]/` | Service detail and configurator: `website-design-development`, `ai-bot-agent-development`, `interface-engineering`, `studio-retainer`, `technical-audit` |
+| `/work/` | Portfolio |
+| `/work/[slug]/` | Case studies: `bizedge`, `real-estate`, `lumia`, `mo-touch`, `zinid` |
+| `/expertise/` | Expertise overview |
+| `/expertise/saas/`, `/expertise/frontend-architecture/`, `/expertise/design-systems/` | Vertical pages (SaaS; FinTech and RegTech; AI agents and automation) |
+| `/insights/` and `/insights/[slug]/` | Articles, three per row on desktop |
+| `/studio/`, `/contact/`, `/privacy/`, `/terms/` | Studio, contact form, legal |
+| `/api/contact` | POST endpoint that emails the enquiry through Resend |
+
+`trailingSlash` is on, so every URL, canonical and sitemap entry ends in `/`.
 
 ---
 
-## Components
+## Project structure
 
-### Layout
-- `Navigation` — Fixed header with logo, nav links, and CTA
-- `Footer` — Animated email CTA, links, copyright
-
-### Sections
-- `Hero` — Full-viewport hero with animated title
-- `Marquee` — Scrolling text marquee (services, project types)
-- `ServicesSection` — Service offerings preview
-- `SelectedWorkSection` — Featured projects grid
-- `StatsSection` — Studio metrics and highlights
-- `StudioSection` — Brief studio overview
-- `InsightsSection` — Recent blog posts preview
-- `CTASection` — Call-to-action
-
-### UI
-- `ProjectCard` — Project thumbnail with logo/image support
-- `WorkCard` — Detailed work listing card
-- `InsightCard` — Blog post preview card
-- `ExpertiseCard` — Expertise area card
-- `InteractiveTitle` — Animated text reveal
-- `LightLeaks` — Decorative light leak overlay
-- `ScrollProgress` — Page scroll indicator
-- `CustomCursor` — Custom cursor on desktop
-- `CursorWrapper` — Cursor state management
-- `Marquee` — Infinite scroll animation
-
----
-
-## Data Structure
-
-Projects are defined in `src/data/projects.ts`:
-
-```typescript
-interface Project {
-  title: string;
-  year: string;
-  clientType: string;
-  engagementType: string;
-  description: string;
-  tags: string[];
-  metric: string;
-  imageSrc?: string;    // For photo thumbnails
-  logoSrc?: string;     // For logo-only projects
-  imageAlt: string;
-  href: string;
-  bgColor?: string;
-}
-
-interface CaseStudy extends Project {
-  context: string;
-  problem: string;
-  approach: string;
-  whatWeBuilt: string;
-  results: string;
-  learnings: string;
-  externalUrl?: string;
-}
+```
+public/
+  favicon.ico, favicon-32.png, icon-192.png, apple-touch-icon.png   QQ icon set
+  images/                  Screenshots and the white QQ logo used in the nav
+  llms.txt, llms-full.txt  Plain-text site summary for AI tools
+  og-image.png             Social share image
+  robots.txt, sitemap.xml  Generated by next-sitemap (do not hand-edit)
+src/
+  app/                     Routes (one folder per page; client UI lives in *Client.tsx)
+    services/[slug]/       Service detail page
+    work/<slug>/           Case studies, built on CaseStudyLayout
+    insights/<slug>/       Articles, built on ArticleLayout
+    api/contact/           Contact form endpoint
+  components/
+    layout/                Navigation, Footer, PageLayout, CaseStudyLayout, ArticleLayout, LegalPage
+    sections/              Home page sections
+    services/              ServiceConfigurator (add-on picker and estimate)
+    ui/                    Reusable pieces (SectionHeader, ServiceItem, cards, cursor, etc.)
+    SchemaOrg.tsx          Emits JSON-LD on every page
+  data/
+    projects.ts            Projects (array order is display order; the first three feature on Home)
+    services.ts            Service summaries and "From $X" prices
+    service-details.ts     Base price, included scope and add-ons per service
+    faq.ts                 FAQ shown on /services and emitted as FAQPage schema
+    studio.ts              Studio copy and stats
+    schema-org.ts          JSON-LD builders
+    legal/                 Privacy and Terms content
+docs/                      Project documentation
+next-sitemap.config.js     Sitemap, robots.txt and lastmod logic
 ```
 
 ---
 
-## Scripts
+## Design system
 
-```bash
-# Development
-npm run dev              # Start dev server at localhost:3000
-
-# Production
-npm run build            # Build for production
-npm run start            # Start production server
-
-# Linting
-npm run lint             # Run ESLint
-
-# SEO
-npm run postbuild        # Auto-generate sitemap.xml after build
-```
+- **Palette:** near-black background (`#050505`), white text at varying opacity, orange (`orange-400/500`) as the single accent, with blue and purple only in gradients.
+- **Type:** Syne bold uppercase for headings (`font-display`), Plus Jakarta Sans for body (`font-body`), small mono for labels.
+- **Spacing:** page sections use `py-8` to `py-12` vertically (halved twice from the original `py-32`). Content width is `max-w-6xl`, the topbar and footer use a 1200px width so their edges line up.
+- **Components:** `SectionHeader` (label, title, description, optional `align="center"`) opens most sections. Interactive elements have visible orange focus rings.
+- **Brand:** the topbar and favicon use the QQ icon. The nav uses a white version of the icon on dark backgrounds, source files are in the `SLIIQQUE_LOGO` folder kept outside the repo.
 
 ---
 
-## Environment Variables
+## Services, pricing and the configurator
 
-No environment variables are required for the website itself. All images from external sources (Unsplash, Lumia, ZinID) are configured via `next.config.mjs` remote patterns.
+Prices are "starting at" prices. `src/data/service-details.ts` holds, per service, a `basePrice`, the `included` scope, and a list of `addOns`, each with a price that is added to the base. On `/services/[slug]/` the visitor ticks add-ons, the estimate updates instantly, and "Request This Quote" opens `/contact/?service=...&addons=...&estimate=...`, which pre-fills the form's project type and message.
 
-For local development, ensure you have Node.js 18.18+ installed.
+Current starting prices: Website $300, AI Bot and Agent $600, Interface Engineering $1,000, Studio Retainer $2,500 per month, Technical Audit $800.
+
+A change to any price touches several files. Follow the checklist in [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md).
+
+---
+
+## SEO and AEO
+
+Full detail in [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md). In short:
+
+- Every route sets its own title, description, canonical (with trailing slash), Open Graph and Twitter card. Titles stay under about 50 characters because the root template appends ` | SLIIQQUE`.
+- `SchemaOrg.tsx` outputs a site-wide graph (Organization, LocalBusiness, WebSite, Services) plus page-specific nodes: `Article`, `CreativeWork`, `ItemList`, `FAQPage` and per-service `Service` with the starting price.
+- `next-sitemap.config.js` builds the sitemap with `lastmod` taken from git history, and a `robots.txt` that allows search and AI crawlers and blocks `/api/`.
+- `public/llms.txt` and `public/llms-full.txt` summarise the studio, prices, service pages and FAQ for AI tools. Keep them in step with the data files.
+
+---
+
+## Legal pages
+
+`/privacy/` and `/terms/` render from `src/data/legal/privacy.ts` and `terms.ts` through `LegalPage`. Edit the text there. Update the date by changing `LEGAL_UPDATED` in `src/data/legal/types.ts`. Have the wording reviewed by a lawyer before relying on it, and revisit the cookie section if analytics are ever added.
 
 ---
 
 ## Deployment
 
-The site is optimized for static hosting (Vercel, Netlify, Cloudflare Pages).
+Hosted on Vercel. Push to the connected branch, or run `vercel` from the project root. Make sure the three Resend variables are set in the project, and that `RESEND_TO_EMAIL` points to the inbox you want.
 
-### Vercel (Recommended)
-```bash
-npm i -g vercel
-vercel
-```
-
-### Netlify
-```bash
-npm run build
-# Drag .next/ to Netlify drop
-```
-
-### Manual
-```bash
-npm run build
-npm run start
-```
+After a deploy, submit `https://sliiqque.space/sitemap.xml` in Google Search Console and Bing Webmaster Tools, and check pages with the Rich Results Test.
 
 ---
 
-## SEO & AEO
+## Adding content
 
-Full audit, checklist and maintenance routine: [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md).
+**A project / case study**
 
-- **Metadata:** every route sets its own `title`, `description`, canonical, Open Graph and Twitter card. Canonicals use a trailing slash to match `trailingSlash: true` and the sitemap. Titles stay under ~50 characters because the root template appends ` | SLIIQQUE`.
-- **Structured data (JSON-LD):** `src/components/SchemaOrg.tsx` emits a site-wide graph (Organization, LocalBusiness, WebSite, Services with prices) plus page-specific nodes from `pageSchemas()` in `src/data/schema-org.ts`: `Article` on insights, `CreativeWork` on case studies, `ItemList` on `/work`, `FAQPage` on `/services`, and a `BreadcrumbList` everywhere.
-- **Sitemap:** `next-sitemap` runs after `npm run build` and writes `public/sitemap.xml`. `lastmod` comes from the last git commit touching the route, not the build time. New routes are picked up automatically; add case studies to `workPriorities` in `next-sitemap.config.js`.
-- **robots.txt:** generated from `next-sitemap.config.js`. It allows all crawlers and names the major AI search/answer bots (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and others). `/api/` is disallowed.
-- **AEO:** `public/llms.txt` and `public/llms-full.txt` summarise the studio, services, prices and case studies for LLMs. Keep them in sync with `src/data/services.ts` and `src/data/faq.ts` whenever prices or services change.
-- **Keeping it consistent:** when changing a price, update `services.ts`, `schema-org.ts`, `faq.ts`, and both `llms` files.
+1. Add the entry to `src/data/projects.ts` (position in the array is its position on the site).
+2. Create `src/app/work/<slug>/page.tsx` and `CaseStudyClient.tsx` by copying an existing case study.
+3. Add a screenshot to `public/images/`.
+4. Add the path to `workPriorities` in `next-sitemap.config.js`, to `public/llms.txt`, and update the project count in `src/data/studio.ts` and `StatsSection.tsx` if it changes.
 
----
+**An article**
 
-## Customization
+1. Add it to `src/data/insights.ts` and create `src/app/insights/<slug>/`.
+2. Add its metadata to `articleSchemas` in `src/data/schema-org.ts` and its slug to `insightSlugs` in `next-sitemap.config.js`.
 
-### Theme Colors
-Edit `tailwind.config.ts`:
+**A service add-on:** add an object to that service's `addOns` in `service-details.ts`. No other file needs to change.
 
-```typescript
-colors: {
-  background: "#050505",  // Main background
-  footer: "#0a0a0a",      // Footer background
-  foreground: "#FFFFFF",  // Main text
-  muted: "rgba(255, 255, 255, 0.4)",  // Muted text
-  border: "rgba(255, 255, 255, 0.05)", // Borders
-}
-```
-
-### Fonts
-Configured in `src/app/layout.tsx`:
-- Display font: **Syne** (headings)
-- Body font: **Plus Jakarta Sans** (body text)
-
-### Adding Projects
-Add to `src/data/projects.ts`:
-```typescript
-export const projects: Project[] = [
-  // existing projects...
-  {
-    title: "New Project",
-    year: "2025",
-    clientType: "FinTech",
-    engagementType: "Product Build",
-    description: "...",
-    tags: ["React", "TypeScript"],
-    metric: "Key metric",
-    logoSrc: "https://...", // or imageSrc for photos
-    imageAlt: "Project description",
-    href: "/work/new-project",
-    bgColor: "#hex",
-  },
-];
-```
-
-### Remote Images
-Add new domains to `next.config.mjs`:
-```javascript
-remotePatterns: [
-  {
-    protocol: "https",
-    hostname: "example.com",
-  },
-],
-```
+**A remote image domain:** add it to `images.remotePatterns` in `next.config.mjs`.
 
 ---
 
 ## License
 
-Private — All rights reserved. SLIIQQUE Studio.
+Private. All rights reserved, SLIIQQUE Studio.
