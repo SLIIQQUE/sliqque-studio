@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import {
   Rocket,
@@ -39,6 +40,8 @@ export function ServiceItem({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const Icon = iconMap[iconName] || Monitor;
+  const href = slug ? `/services/${slug}/` : "/contact";
+  const ctaLabel = slug ? "Build Your Quote" : `Get ${title} Quote`;
 
   return (
     <motion.div
@@ -48,7 +51,10 @@ export function ServiceItem({
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
       className="group relative"
     >
-      <div className="relative pl-8 py-8 border-b border-white/5 hover:border-white/10 transition-colors duration-500">
+      <Link
+        href={href}
+        aria-label={`${title} — ${ctaLabel}`}
+        className="block relative pl-8 py-8 border-b border-white/5 hover:border-white/10 transition-colors duration-500 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none">
         <div
           className={`absolute left-0 top-0 bottom-0 w-px transition-all duration-500 ${
             highlight
@@ -117,6 +123,26 @@ export function ServiceItem({
                 ))}
               </div>
             )}
+
+            <div className="md:hidden mt-7 pt-5 border-t border-white/10 flex items-center justify-between gap-4">
+              {price && (
+                <span
+                  className={`font-display font-bold text-lg tracking-tight ${highlight ? "text-orange-400" : "text-white"}`}
+                >
+                  {price}
+                </span>
+              )}
+              <span
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] border ${
+                  highlight
+                    ? "bg-orange-500 text-black border-orange-500"
+                    : "bg-white/10 text-white border-white/25"
+                }`}
+              >
+                {ctaLabel}
+                <ChevronRight size={12} aria-hidden="true" />
+              </span>
+            </div>
           </div>
 
           <div className="hidden md:flex flex-col items-end gap-4 shrink-0">
@@ -133,22 +159,21 @@ export function ServiceItem({
               </div>
             )}
 
-            <motion.a
-              href={slug ? `/services/${slug}/` : "/contact"}
+            <motion.span
               whileHover={{ x: 4 }}
-              className={`inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none ${
+              className={`inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-300 ${
                 highlight
-                  ? "text-orange-400/70 hover:text-orange-400"
-                  : "text-white/55 hover:text-white/80"
+                  ? "text-orange-400/70 group-hover:text-orange-400"
+                  : "text-white/55 group-hover:text-white/80"
               }`}
             >
-              {slug ? "Build Your Quote" : `Get ${title} Quote`}
+              {ctaLabel}
               <ChevronRight
                 size={12}
                 className="group-hover:translate-x-1 transition-transform"
                 aria-hidden="true"
               />
-            </motion.a>
+            </motion.span>
           </div>
         </div>
 
@@ -159,7 +184,7 @@ export function ServiceItem({
               : "bg-gradient-to-r from-orange-500/50 via-blue-500/50 to-purple-500/50"
           }`}
         />
-      </div>
+      </Link>
     </motion.div>
   );
 }
