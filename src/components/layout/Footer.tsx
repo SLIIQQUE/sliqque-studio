@@ -53,10 +53,10 @@ const Footer = ({
           href={`mailto:${email}`}
           onMouseEnter={() => setEmailHovered(true)}
           onMouseLeave={() => setEmailHovered(false)}
-          className="relative inline-block"
+          className="relative block w-full max-w-[75rem] mx-auto"
         >
           <motion.span 
-            className="font-display font-bold text-4xl md:text-6xl lg:text-8xl tracking-tighter uppercase block"
+            className="font-display font-bold text-[clamp(1rem,calc((100vw_-_5rem)/13.9),5.5rem)] whitespace-nowrap tracking-tighter uppercase block"
             animate={{ 
               backgroundSize: emailHovered ? "100% 100%" : "0% 100%",
               backgroundPosition: emailHovered ? "0% 0%" : "100% 0%"
@@ -90,7 +90,7 @@ const Footer = ({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-8 text-base font-body text-white/50 max-w-md mx-auto"
+          className="mt-8 text-base font-body text-white/50 max-w-md lg:max-w-none lg:whitespace-nowrap mx-auto"
         >
           We take on 2–3 new projects per quarter. Let&apos;s see if we&apos;re a fit.
         </motion.p>
@@ -100,7 +100,7 @@ const Footer = ({
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="relative z-10 w-full border-t border-white/5 pt-10"
+        className="relative z-10 w-full max-w-[75rem] mx-auto border-t border-white/5 pt-10"
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex gap-8">

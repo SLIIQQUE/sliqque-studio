@@ -66,8 +66,8 @@ export default function ServicesPageClient() {
 
       <section aria-label="Frequently asked questions" className="py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader label="FAQ" title="Common Questions" />
-          <div className="max-w-3xl divide-y divide-white/10 border-y border-white/10">
+          <SectionHeader label="FAQ" title="Common Questions" align="center" />
+          <div className="max-w-3xl mx-auto divide-y divide-white/10 border-t border-white/10">
             {faqs.map((faq) => (
               <details key={faq.question} className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-bold text-lg tracking-tight">
@@ -91,7 +91,7 @@ export default function ServicesPageClient() {
             <h2 className="font-display font-bold text-3xl md:text-4xl tracking-tight uppercase mb-6">
               Ready to Start?
             </h2>
-            <p className="text-base font-body text-white/50 max-w-xl mx-auto mb-10">
+            <p className="text-base font-body text-white/50 max-w-xl lg:max-w-none lg:whitespace-nowrap mx-auto mb-10">
               We take on 2–3 new projects per quarter. Let&apos;s see if we&apos;re a fit.
             </p>
             <Link

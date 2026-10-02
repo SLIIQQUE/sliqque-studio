@@ -22,7 +22,7 @@ export default function InsightsPageClient() {
 
       <section className="py-8 px-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4">
             {insightArticles.map((article, i) => (
               <motion.div
                 key={article.title}
