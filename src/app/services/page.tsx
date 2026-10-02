@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import ServicesPageClient from "./ServicesPageClient";
 
 export const metadata: Metadata = {
-  title: "Website Development, AI Agents & Automation Services",
+  title: "Website, AI Agent & Automation Services",
   description:
     "Websites from $300, AI bots and agents from $600, workflow automation, SaaS interfaces and retainers. 2–3 new projects per quarter.",
   alternates: {

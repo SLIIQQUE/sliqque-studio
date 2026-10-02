@@ -33,6 +33,7 @@ Where each fact on the site lives, and everything that must change together. Fol
 
 ## Things to know before editing
 
+- **Titles and descriptions** are set only in each page's `metadata` export (the site default is in `src/app/layout.tsx`). Do not add a manual `<meta name="description">` tag, it creates a duplicate. Keep titles around 50 characters and descriptions under 160. See the metadata rules in [SEO-AUDIT.md](SEO-AUDIT.md).
 - **Add-on prices are estimates, not commitments.** The page tells visitors the final quote is confirmed after a conversation, and the Terms say the same. Keep that wording consistent.
 - **Real Estate case study** is written from demo data. Replace it with real results and a live link when the product launches.
 - **Legal pages** are a general template. Check them with a lawyer. They state that Nigerian law and the Lagos courts apply, that client IP transfers on full payment, and a 12-month liability cap. Change these if your agreements differ.

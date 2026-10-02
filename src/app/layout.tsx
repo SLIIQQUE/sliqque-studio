@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | SLIIQQUE",
   },
   description:
-    "SLIIQQUE is a boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms. We help founders and businesses automate, engage, and grow.",
+    "Boutique software studio building websites, AI bots and agents, workflow automation and SaaS platforms. Based in Lagos, Nigeria, working worldwide.",
   authors: [{ name: "SLIIQQUE Studio" }],
   creator: "SLIIQQUE Studio",
   publisher: "SLIIQQUE Studio",
@@ -94,7 +94,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
 
-        <meta name="description" content="SLIIQQUE is a boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms. We help founders and businesses automate, engage, and grow." />
         <link rel="alternate" href="https://sliiqque.space" hrefLang="en" />
         <link rel="alternate" href="https://sliiqque.space" hrefLang="x-default" />
       </head>

@@ -4,7 +4,7 @@ import ArticleClient from "./ArticleClient";
 
 export const metadata: Metadata = {
   title:
-    "The Hidden Cost of Cheap Web Development for Nigerian Businesses",
+    "The Hidden Cost of Cheap Web Dev in Nigeria",
   description:
     "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security vulnerabilities, and missed growth opportunities.",
   openGraph: {

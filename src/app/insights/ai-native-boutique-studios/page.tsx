@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import ArticleClient from "./ArticleClient";
 
 export const metadata: Metadata = {
-  title: "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms",
+  title: "Why AI Natives Choose Boutique Studios",
   description:
     "AI-native founders are leaving freelance platforms for boutique studios and getting higher quality, real accountability, and long-term value for their builds.",
   openGraph: {

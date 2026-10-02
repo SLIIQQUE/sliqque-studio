@@ -150,7 +150,7 @@ A change to any price touches several files. Follow the checklist in [docs/CONTE
 
 Full detail in [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md). In short:
 
-- Every route sets its own title, description, canonical (with trailing slash), Open Graph and Twitter card. Titles stay under about 50 characters because the root template appends ` | SLIIQQUE`.
+- Every route sets its own title and description through Next.js `metadata` only (no hand-written `<meta>` tags in `<head>`), plus canonical (with trailing slash), Open Graph and Twitter card. Titles stay under about 50 characters because the root template appends ` | SLIIQQUE`.
 - `SchemaOrg.tsx` outputs a site-wide graph (Organization, LocalBusiness, WebSite, Services) plus page-specific nodes: `Article`, `CreativeWork`, `ItemList`, `FAQPage` and per-service `Service` with the starting price.
 - `next-sitemap.config.js` builds the sitemap with `lastmod` taken from git history, and a `robots.txt` that allows search and AI crawlers and blocks `/api/`.
 - `public/llms.txt` and `public/llms-full.txt` summarise the studio, prices, service pages and FAQ for AI tools. Keep them in step with the data files.

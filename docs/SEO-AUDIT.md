@@ -15,6 +15,8 @@ Audited 2 Oct 2026, updated after the service pages, legal pages and Real Estate
 | robots.txt | Non-standard `Host:` line, no AI bot rules, `/api/` crawlable. | Standard rules, named AI search bots allowed, `/api/` disallowed. |
 | AEO | No `llms.txt`, no FAQ content, no direct answers about pricing or location. | `llms.txt`, `llms-full.txt`, and a visible FAQ on `/services` with matching `FAQPage` schema. |
 | Favicon | Old logo. | QQ icon set (ico, 32, 192, apple-touch). |
+| Duplicate meta description | Every page had two `<meta name="description">` tags: a hard-coded 203-character one in the root layout `<head>` plus the Next.js metadata one. | Hard-coded tag removed. The default in `metadata` is now 147 characters. A scan of all 33 sitemap pages confirms exactly one description each. |
+| Long titles | `/insights/ai-native-boutique-studios/` (80 characters), `/insights/hidden-cost-web-dev-nigeria/` (75) and `/services/` (63 with the brand) would be cut off in results. | Shortened to 38, 43 and 39 characters before the ` \| SLIIQQUE` suffix. All rendered titles are now 62 characters or fewer. |
 
 ## Added after the first pass
 
@@ -44,6 +46,13 @@ Audited 2 Oct 2026, updated after the service pages, legal pages and Real Estate
 7. **Service pages:** add a testimonial or client logo to each once you have one, and consider per-service share images.
 8. **Insights:** several articles show dates of 2026-03-21 as `dateModified` in schema. Update `articleSchemas` when an article is edited.
 9. Run Lighthouse and the Rich Results Test against production after deploy.
+
+## Metadata rules
+
+- Set `title` and `description` only through the Next.js `metadata` export. Never add a hand-written `<meta name="description">` or `<title>` to `<head>`, because it duplicates the generated one.
+- Keep page titles at about 50 characters or fewer. The root template appends ` | SLIIQQUE`, so do not add the brand yourself.
+- Keep descriptions between roughly 130 and 160 characters.
+- After adding or editing pages, crawl the sitemap URLs and check each has one description, one canonical (with trailing slash) and a title of 62 characters or fewer.
 
 ## Maintenance checklist
 
