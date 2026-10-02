@@ -38,6 +38,8 @@ Audited 2 Oct 2026, updated after the service pages, legal pages and Real Estate
 
 ## Still to do (needs you, cannot be done from the repo)
 
+0. **Make the details match everywhere.** Conflicting facts weaken entity trust: the site said founded 2021, Google's AI summary said September 2023, and the Google profile said 22 December 2025. The site now says **22 December 2025** for all divisions. Set the same date, one description and the same links on the Google profile, LinkedIn, Facebook and Himalayas. See [CONTENT-GUIDE.md](CONTENT-GUIDE.md). Google's AI summary corrects itself only after the sources agree and it recrawls.
+
 1. **Verify in Google Search Console and Bing Webmaster Tools**, submit `https://sliiqque.space/sitemap.xml`, and request indexing for the new `/work/real-estate/` page.
 2. **Add real social profiles** to `sameAs` in `src/data/schema-org.ts` (only `x.com/sliiqque` is listed; add LinkedIn, GitHub, Instagram, Clutch etc. once they exist). This is the strongest entity signal for AI engines.
 3. **Create a Google Business Profile** for the Lagos address. The LocalBusiness schema has coordinates and hours but no street address, so local results will be weak until one exists.

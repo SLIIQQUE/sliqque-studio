@@ -24,7 +24,7 @@ export const organizationSchema = {
   sameAs,
   email: "hello@sliiqque.space",
   description: "Boutique software studio building websites, AI bots and agents, workflow automation, and SaaS platforms.",
-  foundingDate: "2021",
+  foundingDate: "2025-12-22",
   foundingLocation: { "@type": "City", name: "Lagos" },
   areaServed: "Worldwide",
   contactPoint: {

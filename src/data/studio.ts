@@ -78,7 +78,7 @@ export const studioStack: string[] = [
 ];
 
 export const studioStats = [
-  { value: "2021", label: "Founded" },
+  { value: "2025", label: "Founded" },
   { value: "6+", label: "Projects shipped" },
   { value: "3", label: "Focus verticals" },
   { value: "1", label: "Principal" },

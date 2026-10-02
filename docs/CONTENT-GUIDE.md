@@ -20,7 +20,7 @@ Where each fact on the site lives, and everything that must change together. Fol
 
 | Item | Value |
 |---|---|
-| Studio | SLIIQQUE Studio, Lagos, Nigeria, founded 2021, works worldwide |
+| Studio | SLIIQQUE Studio, Lagos, Nigeria, founded 22 December 2025 (all divisions), works worldwide |
 | Contact | hello@sliiqque.space |
 | Website Design & Development | from $300 |
 | AI Bot & Agent Development | from $600 |
@@ -30,6 +30,17 @@ Where each fact on the site lives, and everything that must change together. Fol
 | Capacity | 2-3 new projects per quarter |
 | Case studies | BizEdge, SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID |
 | Stats shown | 5+ years, 6+ projects shipped, 3 focus verticals, 1 principal |
+
+## Same details everywhere
+
+Search engines and AI tools compare the site with your profiles. Keep these identical on the website, Google Business Profile, LinkedIn, Facebook, Himalayas and any directory:
+
+- **Founding date: 22 December 2025.** Use it for every division (Creative Studio and Product & Engineering). On the site it appears in `studio.ts` (`studioStats`), `schema-org.ts` (`foundingDate`), `faq.ts`, `llms.ts` and the `/studio/` description.
+- **Name:** SLIIQQUE, based in Lagos, Nigeria.
+- **One description:** the site default in `src/app/layout.tsx`. Paste the same sentence into each profile's About field.
+- **Contact:** hello@sliiqque.space and https://sliiqque.space (with the same social links in `sameAs` in `schema-org.ts`).
+
+Case studies carry their original project years (BizEdge 2021, Lumia 2019, ZINID 2018, Mo Touch 2024). Those are delivery dates, not company dates. Say "delivered by the founder" if you want to avoid any confusion with the 2025 founding date.
 
 ## Things to know before editing
 

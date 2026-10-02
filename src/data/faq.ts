@@ -7,7 +7,7 @@ export const faqs: FaqItem[] = [
   {
     question: "What does SLIIQQUE do?",
     answer:
-      "SLIIQQUE is a boutique software studio in Lagos, Nigeria, founded in 2021. We build websites, AI bots and agents, workflow automation systems, and SaaS interfaces for founders and businesses worldwide.",
+      "SLIIQQUE is a boutique software studio in Lagos, Nigeria, founded in December 2025. We build websites, AI bots and agents, workflow automation systems, and SaaS interfaces for founders and businesses worldwide.",
   },
   {
     question: "How much does a website cost?",

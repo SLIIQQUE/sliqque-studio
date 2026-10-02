@@ -11,7 +11,7 @@ const EMAIL = "hello@sliiqque.space";
 const url = (path: string) => `${baseUrl}${path.replace(/\/?$/, "/")}`;
 
 const summary =
-  "SLIIQQUE is a boutique software studio in Lagos, Nigeria, founded in 2021. It builds websites, AI bots and agents, workflow automation systems, and SaaS interfaces for founders and businesses worldwide. The studio takes on 2-3 new projects per quarter.";
+  "SLIIQQUE is a boutique software studio in Lagos, Nigeria, founded in December 2025. It builds websites, AI bots and agents, workflow automation systems, and SaaS interfaces for founders and businesses worldwide. The studio takes on 2-3 new projects per quarter.";
 
 const keyFacts = [
   `Founder and lead engineer: ${studioInfo.founder}`,
