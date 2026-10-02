@@ -19,7 +19,7 @@ const config = {
       "/terms": 0.3,
     };
 
-    const workPriorities = ["/work/bizedge", "/work/lumia", "/work/mo-touch", "/work/zinid"];
+    const workPriorities = ["/work/bizedge", "/work/real-estate", "/work/lumia", "/work/mo-touch", "/work/zinid"];
     const expertisePriorities = ["/expertise/saas", "/expertise/design-systems", "/expertise/frontend-architecture"];
     const insightSlugs = [
       "ai-native-boutique-studios", "analytics-dashboard-nextjs", "cra-to-nextjs-migration",

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 
@@ -117,12 +118,16 @@ const Navigation = ({
         }`}
       >
         <div className="h-full max-w-7xl mx-auto px-10 flex items-center justify-between">
-          <Link href="/" className="relative z-50">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="font-display font-bold text-xl tracking-tighter uppercase text-white"
-            >
-              {brandMark}
+          <Link href="/" className="relative z-50" aria-label={brandMark}>
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Image
+                src="/images/sliiqque-icon-white.png"
+                alt={brandMark}
+                width={740}
+                height={458}
+                priority
+                className="h-8 w-auto"
+              />
             </motion.div>
           </Link>
 

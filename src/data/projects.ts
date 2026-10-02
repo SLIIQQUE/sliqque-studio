@@ -42,6 +42,19 @@ export const projects: Project[] = [
     bgColor: "#1a1a2e",
   },
   {
+    title: "SLIIQQUE Real Estate",
+    year: "2026",
+    clientType: "Real Estate",
+    engagementType: "Product Build",
+    description: "A property website with a built-in CMS: searchable listings, agent profiles, articles, and enquiry capture, all managed from an admin panel with no redeploys.",
+    tags: ["Next.js", "React", "Payload CMS", "PostgreSQL", "Tailwind CSS"],
+    metric: "CMS-Powered",
+    imageSrc: "/images/real-estate-screenshot.jpg",
+    imageAlt: "SLIIQQUE Real Estate homepage with property search",
+    href: "/work/real-estate",
+    bgColor: "#102E26",
+  },
+  {
     title: "Lumia",
     year: "2019",
     clientType: "FinTech",
@@ -98,6 +111,12 @@ export const studioProjects: StudioProject[] = [
     type: "SaaS: 11-module HR platform",
     metric: "11 Modules",
     link: "/work/bizedge",
+  },
+  {
+    name: "SLIIQQUE Real Estate",
+    type: "Real Estate: CMS-powered property platform",
+    metric: "CMS-Powered",
+    link: "/work/real-estate",
   },
   {
     name: "Lumia",

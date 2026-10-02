@@ -95,20 +95,32 @@ export default function CaseStudyLayout({
               <div className="lg:col-span-4">
                 <div className="flex flex-wrap gap-x-8 gap-y-4">
                   <div>
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">Client Type</span>
-                    <span className="text-sm font-body">{caseStudy.clientType}</span>
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">
+                      Client Type
+                    </span>
+                    <span className="text-sm font-body">
+                      {caseStudy.clientType}
+                    </span>
                   </div>
                   <div>
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">Year</span>
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">
+                      Year
+                    </span>
                     <span className="text-sm font-body">{caseStudy.year}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">Engagement</span>
-                    <span className="text-sm font-body">{caseStudy.engagementType}</span>
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">
+                      Engagement
+                    </span>
+                    <span className="text-sm font-body">
+                      {caseStudy.engagementType}
+                    </span>
                   </div>
                   {externalUrl && (
                     <div>
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">External</span>
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">
+                        External
+                      </span>
                       <a
                         href={externalUrl.url}
                         target="_blank"
@@ -122,7 +134,9 @@ export default function CaseStudyLayout({
                   )}
                   {contact && (
                     <div>
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">Contact</span>
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-2">
+                        Contact
+                      </span>
                       <a
                         href={contact.href}
                         className="text-sm font-body text-white hover:text-white/60 transition-colors inline-flex items-center gap-1"
@@ -164,7 +178,9 @@ export default function CaseStudyLayout({
               transition={{ duration: 0.8 }}
               className="lg:col-span-3"
             >
-              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block">Stack</span>
+              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block">
+                Stack
+              </span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -206,7 +222,7 @@ export default function CaseStudyLayout({
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="lg:col-span-9"
               >
-                <p className="text-lg font-body text-white/60 leading-relaxed whitespace-pre-line">
+                <p className="text-base font-body text-white/60 leading-relaxed whitespace-pre-line">
                   {String(caseStudy[key])}
                 </p>
               </motion.div>
@@ -223,7 +239,9 @@ export default function CaseStudyLayout({
               transition={{ duration: 0.8 }}
               className="lg:col-span-3"
             >
-              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block">Results</span>
+              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block">
+                Results
+              </span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -235,7 +253,7 @@ export default function CaseStudyLayout({
                 {caseStudy.results.split("\n").map((result, i) => (
                   <li
                     key={i}
-                    className="text-lg font-body text-white/60 leading-relaxed flex items-start gap-4"
+                    className="text-base font-body text-white/60 leading-relaxed flex items-start gap-4"
                   >
                     <span className="w-2 h-2 bg-white/20 rounded-full mt-2 flex-shrink-0" />
                     {result}
@@ -255,7 +273,9 @@ export default function CaseStudyLayout({
               transition={{ duration: 0.8 }}
               className="lg:col-span-3"
             >
-              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block">What We Learned</span>
+              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block">
+                What We Learned
+              </span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -263,7 +283,7 @@ export default function CaseStudyLayout({
               transition={{ duration: 0.8, delay: 0.1 }}
               className="lg:col-span-9"
             >
-              <p className="text-lg font-body text-white/60 leading-relaxed">
+              <p className="text-base font-body text-white/60 leading-relaxed">
                 {caseStudy.learnings}
               </p>
             </motion.div>

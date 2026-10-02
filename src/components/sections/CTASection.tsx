@@ -109,7 +109,7 @@ const CTASection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 id="cta-heading" className="font-display font-bold text-4xl sm:text-4xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.9] mb-8">
+          <h2 id="cta-heading" className="font-display font-bold text-4xl sm:text-4xl md:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">
             Ready to<br />Build Something<br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-blue-500 to-purple-500">
               Extraordinary?

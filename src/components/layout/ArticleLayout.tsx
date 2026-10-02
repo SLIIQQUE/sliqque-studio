@@ -65,7 +65,9 @@ export default function ArticleLayout({
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted">
                 {date}
               </span>
-              <span className="text-white/20" aria-hidden="true">&bull;</span>
+              <span className="text-white/20" aria-hidden="true">
+                &bull;
+              </span>
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted">
                 {readTime}
               </span>
@@ -75,7 +77,7 @@ export default function ArticleLayout({
               {title}
             </h1>
 
-            <p className="text-lg font-body text-white/60 leading-relaxed">
+            <p className="text-base font-body text-white/60 leading-relaxed">
               {description}
             </p>
 
@@ -143,7 +145,10 @@ export default function ArticleLayout({
           >
             <p className="text-sm font-body text-muted">
               {ctaText}{" "}
-              <Link href="/contact" className="text-white underline underline-offset-2 hover:no-underline">
+              <Link
+                href="/contact"
+                className="text-white underline underline-offset-2 hover:no-underline"
+              >
                 Let&apos;s talk &rarr;
               </Link>
             </p>

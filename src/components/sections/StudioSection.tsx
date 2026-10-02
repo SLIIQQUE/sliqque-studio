@@ -8,7 +8,10 @@ import { differentiators, studioInfo } from "@/data";
 
 const StudioSection = () => {
   return (
-    <section aria-labelledby="studio-heading" className="py-12 px-10 relative overflow-hidden">
+    <section
+      aria-labelledby="studio-heading"
+      className="py-12 px-10 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-orange-500/5" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -24,15 +27,22 @@ const StudioSection = () => {
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/50 block mb-4">
                 {studioInfo.subheadline}
               </span>
-              <h2 id="studio-heading" className="font-display font-bold text-5xl md:text-6xl xl:text-7xl tracking-tight uppercase leading-none">
-                Built with<br />intent.<br />Driven by craft.
+              <h2
+                id="studio-heading"
+                className="font-display font-bold text-5xl tracking-tight uppercase leading-none"
+              >
+                Built with
+                <br />
+                intent.
+                <br />
+                Driven by craft.
               </h2>
             </div>
             <div>
-              <p className="text-xl font-body text-white/50 leading-relaxed mb-6">
+              <p className="text-base font-body text-white/50 leading-relaxed mb-6">
                 {studioInfo.description}
               </p>
-              <p className="text-lg font-body text-white/50">
+              <p className="text-base font-body text-white/50">
                 {studioInfo.specialization}
               </p>
             </div>
@@ -83,7 +93,11 @@ const StudioSection = () => {
             className="group inline-flex items-center gap-2 px-8 py-4 border border-white/20 font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
           >
             Full Story
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            <ArrowRight
+              size={14}
+              className="group-hover:translate-x-1 transition-transform"
+              aria-hidden="true"
+            />
           </Link>
         </motion.div>
       </div>

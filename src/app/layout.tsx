@@ -89,8 +89,9 @@ export default function RootLayout({
         <meta name="color-scheme" content="dark" />
         <meta name="theme-color" content="#050505" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logo.svg" />
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         <meta name="description" content="SLIIQQUE is a boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms. We help founders and businesses automate, engage, and grow." />
         <link rel="alternate" href="https://sliiqque.space" hrefLang="en" />

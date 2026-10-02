@@ -46,14 +46,18 @@ export default function ContactPageClient() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   if (isSubmitted) {
     return (
-      <div className="pt-[100px] min-h-screen flex items-center justify-center px-10" aria-live="polite" aria-atomic="true">
+      <div
+        className="pt-[100px] min-h-screen flex items-center justify-center px-10"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,9 +70,9 @@ export default function ContactPageClient() {
           <h1 className="font-display font-bold text-4xl tracking-tight uppercase mb-6">
             Message Sent
           </h1>
-          <p className="text-lg font-body text-white/60 leading-relaxed">
-             Thank you for reaching out. We&apos;ll review your project details and
-            get back to you within 24 hours.
+          <p className="text-base font-body text-white/60 leading-relaxed">
+            Thank you for reaching out. We&apos;ll review your project details
+            and get back to you within 24 hours.
           </p>
         </motion.div>
       </div>
@@ -77,7 +81,10 @@ export default function ContactPageClient() {
 
   return (
     <div className="pt-[100px]">
-      <section aria-labelledby="contact-heading" className="py-6 md:py-10 px-6 md:px-10 border-b border-white/5">
+      <section
+        aria-labelledby="contact-heading"
+        className="py-6 md:py-10 px-6 md:px-10 border-b border-white/5"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <motion.div
@@ -89,13 +96,17 @@ export default function ContactPageClient() {
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">
                 Contact
               </span>
-              <h1 id="contact-heading" className="font-display font-bold text-4xl md:text-5xl lg:text-[3.4rem] tracking-tighter uppercase leading-tight mb-6 md:mb-8">
-                Start a<br />Conversation
+              <h1
+                id="contact-heading"
+                className="font-display font-bold text-4xl md:text-5xl lg:text-[3rem] tracking-tighter uppercase leading-tight mb-6 md:mb-8"
+              >
+                Start a<br />
+                Conversation
               </h1>
-              <p className="text-lg font-body text-white/60 leading-relaxed mb-8">
-                We&apos;re selective about the projects we take on. This intake form
-                helps us understand if we&apos;re a good fit before we schedule a
-                call.
+              <p className="text-base font-body text-white/60 leading-relaxed mb-8">
+                We&apos;re selective about the projects we take on. This intake
+                form helps us understand if we&apos;re a good fit before we
+                schedule a call.
               </p>
               <div className="space-y-4">
                 <div>
@@ -117,7 +128,6 @@ export default function ContactPageClient() {
                     Lagos, Nigeria · Working globally
                   </span>
                 </div>
-
               </div>
             </motion.div>
 
@@ -130,7 +140,10 @@ export default function ContactPageClient() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                    <label
+                      htmlFor="name"
+                      className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                    >
                       Your Name *
                     </label>
                     <input
@@ -145,7 +158,10 @@ export default function ContactPageClient() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                    <label
+                      htmlFor="email"
+                      className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                    >
                       Email *
                     </label>
                     <input
@@ -163,7 +179,10 @@ export default function ContactPageClient() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="company" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                    <label
+                      htmlFor="company"
+                      className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                    >
                       Company / Project Name
                     </label>
                     <input
@@ -177,7 +196,10 @@ export default function ContactPageClient() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="project-type" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                    <label
+                      htmlFor="project-type"
+                      className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                    >
                       Project Type *
                     </label>
                     <select
@@ -189,7 +211,9 @@ export default function ContactPageClient() {
                       className="w-full bg-background border border-white/10 px-4 py-3 text-sm font-body text-white focus:border-white focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none transition-colors"
                     >
                       <option value="">Select type</option>
-                      <option value="website">Website Design & Development</option>
+                      <option value="website">
+                        Website Design & Development
+                      </option>
                       <option value="product-build">Product Build</option>
                       <option value="interface-engineering">
                         Interface Engineering
@@ -203,7 +227,10 @@ export default function ContactPageClient() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="timeline" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                    <label
+                      htmlFor="timeline"
+                      className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                    >
                       Target Timeline
                     </label>
                     <select
@@ -221,7 +248,10 @@ export default function ContactPageClient() {
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="budget" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                    <label
+                      htmlFor="budget"
+                      className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                    >
                       Approximate Budget
                     </label>
                     <select
@@ -241,7 +271,10 @@ export default function ContactPageClient() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3">
+                  <label
+                    htmlFor="message"
+                    className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-3"
+                  >
                     What Are You Building? *
                   </label>
                   <textarea
@@ -257,7 +290,10 @@ export default function ContactPageClient() {
                 </div>
 
                 {error && (
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded" role="alert">
+                  <div
+                    className="p-4 bg-red-500/10 border border-red-500/30 rounded"
+                    role="alert"
+                  >
                     <p className="text-sm font-body text-red-400">{error}</p>
                   </div>
                 )}
@@ -269,9 +305,25 @@ export default function ContactPageClient() {
                 >
                   {isSending ? (
                     <>
-                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      <svg
+                        className="animate-spin h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                        />
                       </svg>
                       Sending...
                     </>

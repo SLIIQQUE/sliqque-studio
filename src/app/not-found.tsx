@@ -5,7 +5,8 @@ import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
-  description: "The page you're looking for doesn't exist. Let's get you back on track.",
+  description:
+    "The page you're looking for doesn't exist. Let's get you back on track.",
 };
 
 export default function NotFound() {
@@ -18,7 +19,7 @@ export default function NotFound() {
         <h1 className="font-display font-bold text-6xl md:text-8xl tracking-tighter uppercase mb-6">
           Page Not Found
         </h1>
-        <p className="text-lg font-body text-white/60 max-w-md mb-12 leading-relaxed">
+        <p className="text-base font-body text-white/60 max-w-md mb-12 leading-relaxed">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
           Let&apos;s get you back on track.
         </p>
@@ -26,7 +27,11 @@ export default function NotFound() {
           href="/"
           className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
         >
-          <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" aria-hidden="true" />
+          <ArrowLeft
+            size={14}
+            className="group-hover:-translate-x-1 transition-transform"
+            aria-hidden="true"
+          />
           Back to Home
         </Link>
       </div>
