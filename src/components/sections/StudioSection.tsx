@@ -8,7 +8,7 @@ import { differentiators, studioInfo } from "@/data";
 
 const StudioSection = () => {
   return (
-    <section aria-labelledby="studio-heading" className="py-32 px-10 relative overflow-hidden">
+    <section aria-labelledby="studio-heading" className="py-12 px-10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-orange-500/5" />
 
       <div className="max-w-6xl mx-auto relative z-10">

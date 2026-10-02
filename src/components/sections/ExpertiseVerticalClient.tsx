@@ -49,7 +49,7 @@ export default function ExpertiseVerticalClient({
 }: ExpertiseVerticalClientProps) {
   return (
     <div className="pt-[100px]">
-      <section className="py-32 px-10 border-b border-white/5">
+      <section className="py-12 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function ExpertiseVerticalClient({
         </div>
       </section>
 
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <motion.div
@@ -103,7 +103,7 @@ export default function ExpertiseVerticalClient({
         </div>
       </section>
 
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <motion.div
@@ -138,7 +138,7 @@ export default function ExpertiseVerticalClient({
         </div>
       </section>
 
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -180,7 +180,7 @@ export default function ExpertiseVerticalClient({
         </div>
       </section>
 
-      <section className="py-32 px-10">
+      <section className="py-12 px-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

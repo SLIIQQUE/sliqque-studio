@@ -16,7 +16,7 @@ export default function TermsPage() {
   return (
     <PageLayout>
       <div className="pt-[100px]">
-        <section className="py-20 px-10 border-b border-white/5">
+        <section className="py-8 px-10 border-b border-white/5">
           <div className="max-w-3xl mx-auto">
             <Link
               href="/"
@@ -33,7 +33,7 @@ export default function TermsPage() {
             </p>
           </div>
         </section>
-        <section className="py-20 px-10">
+        <section className="py-8 px-10">
           <div className="max-w-3xl mx-auto prose">
             <h2 className="font-display font-bold text-xl tracking-tight uppercase mt-8 mb-4">
               Acceptance of Terms

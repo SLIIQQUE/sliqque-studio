@@ -9,7 +9,7 @@ import { services } from "@/data";
 
 const ServicesSection = () => {
   return (
-    <section aria-labelledby="services-heading" className="py-32 px-6 md:px-10 relative overflow-hidden">
+    <section aria-labelledby="services-heading" className="py-12 px-6 md:px-10 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       </div>

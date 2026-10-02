@@ -17,7 +17,7 @@ import {
 
 function FounderSection() {
   return (
-    <section aria-label="About the founder" className="min-h-[70vh] px-10 pb-32 border-b border-white/5 flex items-center">
+    <section aria-label="About the founder" className="min-h-[70vh] px-10 pb-12 border-b border-white/5 flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <motion.div
@@ -82,7 +82,7 @@ function FounderSection() {
 
 function StatsSection() {
   return (
-    <section className="py-32 px-10 border-b border-white/5">
+    <section className="py-12 px-10 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {studioStats.map((stat) => (
@@ -109,7 +109,7 @@ function StatsSection() {
 
 function ServicesListSection() {
   return (
-    <section aria-labelledby="studio-services-heading" className="py-32 px-10 border-b border-white/5">
+    <section aria-labelledby="studio-services-heading" className="py-12 px-10 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <SectionHeader label="What I Work On" title="Services" />
 
@@ -138,7 +138,7 @@ function ServicesListSection() {
 
 function ProjectsSection() {
   return (
-    <section aria-labelledby="studio-projects-heading" className="py-32 px-10 border-b border-white/5">
+    <section aria-labelledby="studio-projects-heading" className="py-12 px-10 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <SectionHeader label="Selected Work" title="Projects" />
 
@@ -198,7 +198,7 @@ function ProjectsSection() {
 
 function TechStackSection() {
   return (
-    <section aria-labelledby="studio-tech-heading" className="py-32 px-10 border-b border-white/5">
+    <section aria-labelledby="studio-tech-heading" className="py-12 px-10 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <SectionHeader label="Tech Stack" title="Tools I Use" />
 
@@ -223,7 +223,7 @@ function TechStackSection() {
 
 function PhilosophySection() {
   return (
-    <section aria-labelledby="studio-philosophy-heading" className="py-32 px-10 border-b border-white/5">
+    <section aria-labelledby="studio-philosophy-heading" className="py-12 px-10 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <SectionHeader label="What I Believe" title="Philosophy" />
 
@@ -255,7 +255,7 @@ function PhilosophySection() {
 
 function StartProjectSection() {
   return (
-    <section aria-label="Start a Project" className="py-32 px-10">
+    <section aria-label="Start a Project" className="py-12 px-10">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

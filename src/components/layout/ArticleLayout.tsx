@@ -46,7 +46,7 @@ export default function ArticleLayout({
 
   return (
     <div className="pt-[100px]">
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function ArticleLayout({
         </div>
       </section>
 
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ export default function ArticleLayout({
         </div>
       </section>
 
-      <section className="py-20 px-10">
+      <section className="py-8 px-10">
         <div className="max-w-3xl mx-auto prose">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

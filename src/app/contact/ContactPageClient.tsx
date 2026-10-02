@@ -77,7 +77,7 @@ export default function ContactPageClient() {
 
   return (
     <div className="pt-[100px]">
-      <section aria-labelledby="contact-heading" className="py-16 md:py-24 px-6 md:px-10 border-b border-white/5">
+      <section aria-labelledby="contact-heading" className="py-6 md:py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <motion.div

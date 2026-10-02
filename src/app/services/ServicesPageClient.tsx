@@ -11,7 +11,7 @@ import { services, processSteps } from "@/data";
 export default function ServicesPageClient() {
   return (
     <div className="pt-[100px]">
-      <section aria-labelledby="services-page-heading" className="py-24 px-6 md:px-10 border-b border-white/5">
+      <section aria-labelledby="services-page-heading" className="py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             label="Services"
@@ -22,7 +22,7 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      <section className="py-8 px-6 md:px-10 border-b border-white/5">
+      <section className="py-3 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-0">
             {services.map((service, i) => (
@@ -32,7 +32,7 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      <section aria-labelledby="process-heading" className="py-24 px-6 md:px-10 border-b border-white/5">
+      <section aria-labelledby="process-heading" className="py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader label="How We Work" title="Our Process" />
 
@@ -64,7 +64,7 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      <section aria-label="Ready to Start" className="py-24 px-6 md:px-10">
+      <section aria-label="Ready to Start" className="py-10 px-6 md:px-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

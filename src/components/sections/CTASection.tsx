@@ -86,7 +86,7 @@ const FloatingElement = ({ delay, x, y, size }: { delay: number; x: string; y: s
 
 const CTASection = () => {
   return (
-    <section aria-labelledby="cta-heading" className="py-32 px-4 sm:px-10 md:px-10 relative overflow-hidden">
+    <section aria-labelledby="cta-heading" className="py-12 px-4 sm:px-10 md:px-10 relative overflow-hidden">
       <AnimatedBackground />
 
       {/* All floating elements on desktop, fewer on mobile */}

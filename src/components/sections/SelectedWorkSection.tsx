@@ -8,7 +8,7 @@ import { featuredProjects, workPageContent } from "@/data";
 
 const SelectedWorkSection = () => {
   return (
-    <section aria-labelledby="work-heading" className="py-32 px-10 relative overflow-hidden">
+    <section aria-labelledby="work-heading" className="py-12 px-10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-purple-500/5" />
       
       <div className="max-w-6xl mx-auto relative z-10">

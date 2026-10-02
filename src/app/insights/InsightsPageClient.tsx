@@ -9,7 +9,7 @@ import { insightArticles } from "@/data";
 export default function InsightsPageClient() {
   return (
     <div className="pt-[100px]">
-      <section aria-labelledby="insights-page-heading" className="py-32 px-10 border-b border-white/5">
+      <section aria-labelledby="insights-page-heading" className="py-12 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             label="From the Studio"
@@ -20,7 +20,7 @@ export default function InsightsPageClient() {
         </div>
       </section>
 
-      <section className="py-20 px-10">
+      <section className="py-8 px-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
             {insightArticles.map((article, i) => (

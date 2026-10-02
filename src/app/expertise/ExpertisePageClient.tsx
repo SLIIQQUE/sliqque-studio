@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
 export default function ExpertisePageClient() {
   return (
     <div className="pt-[100px]">
-      <section className="py-32 px-10 border-b border-white/5">
+      <section className="py-12 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             label="Expertise"
@@ -26,7 +26,7 @@ export default function ExpertisePageClient() {
         </div>
       </section>
 
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {verticals.map((vertical, i) => (
@@ -36,7 +36,7 @@ export default function ExpertisePageClient() {
         </div>
       </section>
 
-      <section className="py-32 px-10 border-b border-white/5">
+      <section className="py-12 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader label="Capabilities" title="What We Ship" />
 
@@ -73,7 +73,7 @@ export default function ExpertisePageClient() {
         </div>
       </section>
 
-      <section className="py-32 px-10 border-b border-white/5">
+      <section className="py-12 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader label="Shipped Work" title="Projects That Back This Up" />
 
@@ -111,7 +111,7 @@ export default function ExpertisePageClient() {
         </div>
       </section>
 
-      <section className="py-32 px-10">
+      <section className="py-12 px-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -147,7 +147,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-blue-500/5" />
 
       <div className="max-w-6xl mx-auto px-10 relative z-10">

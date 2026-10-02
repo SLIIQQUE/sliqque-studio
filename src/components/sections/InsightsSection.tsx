@@ -235,7 +235,7 @@ const InsightsSection = () => {
   const featuredArticle = insights.find((i) => i.featured);
   const regularArticles = insights.filter((i) => !i.featured);
   return (
-    <section aria-labelledby="insights-heading" className="py-32 px-10 relative overflow-hidden">
+    <section aria-labelledby="insights-heading" className="py-12 px-10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent" />
       
       <div className="max-w-6xl mx-auto relative z-10">

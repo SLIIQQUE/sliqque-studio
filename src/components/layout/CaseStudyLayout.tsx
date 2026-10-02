@@ -53,7 +53,7 @@ export default function CaseStudyLayout({
 }: CaseStudyLayoutProps) {
   return (
     <div className="pt-[100px]">
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ export default function CaseStudyLayout({
           </motion.div>
         </div>
       </section>
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div
             className="aspect-[8/5] rounded-[2px] overflow-hidden"
@@ -155,7 +155,7 @@ export default function CaseStudyLayout({
           </div>
         </div>
       </section>
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <motion.div
@@ -187,7 +187,7 @@ export default function CaseStudyLayout({
         </div>
       </section>
       {sections.map(({ label, key }) => (
-        <section key={key} className="py-20 px-10 border-b border-white/5">
+        <section key={key} className="py-8 px-10 border-b border-white/5">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
               <motion.div
@@ -214,7 +214,7 @@ export default function CaseStudyLayout({
           </div>
         </section>
       ))}
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <motion.div
@@ -246,7 +246,7 @@ export default function CaseStudyLayout({
           </div>
         </div>
       </section>
-      <section className="py-20 px-10 border-b border-white/5">
+      <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <motion.div
@@ -270,7 +270,7 @@ export default function CaseStudyLayout({
           </div>
         </div>
       </section>
-      <section className="py-32 px-10">
+      <section className="py-12 px-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
