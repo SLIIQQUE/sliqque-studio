@@ -140,6 +140,7 @@ const ArticleCard = ({
 
 const FeaturedArticle = ({
   title,
+  excerpt,
   date,
   readingTime,
   tags,
@@ -147,6 +148,7 @@ const FeaturedArticle = ({
   image
 }: {
   title: string;
+  excerpt: string;
   date: string;
   readingTime: string;
   tags: string[];
@@ -165,13 +167,13 @@ const FeaturedArticle = ({
       className="lg:col-span-2 group"
     >
       <Link href={href} className="block">
-        <div className="relative overflow-hidden rounded-3xl mb-8 h-full">
+        <div className="relative overflow-hidden rounded-3xl mb-6 md:mb-8 h-full">
           <Image
             src={image}
             alt={title}
             width={1200}
             height={514}
-            className="w-full h-full aspect-[21/9] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+            className="w-full h-full aspect-video md:aspect-[21/9] object-cover transition-all duration-700 ease-out group-hover:scale-[1.05] grayscale-[80%] group-hover:grayscale-0 md:grayscale-0"
             sizes="(max-width: 768px) 100vw, 800px"
             priority
           />
@@ -187,7 +189,19 @@ const FeaturedArticle = ({
             transition={{ duration: 1 }}
           />
 
-          <div className="absolute inset-0 flex flex-col justify-end p-10">
+          {/* Mobile: same meta overlay as the regular cards */}
+          <div className="md:hidden absolute bottom-6 left-6 right-6 flex items-center gap-4">
+            <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
+              <Calendar className="w-3 h-3" aria-hidden="true" />
+              {date}
+            </span>
+            <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
+              <Clock className="w-3 h-3" aria-hidden="true" />
+              {readingTime}
+            </span>
+          </div>
+
+          <div className="hidden md:flex absolute inset-0 flex-col justify-end p-10">
             <div className="mb-4">
               {tags.map((tag) => (
                 <span
@@ -216,6 +230,15 @@ const FeaturedArticle = ({
               </span>
             </div>
           </div>
+        </div>
+
+        <div className="md:hidden">
+          <h3 className="font-display font-bold text-xl tracking-tight uppercase mb-3">
+            {title}
+          </h3>
+          <p className="text-sm font-body text-white/50 leading-relaxed">
+            {excerpt}
+          </p>
         </div>
       </Link>
     </motion.div>
