@@ -61,7 +61,7 @@ const config = {
       lastmod: lastModified(path),
     };
   },
-  exclude: ["/404", "/500", "/favicon.ico", "/api/*"],
+  exclude: ["/404", "/500", "/favicon.ico", "/api/*", "/llms.txt", "/llms-full.txt"],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/", disallow: ["/api/"] },

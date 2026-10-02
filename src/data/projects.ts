@@ -24,6 +24,8 @@ export interface Project {
   imageAlt: string;
   href: string;
   bgColor?: string;
+  /** Plain-language results, used in llms-full.txt. */
+  outcomes?: string[];
 }
 
 export const projects: Project[] = [
@@ -40,6 +42,13 @@ export const projects: Project[] = [
     imageAlt: "BizEdge HR and Payroll platform dashboard",
     href: "/work/bizedge",
     bgColor: "#1a1a2e",
+    outcomes: [
+      "All-in-one platform replacing 5+ disconnected HR tools",
+      "PAYE compliance under the Nigeria Tax Act built into payroll",
+      "Payroll processing time reduced from days to hours",
+      "Mobile app on iOS and Android with 2,000+ active users",
+      "Used by 2,000+ businesses across Africa and Europe",
+    ],
   },
   {
     title: "SLIIQQUE Real Estate",
@@ -53,6 +62,12 @@ export const projects: Project[] = [
     imageAlt: "SLIIQQUE Real Estate homepage with property search",
     href: "/work/real-estate",
     bgColor: "#102E26",
+    outcomes: [
+      "Website and CMS delivered as one system, so content updates need no code changes",
+      "Edits reach the live site within seconds",
+      "Every enquiry lands in a single Leads inbox",
+      "Production setup on Neon PostgreSQL and Vercel Blob with database migrations",
+    ],
   },
   {
     title: "Lumia",
@@ -67,6 +82,12 @@ export const projects: Project[] = [
     imageAlt: "Lumia electricity payment platform homepage",
     href: "/work/lumia",
     bgColor: "#0f0f0f",
+    outcomes: [
+      "Partnerships with 6 major DisCos across Nigeria",
+      "Instant token delivery by SMS and email, typically under 30 seconds",
+      "Prepaid and postpaid payments with iOS and Android apps",
+      "Reseller program that lets entrepreneurs start electricity vending",
+    ],
   },
   {
     title: "Mo Touch",
@@ -80,6 +101,11 @@ export const projects: Project[] = [
     imageAlt: "Mo Touch — premium interactive makeup artist portfolio gallery with immersive scroll-driven animations",
     href: "/work/mo-touch",
     bgColor: "#0a0a0a",
+    outcomes: [
+      "Smooth 60fps scroll animations on mobile and desktop",
+      "Touch-optimised interactions built for beauty discovery",
+      "Static build on Vercel with global edge caching for fast loads and SEO",
+    ],
   },
   {
     title: "ZINID",
@@ -94,6 +120,12 @@ export const projects: Project[] = [
     imageAlt: "ZINID fraud prevention platform homepage",
     href: "/work/zinid",
     bgColor: "#0a0a0a",
+    outcomes: [
+      "Shared fraud intelligence network connecting multiple Nigerian fintech platforms",
+      "Fraud scores updated in real time across the ecosystem",
+      "Reduced onboarding bonus abuse by identifying repeat offenders across platforms",
+      "AML compliance infrastructure aligned with CBN requirements",
+    ],
   },
 ];
 
