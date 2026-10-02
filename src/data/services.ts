@@ -21,7 +21,7 @@ export const services: ServiceItemData[] = [
     description:
       "Professional, conversion-focused websites for businesses ready to establish their online presence and grow.",
     icon: "Monitor",
-    price: "From $1,000",
+    price: "From $300",
     features: [
       "Custom responsive design",
       "SEO optimization",
@@ -36,7 +36,7 @@ export const services: ServiceItemData[] = [
     description:
       "Custom AI bots for WhatsApp, Telegram, and social platforms. AI agents embedded in websites for real-time customer engagement, lead capture, and automation.",
     icon: "Rocket",
-    price: "From $3,000",
+    price: "From $600",
     features: [
       "WhatsApp bot integration",
       "Telegram bot development",
@@ -50,7 +50,7 @@ export const services: ServiceItemData[] = [
     description:
       "SaaS and business interfaces built for performance and conversion. React, Next.js, TypeScript.",
     icon: "Layers",
-    price: "From $8,000",
+    price: "From $1,000",
     features: [
       "Pixel-perfect build",
       "Performance-first",
@@ -64,7 +64,7 @@ export const services: ServiceItemData[] = [
     description:
       "Your dedicated engineering partner for websites, automation, and AI agents. On call, embedded, always shipping.",
     icon: "Boxes",
-    price: "From $6,000/month",
+    price: "From $2,500/month",
     features: [
       "Priority access",
       "40hrs/month",
@@ -78,7 +78,7 @@ export const services: ServiceItemData[] = [
     description:
       "We audit your website, workflows, and tech stack. Then we tell you exactly what to fix, automate, or rebuild.",
     icon: "Shield",
-    price: "Fixed: $2,500",
+    price: "Fixed: $800",
     features: [
       "Performance audit",
       "Architecture review",

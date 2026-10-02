@@ -86,23 +86,23 @@ export const serviceSchemas = [
         name: "Engineering Services",
         itemListElement: [
           offering("Product Build", 15000, "USD"),
-          offering("Interface Engineering", 8000, "USD"),
+          offering("Interface Engineering", 1000, "USD"),
         ],
       },
     }),
   service("/#service-website", "Website Design", "Website Design & Development",
     "Professional, conversion-focused websites with workflow automation and AI bot integration for businesses ready to grow.",
-    { offers: fixedOffer(1000, "USD", "Starting price") }),
+    { offers: fixedOffer(300, "USD", "Starting price") }),
   service("/#service-saas", "SaaS Frontend Development", "SaaS Interface Engineering",
     "High-performance React and Next.js interfaces for SaaS products with AI agent integration and workflow automation, built for conversion and scale."),
   service("/#service-automation", "Workflow Automation", "Workflow Automation Systems",
     "End-to-end workflow automation connecting websites, bots, and backend systems, reducing manual work and increasing operational efficiency."),
   service("/#service-retainer", "Studio Retainer", "Studio Retainer",
     "Your dedicated engineering partner for websites, automation, and AI agents. On call, embedded, and always shipping with priority access and ongoing support.",
-    { offers: fixedOffer(6000, "USD", "Monthly retainer starting price") }),
+    { offers: fixedOffer(2500, "USD", "Monthly retainer starting price") }),
   service("/#service-audit", "Technical Audit", "Technical Audit",
     "A thorough audit of your website, workflows, and tech stack with a clear action plan covering performance, architecture, and what to fix, automate, or rebuild.",
-    { offers: fixedOffer(2500, "USD", "Fixed price") }),
+    { offers: fixedOffer(800, "USD", "Fixed price") }),
 ];
 
 const author = {
