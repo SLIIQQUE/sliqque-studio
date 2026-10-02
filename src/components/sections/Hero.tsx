@@ -82,6 +82,54 @@ const ITEMS = [
   "Automation",
 ];
 
+const DOT_COLORS = ["#f97316", "#3b82f6", "#8b5cf6"];
+
+/**
+ * MarqueeRow — mobile-only auto-scrolling row of tech pills.
+ *
+ * The set is repeated so each half of the track is wider than the viewport,
+ * then the track slides by -50% (CSS only, transform-only) for a seamless loop.
+ * Pills use margin (not gap) so the -50% shift is exactly one half.
+ */
+const MarqueeRow = ({
+  items,
+  reverse = false,
+  duration,
+  dotOffset = 0,
+}: {
+  items: string[];
+  reverse?: boolean;
+  duration: number;
+  dotOffset?: number;
+}) => {
+  const half = [...items, ...items];
+  const track = [...half, ...half];
+  return (
+    <div className="marquee-fade marquee-pause overflow-hidden">
+      <div
+        className={`flex w-max will-change-transform ${
+          reverse ? "animate-marquee-reverse" : "animate-marquee"
+        }`}
+        style={{ "--marquee-duration": `${duration}s` } as React.CSSProperties}
+      >
+        {track.map((tech, i) => (
+          <div
+            key={`${tech}-${i}`}
+            aria-hidden={i >= items.length ? true : undefined}
+            className="mr-3 flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60 whitespace-nowrap"
+          >
+            <span
+              className="h-1.5 w-1.5 rounded-full"
+              style={{ background: DOT_COLORS[(i + dotOffset) % DOT_COLORS.length] }}
+            />
+            {tech}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Hero = ({
   title = "SLIIQQUE",
   subtitle = "We build interfaces that ship, scale, and convert.",
@@ -275,8 +323,25 @@ const Hero = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-20 flex items-center justify-center gap-8"
+            className="mt-20"
           >
+            {/* Mobile: two counter-drifting marquee rows */}
+            <div
+              className="md:hidden -mx-10 flex flex-col gap-3"
+              aria-label={ITEMS.join(", ")}
+              role="group"
+            >
+              <MarqueeRow items={ITEMS.slice(0, 3)} duration={22} />
+              <MarqueeRow
+                items={ITEMS.slice(3)}
+                reverse
+                duration={26}
+                dotOffset={1}
+              />
+            </div>
+
+            {/* Desktop: static pills */}
+            <div className="hidden md:flex items-center justify-center gap-8">
             {ITEMS.map((tech, i) => (
               <motion.div
                 key={tech}
@@ -289,6 +354,7 @@ const Hero = ({
                 {tech}
               </motion.div>
             ))}
+            </div>
           </motion.div>
         </div>
 

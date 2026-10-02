@@ -121,6 +121,15 @@ body {
   }
 }
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -146,6 +155,34 @@ body {
 
 .animate-marquee {
   animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse var(--marquee-duration, 40s) linear infinite;
+}
+
+/* Pause a marquee row while it is being touched/hovered */
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee-reverse,
+.marquee-pause:active .animate-marquee,
+.marquee-pause:active .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+
+/* Soft fade at both edges so pills dissolve instead of being cut off */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+
+/* The global reduced-motion rule freezes animations; these slow, linear
+   drifts are exempted so the hero pills still move (at a gentler pace). */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-duration: calc(var(--marquee-duration, 40s) * 2.5) !important;
+    animation-iteration-count: infinite !important;
+  }
 }
 
 .animate-spin-slow {
