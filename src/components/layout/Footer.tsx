@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import { OPEN_SETTINGS_EVENT } from "@/lib/analytics";
 
 interface FooterProps {
   brandMark?: string;
@@ -103,7 +104,7 @@ const Footer = ({
         className="relative z-10 w-full max-w-[75rem] mx-auto border-t border-white/5 pt-10"
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             <Link
               href="/privacy"
               className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
@@ -116,6 +117,13 @@ const Footer = ({
             >
               Terms
             </Link>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event(OPEN_SETTINGS_EVENT))}
+              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
+            >
+              Cookie settings
+            </button>
           </div>
           
           <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/20">

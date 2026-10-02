@@ -5,7 +5,7 @@ export const privacyPolicy: LegalDocument = {
   updated: LEGAL_UPDATED,
   intro: [
     "SLIIQQUE Studio is a software studio based in Lagos, Nigeria. This policy explains what personal information we collect through sliiqque.space, why we collect it, how we protect it, and the choices you have.",
-    "We keep our data practices deliberately small. The site has no user accounts, no advertising trackers, and no analytics or marketing cookies. The main thing we collect is what you choose to send us through the contact form or by email.",
+    "We keep our data practices deliberately small. The site has no user accounts and no advertising trackers. We use Google Analytics to understand how the site is used, but only if you accept it, and nothing is sent to Google before then. The main thing we collect is what you choose to send us through the contact form or by email.",
   ],
   sections: [
     {
@@ -23,6 +23,7 @@ export const privacyPolicy: LegalDocument = {
         "Contact form details: your name, email address, company or project name, project type, target timeline, approximate budget, and the message you write. If you arrive from a service page, the form may also contain the service and add-ons you selected and the estimate shown to you.",
         "Email correspondence: anything you send to {email}, including attachments, and our replies.",
         "Project information: when you become a client, the briefs, files, credentials and business details you share so we can deliver the work.",
+        "Analytics data, only if you accept analytics cookies: pages viewed, approximate location (city or country level), device and browser type, language, how you reached the site, and how you interact with pages. This is collected by Google Analytics using cookies and is not linked to your name or email.",
         "Technical data: like every website, our hosting infrastructure automatically processes your IP address, browser type, device type, pages requested and timestamps in server logs, mainly for security and reliability.",
       ],
       after: [
@@ -35,6 +36,7 @@ export const privacyPolicy: LegalDocument = {
       items: [
         "To respond to your enquiry, assess whether we are a good fit, and prepare quotes and proposals.",
         "To deliver the services you engage us for, and to communicate with you about the work.",
+        "To understand how the site is used and improve it, using aggregated analytics, only with your consent.",
         "To keep the site secure, prevent spam and abuse, and fix technical problems.",
         "To meet legal, accounting and tax obligations.",
         "To send you updates about our services, only where you have asked for them or where the law allows, and always with a way to opt out.",
@@ -50,7 +52,7 @@ export const privacyPolicy: LegalDocument = {
         "Where data protection law such as the Nigeria Data Protection Act 2023 (NDPA), the UK GDPR or the EU GDPR applies, we rely on the following bases:",
       ],
       items: [
-        "Consent: when you submit the contact form or subscribe to updates, you consent to us using your details for that purpose. You can withdraw consent at any time.",
+        "Consent: when you submit the contact form or subscribe to updates, you consent to us using your details for that purpose. Analytics cookies are also set only with your consent. You can withdraw consent at any time.",
         "Contract: when processing is necessary to take steps at your request before entering a contract, or to perform a contract with you.",
         "Legitimate interests: to operate and secure the site, keep business records and improve our services, balanced against your rights and expectations.",
         "Legal obligation: where we must retain or disclose information to comply with the law.",
@@ -60,8 +62,15 @@ export const privacyPolicy: LegalDocument = {
       id: "cookies",
       title: "Cookies and similar technologies",
       paragraphs: [
-        "This site does not set advertising, tracking or analytics cookies, and it does not use third-party marketing pixels. Your browser may store small technical items needed to display the site, such as cached assets, which are not used to identify you.",
-        "If we add analytics or any non-essential cookie in future, we will update this policy first and ask for your consent where the law requires it. Most browsers let you block or delete cookies in their settings.",
+        "When you first visit, a banner asks whether you accept analytics cookies. If you choose Decline, or do nothing, no analytics script is loaded and no analytics cookies are set. If you choose Accept, we load Google Analytics (Google Analytics 4), which sets the following cookies:",
+      ],
+      items: [
+        "_ga: distinguishes visitors so we can count them. Expires after up to two years.",
+        "_ga_ followed by an identifier: keeps session state for analytics. Expires after up to two years.",
+      ],
+      after: [
+        "These cookies are used only for analytics. We do not use advertising cookies, remarketing or third-party marketing pixels. Your browser may also store small technical items needed to display the site, which do not identify you.",
+        "You can change your choice at any time with \"Cookie settings\" in the footer. Declining or withdrawing consent stops further analytics and removes the analytics cookies we can reach from this site. You can also block or delete cookies in your browser settings.",
       ],
     },
     {
@@ -72,6 +81,7 @@ export const privacyPolicy: LegalDocument = {
       ],
       items: [
         "Email delivery: contact form messages are delivered to us through an email service provider (Resend).",
+        "Analytics: if you accept analytics cookies, Google (Google Analytics) processes the analytics data described above, under its own privacy policy.",
         "Hosting and infrastructure: our website is served by a hosting provider and content delivery network that process technical data such as IP addresses.",
         "Business tools: tools we use for email, file storage, project management and invoicing may hold information you send us.",
         "Professional advisers and authorities: lawyers, accountants and regulators, where needed to protect our rights or comply with the law.",
@@ -84,7 +94,7 @@ export const privacyPolicy: LegalDocument = {
       id: "international-transfers",
       title: "International transfers",
       paragraphs: [
-        "We are based in Nigeria, and our providers may store or process data in other countries, including the United States and the European Union. When we transfer personal information across borders, we take steps to make sure it stays protected, such as choosing reputable providers with appropriate contractual safeguards, as required by the NDPA and other applicable laws.",
+        "We are based in Nigeria, and our providers may store or process data in other countries, including the United States and the European Union. When we transfer personal information across borders, we take steps to make sure it stays protected, such as choosing reputable providers with appropriate contractual safeguards, as required by the NDPA and other applicable laws. If you accept analytics, Google may process analytics data on servers outside your country, including in the United States.",
       ],
     },
     {

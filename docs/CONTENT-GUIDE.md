@@ -48,6 +48,6 @@ Case studies carry their original project years (BizEdge 2021, Lumia 2019, ZINID
 - **Add-on prices are estimates, not commitments.** The page tells visitors the final quote is confirmed after a conversation, and the Terms say the same. Keep that wording consistent.
 - **Real Estate case study** is written from demo data. Replace it with real results and a live link when the product launches.
 - **Legal pages** are a general template. Check them with a lawyer. They state that Nigerian law and the Lagos courts apply, that client IP transfers on full payment, and a 12-month liability cap. Change these if your agreements differ.
-- **Cookies:** the Privacy Policy says the site sets no analytics or tracking cookies. If you add analytics, change section 5 first.
+- **Analytics and cookies:** Google Analytics loads only after the visitor accepts the banner, and the Privacy Policy (collection, legal bases, cookies, sharing, transfers) describes exactly that. If you add another tool or cookie, update `src/data/legal/privacy.ts` first. The GA ID is `NEXT_PUBLIC_GA_ID` (default `G-798KDK23FZ`).
 - **`public/sitemap.xml` and `public/robots.txt` are generated.** Edit `next-sitemap.config.js` instead, then run `npm run build`.
 - **`/llms.txt` and `/llms-full.txt` are generated** by `src/data/llms.ts` from services, add-ons, projects, articles, studio info and the FAQ. Change the data, not the output. Only the email and page list inside `llms.ts` are written by hand there.

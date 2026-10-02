@@ -67,6 +67,7 @@ Always run `npm run build` before shipping, so the sitemap is regenerated.
 | `RESEND_API_KEY` | Resend API key for the contact form |
 | `RESEND_FROM_EMAIL` | Sender, on a Resend-verified domain (`SLIIQQUE Contact <contact@send.sliiqque.space>`) |
 | `RESEND_TO_EMAIL` | Where enquiries are delivered. Defaults to `hello@sliiqque.space` if unset |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID. Defaults to `G-798KDK23FZ` (property "SLIIQQUE") if unset |
 
 Set the same variables in the Vercel project settings. The form works only when `RESEND_API_KEY` is present.
 
@@ -112,6 +113,9 @@ src/
     services/              ServiceConfigurator (add-on picker and estimate)
     ui/                    Reusable pieces (SectionHeader, ServiceItem, cards, cursor, etc.)
     SchemaOrg.tsx          Emits JSON-LD on every page
+    analytics/             Cookie banner and consent-gated Google Analytics
+  lib/
+    analytics.ts           GA measurement ID, consent keys, trackEvent()
   data/
     projects.ts            Projects (array order is display order; the first three feature on Home)
     services.ts            Service summaries and "From $X" prices
@@ -158,9 +162,24 @@ Full detail in [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md). In short:
 
 ---
 
+## Analytics and cookie consent
+
+Google Analytics 4 (property "SLIIQQUE", stream `https://sliiqque.space`) is wired in through `src/components/analytics/AnalyticsConsent.tsx`, mounted in the root layout. It is **consent-first**: no Google script loads and no cookie is set until the visitor clicks Accept in the banner. Declining (or ignoring it) loads nothing, and Decline or withdrawing removes the `_ga` cookies. The choice is stored in `localStorage` (`sliiqque-analytics-consent`) and can be changed from "Cookie settings" in the footer.
+
+Custom events (only sent after consent, helper in `src/lib/analytics.ts`):
+
+| Event | Fired when |
+|-------|-----------|
+| `begin_quote` | A visitor clicks "Request This Quote" on a service page (service, add-on count, estimate) |
+| `generate_lead` | The contact form is submitted successfully (project type) |
+
+In GA4, mark `generate_lead` and `begin_quote` as **key events** (Admin > Events), and check Reports > Realtime after each deploy. Ad blockers hide visits, so test in a clean browser. The privacy policy describes this setup, so update it if the analytics configuration changes.
+
+---
+
 ## Legal pages
 
-`/privacy/` and `/terms/` render from `src/data/legal/privacy.ts` and `terms.ts` through `LegalPage`. Edit the text there. Update the date by changing `LEGAL_UPDATED` in `src/data/legal/types.ts`. Have the wording reviewed by a lawyer before relying on it, and revisit the cookie section if analytics are ever added.
+`/privacy/` and `/terms/` render from `src/data/legal/privacy.ts` and `terms.ts` through `LegalPage`. Edit the text there. Update the date by changing `LEGAL_UPDATED` in `src/data/legal/types.ts`. Have the wording reviewed by a lawyer before relying on it, and update the cookie section if the analytics setup changes.
 
 ---
 

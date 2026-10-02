@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Check } from "lucide-react";
 import { serviceDetails, formatPrice } from "@/data";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactPageClient() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -54,6 +55,7 @@ export default function ContactPageClient() {
         throw new Error(err.error || "Failed to send message");
       }
 
+      trackEvent("generate_lead", { project_type: formData.project || "unspecified" });
       setIsSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");

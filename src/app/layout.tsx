@@ -5,6 +5,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { MotionConfig } from "framer-motion";
 import { SchemaOrg } from "@/components/SchemaOrg";
+import { AnalyticsConsent } from "@/components/analytics/AnalyticsConsent";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import CursorWrapper from "@/components/ui/CursorWrapper";
 
@@ -99,6 +100,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
         <SchemaOrg />
+        <AnalyticsConsent />
         <header>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:text-sm focus:font-medium">
             Skip to content

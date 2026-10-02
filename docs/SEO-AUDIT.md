@@ -57,6 +57,10 @@ Audited 2 Oct 2026, updated after the service pages, legal pages and Real Estate
 - Keep descriptions between roughly 130 and 160 characters.
 - After adding or editing pages, crawl the sitemap URLs and check each has one description, one canonical (with trailing slash) and a title of 62 characters or fewer.
 
+## Analytics
+
+Google Analytics 4 is installed, consent-gated, with `begin_quote` and `generate_lead` events (see README). Todo in GA4: mark those two as key events, link the property to Search Console (Admin > Product links) so queries and landing pages show next to behaviour, and check Realtime after deploying. Declined visitors are not counted, so expect lower numbers than server logs.
+
 ## Maintenance checklist
 
 When you change any of these, also update:

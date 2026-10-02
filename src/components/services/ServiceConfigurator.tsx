@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Check, Plus } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { trackEvent } from "@/lib/analytics";
 import { estimateTotal, formatPrice, type ServiceDetail } from "@/data";
 
 interface ServiceConfiguratorProps {
@@ -125,6 +126,7 @@ export function ServiceConfigurator({ service }: ServiceConfiguratorProps) {
 
               <Link
                 href={quoteHref}
+                onClick={() => trackEvent("begin_quote", { service: service.slug, addons: selected.length, estimate: total })}
                 className="group w-full px-8 py-4 bg-white text-black font-body font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
               >
                 Request This Quote
