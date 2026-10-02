@@ -18,6 +18,8 @@ Key facts:
 - Technical Audit: fixed $800
 
 
+Prices are starting prices. Optional add-ons (for example a booking system, +$100 on a website) increase the total. Details: https://sliiqque.space/services/
+
 ## FAQ
 
 ### What does SLIIQQUE do?

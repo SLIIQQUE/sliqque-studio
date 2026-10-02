@@ -4,3 +4,4 @@ export * from "./services";
 export * from "./expertise";
 export * from "./insights";
 export * from "./faq";
+export * from "./service-details";

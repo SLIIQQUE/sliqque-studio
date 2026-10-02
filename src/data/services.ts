@@ -1,5 +1,6 @@
 export interface ServiceItemData {
   index: string;
+  slug?: string;
   title: string;
   description: string;
   icon: string;
@@ -17,6 +18,7 @@ export interface ProcessStep {
 export const services: ServiceItemData[] = [
   {
     index: "01",
+    slug: "website-design-development",
     title: "Website Design & Development",
     description:
       "Professional, conversion-focused websites for businesses ready to establish their online presence and grow.",
@@ -32,6 +34,7 @@ export const services: ServiceItemData[] = [
   },
   {
     index: "02",
+    slug: "ai-bot-agent-development",
     title: "AI Bot & Agent Development",
     description:
       "Custom AI bots for WhatsApp, Telegram, and social platforms. AI agents embedded in websites for real-time customer engagement, lead capture, and automation.",
@@ -46,6 +49,7 @@ export const services: ServiceItemData[] = [
   },
   {
     index: "03",
+    slug: "interface-engineering",
     title: "Interface Engineering",
     description:
       "SaaS and business interfaces built for performance and conversion. React, Next.js, TypeScript.",
@@ -60,6 +64,7 @@ export const services: ServiceItemData[] = [
   },
   {
     index: "04",
+    slug: "studio-retainer",
     title: "Studio Retainer",
     description:
       "Your dedicated engineering partner for websites, automation, and AI agents. On call, embedded, always shipping.",
@@ -74,6 +79,7 @@ export const services: ServiceItemData[] = [
   },
   {
     index: "05",
+    slug: "technical-audit",
     title: "Technical Audit",
     description:
       "We audit your website, workflows, and tech stack. Then we tell you exactly what to fix, automate, or rebuild.",

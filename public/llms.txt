@@ -15,6 +15,15 @@ Key facts:
 - Studio Retainer: from $2,500 per month, 40 hours per month
 - Technical Audit: fixed $800
 
+Prices are starting prices. Each service page lets visitors add optional features, and the estimate rises with each one (for example, a booking system adds $100 to a website).
+
+## Service pages (with add-ons and live estimate)
+- [Website Design & Development](https://sliiqque.space/services/website-design-development/): from $300
+- [AI Bot & Agent Development](https://sliiqque.space/services/ai-bot-agent-development/): from $600
+- [Interface Engineering](https://sliiqque.space/services/interface-engineering/): from $1,000
+- [Studio Retainer](https://sliiqque.space/services/studio-retainer/): from $2,500 per month
+- [Technical Audit](https://sliiqque.space/services/technical-audit/): from $800
+
 ## Pages
 - [Home](https://sliiqque.space/): Studio overview, services, selected work
 - [Services](https://sliiqque.space/services/): Engagement types, process, FAQ

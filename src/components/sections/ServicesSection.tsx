@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -35,8 +36,8 @@ const ServicesSection = () => {
           transition={{ delay: 0.6 }}
           className="mt-20 text-center"
         >
-          <a
-            href="/services"
+          <Link
+            href="/services/"
             className="group inline-flex items-center gap-3 text-[11px] font-body font-medium uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
           >
             View all services
@@ -48,7 +49,7 @@ const ServicesSection = () => {
             >
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

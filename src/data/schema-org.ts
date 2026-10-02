@@ -1,5 +1,6 @@
 import { faqs } from "./faq";
 import { projects } from "./projects";
+import { serviceDetails } from "./service-details";
 
 export const baseUrl = "https://sliiqque.space";
 
@@ -204,6 +205,28 @@ const workListSchema = {
   })),
 };
 
+const serviceDetailSchema = (d: (typeof serviceDetails)[number]) => ({
+  "@type": "Service",
+  "@id": baseUrl + `/services/${d.slug}/#service`,
+  name: d.title,
+  serviceType: d.title,
+  description: d.description,
+  url: baseUrl + `/services/${d.slug}/`,
+  provider: { "@id": baseUrl + "/#organization" },
+  areaServed: "Worldwide",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "USD",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      priceCurrency: "USD",
+      minPrice: d.basePrice,
+      ...(d.unit === "month" ? { unitCode: "MON" } : {}),
+    },
+    description: `Starting price. ${d.addOns.length} optional add-ons increase the total.`,
+  },
+});
+
 const norm = (pathname: string) => pathname.replace(/\/?$/, "/");
 
 /** Schema nodes that belong to one page only; the site-wide graph lives in SchemaOrg. */
@@ -215,6 +238,8 @@ export function pageSchemas(pathname: string) {
   if (path === "/work/") nodes.push(workListSchema);
   const project = projects.find((p) => path === p.href + "/");
   if (project) nodes.push(projectSchema(project));
+  const detail = serviceDetails.find((d) => path === `/services/${d.slug}/`);
+  if (detail) nodes.push(serviceDetailSchema(detail));
   const post = articleSchemas.find((a) => a["@id"] === baseUrl + path + "#article");
   if (post) nodes.push(post);
   return nodes;
@@ -222,6 +247,8 @@ export function pageSchemas(pathname: string) {
 
 export function pageLabel(pathname: string, fallback: string) {
   const path = norm(pathname);
+  const detail = serviceDetails.find((d) => path === `/services/${d.slug}/`);
+  if (detail) return detail.title;
   const project = projects.find((p) => path === p.href + "/");
   if (project) return project.title;
   const post = articleSchemas.find((a) => a["@id"] === baseUrl + path + "#article");

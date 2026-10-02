@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Check } from "lucide-react";
+import { serviceDetails, formatPrice } from "@/data";
 
 export default function ContactPageClient() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,6 +18,24 @@ export default function ContactPageClient() {
     budget: "",
     message: "",
   });
+
+  // Prefill from a service page quote: /contact/?service=website&addons=booking,cms&estimate=400
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = serviceDetails.find((s) => s.contactValue === params.get("service"));
+    if (!service) return;
+    const ids = (params.get("addons") ?? "").split(",").filter(Boolean);
+    const names = service.addOns.filter((a) => ids.includes(a.id)).map((a) => a.name);
+    const estimate = Number(params.get("estimate"));
+    const lines = [
+      `Service: ${service.title}`,
+      names.length ? `Add-ons: ${names.join(", ")}` : "Add-ons: none selected",
+      Number.isFinite(estimate) && estimate > 0 ? `Estimated from: ${formatPrice(estimate, service.unit)}` : "",
+      "",
+      "About my project: ",
+    ];
+    setFormData((cur) => ({ ...cur, project: service.contactValue, message: lines.filter((l, i) => l || i === 3).join("\n") }));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -214,6 +233,7 @@ export default function ContactPageClient() {
                       <option value="website">
                         Website Design & Development
                       </option>
+                      <option value="ai-bot">AI Bot & Agent Development</option>
                       <option value="product-build">Product Build</option>
                       <option value="interface-engineering">
                         Interface Engineering
@@ -262,10 +282,11 @@ export default function ContactPageClient() {
                       className="w-full bg-background border border-white/10 px-4 py-3 text-sm font-body text-white focus:border-white focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none transition-colors"
                     >
                       <option value="">Select budget</option>
-                      <option value="5k-15k">$5k - $15k</option>
-                      <option value="15k-40k">$15k - $40k</option>
-                      <option value="40k-80k">$40k - $80k</option>
-                      <option value="80k+">$80k+</option>
+                      <option value="under-500">Under $500</option>
+                      <option value="500-1.5k">$500 - $1,500</option>
+                      <option value="1.5k-5k">$1,500 - $5,000</option>
+                      <option value="5k-15k">$5,000 - $15,000</option>
+                      <option value="15k+">$15,000+</option>
                     </select>
                   </div>
                 </div>

@@ -27,6 +27,7 @@ interface ServiceItemProps extends ServiceItemData {
 
 export function ServiceItem({
   index,
+  slug,
   title,
   description,
   icon: iconName,
@@ -133,7 +134,7 @@ export function ServiceItem({
             )}
 
             <motion.a
-              href="/contact"
+              href={slug ? `/services/${slug}/` : "/contact"}
               whileHover={{ x: 4 }}
               className={`inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none ${
                 highlight
@@ -141,7 +142,7 @@ export function ServiceItem({
                   : "text-white/55 hover:text-white/80"
               }`}
             >
-              Get {title} Quote
+              {slug ? "Build Your Quote" : `Get ${title} Quote`}
               <ChevronRight
                 size={12}
                 className="group-hover:translate-x-1 transition-transform"

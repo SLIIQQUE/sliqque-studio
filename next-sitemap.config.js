@@ -46,6 +46,8 @@ const config = {
       priority = staticPriorities[path];
     } else if (workPriorities.includes(path)) {
       priority = 0.9;
+    } else if (path.startsWith("/services/")) {
+      priority = 0.8;
     } else if (path.startsWith("/expertise/")) {
       priority = 0.8;
     } else if (path.startsWith("/insights/")) {
