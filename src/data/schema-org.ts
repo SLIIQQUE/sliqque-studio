@@ -13,7 +13,7 @@ const logo = {
   width: 192,
   height: 192,
 };
-const sameAs = ["https://x.com/sliiqque", "https://studio.sliiqque.space"];
+const sameAs = ["https://x.com/sliiqque", "https://web.facebook.com/dev.sliiqque", "https://studio.sliiqque.space"];
 
 export const personSchema = {
   "@type": "Person",
