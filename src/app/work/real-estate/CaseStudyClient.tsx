@@ -8,7 +8,7 @@ const caseStudy = {
   year: "2026",
   engagementType: "Product Build",
   stack: ["Next.js", "React", "TypeScript", "Payload CMS", "PostgreSQL", "Tailwind CSS"],
-  context: `SLIIQQUE Real Estate is a property website with a content management system built into the same application. Visitors browse homes for sale or rent, meet the agents, read market insights, and send enquiries. The team behind it manages every listing, agent, article, and photo from a themed admin panel at /admin.
+  context: `Real Estate is a property website with a content management system built into the same application. Visitors browse homes for sale or rent, meet the agents, read market insights, and send enquiries. The team behind it manages every listing, agent, article, and photo from a themed admin panel at /admin.
 
 The goal was a site that feels like a premium editorial brand for visitors and behaves like a simple tool for the people running it.`,
   problem: `Most property sites force a trade-off between design and control:
@@ -48,10 +48,10 @@ export default function CaseStudyClient() {
   return (
     <CaseStudyLayout
       caseStudy={caseStudy}
-      title="SLIIQQUE Real Estate"
+      title="Real Estate"
       description="A property website with a built-in CMS for listings, agents, articles, and enquiries, managed without code changes."
       heroImage="/images/real-estate-screenshot.jpg"
-      heroAlt="SLIIQQUE Real Estate homepage with property search"
+      heroAlt="Real Estate homepage with property search"
       heroBgColor="#102E26"
       sections={[
         { label: "The Context", key: "context" },

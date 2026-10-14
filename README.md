@@ -16,7 +16,7 @@ Related docs:
 - **Home:** hero, services preview, selected work, stats, studio overview, latest insights, call to action
 - **Services:** five engagement types with "from" prices, process, and an FAQ
 - **Service detail pages:** each service has a page where visitors choose optional add-ons and see the estimate rise (a booking system adds $100 to a $300 website). The selection pre-fills the contact form
-- **Work:** four case studies (SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID)
+- **Work:** five case studies (Creative Studio, Real Estate, Lumia, Mo Touch, ZINID)
 - **Expertise:** SaaS platforms, FinTech and RegTech systems, AI agents and automation
 - **Insights:** 11 technical articles
 - **Studio, Contact, Privacy, Terms**

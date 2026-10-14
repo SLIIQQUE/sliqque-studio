@@ -28,7 +28,7 @@ export const verticals: ExpertiseVertical[] = [
     href: "/expertise/saas",
     metric: "Shipped",
     imageSrc: "/images/real-estate-screenshot.jpg",
-    imageAlt: "SLIIQQUE Real Estate CMS-powered property platform",
+    imageAlt: "Real Estate CMS-powered property platform",
     tags: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
   },
   {
@@ -57,7 +57,7 @@ export const capabilities: Capability[] = [
   {
     title: "React & Next.js Engineering",
     description:
-      "Component architecture, state management, SSR and static generation. We build frontends that stay fast as features grow, not monoliths that slow down with every release. SLIIQQUE Real Estate's CMS-powered platform runs on this foundation.",
+      "Component architecture, state management, SSR and static generation. We build frontends that stay fast as features grow, not monoliths that slow down with every release. Real Estate's CMS-powered platform runs on this foundation.",
     icon: "Layers",
   },
   {
@@ -88,7 +88,7 @@ export const capabilities: Capability[] = [
 
 export const projectReferences: ProjectReference[] = [
   {
-    name: "SLIIQQUE Real Estate",
+    name: "Real Estate",
     description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
     href: "/work/real-estate",
   },

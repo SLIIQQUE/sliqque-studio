@@ -8,17 +8,17 @@ import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClie
 export const metadata: Metadata = {
   title: "SaaS & Full-Stack Platform Engineering",
   description:
-    "Full-stack React and Next.js platforms with CMS-backed admin panels, payments and mobile apps. We built SLIIQQUE Real Estate's CMS platform and Lumia's payment platform.",
+    "Full-stack React and Next.js platforms with CMS-backed admin panels, payments and mobile apps. We built Real Estate's CMS platform and Lumia's payment platform.",
   openGraph: {
     title: "SaaS & Full-Stack Platform Engineering | SLIIQQUE",
     description:
-    "Full-stack React/Next.js platforms with CMS-backed architectures, real-time data, and mobile apps. We built SLIIQQUE Real Estate and Lumia.",
+    "Full-stack React/Next.js platforms with CMS-backed architectures, real-time data, and mobile apps. We built Real Estate and Lumia.",
     images: [
       {
         url: "https://sliiqque.space/images/real-estate-screenshot.jpg",
         width: 1280,
         height: 800,
-        alt: "SLIIQQUE Real Estate: a SaaS platform built by SLIIQQUE",
+        alt: "Real Estate: a SaaS platform built by SLIIQQUE",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SaaS & Full-Stack Platform Engineering | SLIIQQUE",
     description:
-      "Full-stack React/Next.js platforms. We built SLIIQQUE Real Estate's CMS platform and Lumia's payment platform.",
+      "Full-stack React/Next.js platforms. We built Real Estate's CMS platform and Lumia's payment platform.",
     images: ["https://sliiqque.space/images/real-estate-screenshot.jpg"],
   },
 };
@@ -43,7 +43,7 @@ export default function SaaSPage() {
       <ExpertiseVerticalClient
         title="SaaS & Full-Stack Platforms"
         subtitle="Full-Stack React & Next.js Platforms Built to Scale"
-        description="We build production platforms with CMS-backed admin panels, payment integrations, real-time data, and mobile apps. SLIIQQUE Real Estate's CMS-powered platform and Lumia's electricity payment platform are the proof. If it involves React, TypeScript, and data that needs to move, we can build it."
+        description="We build production platforms with CMS-backed admin panels, payment integrations, real-time data, and mobile apps. Real Estate's CMS-powered platform and Lumia's electricity payment platform are the proof. If it involves React, TypeScript, and data that needs to move, we can build it."
         stack={["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "React Query", "Tailwind CSS", "Framer Motion"]}
         services={[
           "CMS-backed platform architecture",
@@ -56,7 +56,7 @@ export default function SaaSPage() {
         cta="Building a SaaS platform?"
         relatedProjects={[
           {
-            title: "SLIIQQUE Real Estate",
+            title: "Real Estate",
             description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
             href: "/work/real-estate",
             imageSrc: "/images/real-estate-screenshot.jpg",

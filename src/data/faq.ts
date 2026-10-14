@@ -42,6 +42,6 @@ export const faqs: FaqItem[] = [
   {
     question: "Does SLIIQQUE offer creative or video production services?",
     answer:
-      "Yes, through SLIIQQUE Creative Studio (studio.sliiqque.space), the creative-production vertical of the SLIIQQUE ecosystem. It produces AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns for brands in Nigeria, Africa and worldwide, separate from this site's software and automation work.",
+      "Yes, through Creative Studio (studio.sliiqque.space), the creative-production vertical of the SLIIQQUE ecosystem. It produces AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns for brands in Nigeria, Africa and worldwide, separate from this site's software and automation work.",
   },
 ];

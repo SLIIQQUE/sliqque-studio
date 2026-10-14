@@ -8,7 +8,7 @@ const caseStudy = {
   year: "2026",
   engagementType: "Platform Build",
   stack: ["Next.js 16", "React 19", "TypeScript", "Resend", "Vercel Analytics"],
-  context: `SLIIQQUE Creative Studio is the creative-production vertical of the SLIIQQUE ecosystem: AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns, run on its own platform at studio.sliiqque.space, separate from this site's software and automation work.
+  context: `Creative Studio is the creative-production vertical of the SLIIQQUE ecosystem: AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns, run on its own platform at studio.sliiqque.space, separate from this site's software and automation work.
 
 AI is how the studio produces, not what it sells. The brief we set ourselves: build a platform that presents five creative service lines with transparent, dual-currency pricing, and prove range across categories with real finished work, without a single client logo to lean on yet.`,
   problem: `Launching a new creative-production vertical with no existing client roster meant solving a few problems at once:
@@ -56,10 +56,10 @@ export default function CaseStudyClient() {
   return (
     <CaseStudyLayout
       caseStudy={caseStudy}
-      title="SLIIQQUE Creative Studio"
+      title="Creative Studio"
       description="Our own creative-production vertical: AI commercials, digital humans, product and fashion photography, and brand launch campaigns."
       heroImage="/images/creative-studio-screenshot.jpg"
-      heroAlt="SLIIQQUE Creative Studio homepage"
+      heroAlt="Creative Studio homepage"
       heroBgColor="#0a0a0a"
       externalUrl={{ url: "https://studio.sliiqque.space", label: "studio.sliiqque.space" }}
       contact={null}

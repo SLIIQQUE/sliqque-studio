@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Case study: a property website with a built-in CMS for searchable listings, agent profiles, articles and enquiry capture.",
   openGraph: {
-    title: "SLIIQQUE Real Estate Case Study | SLIIQQUE",
+    title: "Real Estate Case Study | SLIIQQUE",
     description:
       "A property website with a built-in CMS for listings, agents, articles, and enquiries, managed from one admin panel.",
     images: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "https://sliiqque.space/images/real-estate-screenshot.jpg",
         width: 1280,
         height: 800,
-        alt: "SLIIQQUE Real Estate CMS platform interface",
+        alt: "Real Estate CMS platform interface",
       },
     ],
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SLIIQQUE Real Estate Case Study | SLIIQQUE",
+    title: "Real Estate Case Study | SLIIQQUE",
     description:
       "Building a CMS-powered property website where the team manages everything without code changes.",
     images: ["https://sliiqque.space/images/real-estate-screenshot.jpg"],

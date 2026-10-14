@@ -30,7 +30,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "SLIIQQUE Creative Studio",
+    title: "Creative Studio",
     year: "2026",
     clientType: "Creative Production (In-House)",
     engagementType: "Platform Build",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     metric: "Creative Vertical",
     logoSrc: "https://studio.sliiqque.space/icon.png",
     imageSrc: "/images/creative-studio-screenshot.jpg",
-    imageAlt: "SLIIQQUE Creative Studio homepage",
+    imageAlt: "Creative Studio homepage",
     href: "/work/creative-studio",
     bgColor: "#0a0a0a",
     outcomes: [
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "SLIIQQUE Real Estate",
+    title: "Real Estate",
     year: "2026",
     clientType: "Real Estate",
     engagementType: "Product Build",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "React", "Payload CMS", "PostgreSQL", "Tailwind CSS"],
     metric: "CMS-Powered",
     imageSrc: "/images/real-estate-screenshot.jpg",
-    imageAlt: "SLIIQQUE Real Estate homepage with property search",
+    imageAlt: "Real Estate homepage with property search",
     href: "/work/real-estate",
     bgColor: "#102E26",
     outcomes: [
@@ -139,13 +139,13 @@ export const workPageContent: WorkPageContent = {
 
 export const studioProjects: StudioProject[] = [
   {
-    name: "SLIIQQUE Creative Studio",
+    name: "Creative Studio",
     type: "Creative Production: AI commercials, digital humans & photography",
     metric: "Creative Vertical",
     link: "/work/creative-studio",
   },
   {
-    name: "SLIIQQUE Real Estate",
+    name: "Real Estate",
     type: "Real Estate: CMS-powered property platform",
     metric: "CMS-Powered",
     link: "/work/real-estate",

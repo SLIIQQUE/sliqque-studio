@@ -62,7 +62,7 @@ export default function DesignSystemsPage() {
             imageSrc: "/images/motouch-screenshot.jpg",
           },
           {
-            title: "SLIIQQUE Real Estate",
+            title: "Real Estate",
             description: "CMS-powered property platform with automated content workflows and no-redeploy publishing",
             href: "/work/real-estate",
             imageSrc: "/images/real-estate-screenshot.jpg",

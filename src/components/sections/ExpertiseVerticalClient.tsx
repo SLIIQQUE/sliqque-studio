@@ -25,7 +25,7 @@ interface ExpertiseVerticalClientProps {
 
 const defaultRelatedProjects: RelatedProject[] = [
   {
-    title: "SLIIQQUE Real Estate",
+    title: "Real Estate",
     description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
     href: "/work/real-estate",
     imageSrc: "/images/real-estate-screenshot.jpg",

@@ -29,7 +29,7 @@ export interface SisterStudio {
 }
 
 export const creativeStudio: SisterStudio = {
-  name: "SLIIQQUE Creative Studio",
+  name: "Creative Studio",
   url: "https://studio.sliiqque.space",
   description: "The creative-production vertical of the SLIIQQUE ecosystem: AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns for brands in Nigeria, Africa and worldwide.",
 };

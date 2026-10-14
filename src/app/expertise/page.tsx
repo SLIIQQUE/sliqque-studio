@@ -6,7 +6,7 @@ import ExpertisePageClient from "./ExpertisePageClient";
 export const metadata: Metadata = {
   title: "SaaS, FinTech, AI Agents & Automation Expertise",
   description:
-    "Full-stack SaaS, FinTech payments, fraud prevention and AI bots, backed by shipped products: SLIIQQUE Real Estate, Lumia, ZINID and Mo Touch.",
+    "Full-stack SaaS, FinTech payments, fraud prevention and AI bots, backed by shipped products: Real Estate, Lumia, ZINID and Mo Touch.",
   alternates: {
     canonical: "https://sliiqque.space/expertise/",
   },
