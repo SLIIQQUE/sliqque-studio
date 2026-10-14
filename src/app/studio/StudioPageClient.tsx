@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { EcosystemCallout } from "@/components/sections/EcosystemCallout";
 import {
   beliefs,
   studioServices,
@@ -353,6 +354,7 @@ export default function StudioPageClient() {
       <FounderSection />
       <StatsSection />
       <ServicesListSection />
+      <EcosystemCallout />
       <ProjectsSection />
       <TechStackSection />
       <PhilosophySection />

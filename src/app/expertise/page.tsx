@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import ExpertisePageClient from "./ExpertisePageClient";
 
 export const metadata: Metadata = {
   title: "SaaS, FinTech, AI Agents & Automation Expertise",
   description:
-    "Full-stack SaaS, FinTech payments, fraud prevention and AI bots, backed by shipped products: BizEdge, Lumia, ZINID and Mo Touch.",
+    "Full-stack SaaS, FinTech payments, fraud prevention and AI bots, backed by shipped products: SLIIQQUE Real Estate, Lumia, ZINID and Mo Touch.",
   alternates: {
     canonical: "https://sliiqque.space/expertise/",
   },
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
       "We build full-stack React/Next.js platforms, FinTech payment infrastructure, AI bots, and interactive frontends. Backed by shipped products serving real users.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Expertise",
@@ -27,13 +28,14 @@ export const metadata: Metadata = {
     title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",
     description:
       "Full-stack platforms, FinTech systems, AI bots, and interactive frontends shipped by SLIIQQUE.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
 };
 
 export default function ExpertisePage() {
   return (
     <PageLayout>
+      <PageSchema path="/expertise/" />
       <ExpertisePageClient />
     </PageLayout>
   );

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import { getServiceDetail, serviceDetails } from "@/data";
 import ServiceDetailClient from "./ServiceDetailClient";
 
@@ -25,13 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       title: `${service.metaTitle} | SLIIQQUE`,
       description: service.metaDescription,
       url,
-      images: [{ url: "https://sliiqque.space/og-image.png", width: 1200, height: 630, alt: `${service.title} | SLIIQQUE` }],
+      images: [{ url: "https://sliiqque.space/og-image.jpg", width: 1200, height: 630, alt: `${service.title} | SLIIQQUE` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${service.metaTitle} | SLIIQQUE`,
       description: service.metaDescription,
-      images: ["https://sliiqque.space/og-image.png"],
+      images: ["https://sliiqque.space/og-image.jpg"],
     },
   };
 }
@@ -42,6 +43,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
   if (!service) notFound();
   return (
     <PageLayout>
+      <PageSchema path={`/services/${service.slug}/`} />
       <ServiceDetailClient service={service} />
     </PageLayout>
   );

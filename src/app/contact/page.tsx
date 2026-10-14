@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
       "Ready to build something exceptional? Tell us about your website, AI bot, workflow automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Contact SLIIQQUE for Web, AI & Automation Projects",
@@ -27,13 +28,14 @@ export const metadata: Metadata = {
     title: "Contact | Web, AI Bot & Automation Projects | SLIIQQUE",
     description:
       "Ready to build? Tell us about your website, AI bot, automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
 };
 
 export default function ContactPage() {
   return (
     <PageLayout>
+      <PageSchema path="/contact/" />
       <ContactPageClient />
     </PageLayout>
   );

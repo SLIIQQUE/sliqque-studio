@@ -1,3 +1,5 @@
+import { projects } from "./projects";
+
 export interface Differentiator {
   title: string;
   description: string;
@@ -19,6 +21,18 @@ export interface Belief {
   quote: string;
   description: string;
 }
+
+export interface SisterStudio {
+  name: string;
+  url: string;
+  description: string;
+}
+
+export const creativeStudio: SisterStudio = {
+  name: "SLIIQQUE Creative Studio",
+  url: "https://studio.sliiqque.space",
+  description: "The creative-production vertical of the SLIIQQUE ecosystem: AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns for brands in Nigeria, Africa and worldwide.",
+};
 
 export const studioInfo: StudioInfo = {
   name: "SLIIQQUE",
@@ -79,7 +93,7 @@ export const studioStack: string[] = [
 
 export const studioStats = [
   { value: "2025", label: "Founded" },
-  { value: "6+", label: "Projects shipped" },
+  { value: `${projects.length}+`, label: "Projects shipped" },
   { value: "3", label: "Focus verticals" },
   { value: "1", label: "Principal" },
 ];

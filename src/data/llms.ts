@@ -5,7 +5,7 @@ import { projects } from "./projects";
 import { formatPrice, serviceDetails } from "./service-details";
 import { processSteps } from "./services";
 import { baseUrl } from "./schema-org";
-import { beliefs, bioParagraphs, differentiators, studioInfo, studioStack, studioStats } from "./studio";
+import { beliefs, bioParagraphs, creativeStudio, differentiators, studioInfo, studioStack, studioStats } from "./studio";
 
 const EMAIL = "hello@sliiqque.space";
 const url = (path: string) => `${baseUrl}${path.replace(/\/?$/, "/")}`;
@@ -48,6 +48,8 @@ export function buildLlmsTxt(): string {
     "Key facts:",
     ...keyFacts.map((f) => `- ${f}`),
     "",
+    `Sister studio: [${creativeStudio.name}](${creativeStudio.url}) — ${creativeStudio.description}`,
+    "",
     "## Services and pricing (USD, starting prices)",
     ...serviceDetails.map((s) => `- [${s.title}](${url(`/services/${s.slug}`)}): ${servicePrice(s)}`),
     "",
@@ -84,6 +86,8 @@ export function buildLlmsFullTxt(): string {
     studioInfo.description,
     "",
     studioInfo.specialization,
+    "",
+    `SLIIQQUE also runs a sister creative-production studio, [${creativeStudio.name}](${creativeStudio.url}): ${creativeStudio.description}`,
     "",
     ...bioParagraphs.flatMap((p) => [p, ""]),
     "What sets the studio apart:",

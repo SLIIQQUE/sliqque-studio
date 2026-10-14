@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import WorkPageClient from "./WorkPageClient";
 
 export const metadata: Metadata = {
   title: "Our Work: Websites, AI Bots & SaaS Projects",
   description:
-    "Selected projects from SLIIQQUE: BizEdge HRMS, SLIIQQUE Real Estate, Lumia payments, Mo Touch and ZINID fraud prevention.",
+    "Selected projects from SLIIQQUE: SLIIQQUE Real Estate, Lumia payments, Mo Touch and ZINID fraud prevention.",
   alternates: {
     canonical: "https://sliiqque.space/work/",
   },
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     "Browse our portfolio of websites, AI bots and agents, workflow automation systems, and SaaS platforms, each project built with craft, precision, and measurable impact for founders and businesses worldwide.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Portfolio: Websites, Bots & Automation",
@@ -27,13 +28,14 @@ export const metadata: Metadata = {
     title: "Our Work | Websites, AI Bots & Automation Projects | SLIIQQUE",
     description:
       "Browse our portfolio: websites, AI bots, automation systems, and SaaS platforms built with craft and precision for global clients.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
 };
 
 export default function WorkPage() {
   return (
     <PageLayout>
+      <PageSchema path="/work/" />
       <WorkPageClient />
     </PageLayout>
   );

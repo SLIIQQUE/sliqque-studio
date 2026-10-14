@@ -25,16 +25,16 @@ interface ExpertiseVerticalClientProps {
 
 const defaultRelatedProjects: RelatedProject[] = [
   {
-    title: "BizEdge",
-    description: "11-module HRMS, Payroll & Productivity suite — 2,000+ businesses across Africa and Europe",
-    href: "/work/bizedge",
-    imageSrc: "/images/bizedge-screenshot.jpg",
-          },
-          {
-            title: "Project Name",
-            description: "Brief description of the related project goes here.",
-            href: "/work/project",
-            imageSrc: "/images/lumia-screenshot.jpg",
+    title: "SLIIQQUE Real Estate",
+    description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
+    href: "/work/real-estate",
+    imageSrc: "/images/real-estate-screenshot.jpg",
+  },
+  {
+    title: "Lumia",
+    description: "Nigeria's digital electricity payment platform — 6 DisCos, thousands of monthly transactions",
+    href: "/work/lumia",
+    imageSrc: "/images/lumia-screenshot.jpg",
   },
 ];
 

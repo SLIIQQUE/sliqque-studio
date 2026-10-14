@@ -39,4 +39,9 @@ export const faqs: FaqItem[] = [
     answer:
       "Yes. SLIIQQUE is based in Lagos and works with clients worldwide. Past work includes HR software, electricity payments, fraud prevention, and a real estate platform.",
   },
+  {
+    question: "Does SLIIQQUE offer creative or video production services?",
+    answer:
+      "Yes, through SLIIQQUE Creative Studio (studio.sliiqque.space), the creative-production vertical of the SLIIQQUE ecosystem. It produces AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns for brands in Nigeria, Africa and worldwide, separate from this site's software and automation work.",
+  },
 ];

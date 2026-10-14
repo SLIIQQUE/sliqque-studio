@@ -30,10 +30,6 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "bizedgeapp.com",
-      },
-      {
-        protocol: "https",
         hostname: "lumia.ng",
       },
       {
@@ -41,6 +37,15 @@ const nextConfig = {
         hostname: "zinid.africa",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/work/bizedge",
+        destination: "/work",
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import ArticleClient from "./ArticleClient";
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
+      <PageSchema path="/insights/role-based-access-control/" />
       <ArticleClient />
     </PageLayout>
   );

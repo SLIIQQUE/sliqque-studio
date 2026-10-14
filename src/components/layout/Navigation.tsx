@@ -10,6 +10,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 interface NavLink {
   label: string;
   href: string;
+  external?: boolean;
 }
 
 interface NavigationProps {
@@ -25,6 +26,7 @@ const defaultLinks: NavLink[] = [
   { label: "Expertise", href: "/expertise" },
   { label: "Studio", href: "/studio" },
   { label: "Insights", href: "/insights" },
+  { label: "Creative Studio", href: "https://studio.sliiqque.space", external: true },
 ];
 
 const Navigation = ({
@@ -142,6 +144,8 @@ const Navigation = ({
                   <Link
                     href={link.href}
                     aria-current={isActive(link.href) ? "page" : undefined}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none ${
                       isActive(link.href)
                         ? "text-white"
@@ -149,6 +153,7 @@ const Navigation = ({
                     }`}
                   >
                     {link.label}
+                    {link.external && <span aria-hidden="true"> ↗</span>}
                   </Link>
                   <motion.div
                     className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-orange-500 to-blue-500 origin-left"
@@ -248,6 +253,8 @@ const Navigation = ({
                       ref={i === 0 ? firstFocusableRef : undefined}
                       href={link.href}
                       aria-current={isActive(link.href) ? "page" : undefined}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="group flex items-center justify-between focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
                     >

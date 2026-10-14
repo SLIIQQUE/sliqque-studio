@@ -16,7 +16,7 @@ Related docs:
 - **Home:** hero, services preview, selected work, stats, studio overview, latest insights, call to action
 - **Services:** five engagement types with "from" prices, process, and an FAQ
 - **Service detail pages:** each service has a page where visitors choose optional add-ons and see the estimate rise (a booking system adds $100 to a $300 website). The selection pre-fills the contact form
-- **Work:** five case studies (BizEdge, SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID)
+- **Work:** four case studies (SLIIQQUE Real Estate, Lumia, Mo Touch, ZINID)
 - **Expertise:** SaaS platforms, FinTech and RegTech systems, AI agents and automation
 - **Insights:** 11 technical articles
 - **Studio, Contact, Privacy, Terms**
@@ -81,7 +81,7 @@ Set the same variables in the Vercel project settings. The form works only when 
 | `/services/` | Services, process, FAQ |
 | `/services/[slug]/` | Service detail and configurator: `website-design-development`, `ai-bot-agent-development`, `interface-engineering`, `studio-retainer`, `technical-audit` |
 | `/work/` | Portfolio |
-| `/work/[slug]/` | Case studies: `bizedge`, `real-estate`, `lumia`, `mo-touch`, `zinid` |
+| `/work/[slug]/` | Case studies: `real-estate`, `lumia`, `mo-touch`, `zinid` |
 | `/expertise/` | Expertise overview |
 | `/expertise/saas/`, `/expertise/frontend-architecture/`, `/expertise/design-systems/` | Vertical pages (SaaS; FinTech and RegTech; AI agents and automation) |
 | `/insights/` and `/insights/[slug]/` | Articles, three per row on desktop |

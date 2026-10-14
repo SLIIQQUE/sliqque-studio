@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ServiceItem } from "@/components/ui/ServiceItem";
+import { EcosystemCallout } from "@/components/sections/EcosystemCallout";
 import { services, processSteps, faqs } from "@/data";
 
 export default function ServicesPageClient() {
@@ -63,6 +64,8 @@ export default function ServicesPageClient() {
           </div>
         </div>
       </section>
+
+      <EcosystemCallout />
 
       <section aria-label="Frequently asked questions" className="py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">

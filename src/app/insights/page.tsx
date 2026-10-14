@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import InsightsPageClient from "./InsightsPageClient";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
       "Technical articles and thought leadership on website development, AI bots and agents, workflow automation, frontend engineering, and SaaS architecture, written by the team at SLIIQQUE Studio.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Insights",
@@ -27,13 +28,14 @@ export const metadata: Metadata = {
     title: "Insights: Web Dev, AI Agents & Automation | SLIIQQUE",
     description:
       "Technical articles on web development, AI agents, automation, and frontend engineering from the SLIIQQUE team.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
 };
 
 export default function InsightsPage() {
   return (
     <PageLayout>
+      <PageSchema path="/insights/" />
       <InsightsPageClient />
     </PageLayout>
   );

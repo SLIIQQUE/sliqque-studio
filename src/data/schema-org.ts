@@ -1,6 +1,7 @@
 import { faqs } from "./faq";
 import { projects } from "./projects";
 import { serviceDetails } from "./service-details";
+import { insightArticles } from "./insights";
 
 export const baseUrl = "https://sliiqque.space";
 
@@ -12,7 +13,20 @@ const logo = {
   width: 192,
   height: 192,
 };
-const sameAs = ["https://x.com/sliiqque"];
+const sameAs = ["https://x.com/sliiqque", "https://studio.sliiqque.space"];
+
+export const personSchema = {
+  "@type": "Person",
+  "@id": baseUrl + "/studio/#person",
+  name: "Gabriel Njoabozia",
+  url: baseUrl + "/studio/",
+  image: baseUrl + "/images/Gabriel.jpg",
+  jobTitle: "Founder & Lead Engineer",
+  worksFor: { "@id": baseUrl + "/#organization" },
+  knowsAbout: [
+    "React", "Next.js", "TypeScript", "AI Agents", "Workflow Automation",
+  ],
+};
 
 export const organizationSchema = {
   "@type": "Organization",
@@ -20,12 +34,13 @@ export const organizationSchema = {
   name: "SLIIQQUE",
   url: baseUrl + "/",
   logo,
-  image: baseUrl + "/og-image.png",
+  image: baseUrl + "/og-image.jpg",
   sameAs,
   email: "hello@sliiqque.space",
   description: "Boutique software studio building websites, AI bots and agents, workflow automation, and SaaS platforms.",
   foundingDate: "2025-12-22",
   foundingLocation: { "@type": "City", name: "Lagos" },
+  founder: { "@id": baseUrl + "/studio/#person" },
   areaServed: "Worldwide",
   contactPoint: {
     "@type": "ContactPoint",
@@ -46,7 +61,7 @@ export const localBusinessSchema = {
   description: "Boutique software studio in Lagos, Nigeria, specializing in websites, AI bots, and workflow automation",
   url: baseUrl + "/",
   logo,
-  image: baseUrl + "/og-image.png",
+  image: baseUrl + "/og-image.jpg",
   sameAs,
   email: "hello@sliiqque.space",
   address: {
@@ -112,62 +127,34 @@ export const serviceSchemas = [
     { offers: fixedOffer(800, "USD", "Fixed price") }),
 ];
 
-const author = {
-  "@type": "Person",
-  name: "Gabriel Njoabozia",
-  url: baseUrl + "/studio",
-  jobTitle: "Founder & Lead Engineer",
-  worksFor: { "@id": baseUrl + "/#organization" },
+const MONTHS: Record<string, string> = {
+  Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
+  Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12",
 };
 
-const article = (slug: string, headline: string, description: string, datePublished: string, dateModified: string) => ({
-  "@type": "Article",
-  "@id": baseUrl + slug + "#article",
-  headline,
-  description,
-  author,
-  publisher: { "@id": baseUrl + "/#organization" },
-  datePublished,
-  dateModified,
-  image: { "@type": "ImageObject", url: baseUrl + "/og-image.png" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": baseUrl + slug },
-});
+/** "Jun 2026" -> "2026-06-01". Single source of truth is the display date in insights.ts. */
+const isoDate = (displayDate: string) => {
+  const [month, year] = displayDate.split(" ");
+  return `${year}-${MONTHS[month]}-01`;
+};
 
-export const articleSchemas = [
-  article("/insights/react-server-components/", "React Server Components in Production",
-    "How we're using React Server Components to reduce client-side JavaScript and improve the initial load experience for data-heavy frontend applications.",
-    "2026-01-15", "2026-03-21"),
-  article("/insights/analytics-dashboard-nextjs/", "Building a SaaS Dashboard with Next.js 14",
-    "A complete guide to building a real-time analytics dashboard using Next.js 14 App Router, React Query, and Recharts.",
-    "2025-12-01", "2026-03-21"),
-  article("/insights/react-performance/", "Performance Optimization in React",
-    "Practical techniques for profiling, identifying bottlenecks, and optimizing React applications for real-world use.",
-    "2026-03-21", "2026-03-21"),
-  article("/insights/frontend-ux-conversion/", "Frontend UX Patterns That Drive Conversion",
-    "After building dozens of products, these are the interface patterns that consistently improve onboarding and retention.",
-    "2026-02-01", "2026-03-21"),
-  article("/insights/framer-motion-guide/", "Why We Use Framer Motion for Production Animations",
-    "A practical look at building production-grade animations with Framer Motion, from micro-interactions to page transitions.",
-    "2026-02-15", "2026-03-21"),
-  article("/insights/design-system-guide/", "Building a Design System from Scratch",
-    "A practical guide to architecting a design system: design tokens, component libraries, accessibility, and team adoption strategies.",
-    "2026-01-01", "2026-03-21"),
-  article("/insights/ai-native-boutique-studios/", "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms",
-    "Why AI-native founders are ditching Upwork and Fiverr for boutique software studios, and what that means for your next build.",
-    "2026-03-15", "2026-03-21"),
-  article("/insights/hidden-cost-web-dev-nigeria/", "The Hidden Cost of Cheap Web Development for Nigerian Businesses",
-    "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security issues, and missed opportunities.",
-    "2026-02-20", "2026-03-21"),
-  article("/insights/cra-to-nextjs-migration/", "Migrating from Create React App to Next.js",
-    "A practical look at migrating a production React app from Create React App to Next.js: the DX improvements, performance wins, and lessons learned along the way.",
-    "2026-02-01", "2026-03-21"),
-  article("/insights/nextauth-authentication/", "Building an Authentication System with NextAuth.js",
-    "A practical guide to implementing full authentication in Next.js with NextAuth.js: covering email/password, OAuth providers, session management, and middleware route protection.",
-    "2026-01-10", "2026-03-21"),
-  article("/insights/role-based-access-control/", "Building Role-Based Access Control with Next.js",
-    "Step-by-step guide to implementing role-based access control in your Next.js application using middleware, session-based auth, and composable protection patterns.",
-    "2026-01-05", "2026-03-21"),
-];
+/** Derived from insightArticles so headline/date/image can never drift from the visible page. */
+export const articleSchemas = insightArticles.map((a) => {
+  const datePublished = isoDate(a.date);
+  return {
+    "@type": "Article",
+    "@id": baseUrl + a.href + "/#article",
+    headline: a.title,
+    description: a.excerpt,
+    author: { "@id": baseUrl + "/studio/#person" },
+    publisher: { "@id": baseUrl + "/#organization" },
+    datePublished,
+    dateModified: datePublished,
+    image: { "@type": "ImageObject", url: baseUrl + a.imageSrc.replace(/\.webp$/, ".jpg") },
+    keywords: a.tags.join(", "),
+    mainEntityOfPage: { "@type": "WebPage", "@id": baseUrl + a.href + "/" },
+  };
+});
 
 const faqSchema = {
   "@type": "FAQPage",
@@ -253,4 +240,21 @@ export function pageLabel(pathname: string, fallback: string) {
   if (project) return project.title;
   const post = articleSchemas.find((a) => a["@id"] === baseUrl + path + "#article");
   return post ? post.headline : fallback;
+}
+
+/** Pure, server-safe breadcrumb builder (no React) so it can render in the initial HTML. */
+export function generateBreadcrumbs(pathname: string) {
+  const segments = pathname.split("/").filter(Boolean);
+  const items = [{ "@type": "ListItem", position: 1, name: "Home", item: baseUrl + "/" }];
+  let accumulated = "";
+  for (const segment of segments) {
+    accumulated += "/" + segment;
+    items.push({
+      "@type": "ListItem",
+      position: items.length + 1,
+      name: pageLabel(accumulated, segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())),
+      item: baseUrl + accumulated + "/",
+    });
+  }
+  return items;
 }

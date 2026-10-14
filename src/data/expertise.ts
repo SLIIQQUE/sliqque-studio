@@ -24,11 +24,11 @@ export const verticals: ExpertiseVertical[] = [
   {
     title: "SaaS & Full-Stack Platforms",
     description:
-      "Full-stack React and Next.js platforms with complex module architectures, payment integrations, real-time data processing, and mobile apps. We've built multi-module HRMS suites handling payroll, recruitment, and performance management, and digital payment platforms processing thousands of transactions daily.",
+      "Full-stack React and Next.js platforms with CMS-backed admin panels, payment integrations, real-time data processing, and mobile apps. We've built property platforms with searchable listings and no-redeploy content management, and digital payment platforms processing thousands of transactions daily.",
     href: "/expertise/saas",
     metric: "Shipped",
-    imageSrc: "/images/bizedge-screenshot.jpg",
-    imageAlt: "BizEdge HR and Payroll platform dashboard",
+    imageSrc: "/images/real-estate-screenshot.jpg",
+    imageAlt: "SLIIQQUE Real Estate CMS-powered property platform",
     tags: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
   },
   {
@@ -57,7 +57,7 @@ export const capabilities: Capability[] = [
   {
     title: "React & Next.js Engineering",
     description:
-      "Component architecture, state management, SSR and static generation. We build frontends that stay fast as features grow, not monoliths that slow down with every release. BizEdge's 11-module HRMS runs on this foundation.",
+      "Component architecture, state management, SSR and static generation. We build frontends that stay fast as features grow, not monoliths that slow down with every release. SLIIQQUE Real Estate's CMS-powered platform runs on this foundation.",
     icon: "Layers",
   },
   {
@@ -88,9 +88,9 @@ export const capabilities: Capability[] = [
 
 export const projectReferences: ProjectReference[] = [
   {
-    name: "BizEdge",
-    description: "11-module HRMS, Payroll & Productivity suite — 2,000+ businesses",
-    href: "/work/bizedge",
+    name: "SLIIQQUE Real Estate",
+    description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
+    href: "/work/real-estate",
   },
   {
     name: "Lumia",

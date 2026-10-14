@@ -30,27 +30,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "BizEdge",
-    year: "2021",
-    clientType: "HRMS SaaS",
-    engagementType: "Product Build",
-    description: "All-in-one HR, Payroll & Productivity suite: 11 modules, 2,000+ businesses, mobile apps on iOS & Android.",
-    tags: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
-    metric: "11 Modules",
-    logoSrc: "/images/bizedge-logo.svg",
-    imageSrc: "/images/bizedge-screenshot.jpg",
-    imageAlt: "BizEdge HR and Payroll platform dashboard",
-    href: "/work/bizedge",
-    bgColor: "#1a1a2e",
-    outcomes: [
-      "All-in-one platform replacing 5+ disconnected HR tools",
-      "PAYE compliance under the Nigeria Tax Act built into payroll",
-      "Payroll processing time reduced from days to hours",
-      "Mobile app on iOS and Android with 2,000+ active users",
-      "Used by 2,000+ businesses across Africa and Europe",
-    ],
-  },
-  {
     title: "SLIIQQUE Real Estate",
     year: "2026",
     clientType: "Real Estate",
@@ -138,12 +117,6 @@ export const workPageContent: WorkPageContent = {
 };
 
 export const studioProjects: StudioProject[] = [
-  {
-    name: "BizEdge",
-    type: "SaaS: 11-module HR platform",
-    metric: "11 Modules",
-    link: "/work/bizedge",
-  },
   {
     name: "SLIIQQUE Real Estate",
     type: "Real Estate: CMS-powered property platform",

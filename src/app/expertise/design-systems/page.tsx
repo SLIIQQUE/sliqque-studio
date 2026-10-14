@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import LightLeaks from "@/components/ui/LightLeaks";
+import { PageSchema } from "@/components/PageSchema";
 import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClient";
 
 export const metadata: Metadata = {
@@ -14,10 +15,10 @@ export const metadata: Metadata = {
       "AI bots for WhatsApp/Telegram, website AI agents, workflow automation, and interactive frontends with GSAP and Framer Motion.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "SLIIQQUE AI Agents & Automation",
+        url: "https://sliiqque.space/images/motouch-screenshot.jpg",
+        width: 1280,
+        height: 800,
+        alt: "Mo Touch: an interactive frontend built by SLIIQQUE",
       },
     ],
   },
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: "AI Agents & Automation | Bots, Workflow Automation & Interactive Frontends | SLIIQQUE",
     description:
       "AI bots, website agents, workflow automation, and interactive frontends from SLIIQQUE.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/images/motouch-screenshot.jpg"],
   },
 };
 
@@ -38,6 +39,7 @@ export default function DesignSystemsPage() {
     <main id="main-content" className="relative min-h-screen">
       <Navigation />
       <LightLeaks />
+      <PageSchema path="/expertise/design-systems/" />
       <ExpertiseVerticalClient
         title="AI Agents & Automation"
         subtitle="Bots, Automation, and Interactive Experiences That Work for You"
@@ -60,10 +62,10 @@ export default function DesignSystemsPage() {
             imageSrc: "/images/motouch-screenshot.jpg",
           },
           {
-            title: "BizEdge",
-            description: "11-module HRMS with workflow automation connecting payroll, recruitment, and performance management",
-            href: "/work/bizedge",
-            imageSrc: "/images/bizedge-screenshot.jpg",
+            title: "SLIIQQUE Real Estate",
+            description: "CMS-powered property platform with automated content workflows and no-redeploy publishing",
+            href: "/work/real-estate",
+            imageSrc: "/images/real-estate-screenshot.jpg",
           },
         ]}
       />

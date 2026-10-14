@@ -117,6 +117,14 @@ const Footer = ({
             >
               Terms
             </Link>
+            <a
+              href="https://studio.sliiqque.space"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
+            >
+              Creative Studio ↗
+            </a>
             <button
               type="button"
               onClick={() => window.dispatchEvent(new Event(OPEN_SETTINGS_EVENT))}

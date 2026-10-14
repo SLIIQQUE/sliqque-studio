@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import Link from "next/link";
 import { ArrowRight, Layers, Building2, BrainCircuit, Workflow, Palette } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { EcosystemCallout } from "@/components/sections/EcosystemCallout";
 import { verticals, capabilities, projectReferences } from "@/data";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -110,6 +111,8 @@ export default function ExpertisePageClient() {
           </div>
         </div>
       </section>
+
+      <EcosystemCallout />
 
       <section className="py-12 px-10">
         <div className="max-w-6xl mx-auto text-center">

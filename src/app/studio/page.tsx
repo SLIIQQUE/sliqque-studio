@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { PageSchema } from "@/components/PageSchema";
 import StudioPageClient from "./StudioPageClient";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     "SLIIQQUE is a Lagos-based boutique software studio building high-performance websites, AI bots and agents, workflow automation systems, and SaaS platforms, founded by engineers who ship.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE Studio",
@@ -27,13 +28,14 @@ export const metadata: Metadata = {
     title: "About SLIIQQUE | Website, AI & Automation Studio | SLIIQQUE",
     description:
       "Lagos-based boutique software studio building high-performance websites, AI bots, automation systems, and SaaS platforms.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
 };
 
 export default function StudioPage() {
   return (
     <PageLayout>
+      <PageSchema path="/studio/" />
       <StudioPageClient />
     </PageLayout>
   );

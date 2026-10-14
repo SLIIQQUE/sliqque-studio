@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import LightLeaks from "@/components/ui/LightLeaks";
+import { PageSchema } from "@/components/PageSchema";
 import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClient";
 
 export const metadata: Metadata = {
@@ -14,10 +15,10 @@ export const metadata: Metadata = {
       "Payment infrastructure, multi-API integration, real-time transaction processing, and fraud prevention platforms. Built Lumia and ZINID.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "SLIIQQUE FinTech & RegTech Systems",
+        url: "https://sliiqque.space/images/lumia-screenshot.jpg",
+        width: 1280,
+        height: 800,
+        alt: "Lumia: a FinTech payment platform built by SLIIQQUE",
       },
     ],
   },
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: "FinTech & RegTech Systems | Payment Infrastructure & Fraud Prevention | SLIIQQUE",
     description:
       "Payment infrastructure, multi-API integration, and fraud prevention platforms. Built Lumia and ZINID.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/images/lumia-screenshot.jpg"],
   },
 };
 
@@ -38,6 +39,7 @@ export default function FrontendArchitecturePage() {
     <main id="main-content" className="relative min-h-screen">
       <Navigation />
       <LightLeaks />
+      <PageSchema path="/expertise/frontend-architecture/" />
       <ExpertiseVerticalClient
         title="FinTech & RegTech Systems"
         subtitle="Payment Infrastructure & Fraud Prevention Built for Africa"

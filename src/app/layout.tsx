@@ -4,7 +4,7 @@ import "./globals.css";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { MotionConfig } from "framer-motion";
-import { SchemaOrg } from "@/components/SchemaOrg";
+import { SiteSchema } from "@/components/SiteSchema";
 import { AnalyticsConsent } from "@/components/analytics/AnalyticsConsent";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import CursorWrapper from "@/components/ui/CursorWrapper";
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       "We build high-performance websites, AI bots and agents, workflow automation, and SaaS platforms, from concept to deployment.",
     images: [
       {
-        url: "https://sliiqque.space/og-image.png",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     creator: "@sliiqque",
     title: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
     description: "We build websites, AI bots, and workflow automation.",
-    images: ["https://sliiqque.space/og-image.png"],
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
   alternates: {
     canonical: "https://sliiqque.space/",
@@ -99,7 +99,7 @@ export default function RootLayout({
         <link rel="alternate" href="https://sliiqque.space" hrefLang="x-default" />
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
-        <SchemaOrg />
+        <SiteSchema />
         <AnalyticsConsent />
         <header>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:text-sm focus:font-medium">
