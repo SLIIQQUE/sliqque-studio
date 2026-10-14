@@ -18,6 +18,7 @@ export default function ContactPageClient() {
     timeline: "",
     budget: "",
     message: "",
+    hp: "",
   });
 
   // Prefill from a service page quote: /contact/?service=website&addons=booking,cms&estimate=400
@@ -159,6 +160,19 @@ export default function ContactPageClient() {
               className="lg:col-span-7"
             >
               <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Honeypot: hidden from sighted users, but a bot that fills every field will fill this too. */}
+                <div className="sr-only" aria-hidden="true">
+                  <label htmlFor="hp">Leave this field blank</label>
+                  <input
+                    id="hp"
+                    type="text"
+                    name="hp"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.hp}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label

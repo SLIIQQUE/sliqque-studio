@@ -16,9 +16,30 @@ interface ContactFormData {
   timeline: string;
   budget: string;
   message: string;
+  /** Honeypot field: real visitors never fill it in, so a filled value marks the submission as a bot. */
+  hp?: string;
 }
 
-function buildEmailHtml(data: ContactFormData): string {
+const escapeHtml = (s: string) =>
+  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
+
+/** Strips line breaks for values placed in a single-line context (email subject). */
+const singleLine = (s: string) => s.replace(/[\r\n]+/g, " ").trim();
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function buildEmailHtml(raw: ContactFormData): string {
+  // Escape every user-submitted value before it's interpolated into HTML, so a submitted
+  // name or message containing markup can't alter the notification email's rendering.
+  const data: ContactFormData = {
+    name: escapeHtml(raw.name),
+    email: escapeHtml(raw.email),
+    company: escapeHtml(raw.company),
+    project: escapeHtml(raw.project),
+    timeline: escapeHtml(raw.timeline),
+    budget: escapeHtml(raw.budget),
+    message: escapeHtml(raw.message),
+  };
   const field = (label: string, value: string) => `
     <tr>
       <td style="padding:0 0 6px 0;font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#f97316;white-space:nowrap;vertical-align:top">${label}</td>
@@ -182,10 +203,23 @@ export async function POST(request: Request) {
   try {
     const body: ContactFormData = await request.json();
 
+    // Honeypot: a filled hidden field means a bot filled the form. Respond as if it
+    // worked, without sending anything, so the bot gets no signal to adapt to.
+    if (body.hp) {
+      return NextResponse.json({ success: true });
+    }
+
     // Validate required fields
     if (!body.name?.trim() || !body.email?.trim() || !body.message?.trim()) {
       return NextResponse.json(
         { error: "Name, email, and message are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!EMAIL_RE.test(body.email.trim())) {
+      return NextResponse.json(
+        { error: "Please enter a valid email address." },
         { status: 400 }
       );
     }
@@ -201,7 +235,7 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: [toEmail],
       replyTo: body.email,
-      subject: `New inquiry from ${body.name} — ${body.project || "General"}`,
+      subject: `New inquiry from ${singleLine(body.name)} — ${singleLine(body.project) || "General"}`,
       html: buildEmailHtml(body),
     });
 
