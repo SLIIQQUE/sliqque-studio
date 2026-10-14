@@ -30,6 +30,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "SLIIQQUE Creative Studio",
+    year: "2026",
+    clientType: "Creative Production (In-House)",
+    engagementType: "Platform Build",
+    description: "Our own creative-production vertical: AI commercials, digital humans, product and fashion photography, and brand launch campaigns, on its own platform at studio.sliiqque.space.",
+    tags: ["Next.js 16", "React 19", "TypeScript", "Resend"],
+    metric: "Creative Vertical",
+    logoSrc: "https://studio.sliiqque.space/icon.png",
+    imageSrc: "/images/creative-studio-screenshot.jpg",
+    imageAlt: "SLIIQQUE Creative Studio homepage",
+    href: "/work/creative-studio",
+    bgColor: "#0a0a0a",
+    outcomes: [
+      "5 fully-scoped service pages, each priced in NGN and USD with its own FAQ",
+      "3 complete concept brand worlds built end to end — ÀLÀ, ODÈ and ÀSE — each labeled as concept work with no invented clients, testimonials or metrics",
+      "Age-gated presentation for 18+ concept work, consistent with the platform's content policies",
+      "Cross-linked with the main SLIIQQUE site: shared navigation, footer link, FAQ entry and schema.org sameAs",
+      "Its own Vercel deployment and domain, independent of the main site",
+    ],
+  },
+  {
     title: "SLIIQQUE Real Estate",
     year: "2026",
     clientType: "Real Estate",
@@ -117,6 +138,12 @@ export const workPageContent: WorkPageContent = {
 };
 
 export const studioProjects: StudioProject[] = [
+  {
+    name: "SLIIQQUE Creative Studio",
+    type: "Creative Production: AI commercials, digital humans & photography",
+    metric: "Creative Vertical",
+    link: "/work/creative-studio",
+  },
   {
     name: "SLIIQQUE Real Estate",
     type: "Real Estate: CMS-powered property platform",
