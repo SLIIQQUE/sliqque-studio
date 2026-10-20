@@ -4,44 +4,44 @@ import React from "react";
 import CaseStudyLayout from "@/components/layout/CaseStudyLayout";
 
 const caseStudy = {
-  clientType: "Real Estate",
+  clientType: "Real Estate (Concept Demo)",
   year: "2026",
-  engagementType: "Product Build",
-  stack: ["Next.js", "React", "TypeScript", "Payload CMS", "PostgreSQL", "Tailwind CSS"],
-  context: `Real Estate is a property website with a content management system built into the same application. Visitors browse homes for sale or rent, meet the agents, read market insights, and send enquiries. The team behind it manages every listing, agent, article, and photo from a themed admin panel at /admin.
+  engagementType: "Template Build",
+  stack: ["Next.js", "React", "TypeScript", "Payload CMS", "PostgreSQL", "Leaflet", "Resend"],
+  context: `Real Estate is SLIIQQUE's reusable Canadian-realtor website template, built against a Real Estate Website Build Spec covering Presence, Authority, and Command tiers, and deployed live at realty.sliiqque.space. It ships with a full bilingual (English/French) marketing site, a built-in Payload CMS, and two Canadian-specific calculators, fronted by a fictional agent persona ("Priya Mehta," Toronto/GTA) so the capability can be demonstrated honestly, without a real brokerage client yet.
 
-The goal was a site that feels like a premium editorial brand for visitors and behaves like a simple tool for the people running it.`,
-  problem: `Most property sites force a trade-off between design and control:
+SLIIQQUE holds no real-estate licence. The agent, brokerage name, licence number, and every listing, testimonial, and sold property shown are disclosed as fictional on every page, so the demo never reads as a real, licensed business.`,
+  problem: `Building for the Canadian realtor market raises problems a generic property site doesn't have to solve:
 
-• Template sites look generic and are hard to differentiate in a crowded market
-• Custom-built sites look great but need a developer for every new listing or price change
-• Enquiries end up scattered across email, WhatsApp, and contact forms with no single record
-• Photos and content live in different places, so listings go stale
-• Search is an afterthought, so visitors cannot narrow homes by location, type, price, or neighborhood`,
-  approach: `We built the website and the CMS as one product, so there is nothing to wire together and nothing for the team to deploy:
+• Most property sites force a trade-off between a generic template and a custom build that needs a developer for every listing change
+• Canada is bilingual by law in federal contexts and by market expectation in much of the country, so an English-only site excludes a real share of buyers
+• Mortgage and land-transfer-tax math differs by province (and by city, for Toronto's municipal land transfer tax), so a US-style calculator would simply be wrong
+• Realtor marketing is trademark- and regulator-sensitive: REALTOR®/MLS® wording, provincial regulator disclosure, PIPEDA and Quebec's Law 25, and CASL's opt-in rules all apply
+• Demonstrating the capability with no real client yet means every piece of sample content has to be clearly labeled, not quietly passed off as real`,
+  approach: `We treated it as a genuine reusable template, not a one-off mockup, with disclosure built in from the start rather than bolted on:
 
-• Payload CMS runs inside the same Next.js app, so editors and visitors share one codebase and one database
-• Content is never hard-coded. Every listing, agent, neighborhood, article, and testimonial lives in PostgreSQL
-• Public pages are Server Components that read through the Payload Local API, with filters validated against a whitelist
-• Edits appear on the live site within seconds through on-demand cache invalidation
-• The admin panel is themed to match the site, so the team works inside the brand, not a generic dashboard`,
-  whatWeBuilt: `A complete property platform for visitors and for the team:
+• Payload CMS runs inside the same Next.js app via route groups, so the public site and the admin panel share one codebase and database, but the site runs with zero environment variables: every page reads from typed static data files until a database is connected, and Payload's Local API takes over automatically with the exact same function signatures once it is
+• \`/fr/...\` is handled by middleware that rewrites to the same page files and stamps a locale header, so there's no duplicated route tree to keep in sync
+• A mortgage calculator with CMHC insurance and bi-weekly payment rules, and a land-transfer-tax calculator with real Ontario, Toronto, and BC brackets, both carrying an explicit "estimate only" disclaimer
+• Every lead form (contact, valuation, viewing request, listing enquiry, newsletter) shares the same honeypot, per-IP rate limiting, required consent checkbox, and attribution capture, emailing through Resend and optionally pushing to a CRM webhook
+• A standing production checklist graded against the spec in three states — done in code, wired but needs credentials, or a manual step for a real client — so what's demo-only versus launch-ready stays explicit rather than assumed`,
+  whatWeBuilt: `A complete marketing site and CMS, built to be relaunched under a real agent's name rather than thrown away:
 
-1. Home: full-bleed hero with a buy, rent, or sell search, featured listings, neighborhoods, agents, articles, and testimonials
-2. Properties: search by location, type, price band, and neighborhood, with sorting, pagination, photo galleries, and a viewing-request form
-3. Agents: profiles filterable by specialty, with bio, experience, current listings, and a message form
-4. Insights: articles with search, category filters, share buttons, and related reading
-5. Admin panel: manage listings, agents, neighborhoods, articles, testimonials, photos, and site settings
-6. Leads: every viewing request, valuation request, contact message, and newsletter signup lands in one inbox
-7. Brand system: a forest green, cream, and terracotta palette carried from the website into the admin`,
-  results: `• One system for the site and its content, with no code changes needed to publish or update
-• Edits reach the live site within seconds
-• Every enquiry captured in a single Leads inbox instead of scattered across channels
-• Production-ready setup with Neon PostgreSQL, Vercel Blob storage, and database migrations
-• A strict 300-line file limit enforced at build time to keep the codebase maintainable`,
-  learnings: `Building the CMS inside the website, rather than beside it, removed an entire class of problems: no separate API to keep in sync, no second deployment, and one set of types from database to page.
+1. Home, Listings (search by location, type, price, neighborhood, with map, gallery, mortgage calculator, and enquiry form), Sold, Neighbourhoods, Buy, Sell, Home Valuation, Book a Viewing
+2. Two Canadian calculators: mortgage (with CMHC/bi-weekly rules) and land transfer tax (Ontario/Toronto/BC brackets)
+3. A dedicated page for buyers purchasing Toronto property remotely from Nigeria — video tours, non-resident financing, foreign-buyer rules, and naira-to-dollar planning — connecting SLIIQQUE's Lagos base to its Toronto demo market
+4. Insights articles, Reviews, Team profiles, Open Houses, Favorites, Compare, FAQ, Privacy/Terms/Accessibility, custom 404/500, sitemap/robots
+5. Admin panel at /admin, themed to the site's forest-green, cream, and terracotta palette, for listings, agents, neighbourhoods, articles, testimonials, and leads
+6. A compliance footer on every page: agent, brokerage, licence, regulator, and correct REALTOR®/MLS® trademark wording`,
+  results: `• Full spec-compliant page set shipped and self-audited against a 300+ line production checklist, graded done-in-code, wired-but-needs-credentials, or manual-client-step
+• Runs with zero environment variables: forms degrade to a clear "not configured" message and the entire site works off static demo data until Payload and Postgres are connected
+• Bilingual EN/FR routing via middleware, with no duplicated route tree
+• A dedicated remote-buying page for Nigerian buyers purchasing Toronto property, bridging SLIIQQUE's Lagos base with its Toronto demo market
+• Deployed live at realty.sliiqque.space as a working demonstration, not a static mock-up
+• Disclosed as a concept demo on every page: fictional agent, brokerage, licence number, and listings, so nothing implies a real, licensed business`,
+  learnings: `Disclosure had to be a design constraint from the first commit, not a disclaimer added at the end: a realtor-vertical demo lives or dies on whether a visitor can tell, immediately, that the agent and listings are fictional, so the labeling runs through the data layer (\`src/data/brand.ts\`) and onto every page, not just a footer line.
 
-We also learned that editor experience is part of the product. Theming the admin to match the brand and keeping the content model simple mattered as much as the public design, because the people updating the site every day are the ones who decide whether it stays accurate.`,
+Wrapping the static data files with the same function signatures Payload's Local API would use meant the site could run, fully, with zero infrastructure, while still being one environment variable away from a real CMS. That turned "reusable template" from a claim into something actually true: a real client's content replaces the demo data, not the architecture.`,
 };
 
 export default function CaseStudyClient() {
@@ -49,10 +49,13 @@ export default function CaseStudyClient() {
     <CaseStudyLayout
       caseStudy={caseStudy}
       title="Real Estate"
-      description="A property website with a built-in CMS for listings, agents, articles, and enquiries, managed without code changes."
+      description="A reusable, bilingual Canadian-realtor website template with a built-in CMS, Canadian mortgage and land-transfer-tax calculators, and searchable listings."
       heroImage="/images/real-estate-screenshot.jpg"
       heroAlt="Real Estate homepage with property search"
       heroBgColor="#102E26"
+      externalUrl={{ url: "https://realty.sliiqque.space", label: "realty.sliiqque.space" }}
+      contact={null}
+      useInteractiveTitle={false}
       sections={[
         { label: "The Context", key: "context" },
         { label: "The Problem", key: "problem" },

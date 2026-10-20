@@ -4,13 +4,13 @@ import { PageSchema } from "@/components/PageSchema";
 import CaseStudyClient from "./CaseStudyClient";
 
 export const metadata: Metadata = {
-  title: "Real Estate CMS Platform Case Study",
+  title: "Real Estate Template Case Study",
   description:
-    "Case study: a property website with a built-in CMS for searchable listings, agent profiles, articles and enquiry capture.",
+    "Case study: a reusable, bilingual Canadian-realtor website template with a built-in CMS, Canadian mortgage and land-transfer-tax calculators, and searchable listings, live at realty.sliiqque.space.",
   openGraph: {
     title: "Real Estate Case Study | SLIIQQUE",
     description:
-      "A property website with a built-in CMS for listings, agents, articles, and enquiries, managed from one admin panel.",
+      "A bilingual Canadian-realtor website template with a built-in CMS, Canadian calculators, and searchable listings, managed from one admin panel.",
     images: [
       {
         url: "https://sliiqque.space/images/real-estate-screenshot.jpg",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Real Estate Case Study | SLIIQQUE",
     description:
-      "Building a CMS-powered property website where the team manages everything without code changes.",
+      "Building a bilingual, CMS-powered Canadian-realtor website template the team manages without code changes.",
     images: ["https://sliiqque.space/images/real-estate-screenshot.jpg"],
   },
 };
