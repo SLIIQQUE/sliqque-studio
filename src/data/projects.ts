@@ -81,7 +81,7 @@ export const projects: Project[] = [
     imageSrc: "/images/realty-starter-screenshot.jpg",
     imageAlt: "Realty Starter homepage with Toronto and GTA property search",
     href: "/work/realty-starter",
-    bgColor: "#102E26",
+    bgColor: "#050505",
     outcomes: [
       "A market-ready website offer for Canadian real estate agents and brokerages, not an internal boilerplate — live, compliant, and one re-skin away from a real launch",
       "Full spec-driven page set shipped and self-audited against a 300+ line production checklist",

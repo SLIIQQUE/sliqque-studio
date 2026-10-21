@@ -31,7 +31,7 @@ SLIIQQUE holds no real-estate licence. The agent, brokerage name, licence number
 2. Two Canadian calculators: mortgage (with CMHC/bi-weekly rules) and land transfer tax (Ontario/Toronto/BC brackets)
 3. A dedicated page for buyers purchasing Toronto property remotely from Nigeria — video tours, non-resident financing, foreign-buyer rules, and naira-to-dollar planning — connecting SLIIQQUE's Lagos base to its Toronto demo market
 4. Insights articles, Reviews, Team profiles, Open Houses, Favorites, Compare, FAQ, Privacy/Terms/Accessibility, custom 404/500, sitemap/robots
-5. Admin panel at /admin, themed to the site's forest-green, cream, and terracotta palette, for listings, agents, neighbourhoods, articles, testimonials, and leads
+5. Admin panel at /admin, themed to the site's white, near-black, and signature-orange SLIIQQUE palette, for listings, agents, neighbourhoods, articles, testimonials, and leads
 6. A compliance footer on every page: agent, brokerage, licence, regulator, and correct REALTOR®/MLS® trademark wording`,
   results: `• A market-ready offer for Canadian real estate agents, not an internal boilerplate — live, compliant, and one re-skin away from a real brokerage launch
 • Full spec-compliant page set shipped and self-audited against a 300+ line production checklist, graded done-in-code, wired-but-needs-credentials, or manual-client-step
@@ -53,7 +53,7 @@ export default function CaseStudyClient() {
       description="A bilingual, REALTOR®-compliant website offer for Canadian real estate agents — built-in CMS, Canadian mortgage and land-transfer-tax calculators, and searchable listings."
       heroImage="/images/realty-starter-screenshot.jpg"
       heroAlt="Realty Starter homepage with Toronto and GTA property search"
-      heroBgColor="#102E26"
+      heroBgColor="#050505"
       externalUrl={{ url: "https://realty.sliiqque.space", label: "realty.sliiqque.space" }}
       contact={null}
       useInteractiveTitle={false}
