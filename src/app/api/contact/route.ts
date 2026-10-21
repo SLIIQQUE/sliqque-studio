@@ -45,7 +45,7 @@ function buildEmailHtml(raw: ContactFormData): string {
       <td style="padding:0 0 6px 0;font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#f97316;white-space:nowrap;vertical-align:top">${label}</td>
     </tr>
     <tr>
-      <td style="padding:0 0 20px 0;font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;font-weight:500;color:#ffffff;line-height:1.4">${value || "—"}</td>
+      <td style="padding:0 0 20px 0;font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;font-weight:500;color:#ffffff;line-height:1.4">${value || "N/A"}</td>
     </tr>`;
 
   return `
@@ -235,7 +235,7 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: [toEmail],
       replyTo: body.email,
-      subject: `New inquiry from ${singleLine(body.name)} — ${singleLine(body.project) || "General"}`,
+      subject: `New inquiry from ${singleLine(body.name)}: ${singleLine(body.project) || "General"}`,
       html: buildEmailHtml(body),
     });
 

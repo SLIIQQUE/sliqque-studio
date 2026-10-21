@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Clock, Sparkles } from "lucide-react";
 
 /**
- * AnimatedBackground — large blurred gradient orbs that drift.
+ * AnimatedBackground: large blurred gradient orbs that drift.
  *
  * Performance notes:
  * - Uses `will-change: transform` for GPU compositing.
@@ -54,13 +54,13 @@ const AnimatedBackground = () => {
 };
 
 /**
- * FloatingElement — decorative circles that rotate and float.
+ * FloatingElement: decorative circles that rotate and float.
  *
  * Performance notes:
  * - Uses `will-change: transform` for GPU compositing.
  * - Kept as framer-motion (not CSS) to benefit from MotionConfig reducedMotion.
  * - Reduced count on mobile via responsive containers.
- * - Only animates `y` and `rotate` — no layout/paint triggers.
+ * - Only animates `y` and `rotate` (no layout/paint triggers).
  */
 const FloatingElement = ({ delay, x, y, size }: { delay: number; x: string; y: string; size: number }) => (
   <motion.div

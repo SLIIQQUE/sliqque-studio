@@ -23,7 +23,7 @@ AI is how the studio produces, not what it sells. The brief we set ourselves: bu
 • Five service pages (AI Commercials, AI UGC & Digital Humans, AI Photography, AI Fashion Imagery, Brand Launches & Campaigns), each with a direct-answer opening paragraph written to be quoted by search and AI answer engines
 • Every price shown in Naira and US Dollars together, sourced from one typed data file so the two currencies can never drift apart
 • A per-service FAQ that also feeds the site's FAQPage structured data
-• Three complete concept brand worlds — ÀLÀ (skincare), ODÈ (grooming) and ÀSE (spirits) — built end to end as portfolio proof, each explicitly labeled as concept work with no invented clients, testimonials, awards or metrics
+• Three complete concept brand worlds: ÀLÀ (skincare), ODÈ (grooming) and ÀSE (spirits), built end to end as portfolio proof, each explicitly labeled as concept work with no invented clients, testimonials, awards or metrics
 • Age-gating on the pages that show ÀSE's alcohol-related concept work
 • A cross-link back to the main SLIIQQUE engineering site: shared navigation entry, footer link, a dedicated FAQ answer, and a schema.org sameAs reference, so the two sites read as one ecosystem`,
   whatWeBuilt: `A complete platform for the creative-production side of the business:
@@ -31,12 +31,12 @@ AI is how the studio produces, not what it sells. The brief we set ourselves: bu
 1. Home: hero, service overview, and a preview of the concept portfolio
 2. Services: five priced service pages (commercials, digital humans, photography, fashion imagery, campaigns), each with its own direct answer, inclusions, process and FAQ
 3. Pricing: a single page comparing every service and retainer tier in Naira and US Dollars
-4. Works: ÀLÀ, ODÈ and ÀSE, three concept brand worlds with their own case pages — brief, challenge, results and conclusion
+4. Works: ÀLÀ, ODÈ and ÀSE, three concept brand worlds with their own case pages: brief, challenge, results and conclusion
 5. Journal: articles on identity lock, storyboarding, grading and fashion imagery
 6. About, FAQ, Glossary, Contact: supporting pages, plus Privacy, Terms and Policies
 7. Contact handling via Resend, and Vercel Analytics for traffic`,
   results: `• 5 fully-scoped service pages, each priced in NGN and USD with its own FAQ
-• 3 complete concept brand worlds built end to end — ÀLÀ, ODÈ and ÀSE — each labeled as concept work with no invented clients, testimonials or metrics
+• 3 complete concept brand worlds built end to end (ÀLÀ, ODÈ and ÀSE), each labeled as concept work with no invented clients, testimonials or metrics
 • Age-gated presentation for 18+ concept work, consistent with the platform's content policies
 • Cross-linked with the main SLIIQQUE site: shared navigation, footer link, FAQ entry and schema.org sameAs
 • Its own Vercel deployment and domain, independent of the main site`,

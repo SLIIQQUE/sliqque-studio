@@ -18,10 +18,10 @@ interface HeroProps {
 }
 
 /**
- * FloatingShape — purely decorative CSS-animated blob.
+ * FloatingShape: purely decorative CSS-animated blob.
  *
  * Performance notes:
- * - Animates via CSS `@keyframes float` (transform only — compositor-friendly).
+ * - Animates via CSS `@keyframes float` (transform only, compositor-friendly).
  * - `will-change: transform` promotes GPU layer.
  * - Respects `prefers-reduced-motion` via CSS `@media` query in globals.css.
  */
@@ -49,10 +49,10 @@ const FloatingShape = ({
 );
 
 /**
- * GradientOrb — large blurred background gradient.
+ * GradientOrb: large blurred background gradient.
  *
  * Performance notes:
- * - Animates via CSS `@keyframes pulse-slow` (scale + opacity — compositor-friendly).
+ * - Animates via CSS `@keyframes pulse-slow` (scale + opacity, compositor-friendly).
  * - `blur-[120px]` is expensive; kept to low opacity (0.3) to reduce GPU cost.
  * - Respects prefers-reduced-motion via CSS.
  */
@@ -85,7 +85,7 @@ const ITEMS = [
 const DOT_COLORS = ["#f97316", "#3b82f6", "#8b5cf6"];
 
 /**
- * MarqueeRow — mobile-only auto-scrolling row of tech pills.
+ * MarqueeRow: mobile-only auto-scrolling row of tech pills.
  *
  * The set is repeated so each half of the track is wider than the viewport,
  * then the track slides by -50% (CSS only, transform-only) for a seamless loop.
@@ -198,7 +198,7 @@ const Hero = ({
           }}
         />
 
-        {/* Floating shapes — reduced count on mobile via `hidden md:block` */}
+        {/* Floating shapes: reduced count on mobile via `hidden md:block` */}
         <div className="hidden md:block">
           <FloatingShape delay={0} x="10%" y="20%" size="120px" />
           <FloatingShape delay={1} x="85%" y="30%" size="80px" />

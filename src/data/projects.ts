@@ -44,7 +44,7 @@ export const projects: Project[] = [
     bgColor: "#0a0a0a",
     outcomes: [
       "5 fully-scoped service pages, each priced in NGN and USD with its own FAQ",
-      "3 complete concept brand worlds built end to end — ÀLÀ, ODÈ and ÀSE — each labeled as concept work with no invented clients, testimonials or metrics",
+      "3 complete concept brand worlds built end to end (ÀLÀ, ODÈ and ÀSE), each labeled as concept work with no invented clients, testimonials or metrics",
       "Age-gated presentation for 18+ concept work, consistent with the platform's content policies",
       "Cross-linked with the main SLIIQQUE site: shared navigation, footer link, FAQ entry and schema.org sameAs",
       "Its own Vercel deployment and domain, independent of the main site",
@@ -83,12 +83,12 @@ export const projects: Project[] = [
     href: "/work/realty-starter",
     bgColor: "#050505",
     outcomes: [
-      "You can see it live right now at realty.sliiqque.space — not a mockup, not a deck, and one re-skin away from launch under a real brokerage's name",
+      "You can see it live right now at realty.sliiqque.space: not a mockup, not a deck, and one re-skin away from launch under a real brokerage's name",
       "Bilingual from the first click: every page exists in English and French, with no second site to maintain",
       "Canadian math a US-built calculator can't give you: mortgage payments with CMHC/bi-weekly rules, and land transfer tax with real Ontario/Toronto/BC brackets",
       "Zero setup cost to evaluate: the whole site runs with no database or environment variables, so what you browse today is what you'd get",
       "A dedicated page turning Nigerian buyers purchasing Toronto property remotely into a differentiator most Canadian realtors miss entirely",
-      "Disclosed honestly throughout — fictional agent, brokerage, and listings, clearly labeled — so there's never a question about what's real",
+      "Disclosed honestly throughout: fictional agent, brokerage, and listings, clearly labeled, so there's never a question about what's real",
     ],
   },
   {
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     tags: ["Vite", "GSAP", "Framer Motion"],
     metric: "Interactive",
     imageSrc: "/images/motouch-screenshot.jpg",
-    imageAlt: "Mo Touch — premium interactive makeup artist portfolio gallery with immersive scroll-driven animations",
+    imageAlt: "Mo Touch: premium interactive makeup artist portfolio gallery with immersive scroll-driven animations",
     href: "/work/mo-touch",
     bgColor: "#0a0a0a",
     outcomes: [

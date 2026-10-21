@@ -52,7 +52,7 @@ export default function CaseStudyClient() {
       title="Mo Touch"
       description="Premium interactive portfolio with immersive scroll-driven storytelling and touch-optimized interactions for a makeup artist."
       heroImage="/images/motouch-screenshot.jpg"
-      heroAlt="Mo Touch — premium interactive makeup artist portfolio gallery"
+      heroAlt="Mo Touch: premium interactive makeup artist portfolio gallery"
       heroBgColor="#0a0a0a"
       externalUrl={{ url: "https://mo-touch.vercel.app/", label: "mo-touch.vercel.app" }}
       contact={null}

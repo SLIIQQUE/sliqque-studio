@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
 /**
- * CustomCursor — replaces the native cursor with a styled follower.
+ * CustomCursor: replaces the native cursor with a styled follower.
  *
  * Performance notes:
  * - Mouse event listener uses `{ passive: true }` to avoid blocking scrolling.
  * - `will-change: transform` is set via Tailwind utility to promote elements
- *   to their own compositor layer — avoids repainting on every frame.
+ *   to their own compositor layer, avoiding repainting on every frame.
  * - CursorWrapper conditionally mounts this component (no-op on touch devices).
  * - `MotionConfig reducedMotion="user"` in layout.tsx disables spring
  *   animation for users who prefer reduced motion.

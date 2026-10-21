@@ -18,7 +18,7 @@ body {
 }
 
 /*
- * Reduced motion — respects OS-level accessibility setting.
+ * Reduced motion: respects OS-level accessibility setting.
  *
  * This media query disables ALL CSS animations and transitions for users
  * who prefer reduced motion. For framer-motion JS animations, the

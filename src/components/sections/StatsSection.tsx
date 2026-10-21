@@ -5,10 +5,10 @@ import { motion, useInView, animate } from "framer-motion";
 import { projects } from "@/data/projects";
 
 /**
- * StatsSection — animated counters, progress rings, stat cards, and marquee.
+ * StatsSection: animated counters, progress rings, stat cards, and marquee.
  *
  * Performance notes:
- * - AnimatedCounter uses framer-motion's imperative `animate()` — no React
+ * - AnimatedCounter uses framer-motion's imperative `animate()`, so there are no React
  *   re-renders during the count-up animation (latest value set via ref callback).
  * - The ProgressRing SVG circle uses `strokeDashoffset` which only triggers
  *   compositing, not layout.

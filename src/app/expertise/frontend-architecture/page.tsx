@@ -57,13 +57,13 @@ export default function FrontendArchitecturePage() {
         relatedProjects={[
           {
             title: "Lumia",
-            description: "Nigeria's digital electricity payment platform — 6 DisCos, thousands of monthly transactions",
+            description: "Nigeria's digital electricity payment platform: 6 DisCos, thousands of monthly transactions",
             href: "/work/lumia",
             imageSrc: "/images/lumia-screenshot.jpg",
           },
           {
             title: "ZINID",
-            description: "Africa's fraud prevention infrastructure — shared risk intelligence for the fintech ecosystem",
+            description: "Africa's fraud prevention infrastructure: shared risk intelligence for the fintech ecosystem",
             href: "/work/zinid",
             imageSrc: "/images/zinid-screenshot.jpg",
           },

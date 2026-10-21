@@ -107,7 +107,7 @@ export default function ArticleClient() {
       </p>
 
       <h2 className="font-display font-bold text-2xl tracking-tight uppercase mt-12 mb-6">
-        Cost #5: The Design Gap — Why Template Sites Don&apos;t Convert
+        Cost #5: Why Template Designs Don&apos;t Convert
       </h2>
       <p className="text-base font-body text-white/60 leading-relaxed">
         Template-based websites come with a subtler but equally damaging

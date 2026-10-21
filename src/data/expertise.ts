@@ -89,22 +89,22 @@ export const capabilities: Capability[] = [
 export const projectReferences: ProjectReference[] = [
   {
     name: "Real Estate",
-    description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
+    description: "CMS-powered property platform: searchable listings, agent profiles, enquiry capture",
     href: "/work/real-estate",
   },
   {
     name: "Lumia",
-    description: "Electricity payment platform — 6 DisCos, thousands of monthly transactions",
+    description: "Electricity payment platform: 6 DisCos, thousands of monthly transactions",
     href: "/work/lumia",
   },
   {
     name: "ZINID",
-    description: "Fraud prevention infrastructure — shared risk intelligence for fintech",
+    description: "Fraud prevention infrastructure: shared risk intelligence for fintech",
     href: "/work/zinid",
   },
   {
     name: "Mo Touch",
-    description: "Interactive portfolio — scroll-driven animations and touch interactions",
+    description: "Interactive portfolio: scroll-driven animations and touch interactions",
     href: "/work/mo-touch",
   },
 ];

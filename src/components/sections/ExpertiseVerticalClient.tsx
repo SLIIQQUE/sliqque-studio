@@ -26,13 +26,13 @@ interface ExpertiseVerticalClientProps {
 const defaultRelatedProjects: RelatedProject[] = [
   {
     title: "Real Estate",
-    description: "CMS-powered property platform — searchable listings, agent profiles, enquiry capture",
+    description: "CMS-powered property platform: searchable listings, agent profiles, enquiry capture",
     href: "/work/real-estate",
     imageSrc: "/images/real-estate-screenshot.jpg",
   },
   {
     title: "Lumia",
-    description: "Nigeria's digital electricity payment platform — 6 DisCos, thousands of monthly transactions",
+    description: "Nigeria's digital electricity payment platform: 6 DisCos, thousands of monthly transactions",
     href: "/work/lumia",
     imageSrc: "/images/lumia-screenshot.jpg",
   },

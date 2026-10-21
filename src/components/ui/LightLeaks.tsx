@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 /**
- * LightLeaks — decorative ambient background blobs.
+ * LightLeaks: decorative ambient background blobs.
  */
 
 function useReducedMotion() {

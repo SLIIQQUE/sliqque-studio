@@ -48,7 +48,7 @@ export function buildLlmsTxt(): string {
     "Key facts:",
     ...keyFacts.map((f) => `- ${f}`),
     "",
-    `Sister studio: [${creativeStudio.name}](${creativeStudio.url}) — ${creativeStudio.description}`,
+    `Sister studio: [${creativeStudio.name}](${creativeStudio.url}), ${creativeStudio.description}`,
     "",
     "## Services and pricing (USD, starting prices)",
     ...serviceDetails.map((s) => `- [${s.title}](${url(`/services/${s.slug}`)}): ${servicePrice(s)}`),

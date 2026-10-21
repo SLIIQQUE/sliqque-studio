@@ -53,7 +53,7 @@ export function ServiceItem({
     >
       <Link
         href={href}
-        aria-label={`${title} — ${ctaLabel}`}
+        aria-label={`${title}: ${ctaLabel}`}
         className="block relative pl-8 py-8 border-b border-white/5 hover:border-white/10 transition-colors duration-500 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none">
         <div
           className={`absolute left-0 top-0 bottom-0 w-px transition-all duration-500 ${

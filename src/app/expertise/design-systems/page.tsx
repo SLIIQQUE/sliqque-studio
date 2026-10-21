@@ -43,7 +43,7 @@ export default function DesignSystemsPage() {
       <ExpertiseVerticalClient
         title="AI Agents & Automation"
         subtitle="Bots, Automation, and Interactive Experiences That Work for You"
-        description="AI bots for WhatsApp and Telegram that handle customer support, lead qualification, and booking. AI agents embedded directly into websites that engage visitors in natural conversation. Workflow automation that connects your website, bots, and backend into a single operation. And interactive frontends with scroll-driven animations and touch interactions — like Mo Touch, a portfolio built with GSAP and Framer Motion."
+        description="AI bots for WhatsApp and Telegram that handle customer support, lead qualification, and booking. AI agents embedded directly into websites that engage visitors in natural conversation. Workflow automation that connects your website, bots, and backend into a single operation. And interactive frontends with scroll-driven animations and touch interactions, like Mo Touch, a portfolio built with GSAP and Framer Motion."
         stack={["Gemini API", "Bot APIs", "GSAP", "Framer Motion", "TypeScript", "Node.js"]}
         services={[
           "WhatsApp & Telegram bot development",
