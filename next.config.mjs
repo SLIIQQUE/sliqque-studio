@@ -38,15 +38,6 @@ const nextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/work/bizedge",
-        destination: "/work",
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     return [
       {

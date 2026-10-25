@@ -14,7 +14,6 @@ interface CaseStudyData {
   stack: string[];
   context: string;
   problem: string;
-  approach: string;
   whatWeBuilt: string;
   results: string;
   learnings: string;

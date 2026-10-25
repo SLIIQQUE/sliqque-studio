@@ -6,11 +6,11 @@ import CaseStudyClient from "./CaseStudyClient";
 export const metadata: Metadata = {
   title: "Realty Starter Case Study",
   description:
-    "The website Canadian realtors switch to: bilingual, REALTOR®-compliant, and built to convert; built-in CMS, Canadian mortgage and land-transfer-tax calculators, and searchable listings, live at realty.sliiqque.space.",
+    "Bilingual, REALTOR®-compliant realtor website with Toronto and GTA listings, Canadian calculators, five lead forms and a built-in CMS. Live at realty.sliiqque.space.",
   openGraph: {
     title: "Realty Starter Case Study | SLIIQQUE",
     description:
-      "The website Canadian realtors switch to: bilingual, compliant, and built to convert, with Canadian calculators and searchable listings, managed from one admin panel.",
+      "Bilingual, compliant realtor website with Canadian calculators, searchable listings and five lead forms, managed from one admin panel. Live at realty.sliiqque.space.",
     images: [
       {
         url: "https://sliiqque.space/images/realty-starter-screenshot.jpg",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Realty Starter Case Study | SLIIQQUE",
     description:
-      "The bilingual, REALTOR®-compliant website Canadian realtors switch to: live listings, Canadian calculators, managed without code changes.",
+      "Bilingual, REALTOR®-compliant realtor website with Canadian calculators, live listings and five lead forms, managed without code changes.",
     images: ["https://sliiqque.space/images/realty-starter-screenshot.jpg"],
   },
 };
