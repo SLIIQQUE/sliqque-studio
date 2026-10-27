@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/services/",
   },
   openGraph: {
+    url: "https://sliiqque.space/services/",
     title: "Website Development, AI Agents & Automation Services | SLIIQQUE",
     description:
       "We build high-performance websites, custom AI bots and agents, workflow automation systems, and SaaS interfaces. SLIIQQUE takes on only 2–3 new projects per quarter to guarantee quality and attention.",

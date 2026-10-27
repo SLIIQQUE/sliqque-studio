@@ -163,7 +163,7 @@ export default function ExpertiseVerticalClient({
                     alt={project.title}
                     width={800}
                     height={450}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     loading="lazy"
                   />

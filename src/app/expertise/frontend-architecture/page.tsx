@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Payment infrastructure, multi-API integration and fraud prevention platforms for Africa. We built Lumia (6 DisCos) and ZINID.",
   openGraph: {
+    url: "https://sliiqque.space/expertise/frontend-architecture/",
     title: "FinTech & RegTech Systems | Payment Infrastructure & Fraud Prevention | SLIIQQUE",
     description:
       "Payment infrastructure, multi-API integration, real-time transaction processing, and fraud prevention platforms. Built Lumia and ZINID.",

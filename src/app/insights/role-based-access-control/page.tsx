@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Step-by-step guide to implementing role-based access control in Next.js with middleware, session auth, and composable security patterns for your applications.",
   openGraph: {
+    url: "https://sliiqque.space/insights/role-based-access-control/",
     type: "article",
     title: "Building Role-Based Access Control with Next.js | SLIIQQUE",
     description:

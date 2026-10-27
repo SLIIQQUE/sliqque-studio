@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "AI bots for WhatsApp and Telegram, website AI agents for support and lead qualification, workflow automation, and interactive frontends.",
   openGraph: {
+    url: "https://sliiqque.space/expertise/design-systems/",
     title: "AI Agents & Automation | Bots, Workflow Automation & Interactive Frontends | SLIIQQUE",
     description:
       "AI bots for WhatsApp/Telegram, website AI agents, workflow automation, and interactive frontends with GSAP and Framer Motion.",

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Case study: our in-house creative-production platform for AI commercials, digital humans, product and fashion photography, and brand launch campaigns.",
   openGraph: {
+    url: "https://sliiqque.space/work/creative-studio/",
     title: "Creative Studio Case Study | SLIIQQUE",
     description:
       "Our in-house creative-production vertical: AI commercials, digital humans, product and fashion photography, and brand launch campaigns, on its own platform.",

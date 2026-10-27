@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Full-stack React and Next.js platforms with CMS-backed admin panels, payments and mobile apps. We built Real Estate's CMS platform and Lumia's payment platform.",
   openGraph: {
+    url: "https://sliiqque.space/expertise/saas/",
     title: "SaaS & Full-Stack Platform Engineering | SLIIQQUE",
     description:
     "Full-stack React/Next.js platforms with CMS-backed architectures, real-time data, and mobile apps. We built Real Estate and Lumia.",

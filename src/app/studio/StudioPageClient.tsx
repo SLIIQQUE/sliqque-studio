@@ -49,7 +49,7 @@ function FounderSection() {
                   className="relative"
                 >
                   <Image
-                    src="/images/Gabriel.jpg"
+                    src="/images/gabriel-ai-avatar.jpg"
                     alt="Gabriel Njoabozia"
                     width={160}
                     height={160}

@@ -118,7 +118,7 @@ export default function ArticleLayout({
                 alt={heroAlt}
                 width={1920}
                 height={1280}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2s]"
+                className="w-full h-full object-cover transition-all duration-[2s]"
                 priority
               />
             </div>

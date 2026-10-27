@@ -6,11 +6,12 @@ import WorkPageClient from "./WorkPageClient";
 export const metadata: Metadata = {
   title: "Our Work: Websites, AI Bots & SaaS Projects",
   description:
-    "Selected projects from SLIIQQUE: Real Estate, Lumia payments, Mo Touch and ZINID fraud prevention.",
+    "Selected projects from SLIIQQUE: Creative Studio, Lumia payments, Realty Starter, our internal Leads Dashboard, Real Estate, ZINID fraud prevention and Mo Touch.",
   alternates: {
     canonical: "https://sliiqque.space/work/",
   },
   openGraph: {
+    url: "https://sliiqque.space/work/",
     title: "Our Work | Websites, AI Bots & Automation Projects | SLIIQQUE",
     description:
     "Browse our portfolio of websites, AI bots and agents, workflow automation systems, and SaaS platforms, each project built with craft, precision, and measurable impact for founders and businesses worldwide.",

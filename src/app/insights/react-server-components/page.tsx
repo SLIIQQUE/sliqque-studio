@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "How we use React Server Components to reduce client-side JavaScript and improve load times in data-heavy frontend applications, with real data from production.",
   openGraph: {
+    url: "https://sliiqque.space/insights/react-server-components/",
     type: "article",
     title: "React Server Components in Production | SLIIQQUE",
     description:

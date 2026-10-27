@@ -29,7 +29,8 @@ interface CaseStudyLayoutProps {
   caseStudy: CaseStudyData;
   title: string;
   description: string;
-  heroImage: string;
+  /** Omit for work with no public screenshot, such as internal tools. */
+  heroImage?: string;
   heroAlt: string;
   heroBgColor?: string;
   externalUrl?: { url: string; label: string } | null;
@@ -156,15 +157,29 @@ export default function CaseStudyLayout({
             className="aspect-[8/5] rounded-[2px] overflow-hidden"
             style={{ backgroundColor: heroBgColor }}
           >
-            <Image
-              src={heroImage}
-              alt={heroAlt}
-              width={1280}
-              height={800}
-              className="w-full h-full object-cover grayscale"
-              sizes="100vw"
-              loading="lazy"
-            />
+            {heroImage ? (
+              <Image
+                src={heroImage}
+                alt={heroAlt}
+                width={1280}
+                height={800}
+                className="w-full h-full object-cover"
+                sizes="100vw"
+                loading="lazy"
+              />
+            ) : (
+              <div
+                role="img"
+                aria-label={heroAlt}
+                className="w-full h-full flex items-center justify-center overflow-hidden"
+              >
+                <InteractiveTitle
+                  title={title}
+                  className="font-display font-bold leading-none tracking-tighter uppercase"
+                  spanClassName="text-5xl md:text-7xl lg:text-8xl"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>

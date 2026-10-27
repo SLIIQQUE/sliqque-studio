@@ -6,11 +6,12 @@ import InsightsPageClient from "./InsightsPageClient";
 export const metadata: Metadata = {
   title: "Insights: Web Dev, AI Agents & Automation",
   description:
-    "Technical articles on website development, AI bots and agents, workflow automation, frontend engineering and SaaS architecture.",
+    "Technical articles from SLIIQQUE on website development, AI bots and agents, workflow automation, frontend engineering and SaaS architecture, written from shipped work.",
   alternates: {
     canonical: "https://sliiqque.space/insights/",
   },
   openGraph: {
+    url: "https://sliiqque.space/insights/",
     title: "Insights: Web Dev, AI Agents & Automation Articles | SLIIQQUE",
     description:
       "Technical articles and thought leadership on website development, AI bots and agents, workflow automation, frontend engineering, and SaaS architecture, written by the team at SLIIQQUE Studio.",

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "A case study on building Nigeria's electricity payment platform with prepaid and postpaid meters, multi-DisCo support, and instant token delivery.",
   openGraph: {
+    url: "https://sliiqque.space/work/lumia/",
     title: "Lumia Case Study | SLIIQQUE",
     description:
       "A case study on building Nigeria's electricity payment platform with prepaid and postpaid meters, multi-DisCo support, and instant token delivery.",

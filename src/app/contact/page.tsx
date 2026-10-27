@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/contact/",
   },
   openGraph: {
+    url: "https://sliiqque.space/contact/",
     title: "Contact | Start Your Website, AI Bot or Automation Project | SLIIQQUE",
     description:
       "Ready to build something exceptional? Tell us about your website, AI bot, workflow automation, or SaaS project. SLIIQQUE takes on only 2–3 new projects per quarter.",

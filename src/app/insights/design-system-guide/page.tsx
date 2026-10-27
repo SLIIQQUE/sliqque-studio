@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/insights/design-system-guide/",
   },
   openGraph: {
+    url: "https://sliiqque.space/insights/design-system-guide/",
     type: "article",
     title: "Building a Design System from Scratch | SLIIQQUE",
     description:

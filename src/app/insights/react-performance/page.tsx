@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/insights/react-performance/",
   },
   openGraph: {
+    url: "https://sliiqque.space/insights/react-performance/",
     type: "article",
     title: "Performance Optimization in React | SLIIQQUE",
     description:

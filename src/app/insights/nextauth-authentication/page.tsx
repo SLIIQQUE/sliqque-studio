@@ -4,12 +4,13 @@ import { PageSchema } from "@/components/PageSchema";
 import ArticleClient from "./ArticleClient";
 
 export const metadata: Metadata = {
-  title: "Building an Authentication System with NextAuth.js",
+  title: "Authentication in Next.js with NextAuth.js",
   description:
     "A practical guide to full authentication in Next.js with NextAuth.js, covering email, OAuth providers, session management, and middleware route protection.",
   openGraph: {
+    url: "https://sliiqque.space/insights/nextauth-authentication/",
     type: "article",
-    title: "Building an Authentication System with NextAuth.js | SLIIQQUE",
+    title: "Authentication in Next.js with NextAuth.js | SLIIQQUE",
     description:
     "A practical guide to full authentication in Next.js with NextAuth.js, covering email, OAuth providers, session management, and middleware route protection.",
     images: [
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
         url: "https://sliiqque.space/images/insights/nextauth-auth.jpg",
         width: 1920,
         height: 1280,
-        alt: "Building an Authentication System with NextAuth.js",
+        alt: "Authentication in Next.js with NextAuth.js",
       },
     ],
   },
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Building an Authentication System with NextAuth.js | SLIIQQUE",
+    title: "Authentication in Next.js with NextAuth.js | SLIIQQUE",
     description:
       "A practical guide to implementing full authentication in Next.js with NextAuth.js.",
     images: ["https://sliiqque.space/images/insights/nextauth-auth.jpg"],

@@ -32,7 +32,7 @@ const InsightCard = ({
               alt={title}
               width={800}
               height={450}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2s]"
+              className="w-full h-full object-cover transition-all duration-[2s]"
               sizes="(max-width: 768px) 100vw, 50vw"
               loading="lazy"
             />

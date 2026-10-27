@@ -32,7 +32,7 @@ const config = {
       "/terms": 0.3,
     };
 
-    const workPriorities = ["/work/real-estate", "/work/realty-starter", "/work/lumia", "/work/mo-touch", "/work/creative-studio", "/work/zinid"];
+    const workPriorities = ["/work/real-estate", "/work/realty-starter", "/work/lumia", "/work/mo-touch", "/work/creative-studio", "/work/zinid", "/work/leads-dashboard"];
     const expertisePriorities = ["/expertise/saas", "/expertise/design-systems", "/expertise/frontend-architecture"];
     const insightSlugs = [
       "ai-native-boutique-studios", "analytics-dashboard-nextjs", "cra-to-nextjs-migration",

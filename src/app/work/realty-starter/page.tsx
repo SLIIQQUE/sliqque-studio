@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Bilingual, REALTOR®-compliant realtor website with Toronto and GTA listings, Canadian calculators, five lead forms and a built-in CMS. Live at realty.sliiqque.space.",
   openGraph: {
+    url: "https://sliiqque.space/work/realty-starter/",
     title: "Realty Starter Case Study | SLIIQQUE",
     description:
       "Bilingual, compliant realtor website with Canadian calculators, searchable listings and five lead forms, managed from one admin panel. Live at realty.sliiqque.space.",

@@ -6,8 +6,9 @@ import CaseStudyClient from "./CaseStudyClient";
 export const metadata: Metadata = {
   title: "Real Estate CMS Platform Case Study",
   description:
-    "Case study: a property website with a built-in CMS for searchable listings, agent profiles, articles and enquiry capture.",
+    "Case study: a property website with a built-in CMS for searchable listings, agent profiles, articles and enquiry capture, all edited from one admin panel with no redeploys.",
   openGraph: {
+    url: "https://sliiqque.space/work/real-estate/",
     title: "Real Estate Case Study | SLIIQQUE",
     description:
       "A property website with a built-in CMS for listings, agents, articles, and enquiries, managed from one admin panel.",

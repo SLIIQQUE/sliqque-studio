@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "AI-native founders are leaving freelance platforms for boutique studios and getting higher quality, real accountability, and long-term value for their builds.",
   openGraph: {
+    url: "https://sliiqque.space/insights/ai-native-boutique-studios/",
     type: "article",
     title:
       "Why AI Natives Are Choosing Boutique Studios Over Freelance Platforms | SLIIQQUE",

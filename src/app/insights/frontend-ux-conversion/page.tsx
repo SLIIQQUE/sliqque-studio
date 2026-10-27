@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/insights/frontend-ux-conversion/",
   },
   openGraph: {
+    url: "https://sliiqque.space/insights/frontend-ux-conversion/",
     type: "article",
     title: "Frontend UX Patterns That Drive Conversion | SLIIQQUE",
     description:

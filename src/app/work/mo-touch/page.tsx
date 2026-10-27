@@ -6,8 +6,9 @@ import CaseStudyClient from "./CaseStudyClient";
 export const metadata: Metadata = {
   title: "Mo Touch: Interactive Makeup Artist Portfolio",
   description:
-    "Case study: an immersive, scroll-driven portfolio for a makeup artist with touch-optimized interactions.",
+    "Case study: an immersive, scroll-driven portfolio for a makeup artist, built with GSAP and Framer Motion for smooth 60fps, touch-first interactions on mobile.",
   openGraph: {
+    url: "https://sliiqque.space/work/mo-touch/",
     title: "Mo Touch Case Study | SLIIQQUE",
     description:
       "Premium interactive portfolio for a makeup artist with immersive scroll-driven animations and touch-optimized interactions.",

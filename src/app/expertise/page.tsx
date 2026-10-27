@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/expertise/",
   },
   openGraph: {
+    url: "https://sliiqque.space/expertise/",
     title: "SaaS Platforms, FinTech, AI Agents & Automation | SLIIQQUE Expertise",
     description:
       "We build full-stack React/Next.js platforms, FinTech payment infrastructure, AI bots, and interactive frontends. Backed by shipped products serving real users.",

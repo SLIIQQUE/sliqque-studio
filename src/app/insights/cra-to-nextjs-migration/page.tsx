@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "A practical look at migrating a production React app from Create React App to Next.js, covering DX improvements, performance wins, and lessons learned.",
   openGraph: {
+    url: "https://sliiqque.space/insights/cra-to-nextjs-migration/",
     type: "article",
     title: "Migrating from Create React App to Next.js | SLIIQQUE",
     description:

@@ -45,7 +45,7 @@ const ArticleCard = ({
             alt={title}
             width={600}
             height={338}
-            className="w-full aspect-video object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale-[80%]"
+            className="w-full aspect-video object-cover transition-all duration-700 ease-out group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, 600px"
             loading="lazy"
           />
@@ -173,7 +173,7 @@ const FeaturedArticle = ({
             alt={title}
             width={1200}
             height={514}
-            className="w-full h-full aspect-video md:aspect-[21/9] object-cover transition-all duration-700 ease-out group-hover:scale-[1.05] grayscale-[80%] group-hover:grayscale-0 md:grayscale-0"
+            className="w-full h-full aspect-video md:aspect-[21/9] object-cover transition-all duration-700 ease-out group-hover:scale-[1.05]"
             sizes="(max-width: 768px) 100vw, 800px"
             priority
           />

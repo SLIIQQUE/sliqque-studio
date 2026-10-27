@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/insights/analytics-dashboard-nextjs/",
   },
   openGraph: {
+    url: "https://sliiqque.space/insights/analytics-dashboard-nextjs/",
     type: "article",
     title: "Building a SaaS Dashboard with Next.js 14 | SLIIQQUE",
     description:

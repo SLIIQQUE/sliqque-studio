@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/terms/",
   },
   openGraph: {
+    url: "https://sliiqque.space/terms/",
     title: "Terms of Service | SLIIQQUE",
     description:
       "The terms for using the SLIIQQUE Studio website and engaging our services: pricing, payment, intellectual property, liability and governing law.",

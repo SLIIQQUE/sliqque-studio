@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Why that ₦50,000 Wix site could end up costing your Lagos business ten times more in lost revenue, security vulnerabilities, and missed growth opportunities.",
   openGraph: {
+    url: "https://sliiqque.space/insights/hidden-cost-web-dev-nigeria/",
     type: "article",
     title:
       "The Hidden Cost of Cheap Web Development for Nigerian Businesses | SLIIQQUE",

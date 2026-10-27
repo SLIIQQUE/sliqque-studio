@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://sliiqque.space/privacy/",
   },
   openGraph: {
+    url: "https://sliiqque.space/privacy/",
     title: "Privacy Policy | SLIIQQUE",
     description:
       "How SLIIQQUE Studio collects, uses, stores and protects your personal information, your rights under NDPA and GDPR, and how to contact us.",

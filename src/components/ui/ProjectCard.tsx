@@ -59,7 +59,7 @@ export function ProjectCard({
                 alt={imageAlt}
                 width={1280}
                 height={800}
-                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
+                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
               />
