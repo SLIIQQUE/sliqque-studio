@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://sliiqque.space/og-image.jpg",
-        width: 1280,
-        height: 800,
+        width: 1200,
+        height: 630,
         alt: "SLIIQQUE FinTech and RegTech systems development",
       },
     ],
