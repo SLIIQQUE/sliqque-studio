@@ -6,6 +6,8 @@
  * - Entries without `permission: true` are never rendered.
  * - Logos: put a transparent SVG or PNG in `public/images/clients/` and set `logoSrc`. The strip draws every
  *   logo in white, so any colour works. Without a logo the company name is shown as text.
+ * - Show the name and logo only. The owners agreed on the condition that no details about their product are added,
+ *   so never link a case study or describe what was built for them.
  * - The strip stays hidden until at least MIN_CLIENTS entries have permission, so it never looks empty.
  */
 export interface Client {
@@ -18,10 +20,13 @@ export interface Client {
   permission: boolean;
 }
 
-export const MIN_CLIENTS = 3;
+export const MIN_CLIENTS = 2;
 
 export const clients: Client[] = [
   { name: "Mo Touch", url: "https://mo-touch.vercel.app/", permission: true },
+  { name: "Lumia", logoSrc: "/images/clients/lumia.png", permission: true },
+  // Pending: confirm zinary.com is the right company and supply a logo larger than the 45 x 53 px file on its site.
+  // { name: "Zinary", url: "https://zinary.com", permission: true },
 ];
 
 export const permittedClients = (): Client[] => clients.filter((c) => c.permission);

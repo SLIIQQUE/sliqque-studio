@@ -13,7 +13,7 @@ The website for SLIIQQUE, a boutique software studio in Lagos, Nigeria. Dark edi
 - **Home:** hero, services preview, selected work, stats, studio overview, latest insights, call to action
 - **Services:** five engagement types with "from" prices, process, and an FAQ
 - **Service detail pages:** each service has a page where visitors choose optional add-ons and see the estimate rise (a booking system adds $100 to a $300 website). The selection pre-fills the contact form
-- **Work:** seven case studies (Creative Studio, Lumia, Realty Starter, Real Estate, ZINID, Mo Touch, and the internal Leads Dashboard, which has no external link)
+- **Work:** five case studies (Creative Studio, Realty Starter, Real Estate, Mo Touch, and the internal Leads Dashboard, which has no external link). Mo Touch is shown as the founder's earlier work with permission. Lumia and ZINID were taken down on 28 October 2026 pending permission
 - **Expertise:** SaaS platforms, FinTech and RegTech systems, AI agents and automation
 - **Insights:** 11 technical articles
 - **Studio, Contact, Privacy, Terms**
@@ -78,7 +78,7 @@ Set the same variables in the Vercel project settings. The form works only when 
 | `/services/` | Services, process, FAQ |
 | `/services/[slug]/` | Service detail and configurator: `website-design-development`, `ai-bot-agent-development`, `interface-engineering`, `studio-retainer`, `technical-audit` |
 | `/work/` | Portfolio |
-| `/work/[slug]/` | Case studies: `real-estate`, `realty-starter`, `lumia`, `mo-touch`, `zinid`, `creative-studio`, `leads-dashboard` |
+| `/work/[slug]/` | Case studies: `real-estate`, `realty-starter`, `mo-touch`, `creative-studio`, `leads-dashboard` |
 | `/expertise/` | Expertise overview |
 | `/expertise/saas/`, `/expertise/frontend-architecture/`, `/expertise/design-systems/` | Vertical pages (SaaS; FinTech and RegTech; AI agents and automation) |
 | `/insights/` and `/insights/[slug]/` | Articles, three per row on desktop |
@@ -194,14 +194,14 @@ After a deploy, submit `https://sliiqque.space/sitemap.xml` in Google Search Con
 1. Add the entry to `src/data/projects.ts` (position in the array is its position on the site).
 2. Create `src/app/work/<slug>/page.tsx` and `CaseStudyClient.tsx` by copying an existing case study.
 3. Add a screenshot to `public/images/`.
-4. Add the path to `workPriorities` in `next-sitemap.config.js`, add `outcomes` to the project entry (they appear in `llms-full.txt`), and update the project count in `src/data/studio.ts` and `StatsSection.tsx` if it changes.
+4. Add the path to `workPriorities` in `next-sitemap.config.js`, add `outcomes` to the project entry (they appear in `llms-full.txt`), and set `earlier: true` on the entry if the work was done before SLIIQQUE was founded. The "Projects Shipped" stat is computed from the `projects` array and counts only SLIIQQUE-era entries.
 
 **An article**
 
 1. Add it to `src/data/insights.ts` and create `src/app/insights/<slug>/`.
 2. Add its metadata to `articleSchemas` in `src/data/schema-org.ts` and its slug to `insightSlugs` in `next-sitemap.config.js`.
 
-**A company in the "Worked with" strip:** add it to `src/data/clients.ts` only after the company has agreed in writing, and set `permission: true`. Put a transparent SVG or PNG logo in `public/images/clients/` and set `logoSrc` (every logo is drawn in white), or leave it out to show the name as text. The strip stays hidden until at least three entries have permission; from four it scrolls.
+**A company in the "Worked with" strip:** add it to `src/data/clients.ts` only after the company has agreed in writing, and set `permission: true`. Put a transparent SVG or PNG logo in `public/images/clients/` and set `logoSrc` (every logo is drawn in white), or leave it out to show the name as text. The strip stays hidden until at least two entries have permission; from four it scrolls. Show the name and logo only: the owners agreed on the condition that no product details are added.
 
 **The founder's website count:** `foundersWebsitesDeployed` in `src/data/studio.ts` feeds the "Websites Deployed" stat. It is the founder's own career count, always labelled as his and never as a SLIIQQUE project count.
 
