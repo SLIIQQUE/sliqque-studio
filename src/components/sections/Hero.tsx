@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
+import { foundersWebsitesDeployed } from "@/data/studio";
 
 interface HeroProps {
   title?: string;
@@ -271,10 +272,27 @@ const Hero = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-md md:max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-12"
+            className="text-xl md:text-3xl font-body font-light text-white/80 max-w-md md:max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-8"
           >
             {subtitle}
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-10 flex justify-center"
+          >
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.8)]" />
+              <span className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-white/55">
+                <span className="font-display text-[11px] text-white">
+                  {foundersWebsitesDeployed}+
+                </span>{" "}
+                websites deployed by our founder
+              </span>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}

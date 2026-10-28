@@ -99,9 +99,9 @@ export const studioStack: string[] = [
 export const foundersWebsitesDeployed = 15;
 
 export const studioStats = [
-  { value: "2025", label: "Founded" },
-  { value: `${projects.filter((p) => !p.earlier).length}+`, label: "Projects shipped at SLIIQQUE" },
   { value: `${foundersWebsitesDeployed}+`, label: "Websites deployed by our founder" },
+  { value: `${projects.filter((p) => !p.earlier).length}+`, label: "Projects shipped at SLIIQQUE" },
+  { value: "2025", label: "Founded" },
   { value: "3", label: "Focus verticals" },
   { value: "1", label: "Principal" },
 ];

@@ -10,10 +10,10 @@ The website for SLIIQQUE, a boutique software studio in Lagos, Nigeria. Dark edi
 
 ## What the site does
 
-- **Home:** hero, services preview, selected work, stats, studio overview, latest insights, call to action
+- **Home:** hero, services preview, selected work, stats with an industries ticker, studio overview, latest insights, call to action
 - **Services:** five engagement types with "from" prices, process, and an FAQ
 - **Service detail pages:** each service has a page where visitors choose optional add-ons and see the estimate rise (a booking system adds $100 to a $300 website). The selection pre-fills the contact form
-- **Work:** five case studies (Creative Studio, Realty Starter, Real Estate, Mo Touch, and the internal Leads Dashboard, which has no external link). Mo Touch is shown as the founder's earlier work with permission. Lumia and ZINID were taken down on 28 October 2026 pending permission
+- **Work:** five case studies (Creative Studio, Realty Starter, Real Estate, Mo Touch, and the internal Leads Dashboard, which has no external link). The page leads with the founder's 15+ career website count against the smaller SLIIQQUE-era count. Mo Touch is shown as the founder's earlier work with permission. Lumia and ZINID were taken down on 28 October 2026 pending permission
 - **Expertise:** SaaS platforms, FinTech and RegTech systems, AI agents and automation
 - **Insights:** 11 technical articles
 - **Studio, Contact, Privacy, Terms**
@@ -118,6 +118,7 @@ src/
     services.ts            Service summaries and "From $X" prices
     service-details.ts     Base price, included scope and add-ons per service
     faq.ts                 FAQ shown on /services and emitted as FAQPage schema
+    industries.ts          Anonymized industry list for the stats marquee
     studio.ts              Studio copy and stats
     schema-org.ts          JSON-LD builders
     llms.ts                Builds llms.txt and llms-full.txt from the other data files
@@ -201,7 +202,9 @@ After a deploy, submit `https://sliiqque.space/sitemap.xml` in Google Search Con
 1. Add it to `src/data/insights.ts` and create `src/app/insights/<slug>/`.
 2. Add its metadata to `articleSchemas` in `src/data/schema-org.ts` and its slug to `insightSlugs` in `next-sitemap.config.js`.
 
-**The founder's website count:** `foundersWebsitesDeployed` in `src/data/studio.ts` feeds the "Websites Deployed" stat. It is the founder's own career count, always labelled as his and never as a SLIIQQUE project count.
+**The founder's website count:** `foundersWebsitesDeployed` in `src/data/studio.ts` feeds the hero badge, the first stat card, the stats marquee, the Studio page and the band at the top of `/work/`. It is the founder's own career count, always labelled as his and never as a SLIIQQUE project count. The separate SLIIQQUE-era count is computed from `projects` and stays next to it.
+
+**The industries ticker:** edit `src/data/industries.ts`. It lists industries and custom sector marks only, never client names or client logos, and renders inside the marquee at the bottom of `StatsSection`. A company can be named or shown only after written permission; if that happens, add a separate permission-gated client data file rather than mixing it into this list.
 
 **A service add-on:** add an object to that service's `addOns` in `service-details.ts`. No other file needs to change.
 
