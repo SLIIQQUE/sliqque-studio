@@ -10,22 +10,29 @@ import { services } from "@/data";
 
 const ServicesSection = () => {
   return (
-    <section aria-labelledby="services-heading" className="py-12 px-6 md:px-10 relative overflow-hidden">
+    <section
+      aria-labelledby="services-heading"
+      className="py-12 px-6 md:px-10 relative overflow-hidden"
+    >
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <SectionHeader
-          pill="What We Do"
-          title="Services"
-          description="Tailored engagements for every stage of your journey, from landing pages to full-scale platforms."
           align="center"
+          title="Services"
+          // pill="What We Do"
+          description="Tailored engagements for every stage of your journey, from landing pages to full-scale platforms."
         />
 
         <div className="space-y-0">
           {services.slice(0, 4).map((service, i) => (
-            <ServiceItem key={service.index} {...service} delay={0.1 + i * 0.08} />
+            <ServiceItem
+              key={service.index}
+              {...service}
+              delay={0.1 + i * 0.08}
+            />
           ))}
         </div>
 
@@ -47,7 +54,11 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.7 }}
             >
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              <ArrowRight
+                size={14}
+                className="group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
             </motion.span>
           </Link>
         </motion.div>
