@@ -188,37 +188,3 @@ body {
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
-
-/* "Worked with" strip: slow horizontal marquee that pauses on hover and stands still for reduced motion. */
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.marquee {
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-}
-
-.marquee-track {
-  animation: marquee-scroll 45s linear infinite;
-  will-change: transform;
-}
-
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none !important;
-    width: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-right: 0;
-  }
-  .marquee-copy {
-    display: none;
-  }
-}
