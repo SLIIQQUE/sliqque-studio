@@ -35,9 +35,8 @@ export default function WorkPageClient() {
           </div>
           <div className="hidden sm:block h-16 w-px bg-white/10" />
           <p className="text-sm font-body text-white/50 leading-relaxed max-w-xl">
-            Before and at SLIIQQUE. Most of that work is private or under NDA, so this page shows
-            the {sliiqqueProjectCount} SLIIQQUE-era builds we can show, plus Mo Touch from the
-            founder&apos;s earlier work.
+            Most of our work is private or under NDA. The {sliiqqueProjectCount} builds below are
+            the projects we can show publicly.
           </p>
         </div>
       </section>
