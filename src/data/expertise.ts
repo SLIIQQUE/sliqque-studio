@@ -34,11 +34,11 @@ export const verticals: ExpertiseVertical[] = [
   {
     title: "FinTech & RegTech Systems",
     description:
-      "Payment infrastructure and fraud prevention platforms built for the African market. DisCo API integration, real-time token generation, multi-gateway payment processing, shared risk intelligence networks, and AML compliance systems. Built to handle scale, complexity, and regulatory requirements.",
+      "Payment infrastructure and fraud prevention systems for the African market: multi-gateway payment processing, multi-provider API integration, risk scoring and AML compliance tooling.",
     href: "/expertise/frontend-architecture",
-    metric: "Live",
-    imageSrc: "/images/lumia-screenshot.jpg",
-    imageAlt: "Lumia electricity payment platform",
+    metric: "Capability",
+    imageSrc: "/og-image.jpg",
+    imageAlt: "SLIIQQUE FinTech and RegTech systems development",
     tags: ["React", "Node.js", "Payment APIs", "Fraud Detection"],
   },
   {
@@ -69,7 +69,7 @@ export const capabilities: Capability[] = [
   {
     title: "Payment & API Integration",
     description:
-      "Payment gateway integration, DisCo API connections for real-time meter validation and token generation, multi-provider API orchestration. Our founder's earlier work on Lumia, an electricity payment platform, covered this kind of integration.",
+      "Payment gateway integration, multi-provider API orchestration and real-time transaction handling.",
     icon: "Building2",
   },
   {
@@ -91,16 +91,6 @@ export const projectReferences: ProjectReference[] = [
     name: "Real Estate",
     description: "CMS-powered property platform: searchable listings, agent profiles, enquiry capture",
     href: "/work/real-estate",
-  },
-  {
-    name: "Lumia",
-    description: "Electricity payment platform: 6 DisCos, thousands of monthly transactions",
-    href: "/work/lumia",
-  },
-  {
-    name: "ZINID",
-    description: "Fraud prevention infrastructure: shared risk intelligence for fintech",
-    href: "/work/zinid",
   },
   {
     name: "Mo Touch",

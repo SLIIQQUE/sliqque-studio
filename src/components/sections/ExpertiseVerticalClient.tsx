@@ -30,12 +30,6 @@ const defaultRelatedProjects: RelatedProject[] = [
     href: "/work/real-estate",
     imageSrc: "/images/real-estate-screenshot.jpg",
   },
-  {
-    title: "Lumia",
-    description: "Nigeria's digital electricity payment platform: 6 DisCos, thousands of monthly transactions",
-    href: "/work/lumia",
-    imageSrc: "/images/lumia-screenshot.jpg",
-  },
 ];
 
 export default function ExpertiseVerticalClient({
@@ -138,6 +132,7 @@ export default function ExpertiseVerticalClient({
         </div>
       </section>
 
+      {relatedProjects.length > 0 && (
       <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -179,6 +174,7 @@ export default function ExpertiseVerticalClient({
           </div>
         </div>
       </section>
+      )}
 
       <section className="py-12 px-10">
         <div className="max-w-6xl mx-auto text-center">

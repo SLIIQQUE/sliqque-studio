@@ -8,18 +8,18 @@ import ExpertiseVerticalClient from "@/components/sections/ExpertiseVerticalClie
 export const metadata: Metadata = {
   title: "FinTech & RegTech Systems Development",
   description:
-    "Payment infrastructure, multi-API integration and fraud prevention platforms for Africa. Earlier work by our founder includes Lumia and ZINID.",
+    "Payment infrastructure, multi-API integration and fraud prevention platforms for Africa.",
   openGraph: {
     url: "https://sliiqque.space/expertise/frontend-architecture/",
     title: "FinTech & RegTech Systems | Payment Infrastructure & Fraud Prevention | SLIIQQUE",
     description:
-      "Payment infrastructure, multi-API integration, real-time transaction processing, and fraud prevention platforms. Earlier work by our founder includes Lumia and ZINID.",
+      "Payment infrastructure, multi-API integration, real-time transaction processing, and fraud prevention platforms.",
     images: [
       {
-        url: "https://sliiqque.space/images/lumia-screenshot.jpg",
+        url: "https://sliiqque.space/og-image.jpg",
         width: 1280,
         height: 800,
-        alt: "Lumia: a FinTech payment platform, earlier work by SLIIQQUE's founder",
+        alt: "SLIIQQUE FinTech and RegTech systems development",
       },
     ],
   },
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FinTech & RegTech Systems | Payment Infrastructure & Fraud Prevention | SLIIQQUE",
     description:
-      "Payment infrastructure, multi-API integration, and fraud prevention platforms. Earlier work by our founder includes Lumia and ZINID.",
-    images: ["https://sliiqque.space/images/lumia-screenshot.jpg"],
+      "Payment infrastructure, multi-API integration, and fraud prevention platforms.",
+    images: ["https://sliiqque.space/og-image.jpg"],
   },
 };
 
@@ -44,7 +44,7 @@ export default function FrontendArchitecturePage() {
       <ExpertiseVerticalClient
         title="FinTech & RegTech Systems"
         subtitle="Payment Infrastructure & Fraud Prevention Built for Africa"
-        description="We build financial infrastructure that handles real transactions, integrates with multiple providers, and processes data in real-time. Our founder's earlier work includes Lumia, an electricity payment platform, and ZINID, a fraud prevention platform. If it involves payments, APIs, and compliance, we know the ground."
+        description="We build payment and compliance-heavy systems: integration with multiple providers, real-time processing and fraud checks. If it involves payments, APIs, and compliance, talk to us about scope."
         stack={["React", "TypeScript", "Node.js", "Payment Gateways", "REST APIs", "Fraud Detection"]}
         services={[
           "Multi-provider API integration",
@@ -55,20 +55,7 @@ export default function FrontendArchitecturePage() {
           "Shared intelligence networks",
         ]}
         cta="Building a FinTech or RegTech product?"
-        relatedProjects={[
-          {
-            title: "Lumia",
-            description: "Nigeria's digital electricity payment platform: 6 DisCos, thousands of monthly transactions",
-            href: "/work/lumia",
-            imageSrc: "/images/lumia-screenshot.jpg",
-          },
-          {
-            title: "ZINID",
-            description: "Africa's fraud prevention infrastructure: shared risk intelligence for the fintech ecosystem",
-            href: "/work/zinid",
-            imageSrc: "/images/zinid-screenshot.jpg",
-          },
-        ]}
+        relatedProjects={[]}
       />
       <Footer />
     </main>

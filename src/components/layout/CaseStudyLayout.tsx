@@ -36,6 +36,8 @@ interface CaseStudyLayoutProps {
   externalUrl?: { url: string; label: string } | null;
   /** Work done before SLIIQQUE existed: show a notice and omit the results and lessons sections. */
   earlierWork?: boolean;
+  /** Replaces the default notice shown for earlier work. */
+  earlierWorkNote?: string;
   contact?: { label: string; href: string } | null;
   useInteractiveTitle?: boolean;
   sections: MetaEntry[];
@@ -52,6 +54,7 @@ export default function CaseStudyLayout({
   contact = null,
   useInteractiveTitle = false,
   earlierWork = false,
+  earlierWorkNote,
   sections,
 }: CaseStudyLayoutProps) {
   return (
@@ -230,7 +233,7 @@ export default function CaseStudyLayout({
               </div>
               <div className="lg:col-span-9">
                 <p className="text-base font-body text-white/80 leading-relaxed">
-                  This project pre-dates SLIIQQUE. It is earlier work by our founder, Gabriel Njoabozia, from before SLIIQQUE was founded in December 2025, shown as background on his experience. It is not a SLIIQQUE project, and no SLIIQQUE results are claimed. The text below describes the product in general terms.
+                  {earlierWorkNote ?? "This project pre-dates SLIIQQUE. It is earlier work by our founder, Gabriel Njoabozia, from before SLIIQQUE was founded in December 2025, shown as background on his experience. It is not a SLIIQQUE project, and no SLIIQQUE results are claimed. The text below describes the product in general terms."}
                 </p>
               </div>
             </div>
