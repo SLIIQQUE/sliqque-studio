@@ -91,9 +91,17 @@ export const studioStack: string[] = [
   "Gemini API", "GitHub Actions",
 ];
 
+/**
+ * Websites the founder has built and deployed across his career, before and since SLIIQQUE was founded
+ * (22 December 2025). This is his own count (stated 28 October 2026); most cannot be shown publicly. It is always
+ * labelled as the founder's, never as SLIIQQUE project count or company age.
+ */
+export const foundersWebsitesDeployed = 15;
+
 export const studioStats = [
   { value: "2025", label: "Founded" },
-  { value: `${projects.filter((p) => !p.earlier).length}+`, label: "Projects shipped" },
+  { value: `${projects.filter((p) => !p.earlier).length}+`, label: "Projects shipped at SLIIQQUE" },
+  { value: `${foundersWebsitesDeployed}+`, label: "Websites deployed by our founder" },
   { value: "3", label: "Focus verticals" },
   { value: "1", label: "Principal" },
 ];

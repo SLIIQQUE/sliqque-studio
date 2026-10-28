@@ -46,6 +46,9 @@ const SelectedWorkSection = dynamic(
 const StatsSection = dynamic(
   () => import("@/components/sections/StatsSection")
 );
+const WorkedWithSection = dynamic(
+  () => import("@/components/sections/WorkedWithSection")
+);
 const StudioSection = dynamic(
   () => import("@/components/sections/StudioSection")
 );
@@ -72,6 +75,7 @@ export default function Home() {
         <ServicesSection />
         <SelectedWorkSection />
         <StatsSection />
+        <WorkedWithSection />
         <StudioSection />
         <EcosystemCallout />
         <InsightsSection />

@@ -99,7 +99,7 @@ function StatsSection() {
   return (
     <section className="py-12 px-10 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {studioStats.map((stat) => (
             <motion.div
               key={stat.label}

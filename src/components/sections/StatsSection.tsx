@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { projects } from "@/data/projects";
+import { foundersWebsitesDeployed } from "@/data/studio";
 
 /**
  * StatsSection: animated counters, progress rings, stat cards, and marquee.
@@ -41,7 +42,7 @@ const AnimatedCounter = ({ value, suffix = "", duration = 2 }: { value: number; 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="font-display font-bold text-5xl md:text-7xl tracking-tight will-change-transform"
+      className="font-display font-bold text-5xl tracking-tight will-change-transform"
     >
       {count}
       {suffix}
@@ -54,12 +55,14 @@ const StatCard = ({
   suffix,
   label,
   icon,
+  note,
   delay
 }: {
   value: number;
   suffix: string;
   label: string;
   icon: React.ReactNode;
+  note?: string;
   delay: number;
 }) => {
   const ref = useRef(null);
@@ -73,11 +76,11 @@ const StatCard = ({
       viewport={{ once: true }}
       transition={{ delay, duration: 0.6 }}
       whileHover={{ scale: 1.05, y: -5 }}
-      className="relative group will-change-transform"
+      className="relative group will-change-transform h-full"
     >
       <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-blue-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      <div className="relative bg-background/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden">
+      <div className="relative h-full bg-background/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 overflow-hidden">
         <motion.div
           className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-transparent rounded-full blur-2xl will-change-transform"
           animate={isInView ? { scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] } : {}}
@@ -96,6 +99,7 @@ const StatCard = ({
           <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/50">
             {label}
           </span>
+          {note && <p className="mt-2 text-xs font-body text-white/40 leading-snug">{note}</p>}
         </div>
 
         <motion.div
@@ -110,7 +114,7 @@ const StatCard = ({
 };
 
 const MarqueeStats = () => {
-  const stats = ["Founded December 2025", "•", `${projects.filter((p) => !p.earlier).length}+ Projects Shipped`, "•", "SaaS & Website Focus", "•", "Lagos, Nigeria", "•"];
+  const stats = ["Founded December 2025", "•", `${projects.filter((p) => !p.earlier).length}+ Projects Shipped At SLIIQQUE`, "•", `${foundersWebsitesDeployed}+ Websites Deployed By Our Founder`, "•", "SaaS & Website Focus", "•", "Lagos, Nigeria", "•"];
 
   return (
     <div className="py-6 border-y border-white/10 overflow-hidden">
@@ -142,7 +146,8 @@ const MarqueeStats = () => {
 const StatsSection = () => {
   const stats = [
     { value: 2025, suffix: "", label: "Founded", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-    { value: projects.filter((p) => !p.earlier).length, suffix: "+", label: "Projects Shipped", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg> },
+    { value: projects.filter((p) => !p.earlier).length, suffix: "+", label: "Projects Shipped", note: "At SLIIQQUE since December 2025", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg> },
+    { value: foundersWebsitesDeployed, suffix: "+", label: "Websites Deployed", note: "By our founder, before and at SLIIQQUE", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg> },
     { value: 3, suffix: "", label: "Focus Verticals", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg> },
     { value: 1, suffix: "", label: "Principal", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg> },
   ];
@@ -167,9 +172,11 @@ const StatsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 mb-20">
           {stats.map((stat, i) => (
-            <StatCard key={stat.label} {...stat} delay={i * 0.1} />
+            <div key={stat.label} className={i === stats.length - 1 ? "col-span-2 lg:col-span-1 h-full" : "h-full"}>
+              <StatCard {...stat} delay={i * 0.1} />
+            </div>
           ))}
         </div>
       </div>

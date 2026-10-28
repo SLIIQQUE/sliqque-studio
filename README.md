@@ -201,6 +201,10 @@ After a deploy, submit `https://sliiqque.space/sitemap.xml` in Google Search Con
 1. Add it to `src/data/insights.ts` and create `src/app/insights/<slug>/`.
 2. Add its metadata to `articleSchemas` in `src/data/schema-org.ts` and its slug to `insightSlugs` in `next-sitemap.config.js`.
 
+**A company in the "Worked with" strip:** add it to `src/data/clients.ts` only after the company has agreed in writing, and set `permission: true`. Put a transparent SVG or PNG logo in `public/images/clients/` and set `logoSrc` (every logo is drawn in white), or leave it out to show the name as text. The strip stays hidden until at least three entries have permission; from four it scrolls.
+
+**The founder's website count:** `foundersWebsitesDeployed` in `src/data/studio.ts` feeds the "Websites Deployed" stat. It is the founder's own career count, always labelled as his and never as a SLIIQQUE project count.
+
 **A service add-on:** add an object to that service's `addOns` in `service-details.ts`. No other file needs to change.
 
 **A remote image domain:** add it to `images.remotePatterns` in `next.config.mjs`.
