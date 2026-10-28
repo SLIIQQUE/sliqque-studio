@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: "https://sliiqque.space/images/motouch-screenshot.jpg",
         width: 1280,
         height: 800,
-        alt: "Mo Touch: an interactive frontend built by SLIIQQUE",
+        alt: "Mo Touch: an interactive frontend, earlier work by SLIIQQUE's founder",
       },
     ],
   },
@@ -44,7 +44,7 @@ export default function DesignSystemsPage() {
       <ExpertiseVerticalClient
         title="AI Agents & Automation"
         subtitle="Bots, Automation, and Interactive Experiences That Work for You"
-        description="AI bots for WhatsApp and Telegram that handle customer support, lead qualification, and booking. AI agents embedded directly into websites that engage visitors in natural conversation. Workflow automation that connects your website, bots, and backend into a single operation. And interactive frontends with scroll-driven animations and touch interactions, like Mo Touch, a portfolio built with GSAP and Framer Motion."
+        description="AI bots for WhatsApp and Telegram that handle customer support, lead qualification, and booking. AI agents embedded directly into websites that engage visitors in natural conversation. Workflow automation that connects your website, bots, and backend into a single operation. And interactive frontends with scroll-driven animations and touch interactions, like Mo Touch, an earlier portfolio by our founder built with GSAP and Framer Motion."
         stack={["Gemini API", "Bot APIs", "GSAP", "Framer Motion", "TypeScript", "Node.js"]}
         services={[
           "WhatsApp & Telegram bot development",

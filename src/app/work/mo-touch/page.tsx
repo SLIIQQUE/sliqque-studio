@@ -6,12 +6,12 @@ import CaseStudyClient from "./CaseStudyClient";
 export const metadata: Metadata = {
   title: "Mo Touch: Interactive Makeup Artist Portfolio",
   description:
-    "Case study: an immersive, scroll-driven portfolio for a makeup artist, built with GSAP and Framer Motion for smooth 60fps, touch-first interactions on mobile.",
+    "Earlier work by our founder, from before SLIIQQUE: an immersive, scroll-driven portfolio for a makeup artist, built with GSAP and Framer Motion.",
   openGraph: {
     url: "https://sliiqque.space/work/mo-touch/",
-    title: "Mo Touch Case Study | SLIIQQUE",
+    title: "Mo Touch: Earlier Work | SLIIQQUE",
     description:
-      "Premium interactive portfolio for a makeup artist with immersive scroll-driven animations and touch-optimized interactions.",
+      "Earlier work by our founder, from before SLIIQQUE: an interactive portfolio for a makeup artist with scroll-driven animations.",
     images: [
       {
         url: "https://sliiqque.space/images/motouch-screenshot.jpg",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mo Touch Case Study | SLIIQQUE",
+    title: "Mo Touch: Earlier Work | SLIIQQUE",
     description:
-      "Premium interactive portfolio for a makeup artist with immersive scroll-driven animations.",
+      "Earlier work by our founder, from before SLIIQQUE: an interactive portfolio for a makeup artist.",
     images: ["https://sliiqque.space/images/motouch-screenshot.jpg"],
   },
 };

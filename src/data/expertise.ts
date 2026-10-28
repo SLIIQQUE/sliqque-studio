@@ -69,13 +69,13 @@ export const capabilities: Capability[] = [
   {
     title: "Payment & API Integration",
     description:
-      "Payment gateway integration, DisCo API connections for real-time meter validation and token generation, multi-provider API orchestration. Lumia processes transactions across 6 electricity distribution companies through a unified integration layer.",
+      "Payment gateway integration, DisCo API connections for real-time meter validation and token generation, multi-provider API orchestration. Our founder's earlier work on Lumia, an electricity payment platform, covered this kind of integration.",
     icon: "Building2",
   },
   {
     title: "Interactive & Motion Frontends",
     description:
-      "Scroll-driven storytelling with GSAP ScrollTrigger, Framer Motion animations, touch-optimized interactions, and immersive digital experiences. Mo Touch proves what a frontend can be when motion serves narrative.",
+      "Scroll-driven storytelling with GSAP ScrollTrigger, Framer Motion animations, touch-optimized interactions, and immersive digital experiences. Our founder's earlier work, Mo Touch, shows what a frontend can be when motion serves narrative.",
     icon: "Palette",
   },
   {

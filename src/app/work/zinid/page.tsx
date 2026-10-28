@@ -6,12 +6,12 @@ import CaseStudyClient from "./CaseStudyClient";
 export const metadata: Metadata = {
   title: "ZINID: Africa's Fraud Prevention Infrastructure",
   description:
-    "Case study: ZINID, Africa's shared fraud prevention platform, with digital identity, real-time risk scoring, transaction monitoring and CBN-aligned AML compliance.",
+    "Earlier work by our founder, from before SLIIQQUE: ZINID, Africa's shared fraud prevention platform for digital identity and real-time risk scoring.",
   openGraph: {
     url: "https://sliiqque.space/work/zinid/",
-    title: "ZINID Case Study | SLIIQQUE",
+    title: "ZINID: Earlier Work | SLIIQQUE",
     description:
-      "Africa's fraud prevention infrastructure with digital identity, real-time risk scoring, and shared intelligence across the Nigerian fintech ecosystem.",
+      "Earlier work by our founder, from before SLIIQQUE: Africa's fraud prevention infrastructure with digital identity and real-time risk scoring.",
     images: [
       {
         url: "https://sliiqque.space/images/zinid-screenshot.jpg",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZINID Case Study | SLIIQQUE",
+    title: "ZINID: Earlier Work | SLIIQQUE",
     description:
-      "Building Africa's shared fraud prevention infrastructure for the Nigerian fintech ecosystem.",
+      "Earlier work by our founder, from before SLIIQQUE: Africa's shared fraud prevention infrastructure.",
     images: ["https://sliiqque.space/images/zinid-screenshot.jpg"],
   },
 };

@@ -6,12 +6,12 @@ import CaseStudyClient from "./CaseStudyClient";
 export const metadata: Metadata = {
   title: "Lumia | Electricity Payment Platform",
   description:
-    "A case study on building Nigeria's electricity payment platform with prepaid and postpaid meters, multi-DisCo support, and instant token delivery.",
+    "Earlier work by our founder, from before SLIIQQUE: Nigeria's electricity payment platform with prepaid and postpaid meters and instant token delivery.",
   openGraph: {
     url: "https://sliiqque.space/work/lumia/",
-    title: "Lumia Case Study | SLIIQQUE",
+    title: "Lumia: Earlier Work | SLIIQQUE",
     description:
-      "A case study on building Nigeria's electricity payment platform with prepaid and postpaid meters, multi-DisCo support, and instant token delivery.",
+      "Earlier work by our founder, from before SLIIQQUE: Nigeria's electricity payment platform with prepaid and postpaid meters and instant token delivery.",
     images: [
       {
         url: "https://sliiqque.space/images/lumia-screenshot.jpg",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumia Case Study | SLIIQQUE",
+    title: "Lumia: Earlier Work | SLIIQQUE",
     description:
-      "Building Nigeria's electricity payment platform with prepaid and postpaid meters, multi-DisCo support, and instant token delivery.",
+      "Earlier work by our founder, from before SLIIQQUE: Nigeria's electricity payment platform with prepaid and postpaid meters and instant token delivery.",
     images: ["https://sliiqque.space/images/lumia-screenshot.jpg"],
   },
 };

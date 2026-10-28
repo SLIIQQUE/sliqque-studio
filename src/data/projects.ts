@@ -23,6 +23,8 @@ export interface Project {
   logoSrc?: string;
   imageAlt: string;
   href: string;
+  /** Done before SLIIQQUE was founded (22 December 2025): shown as the founder's earlier work, never as company age or results. */
+  earlier?: boolean;
   bgColor?: string;
   /** Plain-language results, used in llms-full.txt. */
   outcomes?: string[];
@@ -54,21 +56,16 @@ export const projects: Project[] = [
     title: "Lumia",
     year: "2019",
     clientType: "FinTech",
-    engagementType: "Product Build",
+    engagementType: "Earlier work, before SLIIQQUE",
     description: "Nigeria's electricity payment platform: prepaid & postpaid meters, multi-DisCo support, instant token delivery, and mobile apps.",
     tags: ["React", "TypeScript", "Node.js", "Payment Integration"],
-    metric: "6 DisCos",
+    metric: "Before SLIIQQUE",
     logoSrc: "https://lumia.ng/assets/Logo.png",
     imageSrc: "/images/lumia-screenshot.jpg",
     imageAlt: "Lumia electricity payment platform homepage",
     href: "/work/lumia",
+    earlier: true,
     bgColor: "#0f0f0f",
-    outcomes: [
-      "Partnerships with 6 major DisCos across Nigeria",
-      "Instant token delivery by SMS and email, typically under 30 seconds",
-      "Prepaid and postpaid payments with iOS and Android apps",
-      "Reseller program that lets entrepreneurs start electricity vending",
-    ],
   },
   {
     title: "Realty Starter",
@@ -136,39 +133,30 @@ export const projects: Project[] = [
     title: "ZINID",
     year: "2018",
     clientType: "RegTech / Fraud Prevention",
-    engagementType: "Product Build",
+    engagementType: "Earlier work, before SLIIQQUE",
     description: "Africa's fraud prevention infrastructure platform: credit risk assessment, transaction monitoring, and shared risk memory for the fintech ecosystem.",
     tags: ["React", "TypeScript", "Next.js"],
-    metric: "Risk Infrastructure",
+    metric: "Before SLIIQQUE",
     logoSrc: "https://zinid.africa/logo192.png",
     imageSrc: "/images/zinid-screenshot.jpg",
     imageAlt: "ZINID fraud prevention platform homepage",
     href: "/work/zinid",
+    earlier: true,
     bgColor: "#0a0a0a",
-    outcomes: [
-      "Shared fraud intelligence network connecting multiple Nigerian fintech platforms",
-      "Fraud scores updated in real time across the ecosystem",
-      "Reduced onboarding bonus abuse by identifying repeat offenders across platforms",
-      "AML compliance infrastructure aligned with CBN requirements",
-    ],
   },
   {
     title: "Mo Touch",
     year: "2024",
     clientType: "Beauty & Wellness",
-    engagementType: "Product Build",
+    engagementType: "Earlier work, before SLIIQQUE",
     description: "Premium interactive gallery for a makeup artist: immersive scroll-driven animations, touch-optimized interactions, and a digital-first portfolio experience.",
     tags: ["Vite", "GSAP", "Framer Motion"],
-    metric: "Interactive",
+    metric: "Before SLIIQQUE",
     imageSrc: "/images/motouch-screenshot.jpg",
     imageAlt: "Mo Touch: premium interactive makeup artist portfolio gallery with immersive scroll-driven animations",
     href: "/work/mo-touch",
+    earlier: true,
     bgColor: "#0a0a0a",
-    outcomes: [
-      "Smooth 60fps scroll animations on mobile and desktop",
-      "Touch-optimised interactions built for beauty discovery",
-      "Static build on Vercel with global edge caching for fast loads and SEO",
-    ],
   },
 ];
 

@@ -14,10 +14,10 @@ interface CaseStudyData {
   stack: string[];
   context: string;
   problem: string;
-  whatWeBuilt: string;
-  results: string;
-  learnings: string;
-  [key: string]: string | string[];
+  whatWeBuilt?: string;
+  results?: string;
+  learnings?: string;
+  [key: string]: string | string[] | undefined;
 }
 
 interface MetaEntry {
@@ -34,6 +34,8 @@ interface CaseStudyLayoutProps {
   heroAlt: string;
   heroBgColor?: string;
   externalUrl?: { url: string; label: string } | null;
+  /** Work done before SLIIQQUE existed: show a notice and omit the results and lessons sections. */
+  earlierWork?: boolean;
   contact?: { label: string; href: string } | null;
   useInteractiveTitle?: boolean;
   sections: MetaEntry[];
@@ -49,6 +51,7 @@ export default function CaseStudyLayout({
   externalUrl = null,
   contact = null,
   useInteractiveTitle = false,
+  earlierWork = false,
   sections,
 }: CaseStudyLayoutProps) {
   return (
@@ -216,6 +219,24 @@ export default function CaseStudyLayout({
           </div>
         </div>
       </section>
+      {earlierWork && (
+        <section className="py-8 px-10 border-b border-white/5">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+              <div className="lg:col-span-3">
+                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-orange-400 block">
+                  Earlier work
+                </span>
+              </div>
+              <div className="lg:col-span-9">
+                <p className="text-base font-body text-white/80 leading-relaxed">
+                  This project pre-dates SLIIQQUE. It is earlier work by our founder, Gabriel Njoabozia, from before SLIIQQUE was founded in December 2025, shown as background on his experience. It is not a SLIIQQUE project, and no SLIIQQUE results are claimed. The text below describes the product in general terms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
       {sections.map(({ label, key }) => (
         <section key={key} className="py-8 px-10 border-b border-white/5">
           <div className="max-w-6xl mx-auto">
@@ -244,6 +265,8 @@ export default function CaseStudyLayout({
           </div>
         </section>
       ))}
+      {!earlierWork && (
+        <>
       <section className="py-8 px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -264,7 +287,7 @@ export default function CaseStudyLayout({
               className="lg:col-span-9"
             >
               <ul className="space-y-4">
-                {caseStudy.results.split("\n").map((result, i) => (
+                {(caseStudy.results ?? "").split("\n").map((result, i) => (
                   <li
                     key={i}
                     className="text-base font-body text-white/60 leading-relaxed flex items-start gap-4"
@@ -304,6 +327,8 @@ export default function CaseStudyLayout({
           </div>
         </div>
       </section>
+        </>
+      )}
       <section className="py-12 px-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div

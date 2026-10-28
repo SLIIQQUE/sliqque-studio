@@ -6,7 +6,7 @@ import WorkPageClient from "./WorkPageClient";
 export const metadata: Metadata = {
   title: "Our Work: Websites, AI Bots & SaaS Projects",
   description:
-    "Selected projects from SLIIQQUE: Creative Studio, Lumia payments, Realty Starter, our internal Leads Dashboard, Real Estate, ZINID fraud prevention and Mo Touch.",
+    "SLIIQQUE's own builds (Creative Studio, Realty Starter, our internal Leads Dashboard and Real Estate) and earlier work by our founder from before SLIIQQUE was founded (Lumia, ZINID and Mo Touch).",
   alternates: {
     canonical: "https://sliiqque.space/work/",
   },

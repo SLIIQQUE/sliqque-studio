@@ -93,7 +93,7 @@ export const studioStack: string[] = [
 
 export const studioStats = [
   { value: "2025", label: "Founded" },
-  { value: `${projects.length}+`, label: "Projects shipped" },
+  { value: `${projects.filter((p) => !p.earlier).length}+`, label: "Projects shipped" },
   { value: "3", label: "Focus verticals" },
   { value: "1", label: "Principal" },
 ];
