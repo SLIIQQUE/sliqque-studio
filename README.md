@@ -4,10 +4,7 @@ The website for SLIIQQUE, a boutique software studio in Lagos, Nigeria. Dark edi
 
 **Live:** [https://sliiqque.space](https://sliiqque.space)
 
-Related docs:
-
-- [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md): where every price, project, stat and email lives, and what to update together
-- [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md): SEO and AEO audit, what was fixed, what is still open
+**Documents:** this project keeps no docs of its own. The Product & Engineering growth plan, engagement policies, privacy policy and terms are in the workspace at `Documents/Sales/` and `Documents/Legal/` (`SLIIQQUE-Product-Engineering-*`). Prices, services and verticals are owned by `COMPANY.md`.
 
 ---
 
@@ -125,7 +122,6 @@ src/
     schema-org.ts          JSON-LD builders
     llms.ts                Builds llms.txt and llms-full.txt from the other data files
     legal/                 Privacy and Terms content
-docs/                      Project documentation
 next-sitemap.config.js     Sitemap, robots.txt and lastmod logic
 ```
 
@@ -147,13 +143,13 @@ Prices are "starting at" prices. `src/data/service-details.ts` holds, per servic
 
 Current starting prices: Website $300, AI Bot and Agent $600, Interface Engineering $1,000, Studio Retainer $2,500 per month, Technical Audit $800.
 
-A change to any price touches several files. Follow the checklist in [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md).
+The numbers live in `src/data/service-details.ts` and `src/data/services.ts`. After a price change, update the Product & Engineering pricing tables in `COMPANY.md` at the workspace root so the two stay equal.
 
 ---
 
 ## SEO and AEO
 
-Full detail in [docs/SEO-AUDIT.md](docs/SEO-AUDIT.md). In short:
+In short:
 
 - Every route sets its own title and description through Next.js `metadata` only (no hand-written `<meta>` tags in `<head>`), plus canonical (with trailing slash), Open Graph and Twitter card. Titles stay under about 50 characters because the root template appends ` | SLIIQQUE`.
 - `SchemaOrg.tsx` outputs a site-wide graph (Organization, LocalBusiness, WebSite, Services) plus page-specific nodes: `Article`, `CreativeWork`, `ItemList`, `FAQPage` and per-service `Service` with the starting price.
