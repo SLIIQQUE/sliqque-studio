@@ -34,11 +34,10 @@ const AnimatedCounter = ({
   sizeClass?: string;
 }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
+    if (started) {
       const controls = animate(0, value, {
         duration,
         ease: "easeOut",
@@ -46,13 +45,16 @@ const AnimatedCounter = ({
       });
       return controls.stop;
     }
-  }, [isInView, value, duration]);
+  }, [started, value, duration]);
 
+  // Start the count from the same viewport trigger as the fade-in, so the number
+  // can never stay at 0 while the card is visible (a separate inset margin missed
+  // small cards on mobile).
   return (
     <motion.span
-      ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      onViewportEnter={() => setStarted(true)}
       viewport={{ once: true }}
       className={`font-display font-bold tracking-tight will-change-transform ${sizeClass}`}
     >

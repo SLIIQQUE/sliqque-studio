@@ -175,7 +175,6 @@ const FeaturedArticle = ({
             height={514}
             className="w-full h-full aspect-video md:aspect-[21/9] object-cover transition-all duration-700 ease-out group-hover:scale-[1.05]"
             sizes="(max-width: 768px) 100vw, 800px"
-            priority
           />
           
           <motion.div
