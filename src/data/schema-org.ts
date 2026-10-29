@@ -20,6 +20,8 @@ export const personSchema = {
   "@id": baseUrl + "/studio/#person",
   name: "Gabriel Njoabozia",
   url: baseUrl + "/studio/",
+  // The same person on the creative studio site, which shares this @id.
+  sameAs: ["https://studio.sliiqque.space/about", "https://www.linkedin.com/in/gabriel-njoabozia/", "https://github.com/flawlexsaint"],
   image: baseUrl + "/images/Gabriel.jpg",
   jobTitle: "Founder & Lead Engineer",
   worksFor: { "@id": baseUrl + "/#organization" },
