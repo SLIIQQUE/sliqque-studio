@@ -37,7 +37,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Do you work with clients outside Nigeria?",
     answer:
-      "Yes. SLIIQQUE is based in Lagos and works with clients worldwide. Past work includes HR software, electricity payments, fraud prevention, and a real estate platform.",
+      "Yes. SLIIQQUE is based in Lagos and works with clients worldwide.",
   },
   {
     question: "Does SLIIQQUE offer creative or video production services?",
