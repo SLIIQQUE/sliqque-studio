@@ -195,7 +195,7 @@ After a deploy, submit `https://sliiqque.space/sitemap.xml` in Google Search Con
 1. Add the entry to `src/data/projects.ts` (position in the array is its position on the site).
 2. Create `src/app/work/<slug>/page.tsx` and `CaseStudyClient.tsx` by copying an existing case study.
 3. Add a screenshot to `public/images/`.
-4. Add the path to `workPriorities` in `next-sitemap.config.js`, add `outcomes` to the project entry (they appear in `llms-full.txt`), and set `earlier: true` on the entry if the work was done before SLIIQQUE was founded. The "Projects Shipped" stat is computed from the `projects` array and counts only SLIIQQUE-era entries.
+4. Add the path to `workPriorities` in `next-sitemap.config.js`, add `outcomes` to the project entry (they appear in `llms-full.txt`), and set `earlier: true` on the entry if the work was done before SLIIQQUE was founded.
 
 **An article**
 

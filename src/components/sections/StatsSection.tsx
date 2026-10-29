@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
-import { projects } from "@/data/projects";
 import { industries, type IndustryMark } from "@/data/industries";
 import { foundersWebsitesDeployed } from "@/data/studio";
 import { IndustryMarkIcon } from "@/components/ui/IndustryMark";
@@ -155,7 +154,6 @@ type MarqueeItem =
 const MarqueeStats = () => {
   const items: MarqueeItem[] = [
     { kind: "text", label: `${foundersWebsitesDeployed}+ Websites Deployed By Our Founder` },
-    { kind: "text", label: `${projects.filter((p) => !p.earlier).length}+ Projects Shipped At SLIIQQUE` },
     { kind: "text", label: "Industries We Ship In" },
     ...industries.map((industry): MarqueeItem => ({ kind: "industry", ...industry })),
     { kind: "text", label: "Founded December 2025" },
