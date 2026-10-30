@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/framer-motion-guide/" />
+      <PageSchema path="/insights/framer-motion-guide/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

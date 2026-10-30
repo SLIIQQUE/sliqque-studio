@@ -4,7 +4,8 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PublishedDate } from "@/components/ui/PublishedDate";
 
 interface ArticleLayoutProps {
   date: string;
@@ -53,17 +54,17 @@ export default function ArticleLayout({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link
-              href="/insights"
-              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-12 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
-            >
-              <ArrowLeft size={12} aria-hidden="true" />
-              All Insights
-            </Link>
+            <Breadcrumbs
+              trail={[
+                { name: "Home", href: "/" },
+                { name: "Insights", href: "/insights" },
+                { name: title },
+              ]}
+            />
 
             <div className="flex items-center gap-4 mb-8">
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted">
-                {date}
+                <PublishedDate date={date} />
               </span>
               <span className="text-white/20" aria-hidden="true">
                 &bull;
@@ -93,9 +94,9 @@ export default function ArticleLayout({
                 />
               </div>
               <div>
-                <span className="text-sm font-body font-medium block">
+                <Link href="/studio" rel="author" className="text-sm font-body font-medium block hover:underline underline-offset-2">
                   {authorName}
-                </span>
+                </Link>
                 <span className="text-[10px] font-body text-muted uppercase tracking-[0.1em]">
                   {authorRole}
                 </span>

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function LeadsDashboardPage() {
   return (
     <PageLayout>
-      <PageSchema path="/work/leads-dashboard/" />
+      <PageSchema path="/work/leads-dashboard/" meta={metadata} />
       <CaseStudyClient />
     </PageLayout>
   );

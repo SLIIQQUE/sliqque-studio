@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <PageLayout>
-      <PageSchema path="/work/" />
+      <PageSchema path="/work/" meta={metadata} />
       <WorkPageClient />
     </PageLayout>
   );

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/analytics-dashboard-nextjs/" />
+      <PageSchema path="/insights/analytics-dashboard-nextjs/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

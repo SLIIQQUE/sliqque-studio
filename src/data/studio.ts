@@ -37,7 +37,7 @@ export const studioInfo: StudioInfo = {
   founder: "Gabriel Njoabozia",
   location: "Lagos, Nigeria",
   tagline: "Built with intent. Driven by craft.",
-  headline: "Built with<br />intent.<br />Driven by craft.",
+  headline: "Built with <br />intent. <br />Driven by craft.",
   subheadline: "About the Studio",
   description: "SLIIQQUE is a boutique software studio founded by Gabriel Njoabozia in Lagos, Nigeria. We build high-performance websites, workflow automation systems, AI-powered bots and agents, and production frontend systems. We lead engineering teams and ship products that drive real business results.",
   specialization: "Specializing in website development, workflow automation, AI bot and agent creation, and high-performance frontend engineering, building the digital infrastructure that makes businesses actually work.",

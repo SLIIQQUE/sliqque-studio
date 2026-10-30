@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/frontend-ux-conversion/" />
+      <PageSchema path="/insights/frontend-ux-conversion/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

@@ -5,12 +5,13 @@ import Footer from "@/components/layout/Footer";
 import LightLeaks from "@/components/ui/LightLeaks";
 import Marquee from "@/components/ui/Marquee";
 import Hero from "@/components/sections/Hero";
+import FaqSection from "@/components/sections/FaqSection";
 import { PageSchema } from "@/components/PageSchema";
 
 export const metadata: Metadata = {
   title: "SLIIQQUE | Websites, AI Agents & Workflow Automation Studio",
   description:
-    "Boutique software studio in Lagos, Nigeria. Websites from $300, AI bots and agents from $600, workflow automation and SaaS platforms, shipped for founders worldwide.",
+    "Boutique software studio in Lagos, Nigeria. Websites from $300, AI bots and agents from $600, workflow automation and SaaS, shipped for founders worldwide.",
   alternates: {
     canonical: "https://sliiqque.space/",
   },
@@ -64,7 +65,7 @@ export default function Home() {
     <main id="main-content" className="relative min-h-screen bg-background">
       <Navigation />
       <LightLeaks />
-      <PageSchema path="/" />
+      <PageSchema path="/" meta={metadata} />
 
       <div className="relative z-10">
         <Hero />
@@ -75,6 +76,7 @@ export default function Home() {
         <StudioSection />
         <EcosystemCallout />
         <InsightsSection />
+        <FaqSection />
         <CTASection />
         <Footer />
       </div>

@@ -1,4 +1,5 @@
-import { faqs } from "./faq";
+import { faqs, homeFaqs } from "./faq";
+import { displayDateToIso } from "@/lib/seo";
 import { projects } from "./projects";
 import { serviceDetails } from "./service-details";
 import { insightArticles } from "./insights";
@@ -30,8 +31,9 @@ export const personSchema = {
   ],
 };
 
+/** One entity for both the organisation and its local business facts, so AI engines do not split it in two. */
 export const organizationSchema = {
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "@id": baseUrl + "/#organization",
   name: "SLIIQQUE",
   url: baseUrl + "/",
@@ -39,7 +41,20 @@ export const organizationSchema = {
   image: baseUrl + "/og-image.jpg",
   sameAs,
   email: "hello@sliiqque.space",
-  description: "Boutique software studio building websites, AI bots and agents, workflow automation, and SaaS platforms.",
+  description: "Boutique software studio in Lagos, Nigeria building websites, AI bots and agents, workflow automation, and SaaS platforms for clients worldwide.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lagos",
+    addressCountry: "NG",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 6.5244, longitude: 3.3792 },
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
   foundingDate: "2025-12-22",
   foundingLocation: { "@type": "City", name: "Lagos" },
   founder: { "@id": baseUrl + "/studio/#person" },
@@ -56,36 +71,12 @@ export const organizationSchema = {
   ],
 };
 
-export const localBusinessSchema = {
-  "@type": "LocalBusiness",
-  "@id": baseUrl + "/#localbusiness",
-  name: "SLIIQQUE",
-  description: "Boutique software studio in Lagos, Nigeria, specializing in websites, AI bots, and workflow automation",
-  url: baseUrl + "/",
-  logo,
-  image: baseUrl + "/og-image.jpg",
-  sameAs,
-  email: "hello@sliiqque.space",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Lagos",
-    addressCountry: "NG",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 6.5244, longitude: 3.3792 },
-  priceRange: "$$",
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "18:00",
-  },
-};
-
 export const webSiteSchema = {
   "@type": "WebSite",
   "@id": baseUrl + "/#website",
   url: baseUrl + "/",
   name: "SLIIQQUE",
+  description: "Boutique software studio in Lagos, Nigeria building websites, AI bots and agents, workflow automation, and SaaS platforms for clients worldwide.",
   inLanguage: "en",
   publisher: { "@id": baseUrl + "/#organization" },
 };
@@ -129,20 +120,10 @@ export const serviceSchemas = [
     { offers: fixedOffer(800, "USD", "Fixed price") }),
 ];
 
-const MONTHS: Record<string, string> = {
-  Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
-  Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12",
-};
-
-/** "Jun 2026" -> "2026-06-01". Single source of truth is the display date in insights.ts. */
-const isoDate = (displayDate: string) => {
-  const [month, year] = displayDate.split(" ");
-  return `${year}-${MONTHS[month]}-01`;
-};
-
 /** Derived from insightArticles so headline/date/image can never drift from the visible page. */
 export const articleSchemas = insightArticles.map((a) => {
-  const datePublished = isoDate(a.date);
+  // Month precision, derived from the visible date in insights.ts; no day is invented.
+  const datePublished = displayDateToIso(a.date);
   return {
     "@type": "Article",
     "@id": baseUrl + a.href + "/#article",
@@ -151,7 +132,6 @@ export const articleSchemas = insightArticles.map((a) => {
     author: { "@id": baseUrl + "/studio/#person" },
     publisher: { "@id": baseUrl + "/#organization" },
     datePublished,
-    dateModified: datePublished,
     image: { "@type": "ImageObject", url: baseUrl + a.imageSrc.replace(/\.webp$/, ".jpg") },
     keywords: a.tags.join(", "),
     mainEntityOfPage: { "@type": "WebPage", "@id": baseUrl + a.href + "/" },
@@ -162,6 +142,16 @@ const faqSchema = {
   "@type": "FAQPage",
   "@id": baseUrl + "/services/#faq",
   mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
+const homeFaqSchema = {
+  "@type": "FAQPage",
+  "@id": baseUrl + "/#faq",
+  mainEntity: homeFaqs.map((f) => ({
     "@type": "Question",
     name: f.question,
     acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -219,10 +209,28 @@ const serviceDetailSchema = (d: (typeof serviceDetails)[number]) => ({
 const norm = (pathname: string) => pathname.replace(/\/?$/, "/");
 
 /** Schema nodes that belong to one page only; the site-wide graph lives in SchemaOrg. */
-export function pageSchemas(pathname: string) {
+export function pageSchemas(pathname: string, meta: { name?: string; description?: string } = {}) {
   const path = norm(pathname);
   const nodes: Record<string, unknown>[] = [];
-  nodes.push({ "@type": "WebPage", "@id": baseUrl + path + "#webpage", url: baseUrl + path, isPartOf: { "@id": baseUrl + "/#website" }, about: { "@id": baseUrl + "/#organization" } });
+  const description =
+    meta.description ??
+    serviceDetails.find((d) => path === `/services/${d.slug}/`)?.description ??
+    projects.find((p) => path === p.href + "/")?.description ??
+    insightArticles.find((a) => path === a.href + "/")?.excerpt;
+  nodes.push({
+    "@type": "WebPage",
+    "@id": baseUrl + path + "#webpage",
+    url: baseUrl + path,
+    name: meta.name ?? pageLabel(path, "SLIIQQUE"),
+    ...(description ? { description } : {}),
+    inLanguage: "en",
+    isPartOf: { "@id": baseUrl + "/#website" },
+    about: { "@id": baseUrl + "/#organization" },
+    breadcrumb: { "@id": baseUrl + path + "#breadcrumb" },
+    // Voice assistants read these: the page H1 and any block marked data-speakable.
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "[data-speakable]"] },
+  });
+  if (path === "/") nodes.push(homeFaqSchema);
   if (path === "/services/") nodes.push(faqSchema);
   if (path === "/work/") nodes.push(workListSchema);
   const project = projects.find((p) => path === p.href + "/");

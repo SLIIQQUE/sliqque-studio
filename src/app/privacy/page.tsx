@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <PageLayout>
-      <PageSchema path="/privacy/" />
+      <PageSchema path="/privacy/" meta={metadata} />
       <LegalPage doc={privacyPolicy} />
     </PageLayout>
   );

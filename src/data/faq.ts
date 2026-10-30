@@ -45,3 +45,6 @@ export const faqs: FaqItem[] = [
       "Yes, through Creative Studio (studio.sliiqque.space), the creative-production vertical of the SLIIQQUE ecosystem. It produces AI commercials, AI UGC and digital humans, AI product and fashion photography, and brand launch campaigns for brands in Nigeria, Africa and worldwide, separate from this site's software and automation work.",
   },
 ];
+
+/** The questions shown on the home page: what the studio does, what it costs, and how it works. */
+export const homeFaqs: FaqItem[] = faqs.slice(0, 6);

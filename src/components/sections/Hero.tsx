@@ -243,26 +243,20 @@ const Hero = ({
                   {title.split("").map((char, i) => (
                     <span
                       key={i}
-                      className="inline-block relative cursor-pointer"
+                      data-char={char === " " ? "\u00A0" : char}
+                      className="hero-char inline-block relative cursor-pointer text-white"
+                      style={
+                        {
+                          "--hover-color": ["#f97316", "#3b82f6", "#8b5cf6", "#ffffff"][i % 4],
+                        } as React.CSSProperties
+                      }
                     >
-                      <span className="relative z-10 text-white transition-colors duration-200">
-                        {char === " " ? "\u00A0" : char}
-                      </span>
-                      <motion.span
-                        className="absolute inset-0 z-20"
-                        style={{
-                          color: ["#f97316", "#3b82f6", "#8b5cf6", "#ffffff"][
-                            i % 4
-                          ],
-                        }}
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.15 }}
-                      >
-                        {char === " " ? "\u00A0" : char}
-                      </motion.span>
+                      {char === " " ? "\u00A0" : char}
                     </span>
                   ))}
+                  <span className="sr-only">
+                    , websites, AI agents and workflow automation studio
+                  </span>
                 </h1>
               </motion.div>
             </div>
@@ -272,6 +266,7 @@ const Hero = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            data-speakable
             className="text-xl md:text-3xl font-body font-light text-white/80 max-w-md md:max-w-3xl mx-auto px-[4.5rem] md:px-0 mb-8"
           >
             {subtitle}

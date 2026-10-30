@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/react-performance/" />
+      <PageSchema path="/insights/react-performance/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

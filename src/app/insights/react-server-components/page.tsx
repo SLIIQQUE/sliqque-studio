@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/react-server-components/" />
+      <PageSchema path="/insights/react-server-components/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

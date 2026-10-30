@@ -31,9 +31,9 @@ const StudioSection = () => {
                 id="studio-heading"
                 className="font-display font-bold text-5xl tracking-tight uppercase leading-none"
               >
-                Built with
+                Built with{" "}
                 <br />
-                intent.
+                intent.{" "}
                 <br />
                 Driven by craft.
               </h2>

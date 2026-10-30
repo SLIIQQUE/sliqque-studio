@@ -188,3 +188,20 @@ body {
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+/* Hero title: the hover colour is drawn by CSS so each letter exists once in the DOM.
+   Rendering a second, coloured copy of every letter made the H1 read "SSLLIIIIQQQQUUEE". */
+.hero-char::after {
+  content: attr(data-char);
+  content: attr(data-char) / "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  color: var(--hover-color);
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+.hero-char:hover::after {
+  opacity: 1;
+}

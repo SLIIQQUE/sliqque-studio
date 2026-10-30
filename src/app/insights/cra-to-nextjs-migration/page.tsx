@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/cra-to-nextjs-migration/" />
+      <PageSchema path="/insights/cra-to-nextjs-migration/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

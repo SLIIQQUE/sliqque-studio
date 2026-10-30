@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/hidden-cost-web-dev-nigeria/" />
+      <PageSchema path="/insights/hidden-cost-web-dev-nigeria/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

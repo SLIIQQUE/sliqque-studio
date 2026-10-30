@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function InsightsPage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/" />
+      <PageSchema path="/insights/" meta={metadata} />
       <InsightsPageClient />
     </PageLayout>
   );

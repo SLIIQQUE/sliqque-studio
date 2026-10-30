@@ -216,7 +216,7 @@ const StatsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-4">
+          <h2 id="by-the-numbers" className="font-display font-bold text-4xl md:text-5xl tracking-tight uppercase mb-4">
             By The Numbers
           </h2>
           <p className="text-white/50 font-body">

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function ExpertisePage() {
   return (
     <PageLayout>
-      <PageSchema path="/expertise/" />
+      <PageSchema path="/expertise/" meta={metadata} />
       <ExpertisePageClient />
     </PageLayout>
   );

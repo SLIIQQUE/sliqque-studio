@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ServiceConfigurator } from "@/components/services/ServiceConfigurator";
 import { formatPrice, serviceDetails, type ServiceDetail } from "@/data";
@@ -16,13 +17,14 @@ export default function ServiceDetailClient({ service }: { service: ServiceDetai
       <section aria-labelledby="service-heading" className="py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <Link
-              href="/services/"
-              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-8 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
-            >
-              <ArrowLeft size={12} aria-hidden="true" />
-              All Services
-            </Link>
+            <Breadcrumbs
+              className="mb-8"
+              trail={[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/services/" },
+                { name: service.title },
+              ]}
+            />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-8">
                 <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted block mb-4">

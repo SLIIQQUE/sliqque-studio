@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <PageLayout>
-      <PageSchema path="/terms/" />
+      <PageSchema path="/terms/" meta={metadata} />
       <LegalPage doc={termsOfService} />
     </PageLayout>
   );

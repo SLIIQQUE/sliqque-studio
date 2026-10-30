@@ -105,6 +105,20 @@ const Footer = ({
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <nav aria-label="Footer" className="contents">
+              {[
+                ["About the studio", "/studio"],
+                ["Services", "/services"],
+                ["Work", "/work"],
+                ["Expertise", "/expertise"],
+                ["Insights", "/insights"],
+                ["Contact", "/contact"],
+              ].map(([label, href]) => (
+                <Link key={href} href={href} className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none">
+                  {label}
+                </Link>
+              ))}
+            </nav>
             <Link
               href="/privacy"
               className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/55 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"

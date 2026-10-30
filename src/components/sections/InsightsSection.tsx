@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { PublishedDate } from "@/components/ui/PublishedDate";
 import { ArrowRight, Clock, Calendar, ArrowUpRight } from "lucide-react";
 import { insightArticles } from "@/data";
 
@@ -80,7 +81,7 @@ const ArticleCard = ({
             <div className="flex items-center gap-4 mb-3">
               <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
                 <Calendar className="w-3 h-3" aria-hidden="true" />
-                {date}
+                <PublishedDate date={date} />
               </span>
               <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
                 <Clock className="w-3 h-3" aria-hidden="true" />
@@ -192,7 +193,7 @@ const FeaturedArticle = ({
           <div className="md:hidden absolute bottom-6 left-6 right-6 flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
               <Calendar className="w-3 h-3" aria-hidden="true" />
-              {date}
+              <PublishedDate date={date} />
             </span>
             <span className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
               <Clock className="w-3 h-3" aria-hidden="true" />
@@ -212,16 +213,17 @@ const FeaturedArticle = ({
               ))}
             </div>
             
-            <motion.h3
+            {/* Visual-only on desktop: the mobile block below holds the single h3 for this article. */}
+            <motion.p
               animate={isHovered ? { x: 10 } : {}}
               className="font-display font-bold text-3xl md:text-4xl tracking-tight uppercase leading-tight mb-4"
             >
               {title}
-            </motion.h3>
+            </motion.p>
             
             <div className="flex items-center gap-6">
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">
-                {date}
+                <PublishedDate date={date} />
               </span>
               <span className="text-white/30" aria-hidden="true">•</span>
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.1em] text-white/60">

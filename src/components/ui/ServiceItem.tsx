@@ -13,6 +13,7 @@ import {
   Star,
 } from "lucide-react";
 import type { ServiceItemData } from "@/data";
+import { slugify } from "@/lib/seo";
 
 const iconMap: Record<string, React.ElementType> = {
   Monitor,
@@ -96,6 +97,7 @@ export function ServiceItem({
             </div>
 
             <h2
+              id={slugify(title)}
               className={`font-display font-bold tracking-tight uppercase mb-2 group-hover:text-white/90 transition-colors ${
                 highlight ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"
               }`}

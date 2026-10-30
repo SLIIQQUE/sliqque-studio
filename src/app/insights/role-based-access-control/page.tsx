@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/role-based-access-control/" />
+      <PageSchema path="/insights/role-based-access-control/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

@@ -1,6 +1,5 @@
 import {
   organizationSchema,
-  localBusinessSchema,
   webSiteSchema,
   serviceSchemas,
   personSchema,
@@ -13,7 +12,6 @@ export function SiteSchema() {
     "@context": "https://schema.org",
     "@graph": [
       organizationSchema,
-      localBusinessSchema,
       webSiteSchema,
       personSchema,
       ...serviceSchemas,

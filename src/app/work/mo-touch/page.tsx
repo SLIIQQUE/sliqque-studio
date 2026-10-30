@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function MoTouchPage() {
   return (
     <PageLayout>
-      <PageSchema path="/work/mo-touch/" />
+      <PageSchema path="/work/mo-touch/" meta={metadata} />
       <CaseStudyClient />
     </PageLayout>
   );

@@ -40,7 +40,7 @@ export default function DesignSystemsPage() {
     <main id="main-content" className="relative min-h-screen">
       <Navigation />
       <LightLeaks />
-      <PageSchema path="/expertise/design-systems/" />
+      <PageSchema path="/expertise/design-systems/" meta={metadata} />
       <ExpertiseVerticalClient
         title="AI Agents & Automation"
         subtitle="Bots, Automation, and Interactive Experiences That Work for You"

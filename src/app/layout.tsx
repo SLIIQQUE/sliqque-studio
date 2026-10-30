@@ -70,9 +70,6 @@ export const metadata: Metadata = {
     description: "We build websites, AI bots, and workflow automation.",
     images: ["https://sliiqque.space/og-image.jpg"],
   },
-  alternates: {
-    canonical: "https://sliiqque.space/",
-  },
 };
 
 function cn(...inputs: ClassValue[]) {
@@ -94,9 +91,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
-
-        <link rel="alternate" href="https://sliiqque.space" hrefLang="en" />
-        <link rel="alternate" href="https://sliiqque.space" hrefLang="x-default" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
         <SiteSchema />

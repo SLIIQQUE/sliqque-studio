@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function RealEstatePage() {
   return (
     <PageLayout>
-      <PageSchema path="/work/real-estate/" />
+      <PageSchema path="/work/real-estate/" meta={metadata} />
       <CaseStudyClient />
     </PageLayout>
   );

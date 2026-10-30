@@ -40,7 +40,7 @@ export default function SaaSPage() {
     <main id="main-content" className="relative min-h-screen">
       <Navigation />
       <LightLeaks />
-      <PageSchema path="/expertise/saas/" />
+      <PageSchema path="/expertise/saas/" meta={metadata} />
       <ExpertiseVerticalClient
         title="SaaS & Full-Stack Platforms"
         subtitle="Full-Stack React & Next.js Platforms Built to Scale"

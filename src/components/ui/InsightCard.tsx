@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { PublishedDate } from "@/components/ui/PublishedDate";
 import { ArrowRight } from "lucide-react";
 
 interface InsightCardProps {
@@ -40,7 +41,7 @@ const InsightCard = ({
         )}
         <div className="flex items-center gap-4">
           <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted">
-            {date}
+            <PublishedDate date={date} />
           </span>
           <span className="text-white/20" aria-hidden="true">•</span>
           <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted">

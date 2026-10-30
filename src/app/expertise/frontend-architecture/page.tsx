@@ -40,7 +40,7 @@ export default function FrontendArchitecturePage() {
     <main id="main-content" className="relative min-h-screen">
       <Navigation />
       <LightLeaks />
-      <PageSchema path="/expertise/frontend-architecture/" />
+      <PageSchema path="/expertise/frontend-architecture/" meta={metadata} />
       <ExpertiseVerticalClient
         title="FinTech & RegTech Systems"
         subtitle="Payment Infrastructure & Fraud Prevention Built for Africa"

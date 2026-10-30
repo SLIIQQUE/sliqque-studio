@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/nextauth-authentication/" />
+      <PageSchema path="/insights/nextauth-authentication/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

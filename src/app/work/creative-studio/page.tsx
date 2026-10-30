@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function CreativeStudioPage() {
   return (
     <PageLayout>
-      <PageSchema path="/work/creative-studio/" />
+      <PageSchema path="/work/creative-studio/" meta={metadata} />
       <CaseStudyClient />
     </PageLayout>
   );

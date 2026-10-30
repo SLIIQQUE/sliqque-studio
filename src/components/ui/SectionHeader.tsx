@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { slugify } from "@/lib/seo";
 
 interface SectionHeaderProps {
   label?: string;
@@ -53,6 +54,7 @@ export function SectionHeader({
       )}
 
       <Heading
+        id={slugify(title)}
         className={`font-display font-bold tracking-tight uppercase leading-[0.9] ${
           Heading === "h1"
             ? "text-5xl md:text-7xl"

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <PageLayout>
-      <PageSchema path="/services/" />
+      <PageSchema path="/services/" meta={metadata} />
       <ServicesPageClient />
     </PageLayout>
   );

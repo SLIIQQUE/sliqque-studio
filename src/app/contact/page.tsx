@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageLayout>
-      <PageSchema path="/contact/" />
+      <PageSchema path="/contact/" meta={metadata} />
       <ContactPageClient />
     </PageLayout>
   );

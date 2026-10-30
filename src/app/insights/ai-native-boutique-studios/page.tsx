@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/ai-native-boutique-studios/" />
+      <PageSchema path="/insights/ai-native-boutique-studios/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

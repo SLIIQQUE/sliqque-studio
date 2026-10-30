@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ArticlePage() {
   return (
     <PageLayout>
-      <PageSchema path="/insights/design-system-guide/" />
+      <PageSchema path="/insights/design-system-guide/" meta={metadata} />
       <ArticleClient />
     </PageLayout>
   );

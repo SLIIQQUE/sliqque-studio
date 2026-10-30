@@ -4,7 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { InteractiveTitle } from "@/components/ui/InteractiveTitle";
 
 interface CaseStudyData {
@@ -66,13 +67,13 @@ export default function CaseStudyLayout({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-2 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors mb-12 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] focus-visible:outline-none"
-            >
-              <ArrowLeft size={12} aria-hidden="true" />
-              All Projects
-            </Link>
+            <Breadcrumbs
+              trail={[
+                { name: "Home", href: "/" },
+                { name: "Work", href: "/work" },
+                { name: title },
+              ]}
+            />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               <div className="lg:col-span-8">

@@ -7,6 +7,8 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ServiceItem } from "@/components/ui/ServiceItem";
 import { EcosystemCallout } from "@/components/sections/EcosystemCallout";
+import PricingTable from "@/components/sections/PricingTable";
+import FaqSection from "@/components/sections/FaqSection";
 import { services, processSteps, faqs } from "@/data";
 
 export default function ServicesPageClient() {
@@ -32,6 +34,8 @@ export default function ServicesPageClient() {
           </div>
         </div>
       </section>
+
+      <PricingTable />
 
       <section aria-labelledby="process-heading" className="py-10 px-6 md:px-10 border-b border-white/5">
         <div className="max-w-6xl mx-auto">
@@ -67,22 +71,11 @@ export default function ServicesPageClient() {
 
       <EcosystemCallout />
 
-      <section aria-label="Frequently asked questions" className="py-10 px-6 md:px-10 border-b border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader label="FAQ" title="Common Questions" align="center" />
-          <div className="max-w-3xl mx-auto divide-y divide-white/10 border-t border-white/10">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-bold text-lg tracking-tight">
-                  <h3 className="text-lg">{faq.question}</h3>
-                  <span aria-hidden="true" className="text-white/40 transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="mt-3 text-base font-body text-white/60 leading-relaxed">{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        items={faqs}
+        intro="Pricing, scope, process and where we work, in one place."
+        secondaryLink={{ label: "See our work", href: "/work" }}
+      />
 
       <section aria-label="Ready to Start" className="py-10 px-6 md:px-10">
         <div className="max-w-6xl mx-auto text-center">
